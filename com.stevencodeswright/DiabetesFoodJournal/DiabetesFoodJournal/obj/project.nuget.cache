@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9pU1Xn/eHlY4ZnszlYfsmMqsPcJEhD9kyWPuvpLA0Q6K5uFlOh03xtUNoR/vFz6msFa6Gu5s+hp4OGMfeh0niQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sewri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\xamarin.forms\\4.4.0.936621-pre1\\xamarin.forms.4.4.0.936621-pre1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1979,11 +1979,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\DiabetesFoodJournal.Android.csproj",
+      "projectUniqueName": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\DiabetesFoodJournal.Android.csproj",
       "projectName": "DiabetesFoodJournal.Android",
-      "projectPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\DiabetesFoodJournal.Android.csproj",
+      "projectPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\DiabetesFoodJournal.Android.csproj",
       "packagesPath": "C:\\Users\\sewri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\obj\\",
+      "outputPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2004,8 +2004,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj": {
-              "projectPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj"
+            "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj": {
+              "projectPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj"
             }
           }
         }

@@ -612,11 +612,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
+      "projectUniqueName": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
       "projectName": "DiabetesFoodJournal",
-      "projectPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
+      "projectPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
       "packagesPath": "C:\\Users\\sewri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\obj\\",
+      "outputPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -677,7 +677,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200-preview-014883\\RuntimeIdentifierGraph.json"
       }
     }
   }

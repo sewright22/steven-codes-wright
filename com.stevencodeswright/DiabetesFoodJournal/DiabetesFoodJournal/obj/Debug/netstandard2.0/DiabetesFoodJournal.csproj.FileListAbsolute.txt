@@ -1,0 +1,17 @@
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\bin\Debug\netstandard2.0\DiabetesFoodJournal.deps.json
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\bin\Debug\netstandard2.0\DiabetesFoodJournal.dll
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\bin\Debug\netstandard2.0\ref\DiabetesFoodJournal.dll
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\bin\Debug\netstandard2.0\DiabetesFoodJournal.pdb
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.csprojAssemblyReference.cache
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.AssemblyInfoInputs.cache
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.AssemblyInfo.cs
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.dll
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\ref\DiabetesFoodJournal.dll
+C:\Users\sewri\source\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.pdb

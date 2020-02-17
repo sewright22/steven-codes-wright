@@ -1093,11 +1093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\DiabetesFoodJournal.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\DiabetesFoodJournal.iOS.csproj",
       "projectName": "DiabetesFoodJournal.iOS",
-      "projectPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\DiabetesFoodJournal.iOS.csproj",
+      "projectPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\DiabetesFoodJournal.iOS.csproj",
       "packagesPath": "C:\\Users\\sewri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\obj\\",
+      "outputPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1118,8 +1118,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj": {
-              "projectPath": "C:\\Users\\sewri\\source\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj"
+            "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj": {
+              "projectPath": "C:\\Users\\sewri\\Source\\Repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj"
             }
           }
         }
