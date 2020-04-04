@@ -3,6 +3,5 @@
   <PropertyGroup>
     <SelectedDevice>Google Pixel 3</SelectedDevice>
     <DefaultDevice>pixel_3_pie_9_0_-_api_28</DefaultDevice>
-    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>
