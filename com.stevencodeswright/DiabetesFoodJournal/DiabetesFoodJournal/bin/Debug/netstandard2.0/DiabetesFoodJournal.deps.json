@@ -11,10 +11,11 @@
         "dependencies": {
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
+          "MvvmLight": "5.4.1.1",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
-          "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.4.0.991640"
+          "Xamarin.Essentials": "1.5.2",
+          "Xamarin.Forms": "4.5.0.530"
         },
         "runtime": {
           "DiabetesFoodJournal.dll": {}
@@ -36,7 +37,7 @@
         "dependencies": {
           "SkiaSharp.Views.Forms": "1.59.1.1",
           "System.ValueTuple": "4.4.0",
-          "Xamarin.Forms": "4.4.0.991640"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "runtime": {
           "lib/netstandard1.4/Microcharts.Forms.dll": {
@@ -46,6 +47,7 @@
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
+      "MvvmLight/5.4.1.1": {},
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -70,7 +72,7 @@
       "SkiaSharp.Views.Forms/1.59.1.1": {
         "dependencies": {
           "SkiaSharp": "1.59.1",
-          "Xamarin.Forms": "4.4.0.991640"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "runtime": {
           "lib/netstandard1.3/SkiaSharp.Views.Forms.dll": {
@@ -88,7 +90,7 @@
         }
       },
       "System.ValueTuple/4.4.0": {},
-      "Xamarin.Essentials/1.3.1": {
+      "Xamarin.Essentials/1.5.2": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -99,19 +101,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.4.0.991640": {
+      "Xamarin.Forms/4.5.0.530": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.4.0.471"
+            "fileVersion": "4.5.0.203"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.4.0.471"
+            "fileVersion": "4.5.0.203"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.4.0.471"
+            "fileVersion": "4.5.0.203"
           }
         }
       }
@@ -143,6 +145,13 @@
       "sha512": "sha512-S/lZPw5QcL4V5GpnFZuMSyiUbFqbbtN0taVfY5Pd+V4YJW3OtrAjivdL7jPCypjNOkHTMQRGzNHS6zzxBboyAw==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "MvvmLight/5.4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fTUDMWT//ChZGd7Q5k0IaJuIXgh+FM43pCStxup7kgh1MQXvC48CjpjWkp5Auru/YXhHOJOMgD1NdtFZgn6K2g==",
+      "path": "mvvmlight/5.4.1.1",
+      "hashPath": "mvvmlight.5.4.1.1.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",
@@ -186,19 +195,19 @@
       "path": "system.valuetuple/4.4.0",
       "hashPath": "system.valuetuple.4.4.0.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.3.1": {
+    "Xamarin.Essentials/1.5.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+51728AdZ/qtABGvcIaNXgEoL2jAtxAXLHS8PvGCP0pb6n7twBqYpfgkmwHYVgu+U99szgtL+Jot8L+OXorPcA==",
-      "path": "xamarin.essentials/1.3.1",
-      "hashPath": "xamarin.essentials.1.3.1.nupkg.sha512"
+      "sha512": "sha512-qHxkrkx5jIC0X/qWhxCPZ3MuuOJm8bfCzAoUtlpOBSE4oV0JhrkTezK0A+IV+k/MeJ3zKc8FexaIXah9rlCTIw==",
+      "path": "xamarin.essentials/1.5.2",
+      "hashPath": "xamarin.essentials.1.5.2.nupkg.sha512"
     },
-    "Xamarin.Forms/4.4.0.991640": {
+    "Xamarin.Forms/4.5.0.530": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-668BMe9e5uvQW+caDebKn3nZr1Msxc4YMpDhD/dN061h+bHYEoWu1c/gdmQnwhGpeHMP4TClPxCKRP41FFsGCQ==",
-      "path": "xamarin.forms/4.4.0.991640",
-      "hashPath": "xamarin.forms.4.4.0.991640.nupkg.sha512"
+      "sha512": "sha512-ViHc4HlMUQEt3bR+PpDebHRXAuRCg67XC8UJ/JgQ0CJ11CiB35WT+NBJHipr0cGyHxGwoBhTwA/rKbQtIAy7eg==",
+      "path": "xamarin.forms/4.5.0.530",
+      "hashPath": "xamarin.forms.4.5.0.530.nupkg.sha512"
     }
   }
 }

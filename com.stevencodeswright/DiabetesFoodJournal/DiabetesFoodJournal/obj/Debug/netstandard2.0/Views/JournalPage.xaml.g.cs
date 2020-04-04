@@ -14,7 +14,7 @@ namespace DiabetesFoodJournal.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\JournalPage.xaml")]
-    public partial class JournalPage : global::Xamarin.Forms.ContentView {
+    public partial class JournalPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

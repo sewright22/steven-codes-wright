@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "44MZAEz+AGwoDLuJoo/fN0upaWMTMytoqt7UIbzCtZSiFGFoo0FA31ymGUSZS4v3/MggpL0oAP1XKSyVb4ttRA==",
+  "dgSpecHash": "up+VMQHo7qkCxhCloai4iQmgIIiyLyveDy/UhX7DyULhsCtQQo/2/coRjfDnauTVN85MERh8cNQTKogEdHkmzA==",
   "success": true,
   "projectFilePath": "D:\\git\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlight\\5.4.1.1\\mvvmlight.5.4.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",

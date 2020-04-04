@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace DiabetesFoodJournal.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class JournalPage : ContentView
+    public partial class JournalPage : ContentPage
     {
         public JournalPage()
         {

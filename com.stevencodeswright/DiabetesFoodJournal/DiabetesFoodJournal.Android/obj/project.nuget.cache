@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1ykBWbQzfBC6Fgu133evzqbGDtDDwbZU7b6qHURpvWil4OWUWVpU5a+P72Tb1b+5onqEs5vpLJLKfEw6No9Q1g==",
+  "dgSpecHash": "efmJ1+pC8AJ8elZ5wXXtTPiWkCnJ/u3tmNcnD1KYw9V1SFTxs5v++isaO4qhbjZp/yJeB0MCZHbe5ySg0IgNSw==",
   "success": true,
   "projectFilePath": "D:\\git\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.Android\\DiabetesFoodJournal.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sewri\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlight\\5.4.1.1\\mvvmlight.5.4.1.1.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp.views\\1.59.1.1\\skiasharp.views.1.59.1.1.nupkg.sha512",
