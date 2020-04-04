@@ -1,6 +1,7 @@
 bundleassemblies=false
 aotassemblies=false
-androidaotmode=
+androidaotmode=none
+androidembedprofilers=
 androidenableprofiledaot=
 explicitcrunch=false
 androiddextool=d8
@@ -15,7 +16,7 @@ androidsdkpath=c:\program files (x86)\android\android-sdk\
 androidndkpath=
 javasdkpath=c:\program files\android\jdk\microsoft_dist_openjdk_1.8.0.25\
 androidsequencepointsmode=none
-xamarinandroidversion=10.2.0-16
+xamarinandroidversion=10.2.0-84
 monosymbolarchive=false
 androiduselatestplatformsdk=false
 targetframeworkversion=v9.0

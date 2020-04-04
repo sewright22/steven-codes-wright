@@ -31,6 +31,10 @@
 
     <!-- Your Pages -->
     <TabBar>
+        <Tab Title="Chart"
+             Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TestChartPage}" />
+        </Tab>
         <Tab Title="Browse" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
