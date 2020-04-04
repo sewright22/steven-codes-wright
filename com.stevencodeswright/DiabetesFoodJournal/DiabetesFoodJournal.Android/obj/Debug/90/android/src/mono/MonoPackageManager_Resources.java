@@ -3,8 +3,12 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "DiabetesFoodJournal.Android.dll" comes first in this list. */
 		"DiabetesFoodJournal.Android.dll",
+		"CommonServiceLocator.dll",
 		"DiabetesFoodJournal.dll",
 		"FormsViewGroup.dll",
+		"GalaSoft.MvvmLight.dll",
+		"GalaSoft.MvvmLight.Extras.dll",
+		"GalaSoft.MvvmLight.Platform.dll",
 		"Microcharts.dll",
 		"Microcharts.Droid.dll",
 		"Microcharts.Forms.dll",

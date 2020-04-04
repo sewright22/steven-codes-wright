@@ -27,11 +27,12 @@ D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\Diabe
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
-D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.csproj.CoreCompileInputs.cache
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.AssemblyInfoInputs.cache
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.AssemblyInfo.cs
-D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\XamlC.stamp
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.dll
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\ref\DiabetesFoodJournal.dll
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.pdb
 D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\TestChartPage.xaml.g.cs
+D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\Views\JournalPage.xaml.g.cs
+D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\DiabetesFoodJournal.csproj.CoreCompileInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal\obj\Debug\netstandard2.0\XamlC.stamp

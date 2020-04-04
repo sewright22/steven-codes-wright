@@ -1,20 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "KK4jcr6nfvtGfwKTHljLxH57oDFpSy/QCzMiY/lBY1Wsd0RVrz6vL1xwDdwFlwUbLocr96cj40XL3Msk/L/EDw==",
+  "dgSpecHash": "up+VMQHo7qkCxhCloai4iQmgIIiyLyveDy/UhX7DyULhsCtQQo/2/coRjfDnauTVN85MERh8cNQTKogEdHkmzA==",
   "success": true,
   "projectFilePath": "D:\\git\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal\\DiabetesFoodJournal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlight\\5.4.1.1\\mvvmlight.5.4.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp.views.forms\\1.59.1.1\\skiasharp.views.forms.1.59.1.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\sewri\\.nuget\\packages\\xamarin.forms\\4.4.0.991640\\xamarin.forms.4.4.0.991640.nupkg.sha512"
+    "C:\\Users\\sewri\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\xamarin.forms\\4.5.0.530\\xamarin.forms.4.5.0.530.nupkg.sha512"
   ],
   "logs": []
 }
