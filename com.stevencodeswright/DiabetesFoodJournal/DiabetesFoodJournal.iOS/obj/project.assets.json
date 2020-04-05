@@ -269,6 +269,7 @@
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
           "MvvmLight": "5.4.1.1",
+          "MvvmLightLibs": "5.4.1.1",
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Forms": "4.5.0.530"
@@ -535,6 +536,7 @@
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
           "MvvmLight": "5.4.1.1",
+          "MvvmLightLibs": "5.4.1.1",
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Forms": "4.5.0.530"
@@ -801,6 +803,7 @@
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
           "MvvmLight": "5.4.1.1",
+          "MvvmLightLibs": "5.4.1.1",
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Forms": "4.5.0.530"
@@ -1067,6 +1070,7 @@
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
           "MvvmLight": "5.4.1.1",
+          "MvvmLightLibs": "5.4.1.1",
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Forms": "4.5.0.530"
