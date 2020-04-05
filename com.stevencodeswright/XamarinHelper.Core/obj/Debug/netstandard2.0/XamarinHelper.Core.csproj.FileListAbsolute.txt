@@ -1,0 +1,9 @@
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\bin\Debug\netstandard2.0\XamarinHelper.Core.deps.json
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\bin\Debug\netstandard2.0\XamarinHelper.Core.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamarinHelper.Core.AssemblyInfoInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamarinHelper.Core.AssemblyInfo.cs
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\bin\Debug\netstandard2.0\XamarinHelper.Core.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamarinHelper.Core.csproj.CoreCompileInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamlC.stamp
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamarinHelper.Core.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\XamarinHelper.Core\obj\Debug\netstandard2.0\XamarinHelper.Core.pdb

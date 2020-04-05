@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
@@ -18,8 +19,10 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     
-                    <Entry Text="{Binding Path=SearchText}"
-                           Placeholder="Search for Food..." />
+                    <Entry x:Name="searchEntry" 
+                           Placeholder="Search for Food..." 
+                           Text="Pizza"
+                           IsEnabled="True"/>
 
                     <Button WidthRequest="40"
                             HeightRequest="40"
@@ -27,12 +30,21 @@
                             HorizontalOptions="Center"
                             CornerRadius="20" 
                             Text="+"
-                            Grid.Column="1"/>
+                            Grid.Column="1"
+                            Command="{Binding Path=SearchCommand}"
+                            CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"/>
                 </Grid>
             </Frame>
-            <StackLayout Grid.Row="1">
-                <Label Text="Hello Xamarin.Forms!" />
-            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <templates:SearchResultItemView FoodName="{Binding Path=Name}"
+                                                            TagList="{Binding Tags}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

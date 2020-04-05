@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.SearchResultItemView">
+  <ContentView.Resources>
+        <ControlTemplate x:Key="SearchResultItemTemplate">
+            <Frame>
+                <StackLayout>
+                    <Label Text="{TemplateBinding FoodName}" />
+                    <StackLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
+                                 Orientation="Horizontal">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <templates:TagView TagText="{Binding}" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="templates:SearchResultItemView">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource SearchResultItemTemplate}" />
+        </Style>
+    </ContentView.Resources>
+</ContentView>

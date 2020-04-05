@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.Views;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal
 {
@@ -21,9 +22,15 @@ namespace DiabetesFoodJournal
             InitializeComponent();
 
             if (UseMockDataStore)
+            {
                 DependencyService.Register<MockDataStore>();
+            }
             else
+            {
                 DependencyService.Register<AzureDataStore>();
+            }
+
+            DependencyService.Register<IDeviceHelper, DeviceHelper>();
             MainPage = new AppShell();
         }
 
