@@ -1,5 +1,6 @@
 ﻿using DiabetesFoodJournal.Models;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
 using System;
 using System.Collections.Generic;
@@ -13,18 +14,28 @@ namespace DiabetesFoodJournal.ViewModels
 {
     public class JournalViewModel : BaseViewModel
     {
-        private readonly IDeviceHelper deviceHelper;
+        private readonly INavigationHelper navigation;
+        private readonly IMessenger messenger;
 
-        public JournalViewModel(IDeviceHelper deviceHelper)
+        public JournalViewModel(INavigationHelper navigation, IMessenger messenger)
         {
             LocalSearchResults = new ObservableRangeCollection<FoodSearchResult>();
             SearchCommand = new RelayCommand<string>(async x => await SearchClicked(x).ConfigureAwait(true));
-            this.deviceHelper = deviceHelper;
+            ItemTappedCommand = new RelayCommand<FoodSearchResult>(async x => await ItemTapped(x).ConfigureAwait(true));
+            this.navigation = navigation;
+            this.messenger = messenger;
+        }
+
+        private async Task ItemTapped(FoodSearchResult foodResult)
+        {
+           await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
+            this.messenger.Send(foodResult);
         }
 
         public ObservableRangeCollection<FoodSearchResult> LocalSearchResults { get; }
 
         public RelayCommand<string> SearchCommand { get; set; }
+        public RelayCommand<FoodSearchResult> ItemTappedCommand { get; set; }
 
         private async Task SearchClicked(string x)
         {
@@ -34,6 +45,7 @@ namespace DiabetesFoodJournal.ViewModels
             {
                 var foodItem = new FoodSearchResult()
                 {
+                    Id = i,
                     Name = $"{x} {i}"
                 };
 

@@ -9,6 +9,10 @@
   <ContentView.Resources>
         <ControlTemplate x:Key="SearchResultItemTemplate">
             <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{TemplateBinding TappedCommand}" 
+                                          CommandParameter="{TemplateBinding CommandParameter}"/>
+                </Frame.GestureRecognizers>
                 <StackLayout>
                     <Label Text="{TemplateBinding FoodName}" />
                     <StackLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"

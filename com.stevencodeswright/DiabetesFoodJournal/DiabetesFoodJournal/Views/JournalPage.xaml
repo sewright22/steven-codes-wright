@@ -4,6 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=Journal}"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
@@ -40,7 +42,9 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <templates:SearchResultItemView FoodName="{Binding Path=Name}"
-                                                            TagList="{Binding Tags}"/>
+                                                            TagList="{Binding Tags}"
+                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
+                                                            CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>

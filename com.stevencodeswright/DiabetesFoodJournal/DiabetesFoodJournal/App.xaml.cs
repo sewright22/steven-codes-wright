@@ -30,7 +30,7 @@ namespace DiabetesFoodJournal
                 DependencyService.Register<AzureDataStore>();
             }
 
-            DependencyService.Register<IDeviceHelper, DeviceHelper>();
+
             MainPage = new AppShell();
         }
 

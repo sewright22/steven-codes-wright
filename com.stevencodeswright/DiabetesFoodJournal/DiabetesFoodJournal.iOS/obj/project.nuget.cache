@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xqJDPod/vbmKtlqzbgEwjibvwpLJCyMVlPI9151C7mNdCie9r/+lh+CEQd8p7VvUPaj3s/dMV4AXRKwPs9ur8Q==",
+  "dgSpecHash": "KoWSxD8PyQ2syVeGAcSutz2DskViYCVjMbSTtGKez0lcD+8g06pgi70skv/eCQiTBJENyyVw1vKsOkYbmBRnSg==",
   "success": true,
   "projectFilePath": "D:\\git\\repos\\steven-codes-wright\\com.stevencodeswright\\DiabetesFoodJournal\\DiabetesFoodJournal.iOS\\DiabetesFoodJournal.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sewri\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
-    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlight\\5.4.1.1\\mvvmlight.5.4.1.1.nupkg.sha512",
-    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlightlibsstd10\\5.4.1.1\\mvvmlightlibsstd10.5.4.1.1.nupkg.sha512",
+    "C:\\Users\\sewri\\.nuget\\packages\\mvvmlightstd10\\5.4.1.2\\mvvmlightstd10.5.4.1.2.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\refractored.mvvmhelpers\\1.3.0\\refractored.mvvmhelpers.1.3.0.nupkg.sha512",
     "C:\\Users\\sewri\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",

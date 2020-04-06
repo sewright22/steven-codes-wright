@@ -7,7 +7,8 @@ namespace DiabetesFoodJournal.Models
 {
     public class FoodSearchResult
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public ObservableCollection<string> Tags { get; set; } = new ObservableCollection<string>();
+        public List<string> Tags { get; set; } = new List<string>();
     }
 }

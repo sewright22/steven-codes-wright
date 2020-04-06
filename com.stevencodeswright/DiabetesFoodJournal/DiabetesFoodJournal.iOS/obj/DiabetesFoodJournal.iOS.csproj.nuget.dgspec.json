@@ -128,13 +128,13 @@
               "target": "Package",
               "version": "[0.7.1, )"
             },
-            "MvvmLight": {
+            "MvvmLightLibsStd10": {
               "target": "Package",
               "version": "[5.4.1.1, )"
             },
-            "MvvmLightLibs": {
+            "MvvmLightStd10": {
               "target": "Package",
-              "version": "[5.4.1.1, )"
+              "version": "[5.4.1.2, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
