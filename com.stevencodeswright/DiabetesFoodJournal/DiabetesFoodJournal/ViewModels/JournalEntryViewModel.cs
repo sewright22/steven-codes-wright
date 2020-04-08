@@ -1,40 +1,52 @@
 ﻿using DiabetesFoodJournal.Models;
 using GalaSoft.MvvmLight.Messaging;
+using MvvmHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace DiabetesFoodJournal.ViewModels
 {
     public class JournalEntryViewModel : BaseViewModel
     {
         private readonly IMessenger messenger;
-        private string food;
+        private string foodName;
 
         public JournalEntryViewModel(IMessenger messenger)
         {
             this.messenger = messenger;
-
+            Tags = new ObservableRangeCollection<string>();
             if(this.messenger != null)
             {
                 this.messenger.Register<FoodSearchResult>(this, FoodReceived);
             }
         }
 
+        public ObservableRangeCollection<string> Tags { get; }
+
         private void FoodReceived(FoodSearchResult obj)
         {
-            Food = obj.Name;
+            FoodName = obj.Name;
+            var tagList = new List<string>();
+            tagList.Add("Pizza Hut");
+            tagList.Add("Pan");
+            tagList.Add("Stuffed Crust");
+            tagList.Add("Extra Cheese");
+            tagList.Add("Meat Lovers");
+            tagList.Add("Deep Dish");
+            Device.BeginInvokeOnMainThread(() => Tags.ReplaceRange(tagList));
         }
 
-        public string Food
+        public string FoodName
         {
             get
             {
-                return this.food;
+                return this.foodName;
             }
             set
             {
-                SetProperty(ref this.food, value);
+                SetProperty(ref this.foodName, value);
             }
         }
     }

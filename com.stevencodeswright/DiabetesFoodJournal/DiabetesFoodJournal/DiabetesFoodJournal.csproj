@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\FoodDetailsPage.xaml.cs">
+      <DependentUpon>FoodDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\JournalEntryPage.xaml.cs">
+      <DependentUpon>JournalEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\TestChartPage.xaml.cs">
       <DependentUpon>TestChartPage.xaml</DependentUpon>
     </Compile>
@@ -31,6 +37,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ResourceDictionaries\ViewTemplates\TagView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JournalEntryHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FoodDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\JournalEntryPage.xaml">

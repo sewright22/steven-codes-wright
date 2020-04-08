@@ -12,7 +12,7 @@ namespace DiabetesFoodJournal
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("journalEntry", typeof(JournalEntryPage));
+            Routing.RegisterRoute("journalEntry", typeof(FoodDetailsPage));
         }
     }
 }
