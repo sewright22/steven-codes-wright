@@ -12,9 +12,18 @@ namespace DiabetesFoodJournal.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JournalEntryPage : ContentPage
     {
+        private int stepValue = 5;
         public JournalEntryPage()
         {
             InitializeComponent();
+        }
+
+        private void timeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+            var newStep = Math.Round(e.NewValue / stepValue);
+
+            timeSlider.Value = newStep * stepValue;
         }
     }
 }

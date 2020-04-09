@@ -5,33 +5,87 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=JournalEntry}"
+             Title="New Entry"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalEntryPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="50" />
                 </Grid.ColumnDefinitions>
-            <Entry Text="{Binding Path=FoodName}" />
+                <Entry Text="{Binding Path=FoodName}" />
                 <Button Grid.Column="1"
-                        Text="Tag" />
+                        HeightRequest="40"
+                        CornerRadius="25"
+                        Margin="5"
+                        Text="+" />
             </Grid>
-            <ScrollView Orientation="Horizontal">
-                <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
-                            Wrap="Wrap"
-                            JustifyContent="Start"
-                            AlignItems="Start"
-                            AlignContent="Start">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <templates:TagView TagText="{Binding}" 
-                                               Margin="5"/>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </FlexLayout>
-            </ScrollView>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
+                        Wrap="Wrap"
+                        JustifyContent="Start"
+                        AlignItems="Start"
+                        AlignContent="Start">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <templates:TagView TagText="{Binding}"
+                                           Margin="5" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            <Label Text="Carb Estimate" />
+            <Entry Placeholder="mg/dl" />
+            <Label Text="Bolus" />
+            
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Placeholder="Units" 
+                       Keyboard="Numeric"
+                       Text="{Binding Path=InsulinAmount}"/>
+                <CheckBox x:Name="IsExtended"
+                          Grid.Column="1"
+                          VerticalOptions="Center" />
+                <Label Grid.Column="2"
+                       Text="Extend?" 
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"/>
+            </Grid>
+            <Grid Margin="5"
+                  IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Placeholder="% Up Front" 
+                       Keyboard="Numeric"/>
+                <Entry Placeholder="% Extended" 
+                       Keyboard="Numeric"
+                       Grid.Column="1"/>
+                <Entry Placeholder="Hours"
+                       Keyboard="Numeric"
+                       Grid.Column="2" />
+
+            </Grid>
+
+            <Label Text="When did/will you eat?" />
+            <Label Text="{Binding Path=Value, Source={x:Reference timeSlider}, StringFormat='{0} minutes'}" 
+                   />
+
+            <Slider x:Name="timeSlider" 
+                    ValueChanged="timeSlider_ValueChanged"
+                    Value="0"
+                    Minimum="-30"
+                    Maximum="30" 
+                    ThumbColor="Purple"
+                    MinimumTrackColor="Green"
+                    MaximumTrackColor="Blue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
