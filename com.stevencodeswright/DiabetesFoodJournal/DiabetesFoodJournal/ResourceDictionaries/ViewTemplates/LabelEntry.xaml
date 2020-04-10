@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.LabelEntry">
+    <ContentView.Resources>
+        <ControlTemplate x:Key="LabelEntryTemplate">
+            <Grid>
+                <Label FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       IsVisible="{TemplateBinding LabelIsVisible}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{TemplateBinding Path=Text}" />
+                                <Span Text=" " />
+                                <Span Text="{TemplateBinding Path=Append}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Entry IsVisible="{TemplateBinding EntryIsVisible}"
+                       Text="{TemplateBinding Path=Text}"
+                       Keyboard="Numeric"
+                       Unfocused="Entry_Unfocused"/>
+            </Grid>
+        </ControlTemplate>
+
+        <Style TargetType="templates:LabelEntry">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource LabelEntryTemplate}" />
+        </Style>
+    </ContentView.Resources>
+</ContentView>

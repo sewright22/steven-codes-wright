@@ -12,10 +12,12 @@ namespace DiabetesFoodJournal.ViewModels
     {
         private readonly IMessenger messenger;
         private string foodName;
+        private int? carbCount;
 
         public JournalEntryViewModel(IMessenger messenger)
         {
             this.messenger = messenger;
+            this.carbCount = 5;
             Tags = new ObservableRangeCollection<string>();
             if(this.messenger != null)
             {
@@ -47,6 +49,18 @@ namespace DiabetesFoodJournal.ViewModels
             set
             {
                 SetProperty(ref this.foodName, value);
+            }
+        }
+
+        public int? CarbCount
+        {
+            get
+            {
+                return this.carbCount;
+            }
+            set
+            {
+                SetProperty(ref this.carbCount, value);
             }
         }
     }
