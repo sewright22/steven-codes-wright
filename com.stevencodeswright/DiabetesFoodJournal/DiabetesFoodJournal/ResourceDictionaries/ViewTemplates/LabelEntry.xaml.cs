@@ -12,6 +12,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LabelEntry : ContentView
     {
+        public static readonly BindableProperty LabelProperty = BindableProperty.Create(nameof(Label), typeof(string), typeof(LabelEntry), string.Empty);
         public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LabelEntry), string.Empty);
         public static readonly BindableProperty AppendProperty = BindableProperty.Create(nameof(Append), typeof(string), typeof(LabelEntry), string.Empty);
         public static readonly BindableProperty EntryIsVisibleProperty = BindableProperty.Create(nameof(EntryIsVisible), typeof(bool), typeof(LabelEntry), false);
@@ -21,6 +22,11 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         public LabelEntry()
         {
             InitializeComponent();
+        }
+        public string Label
+        {
+            get => (string)GetValue(LabelProperty);
+            set => SetValue(LabelProperty, value);
         }
 
         public string Text

@@ -13,6 +13,10 @@ namespace DiabetesFoodJournal.ViewModels
         private readonly IMessenger messenger;
         private string foodName;
         private int? carbCount;
+        private decimal? timeExtended;
+        private int? amountUpFront;
+        private int? amountExtended;
+        private decimal mealTimeOffset;
 
         public JournalEntryViewModel(IMessenger messenger)
         {
@@ -22,6 +26,26 @@ namespace DiabetesFoodJournal.ViewModels
             if(this.messenger != null)
             {
                 this.messenger.Register<FoodSearchResult>(this, FoodReceived);
+            }
+
+            this.PropertyChanged += this.JournalEntryViewModel_PropertyChanged;
+        }
+
+        private void JournalEntryViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals(nameof(AmountUpFront)))
+            {
+                if (AmountUpFront.HasValue)
+                {
+                    AmountExtended = 100 - AmountUpFront.Value;
+                }
+            }
+            else if(e.PropertyName.Equals(nameof(AmountExtended)))
+            {
+                if (AmountExtended.HasValue)
+                {
+                    AmountUpFront = 100 - AmountExtended.Value;
+                }
             }
         }
 
@@ -61,6 +85,52 @@ namespace DiabetesFoodJournal.ViewModels
             set
             {
                 SetProperty(ref this.carbCount, value);
+            }
+        }
+        public int? AmountUpFront
+        {
+            get
+            {
+                return this.amountUpFront;
+            }
+            set
+            {
+                SetProperty(ref this.amountUpFront, value);
+            }
+        }
+        public int? AmountExtended
+        {
+            get
+            {
+                return this.amountExtended;
+            }
+            set
+            {
+                SetProperty(ref this.amountExtended, value);
+            }
+        }
+        public decimal? TimeExtended
+        {
+            get
+            {
+                return this.timeExtended;
+            }
+            set
+            {
+                SetProperty(ref this.timeExtended, value);
+            }
+        }
+        public decimal MealTimeOffset
+        {
+            get
+            {
+                return this.mealTimeOffset;
+            }
+            set
+            {
+                var newStep = Math.Round(value / 5);
+
+                SetProperty(ref this.mealTimeOffset, newStep*5);
             }
         }
     }

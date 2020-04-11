@@ -40,56 +40,65 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
-                <Label Text="Carb Estimate" />
-                <templates:LabelEntry Text="{Binding CarbCount}"
-                                      Append="Carbs" />
-                <!--<Entry Placeholder="Carbs" Text="{Binding CarbCount}"
-                       Keyboard="Numeric"/>-->
-                
-                <Label Text="Bolus" />
-
-                <Grid Margin="5">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Entry Placeholder="Units"
-                           Keyboard="Numeric"
-                           Text="{Binding Path=InsulinAmount}" />
-                    <CheckBox x:Name="IsExtended"
-                              Grid.Column="1"
-                              VerticalOptions="Center" />
-                    <Label Grid.Column="2"
-                           Text="Extend?"
-                           VerticalOptions="Center"
-                           VerticalTextAlignment="Center" />
+                    <templates:LabelEntry Label="Carb Estimate"
+                                          Text="{Binding CarbCount}"
+                                          Append=" Carbs"
+                                          Grid.Column="0" />
+                    <Grid Margin="0"
+                          Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <templates:LabelEntry Label="Bolus"
+                                              Text="{Binding Path=InsulinAmount}"
+                                              Append=" Units" />
+
+                        <CheckBox x:Name="IsExtended"
+                                  Grid.Column="1"
+                                  VerticalOptions="Center" />
+                        <Label Grid.Column="2"
+                               Text="Extend?"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center" />
+                    </Grid>
                 </Grid>
-                <Grid Margin="5"
+
+                <Grid Margin="0"
                       IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Entry Placeholder="% Up Front"
-                           Keyboard="Numeric" />
-                    <Entry Placeholder="% Extended"
-                           Keyboard="Numeric"
-                           Grid.Column="1" />
-                    <Entry Placeholder="Hours"
-                           Keyboard="Numeric"
-                           Grid.Column="2" />
+                    <templates:LabelEntry Label="Up Front"
+                                          Text="{Binding AmountUpFront, Mode=TwoWay}"
+                                          Append="% Up Front" />
+                    <templates:LabelEntry Label="Extended"
+                                          Text="{Binding AmountExtended, Mode=TwoWay}"
+                                          Append="% Extended"
+                                          Grid.Column="1" />
+                    <templates:LabelEntry Label="How Long?"
+                                          Text="{Binding TimeExtended}"
+                                          Append=" Hours"
+                                          Grid.Column="2" />
 
                 </Grid>
 
                 <Label Text="When did/will you eat?" />
-                <Label Text="{Binding Path=Value, Source={x:Reference timeSlider}, StringFormat='{0} minutes'}" />
+                <Label Text="{Binding Path=MealTimeOffset, StringFormat='{0} minutes'}" />
 
                 <Slider x:Name="timeSlider"
                         ValueChanged="timeSlider_ValueChanged"
-                        Value="0"
+                        Value="{Binding MealTimeOffset, Mode=TwoWay}"
                         Minimum="-30"
                         Maximum="30"
                         ThumbColor="Purple"

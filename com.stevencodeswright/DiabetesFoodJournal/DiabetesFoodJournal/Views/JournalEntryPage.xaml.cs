@@ -21,9 +21,7 @@ namespace DiabetesFoodJournal.Views
         private void timeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
-            var newStep = Math.Round(e.NewValue / stepValue);
-
-            timeSlider.Value = newStep * stepValue;
+            
         }
     }
 }
