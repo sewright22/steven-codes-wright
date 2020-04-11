@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Models;
+﻿using DiabetesFoodJournal.DataModels;
+using DiabetesFoodJournal.Models;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
 using System;
@@ -11,7 +12,7 @@ namespace DiabetesFoodJournal.ViewModels
     public class JournalEntryViewModel : BaseViewModel
     {
         private readonly IMessenger messenger;
-        private string foodName;
+        private string entryTitle;
         private int? carbCount;
         private decimal? timeExtended;
         private int? amountUpFront;
@@ -22,7 +23,7 @@ namespace DiabetesFoodJournal.ViewModels
         {
             this.messenger = messenger;
             this.carbCount = 5;
-            Tags = new ObservableRangeCollection<string>();
+            Tags = new ObservableRangeCollection<TagDataModel>();
             if(this.messenger != null)
             {
                 this.messenger.Register<FoodSearchResult>(this, FoodReceived);
@@ -49,30 +50,31 @@ namespace DiabetesFoodJournal.ViewModels
             }
         }
 
-        public ObservableRangeCollection<string> Tags { get; }
-
+        public ObservableRangeCollection<TagDataModel> Tags { get; }
+        public NutritionalInfoDataModel NutritionalInfo { get; }
+        public DoseDataModel Dose { get; }
         private void FoodReceived(FoodSearchResult obj)
         {
-            FoodName = obj.Name;
-            var tagList = new List<string>();
-            tagList.Add("Pizza Hut");
-            tagList.Add("Pan");
-            tagList.Add("Stuffed Crust");
-            tagList.Add("Extra Cheese");
-            tagList.Add("Meat Lovers");
-            tagList.Add("Deep Dish");
+            EntryTitle = obj.Name;
+            var tagList = new List<TagDataModel>();
+            //tagList.Add("Pizza Hut");
+            //tagList.Add("Pan");
+            //tagList.Add("Stuffed Crust");
+            //tagList.Add("Extra Cheese");
+            //tagList.Add("Meat Lovers");
+            //tagList.Add("Deep Dish");
             Device.BeginInvokeOnMainThread(() => Tags.ReplaceRange(tagList));
         }
 
-        public string FoodName
+        public string EntryTitle
         {
             get
             {
-                return this.foodName;
+                return this.entryTitle;
             }
             set
             {
-                SetProperty(ref this.foodName, value);
+                SetProperty(ref this.entryTitle, value);
             }
         }
 

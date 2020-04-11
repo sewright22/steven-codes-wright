@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace DiabetesFoodJournal.Models
 {
-    public class Item
+    public class Tag
     {
-        public string Id { get; set; }
-        public string Text { get; set; }
+        public int Id { get; set; }
         public string Description { get; set; }
     }
 }
