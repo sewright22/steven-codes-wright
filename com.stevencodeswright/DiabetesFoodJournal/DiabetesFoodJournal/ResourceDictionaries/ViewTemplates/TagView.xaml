@@ -14,6 +14,10 @@
                    BorderColor="DarkGray">
                 <Label Text="{TemplateBinding TagText}" 
                        Margin="10"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
+                                          CommandParameter="{TemplateBinding CommandParameter}"/>
+                </Frame.GestureRecognizers>
             </Frame>
         </ControlTemplate>
 

@@ -19,12 +19,12 @@ namespace DiabetesFoodJournal.DataModels
         {
             get;
             protected set;
-
         }
         public int Id { get { return this.id; } set { SetProperty(ref this.id, value); } }
         public DateTime Logged { get { return this.logged; } set { SetProperty(ref this.logged, value); } }
         public string Notes { get { return this.notes; } set { SetProperty(ref this.notes, value); } }
         public string Title { get { return this.title; } set { SetProperty(ref this.title, value); } }
+        public ObservableRangeCollection<TagDataModel> Tags { get; } = new ObservableRangeCollection<TagDataModel>();
 
         [JsonIgnore]
         public string Group
@@ -39,18 +39,33 @@ namespace DiabetesFoodJournal.DataModels
         {
             get
             {
-                return this.Model.Id != this.id ||
-                this.Model.Logged != this.logged ||
-                this.Model.Notes != this.notes ||
-                this.Model.Title != this.title;
+                var thisObjectIsChanged =  this.Model.Id != this.id ||
+                                           this.Model.Logged != this.logged ||
+                                           this.Model.Notes != this.notes ||
+                                           this.Model.Title != this.title;
+
+                if(thisObjectIsChanged == false)
+                {
+                    foreach(var tag in Tags)
+                    {
+                        thisObjectIsChanged = tag.IsChanged;
+                        if(thisObjectIsChanged)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                return thisObjectIsChanged;
             }
         }
 
         public void Load(JournalEntry model)
         {
-            this.id = model.Id;
-            this.logged = model.Logged;
-            this.notes = model.Notes;
+            this.Id = model.Id;
+            this.Logged = model.Logged;
+            this.Notes = model.Notes;
+            this.Title = model.Title;
             Model = model;
         }
 

@@ -41,11 +41,31 @@
                 <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
+                            <StackLayout>
+                                <Label BackgroundColor="Gray"
+                                       Margin="0"
+                                       Padding="0"
+                                       Text="{Binding Key}" />
+
+                                <StackLayout BindableLayout.ItemsSource="{Binding Items}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <templates:SearchResultItemView FoodName="{Binding Path=Title}"
+                                                                            TagList="{Binding Tags}"
+                                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
+                                                                            CommandParameter="{Binding}" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                        <!--<DataTemplate>
+                            
                             <templates:SearchResultItemView FoodName="{Binding Path=Name}"
                                                             TagList="{Binding Tags}"
                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
                                                             CommandParameter="{Binding}"/>
-                        </DataTemplate>
+                        </DataTemplate>-->
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </ScrollView>

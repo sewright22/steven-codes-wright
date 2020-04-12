@@ -15,14 +15,18 @@
                 </Frame.GestureRecognizers>
                 <StackLayout>
                     <Label Text="{TemplateBinding FoodName}" />
-                    <StackLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
-                                 Orientation="Horizontal">
+                    <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
+                                Wrap="Wrap"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                AlignContent="Start">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <templates:TagView TagText="{Binding}" />
+                                <templates:TagView TagText="{Binding Description}" 
+                                                   Margin="5"/>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-                    </StackLayout>
+                    </FlexLayout>
                 </StackLayout>
             </Frame>
         </ControlTemplate>

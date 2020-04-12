@@ -1,4 +1,8 @@
-﻿using DiabetesFoodJournal.ViewModels;
+﻿using DiabetesFoodJournal.DataServices;
+using DiabetesFoodJournal.ModelLinks;
+using DiabetesFoodJournal.Models;
+using DiabetesFoodJournal.Services;
+using DiabetesFoodJournal.ViewModels;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System;
@@ -14,6 +18,11 @@ namespace DiabetesFoodJournal
         {
             SimpleIoc.Default.Register<INavigationHelper, ShellNavigation>();
             SimpleIoc.Default.Register(() => { return Messenger.Default; });
+            SimpleIoc.Default.Register<IDataStore<JournalEntry>, MockJournalEntryDataStore>();
+            SimpleIoc.Default.Register<IDataStore<Tag>, MockTagDataStore>();
+            SimpleIoc.Default.Register<IDataStore<JournalEntryTag>, MockJournalEntryTagDataStore>();
+            SimpleIoc.Default.Register<IAppDataService, MockAppDataService>();
+            SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
             SimpleIoc.Default.Register<JournalViewModel>();
             SimpleIoc.Default.Register<JournalEntryViewModel>();
             SimpleIoc.Default.Register<JournalEntryHistoryViewModel>();

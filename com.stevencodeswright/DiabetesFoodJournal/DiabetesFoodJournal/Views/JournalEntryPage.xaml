@@ -3,43 +3,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:DiabetesFoodJournal.Converters"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=JournalEntry}"
              Title="New Entry"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalEntryPage">
+    <ContentPage.Resources>
+        <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
-            <StackLayout Margin="5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="50" />
-                    </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding Path=FoodName}" />
-                    <Button Grid.Column="1"
-                            HeightRequest="40"
-                            CornerRadius="25"
-                            Margin="5"
-                            Text="+" />
-                </Grid>
-                <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Margin="5"
+                         Grid.ColumnSpan="2">
+                <Entry Text="{Binding Path=Model.Title}" />
+                
+                <FlexLayout BindableLayout.ItemsSource="{Binding Model.Tags}"
                             Wrap="Wrap"
                             JustifyContent="Start"
                             AlignItems="Start"
                             AlignContent="Start">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <templates:TagView TagText="{Binding}"
+                            <templates:TagView TagText="{Binding Path=Description}"
                                                Margin="5" />
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Entry Placeholder="Add Tag" 
+                           x:Name="TagSearchEntry"
+                           Text="{Binding TagSearchText, Mode=TwoWay}"
+                           ClearButtonVisibility="WhileEditing"/>
+                    <Button Grid.Column="1"
+                            HeightRequest="40"
+                            CornerRadius="25"
+                            Margin="5"
+                            Text="+" />
+                    <Label Text="Existing Tags" 
+                           Grid.Row="1"
+                           IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}"/>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding ExistingTagSearch}"
+                                Wrap="Wrap"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                AlignContent="Start"
+                                Grid.Row="2"
+                                IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <templates:TagView TagText="{Binding Path=Description}"
+                                                   TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"
+                                                   CommandParameter="{Binding}"
+                                                   Margin="5" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </Grid>
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -97,7 +139,6 @@
                 <Label Text="{Binding Path=MealTimeOffset, StringFormat='{0} minutes'}" />
 
                 <Slider x:Name="timeSlider"
-                        ValueChanged="timeSlider_ValueChanged"
                         Value="{Binding MealTimeOffset, Mode=TwoWay}"
                         Minimum="-30"
                         Maximum="30"
@@ -106,8 +147,13 @@
                         MaximumTrackColor="Blue" />
             </StackLayout>
 
-            <Button Text="Log" 
-                    Grid.Row="1"/>
+            <Button Text="Update"
+                    Grid.Row="1" 
+                    Grid.Column="0"/>
+            
+            <Button Text="Log Again"
+                    Grid.Row="1" 
+                    Grid.Column="1"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
