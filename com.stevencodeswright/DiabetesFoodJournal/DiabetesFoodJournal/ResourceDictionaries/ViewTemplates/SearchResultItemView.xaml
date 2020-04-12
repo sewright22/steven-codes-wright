@@ -13,21 +13,32 @@
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}" 
                                           CommandParameter="{TemplateBinding CommandParameter}"/>
                 </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="{TemplateBinding FoodName}" />
-                    <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
-                                Wrap="Wrap"
-                                JustifyContent="Start"
-                                AlignItems="Start"
-                                AlignContent="Start">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <templates:TagView TagText="{Binding Description}" 
-                                                   Margin="5"/>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </FlexLayout>
-                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <Label Text="{TemplateBinding FoodName}" />
+                        <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
+                                    Wrap="Wrap"
+                                    JustifyContent="Start"
+                                    AlignItems="Start"
+                                    AlignContent="Start">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:TagView TagText="{Binding Description}"
+                                                       Margin="5" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </StackLayout>
+
+                    <Label Text="{TemplateBinding CarbCount, StringFormat='{0} Carbs'}"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           Grid.Column="1"/>
+                </Grid>
             </Frame>
         </ControlTemplate>
 

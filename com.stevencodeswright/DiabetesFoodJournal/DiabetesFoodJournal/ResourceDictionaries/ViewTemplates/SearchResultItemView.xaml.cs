@@ -16,6 +16,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(SearchResultItemView));
         public static readonly BindableProperty TappedCommandProperty = BindableProperty.Create(nameof(TappedCommand), typeof(ICommand), typeof(SearchResultItemView));
         public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(nameof(FoodName), typeof(string), typeof(SearchResultItemView), string.Empty);
+        public static readonly BindableProperty CarbCountProperty = BindableProperty.Create(nameof(CarbCount), typeof(int), typeof(SearchResultItemView), 0);
 
 		public static readonly BindableProperty TagListProperty =
 			BindableProperty.Create(nameof(TagList), typeof(IEnumerable), typeof(ItemsView<Cell>), null,
@@ -38,6 +39,12 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         {
             get => (string)GetValue(FoodNameProperty);
             set => SetValue(FoodNameProperty, value);
+        }
+
+        public int CarbCount
+        {
+            get => (int)GetValue(CarbCountProperty);
+            set => SetValue(CarbCountProperty, value);
         }
 
         public ICommand TappedCommand

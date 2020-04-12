@@ -24,6 +24,8 @@ namespace DiabetesFoodJournal.DataModels
         public DateTime Logged { get { return this.logged; } set { SetProperty(ref this.logged, value); } }
         public string Notes { get { return this.notes; } set { SetProperty(ref this.notes, value); } }
         public string Title { get { return this.title; } set { SetProperty(ref this.title, value); } }
+        public DoseDataModel Dose { get; } = new DoseDataModel();
+        public NutritionalInfoDataModel NutritionalInfo { get; } = new NutritionalInfoDataModel();
         public ObservableRangeCollection<TagDataModel> Tags { get; } = new ObservableRangeCollection<TagDataModel>();
 
         [JsonIgnore]

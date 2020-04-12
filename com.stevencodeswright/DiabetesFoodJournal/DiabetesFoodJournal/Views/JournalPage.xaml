@@ -52,6 +52,7 @@
                                         <DataTemplate>
                                             <templates:SearchResultItemView FoodName="{Binding Path=Title}"
                                                                             TagList="{Binding Tags}"
+                                                                            CarbCount="{Binding NutritionalInfo.Carbohydrates}"
                                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
                                                                             CommandParameter="{Binding}" />
                                         </DataTemplate>

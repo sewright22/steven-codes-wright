@@ -41,6 +41,7 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

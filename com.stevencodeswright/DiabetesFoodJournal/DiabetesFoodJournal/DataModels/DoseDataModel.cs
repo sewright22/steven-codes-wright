@@ -10,9 +10,9 @@ namespace DiabetesFoodJournal.DataModels
     public class DoseDataModel : ObservableObject, IDataModel<Dose>
     {
         private int id;
-        private int? upFront;
-        private int? extended;
-        private decimal? timeExtended;
+        private int upFront;
+        private int extended;
+        private decimal timeExtended;
         private int timeOffset;
 
         [JsonIgnore]
@@ -23,9 +23,9 @@ namespace DiabetesFoodJournal.DataModels
 
         }
         public int Id { get { return this.id; } set { SetProperty(ref this.id, value); } }
-        public int? UpFront { get { return this.upFront; } set { SetProperty(ref this.upFront, value); } }
-        public int? Extended { get { return this.extended; } set { SetProperty(ref this.extended, value); } }
-        public decimal? TimeExtended { get { return this.timeExtended; } set { SetProperty(ref this.timeExtended, value); } }
+        public int UpFront { get { return this.upFront; } set { SetProperty(ref this.upFront, value); } }
+        public int Extended { get { return this.extended; } set { SetProperty(ref this.extended, value); } }
+        public decimal TimeExtended { get { return this.timeExtended; } set { SetProperty(ref this.timeExtended, value); } }
         public int TimeOffset { get { return this.timeOffset; } set { SetProperty(ref this.timeOffset, value); } }
 
         public bool IsChanged
