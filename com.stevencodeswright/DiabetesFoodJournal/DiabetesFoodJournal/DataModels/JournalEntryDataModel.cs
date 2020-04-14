@@ -33,7 +33,18 @@ namespace DiabetesFoodJournal.DataModels
         {
             get
             {
-                return string.Format("{0} {1}", Logged.ToString("MMMM"), Logged.Year.ToString());
+                if (Logged.Date.Equals(DateTime.Today))
+                {
+                    return "Today";
+                }
+                else if (Logged.Date.Equals(DateTime.Today.Add(TimeSpan.FromDays(-1))))
+                {
+                    return "Yesterday";
+                }
+                else
+                {
+                    return string.Format("{0} {1}", Logged.ToString("MM/dd/YYYY"), Logged.Year.ToString());
+                }
             }
         }
 
