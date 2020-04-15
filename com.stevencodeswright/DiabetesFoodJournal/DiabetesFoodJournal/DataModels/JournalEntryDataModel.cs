@@ -13,6 +13,7 @@ namespace DiabetesFoodJournal.DataModels
         private DateTime logged;
         private string notes;
         private string title;
+        private bool isSelected;
 
         [JsonIgnore]
         public JournalEntry Model
@@ -43,7 +44,7 @@ namespace DiabetesFoodJournal.DataModels
                 }
                 else
                 {
-                    return string.Format("{0} {1}", Logged.ToString("MM/dd/YYYY"), Logged.Year.ToString());
+                    return string.Format("{0} {1}", Logged.ToString("MM/dd/yyyy"), Logged.Year.ToString());
                 }
             }
         }
@@ -72,6 +73,8 @@ namespace DiabetesFoodJournal.DataModels
                 return thisObjectIsChanged;
             }
         }
+
+        public bool IsSelected { get { return this.isSelected; } set { SetProperty(ref this.isSelected, value); } }
 
         public void Load(JournalEntry model)
         {

@@ -17,8 +17,9 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         public static readonly BindableProperty TappedCommandProperty = BindableProperty.Create(nameof(TappedCommand), typeof(ICommand), typeof(SearchResultItemView));
         public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(nameof(FoodName), typeof(string), typeof(SearchResultItemView), string.Empty);
         public static readonly BindableProperty CarbCountProperty = BindableProperty.Create(nameof(CarbCount), typeof(int), typeof(SearchResultItemView), 0);
+        public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(nameof(IsSelected), typeof(bool), typeof(SearchResultItemView), false, BindingMode.TwoWay);
 
-		public static readonly BindableProperty TagListProperty =
+        public static readonly BindableProperty TagListProperty =
 			BindableProperty.Create(nameof(TagList), typeof(IEnumerable), typeof(ItemsView<Cell>), null,
 									propertyChanged: OnItemsSourceChanged);
 
@@ -45,6 +46,12 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         {
             get => (int)GetValue(CarbCountProperty);
             set => SetValue(CarbCountProperty, value);
+        }
+
+        public bool IsSelected
+        {
+            get => (bool)GetValue(IsSelectedProperty);
+            set => SetValue(IsSelectedProperty, value);
         }
 
         public ICommand TappedCommand

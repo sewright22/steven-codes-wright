@@ -13,8 +13,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Frame>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.ColumnSpan="2">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -37,7 +42,8 @@
                             CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"/>
                 </Grid>
             </Frame>
-            <ScrollView Grid.Row="1">
+            <ScrollView Grid.Row="1"
+                        Grid.ColumnSpan="2">
                 <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -54,6 +60,7 @@
                                                                             TagList="{Binding Tags}"
                                                                             CarbCount="{Binding NutritionalInfo.Carbohydrates}"
                                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
+                                                                            IsSelected="{Binding Path=IsSelected}"
                                                                             CommandParameter="{Binding}" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
@@ -70,6 +77,18 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </ScrollView>
+
+            <Button Text="Update"
+                    Grid.Row="2"
+                    Grid.Column="0" 
+                    IsVisible="{Binding RowIsSelected}"
+                    Command="{Binding UpdateEntryCommand}"/>
+
+            <Button Text="Log Again"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    IsVisible="{Binding RowIsSelected}" 
+                    Command="{Binding LogAgainCommand}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

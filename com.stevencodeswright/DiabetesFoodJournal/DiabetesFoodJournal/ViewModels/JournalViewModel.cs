@@ -19,26 +19,56 @@ namespace DiabetesFoodJournal.ViewModels
         private readonly IJournalDataService dataService;
         private readonly INavigationHelper navigation;
         private readonly IMessenger messenger;
+        private bool rowIsSelected;
 
         public JournalViewModel(IJournalDataService dataService, INavigationHelper navigation, IMessenger messenger)
         {
             LocalSearchResults = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
             SearchCommand = new RelayCommand<string>(async x => await SearchClicked(x).ConfigureAwait(true));
-            ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(async x => await ItemTapped(x).ConfigureAwait(true));
+            UpdateEntryCommand = new RelayCommand(async () => await UpdateClicked().ConfigureAwait(true));
+            LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
+            ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(x => ItemTapped(x));
             this.dataService = dataService;
             this.navigation = navigation;
             this.messenger = messenger;
         }
 
-        private async Task ItemTapped(JournalEntryDataModel foodResult)
+        private async Task LogAgainClicked()
         {
-           await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
-            this.messenger.Send(foodResult);
+            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
+            SelectedEntry.Id = 0;
+            this.messenger.Send(SelectedEntry);
         }
+
+        private async Task UpdateClicked()
+        {
+            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
+            this.messenger.Send(SelectedEntry);
+        }
+
+        private void ItemTapped(JournalEntryDataModel foodResult)
+        {
+            foreach(var group in LocalSearchResults)
+            {
+                foreach(var item in group.Items)
+                {
+                    item.IsSelected = false;
+                }
+            }
+
+            foodResult.IsSelected = true;
+            SelectedEntry = foodResult;
+            RowIsSelected = true;
+        }
+
+        public bool RowIsSelected { get { return this.rowIsSelected; } set { SetProperty(ref this.rowIsSelected, value); } }
+        public JournalEntryDataModel SelectedEntry { get; set; }
 
         public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> LocalSearchResults { get; }
 
         public RelayCommand<string> SearchCommand { get; set; }
+        public RelayCommand LogAgainCommand { get; set; }
+        public RelayCommand UpdateEntryCommand { get; set; }
         public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; set; }
 
         private async Task SearchClicked(string searchString)
@@ -50,6 +80,7 @@ namespace DiabetesFoodJournal.ViewModels
                          group entry by entry.Group into entryGroup
                          select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
 
+            RowIsSelected = false;
             LocalSearchResults.ReplaceRange(sorted);
         }
     }
