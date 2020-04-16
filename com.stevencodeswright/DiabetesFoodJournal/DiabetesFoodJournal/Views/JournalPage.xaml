@@ -12,6 +12,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -27,22 +28,25 @@
                     </Grid.ColumnDefinitions>
                     
                     <Entry x:Name="searchEntry" 
-                           Placeholder="Search for Food..." 
-                           Text="Pizza"
+                           Placeholder="Search for Food..."
+                           TextChanged="searchEntry_TextChanged"
                            IsEnabled="True"/>
 
-                    <Button WidthRequest="40"
-                            HeightRequest="40"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            CornerRadius="20" 
-                            Text="+"
+                    <Button IsVisible="False"
+                            x:Name="searchButton"
                             Grid.Column="1"
                             Command="{Binding Path=SearchCommand}"
                             CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"/>
                 </Grid>
             </Frame>
-            <ScrollView Grid.Row="1"
+            
+            <ActivityIndicator Grid.Row="1"
+                               Grid.ColumnSpan="2" 
+                               x:Name="loadingAnimation" 
+                               IsVisible="False"
+                               IsRunning="False"/>
+            
+            <ScrollView Grid.Row="2"
                         Grid.ColumnSpan="2">
                 <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
                     <BindableLayout.ItemTemplate>
@@ -67,19 +71,12 @@
                                 </StackLayout>
                             </StackLayout>
                         </DataTemplate>
-                        <!--<DataTemplate>
-                            
-                            <templates:SearchResultItemView FoodName="{Binding Path=Name}"
-                                                            TagList="{Binding Tags}"
-                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
-                                                            CommandParameter="{Binding}"/>
-                        </DataTemplate>-->
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </ScrollView>
 
             <Button Text="Update"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0" 
                     IsVisible="{Binding RowIsSelected}"
                     Command="{Binding UpdateEntryCommand}"/>
