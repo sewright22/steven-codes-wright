@@ -24,6 +24,6 @@
         <Style TargetType="templates:TagView">
             <Setter Property="ControlTemplate"
                     Value="{StaticResource TagTemplate}" />
-        </Style>
+        </Style> 
     </ContentView.Resources>
 </ContentView>
