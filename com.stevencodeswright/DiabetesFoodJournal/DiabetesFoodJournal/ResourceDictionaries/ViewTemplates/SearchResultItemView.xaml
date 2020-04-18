@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             x:Name="JournalEntrySummaryView"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.SearchResultItemView">
+    <ContentView.Resources>
+        <ControlTemplate x:Key="SearchResultItemTemplate">
+            <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
+                                          CommandParameter="{TemplateBinding CommandParameter}" />
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <Label Text="{TemplateBinding FoodName}" />
+                        <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
+                                    Wrap="Wrap"
+                                    JustifyContent="Start"
+                                    AlignItems="Start"
+                                    AlignContent="Start">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:TagView TagText="{Binding Description}"
+                                                       Margin="5" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </StackLayout>
+
+                    <Label Text="{TemplateBinding CarbCount, StringFormat='{0} Carbs'}"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           Grid.Column="1" />
+                </Grid>
+                <Frame.Triggers>
+                    <DataTrigger TargetType="Frame"
+                                 Binding="{TemplateBinding Path=IsSelected}"
+                                 Value="true">
+                        <Setter Property="BackgroundColor"
+                                Value="LightBlue" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Frame"
+                                 Binding="{TemplateBinding Path=IsSelected}"
+                                 Value="false">
+                        <Setter Property="BackgroundColor"
+                                Value="Transparent" />
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="templates:SearchResultItemView">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource SearchResultItemTemplate}" />
+
+        </Style>
+    </ContentView.Resources>
+</ContentView>

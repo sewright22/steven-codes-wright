@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.TagView">
+  <ContentView.Resources>
+        <ControlTemplate x:Key="TagTemplate">
+            <Frame CornerRadius="15"
+                   Margin="0"
+                   Padding="0"
+                   BorderColor="DarkGray">
+                <Label Text="{TemplateBinding TagText}" 
+                       Margin="10"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
+                                          CommandParameter="{TemplateBinding CommandParameter}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="templates:TagView">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource TagTemplate}" />
+        </Style>
+    </ContentView.Resources>
+</ContentView>

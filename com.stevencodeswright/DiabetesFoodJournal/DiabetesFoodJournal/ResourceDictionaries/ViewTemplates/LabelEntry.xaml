@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.LabelEntry">
+    <ContentView.Resources>
+        <ControlTemplate x:Key="LabelEntryTemplate">
+            <Frame CornerRadius="2"
+                   BorderColor="Black"
+                   Padding="5,5,0,0">
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label FontSize="10"
+                           Text="{TemplateBinding Label}" />
+                    
+                    <Label FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           IsVisible="{TemplateBinding LabelIsVisible}"
+                           Grid.Row="1"
+                           Padding="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{TemplateBinding Path=Text}" />
+                                    <Span Text="{TemplateBinding Path=Append}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Entry IsVisible="{TemplateBinding EntryIsVisible}"
+                           Text="{TemplateBinding Path=Text}"
+                           Keyboard="Numeric"
+                           Unfocused="Entry_Unfocused"
+                           Margin="0,5,0,0"/>
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="templates:LabelEntry">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource LabelEntryTemplate}" />
+        </Style>
+    </ContentView.Resources>
+</ContentView>
