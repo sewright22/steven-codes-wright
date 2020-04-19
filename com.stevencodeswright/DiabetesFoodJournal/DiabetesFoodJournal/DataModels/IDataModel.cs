@@ -10,6 +10,7 @@ namespace DiabetesFoodJournal.DataModels
         TModel Model { get; }
         void Load(TModel model);
         TModel Save();
+        TModel Copy();
         bool IsChanged { get; }
     }
 }

@@ -46,6 +46,16 @@ namespace DiabetesFoodJournal.DataModels
             Model = model;
         }
 
+        public NutritionalInfo Copy()
+        {
+            var retVal = new NutritionalInfo();
+
+            retVal.Calories = this.calories;
+            retVal.Protein = this.protein;
+            retVal.Carbohydrates = this.carbohydrates;
+
+            return retVal;
+        }
         public NutritionalInfo Save()
         {
             if (Model == null)

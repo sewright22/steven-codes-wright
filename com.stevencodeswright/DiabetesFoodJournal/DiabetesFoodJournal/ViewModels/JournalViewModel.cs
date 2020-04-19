@@ -36,8 +36,8 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task LogAgainClicked()
         {
             await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
-            SelectedEntry.Id = 0;
-            this.messenger.Send(SelectedEntry);
+            var entry = this.dataService.Copy(SelectedEntry);
+            this.messenger.Send(entry);
         }
 
         private async Task UpdateClicked()

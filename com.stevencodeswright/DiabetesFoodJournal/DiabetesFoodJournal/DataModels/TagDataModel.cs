@@ -31,6 +31,11 @@ namespace DiabetesFoodJournal.DataModels
             }
         }
 
+        public Tag Copy()
+        {
+            return Save();
+        }
+
         public void Load(Tag model)
         {
             this.id = model.Id;

@@ -17,14 +17,17 @@ namespace DiabetesFoodJournal.DataServices
         private readonly IDataStore<NutritionalInfo> nutritionalInfos;
         private readonly IDataStore<JournalEntryTag> journalEntryTags;
         private readonly IDataStore<JournalEntryNutritionalInfo> journalEntryNutritionalInfos;
+        private readonly IDataStore<JournalEntryDose> journalEntryDoses;
+        private readonly IDataStore<Dose> doses;
 
-        public MockAppDataService(IDataStore<JournalEntry> journalEntries, IDataStore<Tag> tags, IDataStore<NutritionalInfo> nutritionalInfos, IDataStore<JournalEntryTag> journalEntryTags, IDataStore<JournalEntryNutritionalInfo> journalEntryNutritionalInfos)
-        {
+        public MockAppDataService(IDataStore<JournalEntry> journalEntries, IDataStore<Tag> tags, IDataStore<NutritionalInfo> nutritionalInfos, IDataStore<JournalEntryTag> journalEntryTags, IDataStore<JournalEntryNutritionalInfo> journalEntryNutritionalInfos, IDataStore<JournalEntryDose> journalEntryDoses, IDataStore<Dose> doses)       {
             this.journalEntries = journalEntries;
             this.tags = tags;
             this.nutritionalInfos = nutritionalInfos;
             this.journalEntryTags = journalEntryTags;
             this.journalEntryNutritionalInfos = journalEntryNutritionalInfos;
+            this.journalEntryDoses = journalEntryDoses;
+            this.doses = doses;
         }
 
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
@@ -40,12 +43,17 @@ namespace DiabetesFoodJournal.DataServices
                           from entryNutrition in en.DefaultIfEmpty(new JournalEntryNutritionalInfo() { Id = entry.Id, JournalEntryId = 0, JournalEntryNutritionalInfoId = 0 })
                           join nutrition in await nutritionalInfos.GetItemsAsync() on entryNutrition.JournalEntryNutritionalInfoId equals nutrition.Id into n
                           from nutrition in n.DefaultIfEmpty(new NutritionalInfo() { Id = entryNutrition.JournalEntryNutritionalInfoId, Carbohydrates=0 })
+                          join entryDose in await journalEntryDoses.GetItemsAsync() on entry.Id equals entryDose.JournalEntryId into ed
+                          from entryDose in ed.DefaultIfEmpty(new JournalEntryDose() { Id = entry.Id, JournalEntryId = 0, DoseId = 0 })
+                          join dose in await doses.GetItemsAsync() on entryDose.DoseId equals dose.Id into d
+                          from dose in d.DefaultIfEmpty(new Dose() { Id = entryDose.DoseId, InsulinAmount = 0, Extended=0, UpFront=100, TimeExtended=0, TimeOffset=0 })
                           where entry.Title.ToUpper().Contains(searchString.ToUpper()) || tag.Description.ToUpper().Contains(searchString.ToUpper())
                           select new
                           {
                               entry,
                               tag,
-                              nutrition
+                              nutrition,
+                              dose
                           };
 
             var currentEntry = new JournalEntryDataModel();
@@ -64,6 +72,11 @@ namespace DiabetesFoodJournal.DataServices
                     if (result.nutrition.Id > 0)
                     {
                         currentEntry.NutritionalInfo.Load(result.nutrition);
+                    }
+
+                    if(result.dose.Id>0)
+                    {
+                        currentEntry.Dose.Load(result.dose);
                     }
                 }
 

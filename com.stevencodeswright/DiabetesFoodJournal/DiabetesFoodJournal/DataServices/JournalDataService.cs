@@ -17,6 +17,16 @@ namespace DiabetesFoodJournal.DataServices
             this.appDataService = appDataService;
         }
 
+        public JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry)
+        {
+            var retVal = new JournalEntryDataModel();
+            retVal.Load(selectedEntry.Copy());
+            retVal.Dose.Load(selectedEntry.Dose.Copy());
+            retVal.NutritionalInfo.Load(selectedEntry.NutritionalInfo.Copy());
+            retVal.Tags.AddRange(selectedEntry.Tags.ToList());
+            return retVal;
+        }
+
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
             return await this.appDataService.SearchJournal(searchString.Trim());
@@ -27,5 +37,6 @@ namespace DiabetesFoodJournal.DataServices
     public interface IJournalDataService
     {
         Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString);
+        JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
     }
 }

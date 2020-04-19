@@ -17,6 +17,30 @@ namespace DiabetesFoodJournal.Services
             items = new List<Dose>();
 
             Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=7.54M, UpFront = 75, Extended = 25, TimeExtended = 2, TimeOffset = -10 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
         }
 
         private void Add(Dose item)
