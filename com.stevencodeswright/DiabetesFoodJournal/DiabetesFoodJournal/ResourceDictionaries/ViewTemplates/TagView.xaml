@@ -12,8 +12,20 @@
                    Margin="0"
                    Padding="0"
                    BorderColor="DarkGray">
-                <Label Text="{TemplateBinding TagText}" 
-                       Margin="10"/>
+                <StackLayout Orientation="Horizontal"
+                             Margin="0"
+                             Padding="0">
+                    <Label Text="{TemplateBinding TagText}"
+                           Margin="10,10,10,10" />
+                    <Label Text="X"
+                           FontAttributes="Bold"
+                           IsVisible="{TemplateBinding CanDelete}"
+                           Margin="0,10,10,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{TemplateBinding DeleteTappedCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
                                           CommandParameter="{TemplateBinding CommandParameter}"/>

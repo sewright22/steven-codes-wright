@@ -24,27 +24,32 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
             <ScrollView  Grid.ColumnSpan="2"
-                         VerticalOptions="FillAndExpand">
-                <Grid >
+                         VerticalOptions="Fill">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    
+
                     <StackLayout Margin="5"
-                             VerticalOptions="Fill">
+                                 Grid.Row="0">
                         <Entry Text="{Binding Path=Model.Title}" />
 
                         <FlexLayout BindableLayout.ItemsSource="{Binding Model.Tags}"
-                            Wrap="Wrap"
-                            JustifyContent="Start"
-                            AlignItems="Start"
-                            AlignContent="Start">
+                                    Wrap="Wrap"
+                                    JustifyContent="Start"
+                                    AlignItems="Start"
+                                    AlignContent="Start">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <templates:TagView TagText="{Binding Path=Description}"
-                                               Margin="5" />
+                                                       CanDelete="{Binding Path=CanDelete}"
+                                                       TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=ExistingTagTappedCommand}"
+                                                       DeleteTappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=ConfirmDeleteTappedCommand}"
+                                                       CommandParameter="{Binding}"
+                                                       Margin="5" />
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </FlexLayout>
@@ -60,31 +65,31 @@
                                 <ColumnDefinition Width="50" />
                             </Grid.ColumnDefinitions>
 
-                            <Entry Placeholder="Add Tag" 
-                           x:Name="TagSearchEntry"
-                           Text="{Binding TagSearchText, Mode=TwoWay}"
-                           ClearButtonVisibility="WhileEditing"/>
+                            <Entry Placeholder="Add Tag"
+                                   x:Name="TagSearchEntry"
+                                   Text="{Binding TagSearchText, Mode=TwoWay}"
+                                   ClearButtonVisibility="WhileEditing" />
                             <Button Grid.Column="1"
-                            HeightRequest="40"
-                            CornerRadius="25"
-                            Margin="5"
-                            Text="+" />
-                            <Label Text="Existing Tags" 
-                           Grid.Row="1"
-                           IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}"/>
+                                    HeightRequest="40"
+                                    CornerRadius="25"
+                                    Margin="5"
+                                    Text="+" />
+                            <Label Text="Existing Tags"
+                                   Grid.Row="1"
+                                   IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}" />
                             <FlexLayout BindableLayout.ItemsSource="{Binding ExistingTagSearch}"
-                                Wrap="Wrap"
-                                JustifyContent="Start"
-                                AlignItems="Start"
-                                AlignContent="Start"
-                                Grid.Row="2"
-                                IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}">
+                                        Wrap="Wrap"
+                                        JustifyContent="Start"
+                                        AlignItems="Start"
+                                        AlignContent="Start"
+                                        Grid.Row="2"
+                                        IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <templates:TagView TagText="{Binding Path=Description}"
-                                                   TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"
-                                                   CommandParameter="{Binding}"
-                                                   Margin="5" />
+                                                           TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"
+                                                           CommandParameter="{Binding}"
+                                                           Margin="5" />
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </FlexLayout>
@@ -97,11 +102,11 @@
                             </Grid.ColumnDefinitions>
 
                             <templates:LabelEntry Label="Carb Estimate"
-                                          Text="{Binding Path=Model.NutritionalInfo.Carbohydrates}"
-                                          Append=" Carbs"
-                                          Grid.Column="0" />
+                                                  Text="{Binding Path=Model.NutritionalInfo.Carbohydrates}"
+                                                  Append=" Carbs"
+                                                  Grid.Column="0" />
                             <Grid Margin="0"
-                          Grid.Column="1">
+                                  Grid.Column="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
@@ -109,48 +114,48 @@
                                 </Grid.ColumnDefinitions>
 
                                 <templates:LabelEntry Label="Bolus"
-                                              Text="{Binding Path=Model.Dose.InsulinAmount}"
-                                              Append=" Units" />
+                                                      Text="{Binding Path=Model.Dose.InsulinAmount}"
+                                                      Append=" Units" />
 
                                 <CheckBox x:Name="IsExtended"
-                                  Grid.Column="1"
-                                  VerticalOptions="Center" 
-                                  IsChecked="True">
+                                          Grid.Column="1"
+                                          VerticalOptions="Center"
+                                          IsChecked="True">
                                     <CheckBox.Triggers>
                                         <DataTrigger TargetType="CheckBox"
-                                             Binding="{Binding Source={x:Reference lblExtendedAmount}, Path=Text}"
-                                             Value="0">
+                                                     Binding="{Binding Source={x:Reference lblExtendedAmount}, Path=Text}"
+                                                     Value="0">
                                             <Setter Property="IsChecked"
-                                            Value="False"/>
+                                                    Value="False" />
                                         </DataTrigger>
                                     </CheckBox.Triggers>
                                 </CheckBox>
                                 <Label Grid.Column="2"
-                               Text="Extend?"
-                               VerticalOptions="Center"
-                               VerticalTextAlignment="Center" />
+                                       Text="Extend?"
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center" />
                             </Grid>
                         </Grid>
 
                         <Grid Margin="0"
-                      IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
+                              IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
                             <templates:LabelEntry Label="Up Front"
-                                          Text="{Binding Path=Model.Dose.UpFront, Mode=TwoWay}"
-                                          Append="% Up Front" />
+                                                  Text="{Binding Path=Model.Dose.UpFront, Mode=TwoWay}"
+                                                  Append="% Up Front" />
                             <templates:LabelEntry Label="Extended"
-                                          x:Name="lblExtendedAmount"
-                                          Text="{Binding Path=Model.Dose.Extended, Mode=TwoWay}"
-                                          Append="% Extended"
-                                          Grid.Column="1" />
+                                                  x:Name="lblExtendedAmount"
+                                                  Text="{Binding Path=Model.Dose.Extended, Mode=TwoWay}"
+                                                  Append="% Extended"
+                                                  Grid.Column="1" />
                             <templates:LabelEntry Label="How Long?"
-                                          Text="{Binding Path=Model.Dose.TimeExtended}"
-                                          Append=" Hours"
-                                          Grid.Column="2" />
+                                                  Text="{Binding Path=Model.Dose.TimeExtended}"
+                                                  Append=" Hours"
+                                                  Grid.Column="2" />
 
                         </Grid>
 
@@ -165,15 +170,18 @@
                                 MinimumTrackColor="Green"
                                 MaximumTrackColor="Blue" />
                     </StackLayout>
-                    <Editor Text="{Binding Path=Model.Notes}"
-                        Placeholder="Notes"
-                            Grid.Row="1"/>
+
+                    <Frame VerticalOptions="FillAndExpand"
+                           Grid.Row="1">
+                        <Editor Text="{Binding Path=Model.Notes}"
+                                Placeholder="Notes" />
+                    </Frame>
                 </Grid>
             </ScrollView>
 
             <Button Text="Save"
-                        Grid.Row="1"
-                         Grid.ColumnSpan="2"/>
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

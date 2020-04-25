@@ -11,6 +11,7 @@ namespace DiabetesFoodJournal.DataModels
     {
         private int id;
         private string description;
+        private bool canDelete;
 
         [JsonIgnore]
         public Tag Model
@@ -21,6 +22,8 @@ namespace DiabetesFoodJournal.DataModels
         }
         public int Id { get { return this.id; } set { SetProperty(ref this.id, value); } }
         public string Description { get { return this.description; } set { SetProperty(ref this.description, value); } }
+
+        public bool CanDelete { get { return this.canDelete; } set { SetProperty(ref this.canDelete, value); } }
 
         public bool IsChanged
         {

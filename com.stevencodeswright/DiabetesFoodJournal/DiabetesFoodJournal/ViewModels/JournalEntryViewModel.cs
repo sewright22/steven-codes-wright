@@ -36,8 +36,32 @@ namespace DiabetesFoodJournal.ViewModels
                 this.messenger.Register<JournalEntryDataModel>(this, JournalEntryReceived);
             }
 
+            ConfirmDeleteTappedCommand = new RelayCommand(ConfirmDeleteTapped);
+            ExistingTagTappedCommand = new RelayCommand<TagDataModel>(ExistingTagTapped);
             TagTappedCommand = new RelayCommand<Tag>(SearchTagTapped);
             this.PropertyChanged += this.JournalEntryViewModel_PropertyChanged;
+        }
+
+        private void ConfirmDeleteTapped()
+        {
+            var selectedTag = Model.Tags.FirstOrDefault(x=>x.CanDelete);
+
+            if(selectedTag!= null)
+            {
+                Model.Tags.Remove(selectedTag);
+            }
+        }
+
+        private void ExistingTagTapped(TagDataModel tappedTag)
+        {
+            var selectedTag = Model.Tags.FirstOrDefault(x => x.CanDelete);
+
+            if (selectedTag != null)
+            {
+                selectedTag.CanDelete = false;
+            }
+
+            tappedTag.CanDelete = true;
         }
 
         private void SearchTagTapped(Tag tappedTag)
@@ -87,6 +111,8 @@ namespace DiabetesFoodJournal.ViewModels
         }
 
         public RelayCommand<Tag> TagTappedCommand { get; }
+        public RelayCommand<TagDataModel> ExistingTagTappedCommand { get; }
+        public RelayCommand ConfirmDeleteTappedCommand { get; }
 
         public JournalEntryDataModel Model
         {

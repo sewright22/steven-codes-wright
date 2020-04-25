@@ -37,6 +37,7 @@
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <templates:TagView TagText="{Binding Description}"
+                                                       CanDelete="False"
                                                        Margin="5" />
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
