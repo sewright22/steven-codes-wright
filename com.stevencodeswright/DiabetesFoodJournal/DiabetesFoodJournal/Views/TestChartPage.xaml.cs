@@ -18,17 +18,17 @@ namespace DiabetesFoodJournal.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class TestChartPage : ContentPage
+    public partial class TestChartPage : ContentView
     {
         public TestChartPage()
         {
             InitializeComponent();
+
+            Load();
         }
 
-        protected async override void OnAppearing()
+        private async void Load()
         {
-            base.OnAppearing();
-
             var dataStore = new MockReadingDataStore();
             var readings = (await dataStore.GetItemsAsync()).ToList();
             var entries = new[]

@@ -26,11 +26,12 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Entry x:Name="searchEntry" 
+
+                    <Entry x:Name="searchEntry"
                            Placeholder="Search for Food..."
                            TextChanged="searchEntry_TextChanged"
-                           IsEnabled="True"/>
+                           IsEnabled="True">
+                    </Entry>
 
                     <Button IsVisible="False"
                             x:Name="searchButton"
