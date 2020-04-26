@@ -13,7 +13,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
     public partial class TagView : ContentView
     {
         public static readonly BindableProperty CanDeleteProperty = BindableProperty.Create(nameof(CanDelete), typeof(bool), typeof(TagView), false, BindingMode.TwoWay, null, CanDeleteChanged);
-                public static readonly BindableProperty TagTextProperty = BindableProperty.Create(nameof(TagText), typeof(string), typeof(TagView), string.Empty);
+        public static readonly BindableProperty TagTextProperty = BindableProperty.Create(nameof(TagText), typeof(string), typeof(TagView), string.Empty);
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(TagView));
         public static readonly BindableProperty TappedCommandProperty = BindableProperty.Create(nameof(TappedCommand), typeof(ICommand), typeof(TagView));
         public static readonly BindableProperty DeleteTappedCommandProperty = BindableProperty.Create(nameof(DeleteTappedCommand), typeof(ICommand), typeof(TagView));
@@ -54,7 +54,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
 
         static async void CanDeleteChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if(oldValue != newValue)
+            if (oldValue != newValue)
             {
                 var newBool = (bool)newValue;
                 var tag = (TagView)bindable;

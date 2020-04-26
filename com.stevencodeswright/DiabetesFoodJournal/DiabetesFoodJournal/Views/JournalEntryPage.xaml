@@ -73,6 +73,8 @@
                                     HeightRequest="40"
                                     CornerRadius="25"
                                     Margin="5"
+                                    Command="{Binding CreateNewTagCommand}"
+                                    CommandParameter="{Binding Source={x:Reference TagSearchEntry}, Path=Text}"
                                     Text="+" />
                             <Label Text="Existing Tags"
                                    Grid.Row="1"

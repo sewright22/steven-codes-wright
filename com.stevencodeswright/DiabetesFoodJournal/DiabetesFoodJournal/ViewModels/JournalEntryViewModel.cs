@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DiabetesFoodJournal.ViewModels
@@ -38,8 +39,23 @@ namespace DiabetesFoodJournal.ViewModels
 
             ConfirmDeleteTappedCommand = new RelayCommand(ConfirmDeleteTapped);
             ExistingTagTappedCommand = new RelayCommand<TagDataModel>(ExistingTagTapped);
+            CreateNewTagCommand = new RelayCommand<string>(async(x)=> await CreateNewTag(x));
             TagTappedCommand = new RelayCommand<Tag>(SearchTagTapped);
             this.PropertyChanged += this.JournalEntryViewModel_PropertyChanged;
+        }
+
+        private async Task CreateNewTag(string newTag)
+        {
+            if (ExistingTagSearch.FirstOrDefault(x => x.Description.Equals(newTag, StringComparison.OrdinalIgnoreCase)) == null)
+            {
+                if(await this.tags.AddItemAsync(new Tag
+                {
+                    Description = newTag
+                }))
+                {
+                    JournalEntryViewModel_PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(nameof(TagSearchText)));
+                }
+            }
         }
 
         private void ConfirmDeleteTapped()
@@ -108,11 +124,13 @@ namespace DiabetesFoodJournal.ViewModels
         private void JournalEntryReceived(JournalEntryDataModel obj)
         {
             Model = obj;
+            TagSearchText = "";
         }
 
         public RelayCommand<Tag> TagTappedCommand { get; }
         public RelayCommand<TagDataModel> ExistingTagTappedCommand { get; }
         public RelayCommand ConfirmDeleteTappedCommand { get; }
+        public RelayCommand<string> CreateNewTagCommand { get; }
 
         public JournalEntryDataModel Model
         {
