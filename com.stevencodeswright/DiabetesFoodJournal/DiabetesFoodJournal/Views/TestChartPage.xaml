@@ -4,14 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              x:Class="DiabetesFoodJournal.Views.TestChartPage"
              x:Name="TestChart">
 
-    <Grid BackgroundColor="#EEEEEE">
-
-        <microcharts:ChartView x:Name="chart1"
-                               BackgroundColor="White" />
+    <Grid BackgroundColor="#EEEEEE"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+        <chart:SfChart HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+            <chart:SplineSeries ItemsSource="{Binding Data}"
+                              XBindingPath="DisplayTime"
+                              YBindingPath="Reading" />
+        </chart:SfChart>
     </Grid>
 
 </ContentView>

@@ -10,6 +10,7 @@ using System.Threading;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
+using Xamarin.Forms;
 
 namespace DiabetesFoodJournal.ViewModels
 {
@@ -23,6 +24,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.dataService = dataService;
             this.messenger = messenger;
 
+            GlucoseReadings = new ObservableRangeCollection<GlucoseReading>();
             JournalEntries = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
 
             if (this.messenger != null)
@@ -32,13 +34,19 @@ namespace DiabetesFoodJournal.ViewModels
 
         }
 
+        public ObservableRangeCollection<GlucoseReading> GlucoseReadings { get; }
+
         public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> JournalEntries { get; }
 
         private async Task JournalEntryReceived(JournalEntryDataModel searchEntry)
         {
-            var entryList = await this.dataService.SearchJournal(searchEntry.Title);
+            var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
 
-            JournalEntries.ReplaceRange(entryList);
+            Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
+
+            var readings = await this.dataService.GetGlucoseReadings(DateTime.Now, DateTime.Now).ConfigureAwait(true);
+
+            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings));
         }
     }
 }

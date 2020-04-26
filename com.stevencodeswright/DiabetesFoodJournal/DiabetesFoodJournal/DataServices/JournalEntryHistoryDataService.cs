@@ -5,17 +5,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using DiabetesFoodJournal.Models;
+using DiabetesFoodJournal.Services;
 
 namespace DiabetesFoodJournal.DataServices
 {
     public class JournalEntryHistoryDataService : IJournalEntryHistoryDataService
     {
         private readonly IAppDataService appDataService;
+        private readonly IDataStore<GlucoseReading> glucoseDataStore;
 
-        public JournalEntryHistoryDataService(IAppDataService appDataService)
+        public JournalEntryHistoryDataService(IAppDataService appDataService, IDataStore<GlucoseReading> glucoseDataStore)
         {
             this.appDataService = appDataService;
+            this.glucoseDataStore = glucoseDataStore;
         }
+
+        public async Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime)
+        {
+            return await glucoseDataStore.GetItemsAsync();
+        }
+
         public async Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm)
         {
             var entryList = await this.appDataService.SearchJournal(searchTerm);
@@ -27,10 +37,14 @@ namespace DiabetesFoodJournal.DataServices
 
             return sorted;
         }
+
+
     }
 
     public interface IJournalEntryHistoryDataService
     {
         Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm);
+
+        Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime);
     }
 }

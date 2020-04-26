@@ -7,6 +7,7 @@
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              xmlns:views="clr-namespace:DiabetesFoodJournal.Views"
              xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalEntryHistoryPage">
     <ContentPage.Content>
@@ -15,9 +16,27 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
-            <views:TestChartPage />
-            
+
+            <chart:SfChart HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           IsVisible="True">
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis>
+                    </chart:CategoryAxis>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+
+                <chart:LineSeries ItemsSource="{Binding Path=GlucoseReadings}"
+                                  XBindingPath="DisplayTime"
+                                  YBindingPath="Reading"
+                                  Color="Black"
+                                  IsVisible="True"
+                                  EnableTooltip="True"/>
+            </chart:SfChart>
+
             <ScrollView Grid.Row="1"
                         Grid.ColumnSpan="1">
                 <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">
