@@ -14,15 +14,18 @@ namespace DiabetesFoodJournal.DataServices
     {
         private readonly IAppDataService appDataService;
         private readonly IDataStore<GlucoseReading> glucoseDataStore;
+        private readonly IDexcomDataStore dexcomDataStore;
 
-        public JournalEntryHistoryDataService(IAppDataService appDataService, IDataStore<GlucoseReading> glucoseDataStore)
+        public JournalEntryHistoryDataService(IAppDataService appDataService, IDataStore<GlucoseReading> glucoseDataStore, IDexcomDataStore dexcomDataStore)
         {
             this.appDataService = appDataService;
             this.glucoseDataStore = glucoseDataStore;
+            this.dexcomDataStore = dexcomDataStore;
         }
 
         public async Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime)
         {
+            await this.dexcomDataStore.GetEGV();
             return await glucoseDataStore.GetItemsAsync();
         }
 

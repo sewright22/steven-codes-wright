@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.Views;
 using XamarinHelper.Core;
+using Xamarin.Auth;
 
 namespace DiabetesFoodJournal
 {
@@ -26,8 +27,33 @@ namespace DiabetesFoodJournal
             MainPage = new AppShell();
         }
 
+        private void Login()
+        {
+            var oauth = new OAuth2Authenticator("WWv2aPRKLsm9SAEgTcrIg8anRiHKbv5e", "x4LTtwqRWJMiaubT", "offline_access", new Uri("https://sandbox-api.dexcom.com/v2/oauth2/login"), new Uri("DiabetesFoodJournal://"), new Uri("https://sandbox-api.dexcom.com/v2/oauth2/token"));
+            oauth.Completed += Oauth_Completed;
+            oauth.Error += Oauth_Error;
+
+            AuthenticationState.Authenticator = oauth;
+
+            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            presenter.Login(oauth);
+        }
+
+        private void Oauth_Error(object sender, AuthenticatorErrorEventArgs e)
+        {
+            var test = 5;
+            var test2 = test;
+        }
+
+        private void Oauth_Completed(object sender, AuthenticatorCompletedEventArgs e)
+        {
+            var test = 5;
+            var test3 = test;
+        }
+
         protected override void OnStart()
         {
+            //Login();
         }
 
         protected override void OnSleep()

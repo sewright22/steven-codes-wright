@@ -102,6 +102,2125 @@ namespace DiabetesFoodJournal.Droid
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_increase_label = global::DiabetesFoodJournal.Droid.Resource.String.sfchart_increase_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_decrease_label = global::DiabetesFoodJournal.Droid.Resource.String.sfchart_decrease_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_total_label = global::DiabetesFoodJournal.Droid.Resource.String.sfchart_total_label;
+			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::DiabetesFoodJournal.Droid.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::DiabetesFoodJournal.Droid.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth.Resource.Attribute.alpha = global::DiabetesFoodJournal.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Auth.Resource.Attribute.font = global::DiabetesFoodJournal.Droid.Resource.Attribute.font;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderAuthority = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderCerts = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderFetchStrategy = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderFetchTimeout = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderPackage = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Auth.Resource.Attribute.fontProviderQuery = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Auth.Resource.Attribute.fontStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.Auth.Resource.Attribute.fontVariationSettings = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontVariationSettings;
+			global::Xamarin.Auth.Resource.Attribute.fontWeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Auth.Resource.Attribute.ttcIndex = global::DiabetesFoodJournal.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.Auth.Resource.Color.browser_actions_bg_grey = global::DiabetesFoodJournal.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Xamarin.Auth.Resource.Color.browser_actions_divider_color = global::DiabetesFoodJournal.Droid.Resource.Color.browser_actions_divider_color;
+			global::Xamarin.Auth.Resource.Color.browser_actions_text_color = global::DiabetesFoodJournal.Droid.Resource.Color.browser_actions_text_color;
+			global::Xamarin.Auth.Resource.Color.browser_actions_title_color = global::DiabetesFoodJournal.Droid.Resource.Color.browser_actions_title_color;
+			global::Xamarin.Auth.Resource.Color.notification_action_color_filter = global::DiabetesFoodJournal.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Auth.Resource.Color.notification_icon_bg_color = global::DiabetesFoodJournal.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Auth.Resource.Color.ripple_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.Auth.Resource.Color.secondary_text_default_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Auth.Resource.Dimension.browser_actions_context_menu_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Xamarin.Auth.Resource.Dimension.browser_actions_context_menu_min_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Xamarin.Auth.Resource.Dimension.compat_button_inset_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Auth.Resource.Dimension.compat_button_inset_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Auth.Resource.Dimension.compat_button_padding_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Auth.Resource.Dimension.compat_button_padding_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Auth.Resource.Dimension.compat_control_corner_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Auth.Resource.Dimension.compat_notification_large_icon_max_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Xamarin.Auth.Resource.Dimension.compat_notification_large_icon_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Auth.Resource.Dimension.notification_action_icon_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Auth.Resource.Dimension.notification_action_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Auth.Resource.Dimension.notification_big_circle_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Auth.Resource.Dimension.notification_content_margin_start = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Auth.Resource.Dimension.notification_large_icon_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Auth.Resource.Dimension.notification_large_icon_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Auth.Resource.Dimension.notification_main_column_padding_top = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Auth.Resource.Dimension.notification_media_narrow_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Auth.Resource.Dimension.notification_right_icon_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Auth.Resource.Dimension.notification_right_side_padding_top = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Auth.Resource.Dimension.notification_small_icon_background_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Auth.Resource.Dimension.notification_small_icon_size_as_large = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Auth.Resource.Dimension.notification_subtext_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Auth.Resource.Dimension.notification_top_pad = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Auth.Resource.Dimension.notification_top_pad_large_text = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Auth.Resource.Drawable.ic_arrow_back = global::DiabetesFoodJournal.Droid.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth.Resource.Drawable.notification_action_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg_low = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg_low_normal = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg_low_pressed = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg_normal = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Auth.Resource.Drawable.notification_bg_normal_pressed = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Auth.Resource.Drawable.notification_icon_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Auth.Resource.Drawable.notification_template_icon_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Auth.Resource.Drawable.notification_template_icon_low_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Auth.Resource.Drawable.notification_tile_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Auth.Resource.Drawable.notify_panel_notification_icon_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Auth.Resource.Id.action_container = global::DiabetesFoodJournal.Droid.Resource.Id.action_container;
+			global::Xamarin.Auth.Resource.Id.action_divider = global::DiabetesFoodJournal.Droid.Resource.Id.action_divider;
+			global::Xamarin.Auth.Resource.Id.action_image = global::DiabetesFoodJournal.Droid.Resource.Id.action_image;
+			global::Xamarin.Auth.Resource.Id.action_text = global::DiabetesFoodJournal.Droid.Resource.Id.action_text;
+			global::Xamarin.Auth.Resource.Id.actions = global::DiabetesFoodJournal.Droid.Resource.Id.actions;
+			global::Xamarin.Auth.Resource.Id.async = global::DiabetesFoodJournal.Droid.Resource.Id.async;
+			global::Xamarin.Auth.Resource.Id.blocking = global::DiabetesFoodJournal.Droid.Resource.Id.blocking;
+			global::Xamarin.Auth.Resource.Id.browser_actions_header_text = global::DiabetesFoodJournal.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Auth.Resource.Id.browser_actions_menu_item_icon = global::DiabetesFoodJournal.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Xamarin.Auth.Resource.Id.browser_actions_menu_item_text = global::DiabetesFoodJournal.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Xamarin.Auth.Resource.Id.browser_actions_menu_items = global::DiabetesFoodJournal.Droid.Resource.Id.browser_actions_menu_items;
+			global::Xamarin.Auth.Resource.Id.browser_actions_menu_view = global::DiabetesFoodJournal.Droid.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.Auth.Resource.Id.chronometer = global::DiabetesFoodJournal.Droid.Resource.Id.chronometer;
+			global::Xamarin.Auth.Resource.Id.forever = global::DiabetesFoodJournal.Droid.Resource.Id.forever;
+			global::Xamarin.Auth.Resource.Id.icon = global::DiabetesFoodJournal.Droid.Resource.Id.icon;
+			global::Xamarin.Auth.Resource.Id.icon_group = global::DiabetesFoodJournal.Droid.Resource.Id.icon_group;
+			global::Xamarin.Auth.Resource.Id.info = global::DiabetesFoodJournal.Droid.Resource.Id.info;
+			global::Xamarin.Auth.Resource.Id.italic = global::DiabetesFoodJournal.Droid.Resource.Id.italic;
+			global::Xamarin.Auth.Resource.Id.line1 = global::DiabetesFoodJournal.Droid.Resource.Id.line1;
+			global::Xamarin.Auth.Resource.Id.line3 = global::DiabetesFoodJournal.Droid.Resource.Id.line3;
+			global::Xamarin.Auth.Resource.Id.normal = global::DiabetesFoodJournal.Droid.Resource.Id.normal;
+			global::Xamarin.Auth.Resource.Id.notification_background = global::DiabetesFoodJournal.Droid.Resource.Id.notification_background;
+			global::Xamarin.Auth.Resource.Id.notification_main_column = global::DiabetesFoodJournal.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.Auth.Resource.Id.notification_main_column_container = global::DiabetesFoodJournal.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Auth.Resource.Id.right_icon = global::DiabetesFoodJournal.Droid.Resource.Id.right_icon;
+			global::Xamarin.Auth.Resource.Id.right_side = global::DiabetesFoodJournal.Droid.Resource.Id.right_side;
+			global::Xamarin.Auth.Resource.Id.tag_transition_group = global::DiabetesFoodJournal.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.Auth.Resource.Id.tag_unhandled_key_event_manager = global::DiabetesFoodJournal.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Xamarin.Auth.Resource.Id.tag_unhandled_key_listeners = global::DiabetesFoodJournal.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Auth.Resource.Id.text = global::DiabetesFoodJournal.Droid.Resource.Id.text;
+			global::Xamarin.Auth.Resource.Id.text2 = global::DiabetesFoodJournal.Droid.Resource.Id.text2;
+			global::Xamarin.Auth.Resource.Id.time = global::DiabetesFoodJournal.Droid.Resource.Id.time;
+			global::Xamarin.Auth.Resource.Id.title = global::DiabetesFoodJournal.Droid.Resource.Id.title;
+			global::Xamarin.Auth.Resource.Id.webview = global::DiabetesFoodJournal.Droid.Resource.Id.webview;
+			global::Xamarin.Auth.Resource.Integer.status_bar_notification_info_maxnum = global::DiabetesFoodJournal.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Auth.Resource.Layout.activity_webview = global::DiabetesFoodJournal.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth.Resource.Layout.browser_actions_context_menu_page = global::DiabetesFoodJournal.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Xamarin.Auth.Resource.Layout.browser_actions_context_menu_row = global::DiabetesFoodJournal.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.Auth.Resource.Layout.notification_action = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_action;
+			global::Xamarin.Auth.Resource.Layout.notification_action_tombstone = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Auth.Resource.Layout.notification_template_custom_big = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Auth.Resource.Layout.notification_template_icon_group = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Auth.Resource.Layout.notification_template_part_chronometer = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Auth.Resource.Layout.notification_template_part_time = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Auth.Resource.String.status_bar_notification_info_overflow = global::DiabetesFoodJournal.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Auth.Resource.String.title_activity_webview = global::DiabetesFoodJournal.Droid.Resource.String.title_activity_webview;
+			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification_Info = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification_Time = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Auth.Resource.Style.Widget_Compat_NotificationActionContainer = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Auth.Resource.Style.Widget_Compat_NotificationActionText = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Auth.Resource.Styleable.ColorStateListItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Auth.Resource.Styleable.ColorStateListItem_alpha = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Auth.Resource.Styleable.ColorStateListItem_android_alpha = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Auth.Resource.Styleable.ColorStateListItem_android_color = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderAuthority = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderCerts = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderPackage = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Auth.Resource.Styleable.FontFamily_fontProviderQuery = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_android_font = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_android_fontStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_android_fontWeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_font = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_fontStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_fontWeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Auth.Resource.Styleable.FontFamilyFont_ttcIndex = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_centerColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_centerX = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_centerY = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_endColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_endX = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_endY = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_gradientRadius = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_startColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_startX = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_startY = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_tileMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Xamarin.Auth.Resource.Styleable.GradientColor_android_type = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Auth.Resource.Styleable.GradientColorItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Auth.Resource.Styleable.GradientColorItem_android_color = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Auth.Resource.Styleable.GradientColorItem_android_offset = global::DiabetesFoodJournal.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_fade_in = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_fade_in;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_fade_out = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_fade_out;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_grow_fade_in_from_bottom = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_popup_enter = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_popup_enter;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_popup_exit = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_popup_exit;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_shrink_fade_out_from_bottom = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_slide_in_bottom = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_slide_in_top = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_slide_out_bottom = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.abc_slide_out_top = global::DiabetesFoodJournal.Droid.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.design_bottom_sheet_slide_in = global::DiabetesFoodJournal.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.design_bottom_sheet_slide_out = global::DiabetesFoodJournal.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.design_snackbar_in = global::DiabetesFoodJournal.Droid.Resource.Animation.design_snackbar_in;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.design_snackbar_out = global::DiabetesFoodJournal.Droid.Resource.Animation.design_snackbar_out;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.EnterFromLeft = global::DiabetesFoodJournal.Droid.Resource.Animation.EnterFromLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.EnterFromRight = global::DiabetesFoodJournal.Droid.Resource.Animation.EnterFromRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.ExitToLeft = global::DiabetesFoodJournal.Droid.Resource.Animation.ExitToLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.ExitToRight = global::DiabetesFoodJournal.Droid.Resource.Animation.ExitToRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.slide_in_right = global::DiabetesFoodJournal.Droid.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth.XamarinForms.Resource.Animation.slide_out_left = global::DiabetesFoodJournal.Droid.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth.XamarinForms.Resource.Animator.design_appbar_state_list_animator = global::DiabetesFoodJournal.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarDivider = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarDivider;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarItemBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarPopupTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarSize = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarSplitStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarTabBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarTabStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarTabTextStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionBarWidgetTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionDropDownStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionMenuTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionMenuTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeCloseButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeCloseDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeCopyDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeCutDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeFindDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModePasteDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModePopupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeSelectAllDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeShareDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeSplitBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionModeWebSearchDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionOverflowButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionOverflowMenuStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionProviderClass = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.actionViewClass = global::DiabetesFoodJournal.Droid.Resource.Attribute.actionViewClass;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.activityChooserViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alertDialogButtonGroupStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alertDialogCenterButtons = global::DiabetesFoodJournal.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alertDialogStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alertDialogTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.allowStacking = global::DiabetesFoodJournal.Droid.Resource.Attribute.allowStacking;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alpha = global::DiabetesFoodJournal.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.alphabeticModifiers = global::DiabetesFoodJournal.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.arrowHeadLength = global::DiabetesFoodJournal.Droid.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.arrowShaftLength = global::DiabetesFoodJournal.Droid.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoCompleteTextViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoSizeMaxTextSize = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoSizeMinTextSize = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoSizePresetSizes = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoSizeStepGranularity = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.autoSizeTextType = global::DiabetesFoodJournal.Droid.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.background = global::DiabetesFoodJournal.Droid.Resource.Attribute.background;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.backgroundSplit = global::DiabetesFoodJournal.Droid.Resource.Attribute.backgroundSplit;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.backgroundStacked = global::DiabetesFoodJournal.Droid.Resource.Attribute.backgroundStacked;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.backgroundTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.backgroundTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.backgroundTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.barLength = global::DiabetesFoodJournal.Droid.Resource.Attribute.barLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.behavior_autoHide = global::DiabetesFoodJournal.Droid.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.behavior_hideable = global::DiabetesFoodJournal.Droid.Resource.Attribute.behavior_hideable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.behavior_overlapTop = global::DiabetesFoodJournal.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.behavior_peekHeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.behavior_skipCollapsed = global::DiabetesFoodJournal.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.borderWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.borderWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.borderlessButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.bottomSheetDialogTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.bottomSheetStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonBarButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonBarNegativeButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonBarNeutralButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonBarPositiveButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonGravity = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonPanelSideLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonStyleSmall = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.buttonTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.buttonTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardBackgroundColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardCornerRadius = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardElevation = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardElevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardMaxElevation = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardPreventCornerOverlap = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.cardUseCompatPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.checkboxStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.checkedTextViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.closeIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.closeIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.closeItemLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.closeItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.collapseContentDescription = global::DiabetesFoodJournal.Droid.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.collapseIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.collapseIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.collapsedTitleGravity = global::DiabetesFoodJournal.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.collapsedTitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.color = global::DiabetesFoodJournal.Droid.Resource.Attribute.color;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorAccent = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorAccent;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorBackgroundFloating = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorButtonNormal = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorControlActivated = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorControlActivated;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorControlHighlight = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorControlNormal = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorControlNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorError = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorError;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorPrimary = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorPrimary;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorPrimaryDark = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.colorSwitchThumbNormal = global::DiabetesFoodJournal.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.commitIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.commitIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentDescription = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetEndWithActions = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetLeft = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetRight = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentInsetStartWithNavigation = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentPaddingBottom = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentPaddingLeft = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentPaddingRight = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentPaddingTop = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.contentScrim = global::DiabetesFoodJournal.Droid.Resource.Attribute.contentScrim;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.controlBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.controlBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.counterEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.counterEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.counterMaxLength = global::DiabetesFoodJournal.Droid.Resource.Attribute.counterMaxLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.counterOverflowTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.counterTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.customNavigationLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.defaultQueryHint = global::DiabetesFoodJournal.Droid.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dialogPreferredPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dialogTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.dialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.displayOptions = global::DiabetesFoodJournal.Droid.Resource.Attribute.displayOptions;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.divider = global::DiabetesFoodJournal.Droid.Resource.Attribute.divider;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dividerHorizontal = global::DiabetesFoodJournal.Droid.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dividerPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.dividerPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dividerVertical = global::DiabetesFoodJournal.Droid.Resource.Attribute.dividerVertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.drawableSize = global::DiabetesFoodJournal.Droid.Resource.Attribute.drawableSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.drawerArrowStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dropDownListViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.dropdownListPreferredItemHeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.editTextBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.editTextBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.editTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.editTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.editTextStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.editTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.elevation = global::DiabetesFoodJournal.Droid.Resource.Attribute.elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.errorEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.errorEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.errorTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandActivityOverflowButtonDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expanded = global::DiabetesFoodJournal.Droid.Resource.Attribute.expanded;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleGravity = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleMargin = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleMarginBottom = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleMarginEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleMarginStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleMarginTop = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.expandedTitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fabSize = global::DiabetesFoodJournal.Droid.Resource.Attribute.fabSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fastScrollEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fastScrollVerticalThumbDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fastScrollVerticalTrackDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.font = global::DiabetesFoodJournal.Droid.Resource.Attribute.font;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontFamily = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontFamily;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderAuthority = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderCerts = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderFetchStrategy = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderFetchTimeout = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderPackage = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontProviderQuery = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.fontWeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.foregroundInsidePadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.gapBetweenBars = global::DiabetesFoodJournal.Droid.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.goIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.goIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.headerLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.headerLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.height = global::DiabetesFoodJournal.Droid.Resource.Attribute.height;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.hideOnContentScroll = global::DiabetesFoodJournal.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.hintAnimationEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.hintEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.hintEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.hintTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.homeAsUpIndicator = global::DiabetesFoodJournal.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.homeLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.homeLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.icon = global::DiabetesFoodJournal.Droid.Resource.Attribute.icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.iconTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.iconTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.iconTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.iconTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.iconifiedByDefault = global::DiabetesFoodJournal.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.imageButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.indeterminateProgressStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.initialActivityCount = global::DiabetesFoodJournal.Droid.Resource.Attribute.initialActivityCount;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.insetForeground = global::DiabetesFoodJournal.Droid.Resource.Attribute.insetForeground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.isLightTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.isLightTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.itemBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.itemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.itemIconTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.itemIconTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.itemPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.itemPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.itemTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.itemTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.itemTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.keylines = global::DiabetesFoodJournal.Droid.Resource.Attribute.keylines;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layoutManager = global::DiabetesFoodJournal.Droid.Resource.Attribute.layoutManager;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_anchor = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_anchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_anchorGravity = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_behavior = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_behavior;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_collapseMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_collapseParallaxMultiplier = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_dodgeInsetEdges = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_insetEdge = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_keyline = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_keyline;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_scrollFlags = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.layout_scrollInterpolator = global::DiabetesFoodJournal.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listChoiceBackgroundIndicator = global::DiabetesFoodJournal.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listDividerAlertDialog = global::DiabetesFoodJournal.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listItemLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.listItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.listLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listMenuViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPopupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPreferredItemHeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPreferredItemHeightLarge = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPreferredItemHeightSmall = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPreferredItemPaddingLeft = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.listPreferredItemPaddingRight = global::DiabetesFoodJournal.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.logo = global::DiabetesFoodJournal.Droid.Resource.Attribute.logo;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.logoDescription = global::DiabetesFoodJournal.Droid.Resource.Attribute.logoDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.maxActionInlineWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.maxButtonHeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.measureWithLargestChild = global::DiabetesFoodJournal.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.menu = global::DiabetesFoodJournal.Droid.Resource.Attribute.menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.multiChoiceItemLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.navigationContentDescription = global::DiabetesFoodJournal.Droid.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.navigationIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.navigationIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.navigationMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.navigationMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.numericModifiers = global::DiabetesFoodJournal.Droid.Resource.Attribute.numericModifiers;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.overlapAnchor = global::DiabetesFoodJournal.Droid.Resource.Attribute.overlapAnchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.paddingBottomNoButtons = global::DiabetesFoodJournal.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.paddingEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.paddingEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.paddingStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.paddingStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.paddingTopNoTitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.panelBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.panelBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.panelMenuListTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.panelMenuListWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.passwordToggleContentDescription = global::DiabetesFoodJournal.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.passwordToggleDrawable = global::DiabetesFoodJournal.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.passwordToggleEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.passwordToggleTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.passwordToggleTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.popupMenuStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.popupTheme = global::DiabetesFoodJournal.Droid.Resource.Attribute.popupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.popupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.preserveIconSpacing = global::DiabetesFoodJournal.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.pressedTranslationZ = global::DiabetesFoodJournal.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.progressBarPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.progressBarPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.progressBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.progressBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.queryBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.queryBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.queryHint = global::DiabetesFoodJournal.Droid.Resource.Attribute.queryHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.radioButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.ratingBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.ratingBarStyleIndicator = global::DiabetesFoodJournal.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.ratingBarStyleSmall = global::DiabetesFoodJournal.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.reverseLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.reverseLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.rippleColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.rippleColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.scrimAnimationDuration = global::DiabetesFoodJournal.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.scrimVisibleHeightTrigger = global::DiabetesFoodJournal.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.searchHintIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.searchHintIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.searchIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.searchIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.searchViewStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.searchViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.seekBarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.seekBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.selectableItemBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.selectableItemBackgroundBorderless = global::DiabetesFoodJournal.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.showAsAction = global::DiabetesFoodJournal.Droid.Resource.Attribute.showAsAction;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.showDividers = global::DiabetesFoodJournal.Droid.Resource.Attribute.showDividers;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.showText = global::DiabetesFoodJournal.Droid.Resource.Attribute.showText;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.showTitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.showTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.singleChoiceItemLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.spanCount = global::DiabetesFoodJournal.Droid.Resource.Attribute.spanCount;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.spinBars = global::DiabetesFoodJournal.Droid.Resource.Attribute.spinBars;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.spinnerDropDownItemStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.spinnerStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.spinnerStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.splitTrack = global::DiabetesFoodJournal.Droid.Resource.Attribute.splitTrack;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.srcCompat = global::DiabetesFoodJournal.Droid.Resource.Attribute.srcCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.stackFromEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.state_above_anchor = global::DiabetesFoodJournal.Droid.Resource.Attribute.state_above_anchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.state_collapsed = global::DiabetesFoodJournal.Droid.Resource.Attribute.state_collapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.state_collapsible = global::DiabetesFoodJournal.Droid.Resource.Attribute.state_collapsible;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.statusBarBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.statusBarScrim = global::DiabetesFoodJournal.Droid.Resource.Attribute.statusBarScrim;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.subMenuArrow = global::DiabetesFoodJournal.Droid.Resource.Attribute.subMenuArrow;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.submitBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.submitBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.subtitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.subtitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.subtitleTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.subtitleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.suggestionRowLayout = global::DiabetesFoodJournal.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.switchMinWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.switchMinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.switchPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.switchPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.switchStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.switchStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.switchTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabContentStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabContentStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabGravity = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabIndicatorColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabIndicatorHeight = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabMaxWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabMinWidth = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabMinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabPaddingBottom = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabPaddingEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabPaddingStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabPaddingTop = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabSelectedTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tabTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.tabTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAllCaps = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAllCaps;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceLargePopupMenu = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceListItem = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceListItemSecondary = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceListItemSmall = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearancePopupMenuHeader = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceSearchResultSubtitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceSearchResultTitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textAppearanceSmallPopupMenu = global::DiabetesFoodJournal.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textColorAlertDialogListItem = global::DiabetesFoodJournal.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.textColorSearchUrl = global::DiabetesFoodJournal.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.theme = global::DiabetesFoodJournal.Droid.Resource.Attribute.theme;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.thickness = global::DiabetesFoodJournal.Droid.Resource.Attribute.thickness;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.thumbTextPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.thumbTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.thumbTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.thumbTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.thumbTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tickMark = global::DiabetesFoodJournal.Droid.Resource.Attribute.tickMark;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tickMarkTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.tickMarkTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tickMarkTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tint = global::DiabetesFoodJournal.Droid.Resource.Attribute.tint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.tintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.title = global::DiabetesFoodJournal.Droid.Resource.Attribute.title;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleEnabled = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMargin = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMargin;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMarginBottom = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMarginEnd = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMarginStart = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMarginStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMarginTop = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMarginTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleMargins = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleMargins;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleTextColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.titleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.titleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.toolbarId = global::DiabetesFoodJournal.Droid.Resource.Attribute.toolbarId;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.toolbarNavigationButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.toolbarStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.toolbarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tooltipForegroundColor = global::DiabetesFoodJournal.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tooltipFrameBackground = global::DiabetesFoodJournal.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.tooltipText = global::DiabetesFoodJournal.Droid.Resource.Attribute.tooltipText;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.track = global::DiabetesFoodJournal.Droid.Resource.Attribute.track;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.trackTint = global::DiabetesFoodJournal.Droid.Resource.Attribute.trackTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.trackTintMode = global::DiabetesFoodJournal.Droid.Resource.Attribute.trackTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.useCompatPadding = global::DiabetesFoodJournal.Droid.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.voiceIcon = global::DiabetesFoodJournal.Droid.Resource.Attribute.voiceIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowActionBar = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowActionBarOverlay = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowActionModeOverlay = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowFixedHeightMajor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowFixedHeightMinor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowFixedWidthMajor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowFixedWidthMinor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowMinWidthMajor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowMinWidthMinor = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Attribute.windowNoTitle = global::DiabetesFoodJournal.Droid.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Boolean.abc_action_bar_embed_tabs = global::DiabetesFoodJournal.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Auth.XamarinForms.Resource.Boolean.abc_allow_stacked_button_bar = global::DiabetesFoodJournal.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::DiabetesFoodJournal.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_background_cache_hint_selector_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_background_cache_hint_selector_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_btn_colored_borderless_text_material = global::DiabetesFoodJournal.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_btn_colored_text_material = global::DiabetesFoodJournal.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_color_highlight_material = global::DiabetesFoodJournal.Droid.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_hint_foreground_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_hint_foreground_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_input_method_navigation_guard = global::DiabetesFoodJournal.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_primary_text_disable_only_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_primary_text_disable_only_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_primary_text_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_primary_text_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_search_url_text = global::DiabetesFoodJournal.Droid.Resource.Color.abc_search_url_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_search_url_text_normal = global::DiabetesFoodJournal.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_search_url_text_pressed = global::DiabetesFoodJournal.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_search_url_text_selected = global::DiabetesFoodJournal.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_secondary_text_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_secondary_text_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_btn_checkable = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_default = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_default;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_edittext = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_edittext;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_seek_thumb = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_spinner = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.abc_tint_switch_track = global::DiabetesFoodJournal.Droid.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.accent_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.accent_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.accent_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.accent_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.background_floating_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.background_floating_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.background_floating_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.background_floating_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.background_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.background_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.background_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.background_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_disabled_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_disabled_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_inverse_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_inverse_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.bright_foreground_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.button_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.button_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.button_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.button_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.cardview_dark_background = global::DiabetesFoodJournal.Droid.Resource.Color.cardview_dark_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.cardview_light_background = global::DiabetesFoodJournal.Droid.Resource.Color.cardview_light_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.cardview_shadow_end_color = global::DiabetesFoodJournal.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.cardview_shadow_start_color = global::DiabetesFoodJournal.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_bottom_navigation_shadow_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_error = global::DiabetesFoodJournal.Droid.Resource.Color.design_error;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_shadow_end_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_shadow_mid_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_shadow_start_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_stroke_end_inner_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_stroke_end_outer_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_stroke_top_inner_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_fab_stroke_top_outer_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_snackbar_background_color = global::DiabetesFoodJournal.Droid.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.design_tint_password_toggle = global::DiabetesFoodJournal.Droid.Resource.Color.design_tint_password_toggle;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.dim_foreground_disabled_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.dim_foreground_disabled_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.dim_foreground_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.dim_foreground_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.foreground_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.foreground_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.foreground_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.foreground_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.highlighted_text_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.highlighted_text_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_blue_grey_800 = global::DiabetesFoodJournal.Droid.Resource.Color.material_blue_grey_800;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_blue_grey_900 = global::DiabetesFoodJournal.Droid.Resource.Color.material_blue_grey_900;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_blue_grey_950 = global::DiabetesFoodJournal.Droid.Resource.Color.material_blue_grey_950;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_deep_teal_200 = global::DiabetesFoodJournal.Droid.Resource.Color.material_deep_teal_200;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_deep_teal_500 = global::DiabetesFoodJournal.Droid.Resource.Color.material_deep_teal_500;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_100 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_100;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_300 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_300;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_50 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_50;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_600 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_600;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_800 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_800;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_850 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_850;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.material_grey_900 = global::DiabetesFoodJournal.Droid.Resource.Color.material_grey_900;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.notification_action_color_filter = global::DiabetesFoodJournal.Droid.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.notification_icon_bg_color = global::DiabetesFoodJournal.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.notification_material_background_media_default_color = global::DiabetesFoodJournal.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_dark_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_dark_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.primary_dark_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.primary_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.primary_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_text_default_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_text_default_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_text_disabled_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.primary_text_disabled_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.ripple_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.ripple_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.ripple_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.secondary_text_default_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.secondary_text_default_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.secondary_text_disabled_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.secondary_text_disabled_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_disabled_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_disabled_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_normal_material_dark = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.switch_thumb_normal_material_light = global::DiabetesFoodJournal.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.tooltip_background_dark = global::DiabetesFoodJournal.Droid.Resource.Color.tooltip_background_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Color.tooltip_background_light = global::DiabetesFoodJournal.Droid.Resource.Color.tooltip_background_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_content_inset_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_default_height_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_default_padding_end_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_default_padding_start_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_elevation_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_stacked_max_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_button_min_height_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_button_min_width_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_action_button_min_width_overflow_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_alert_dialog_button_bar_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_button_inset_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_button_inset_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_button_padding_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_button_padding_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_config_prefDialogWidth = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_control_corner_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_control_inset_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_control_padding_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_fixed_height_major = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_fixed_height_minor = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_fixed_width_major = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_fixed_width_minor = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_min_width_major = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_min_width_minor = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_padding_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_padding_top_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dialog_title_divider_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_disabled_alpha_material_dark = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_disabled_alpha_material_light = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dropdownitem_icon_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dropdownitem_text_padding_left = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_dropdownitem_text_padding_right = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_edit_text_inset_bottom_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_edit_text_inset_top_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_floating_window_z = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_list_item_padding_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_panel_menu_list_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_progress_bar_height_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_search_view_preferred_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_search_view_preferred_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_seekbar_track_background_height_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_seekbar_track_progress_height_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_select_dialog_padding_start_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_switch_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_body_1_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_body_2_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_button_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_caption_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_display_1_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_display_2_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_display_3_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_display_4_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_headline_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_large_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_medium_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_menu_header_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_menu_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_small_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_subhead_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_title_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.abc_text_size_title_material_toolbar = global::DiabetesFoodJournal.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.cardview_compat_inset_shadow = global::DiabetesFoodJournal.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.cardview_default_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.cardview_default_radius = global::DiabetesFoodJournal.Droid.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.compat_button_inset_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.compat_button_inset_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.compat_button_padding_horizontal_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.compat_button_padding_vertical_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.compat_control_corner_material = global::DiabetesFoodJournal.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_appbar_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_active_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_item_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_item_min_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_shadow_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_navigation_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_sheet_modal_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_bottom_sheet_peek_height_min = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_border_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_image_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_size_mini = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_size_normal = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_fab_translation_z_pressed = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_icon_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_icon_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_padding_bottom = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_navigation_separator_vertical_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_action_inline_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_background_corner_radius = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_elevation = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_min_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_padding_horizontal = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_padding_vertical = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_snackbar_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_tab_max_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_tab_scrollable_min_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_tab_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.design_tab_text_size_2line = global::DiabetesFoodJournal.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.disabled_alpha_material_dark = global::DiabetesFoodJournal.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.disabled_alpha_material_light = global::DiabetesFoodJournal.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.fastscroll_default_thickness = global::DiabetesFoodJournal.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.fastscroll_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.fastscroll_minimum_range = global::DiabetesFoodJournal.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.highlight_alpha_material_colored = global::DiabetesFoodJournal.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.highlight_alpha_material_dark = global::DiabetesFoodJournal.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.highlight_alpha_material_light = global::DiabetesFoodJournal.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.hint_alpha_material_dark = global::DiabetesFoodJournal.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.hint_alpha_material_light = global::DiabetesFoodJournal.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.hint_pressed_alpha_material_dark = global::DiabetesFoodJournal.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.hint_pressed_alpha_material_light = global::DiabetesFoodJournal.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::DiabetesFoodJournal.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::DiabetesFoodJournal.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::DiabetesFoodJournal.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_action_icon_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_action_text_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_big_circle_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_content_margin_start = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_large_icon_height = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_large_icon_width = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_main_column_padding_top = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_media_narrow_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_right_icon_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_right_side_padding_top = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_small_icon_background_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_small_icon_size_as_large = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_subtext_size = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_top_pad = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.notification_top_pad_large_text = global::DiabetesFoodJournal.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_corner_radius = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_horizontal_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_margin = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_margin;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_precise_anchor_threshold = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_vertical_padding = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_y_offset_non_touch = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.Auth.XamarinForms.Resource.Dimension.tooltip_y_offset_touch = global::DiabetesFoodJournal.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_action_bar_item_background_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_borderless_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_check_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_colored_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_default_mtrl_shape = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_radio_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_cab_background_internal_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_cab_background_top_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_control_background_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_dialog_material_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_edit_text_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_ab_back_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_clear_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_go_search_api_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_overflow_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_search_api_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_black_16dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_black_36dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_black_48dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_half_black_16dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_half_black_36dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_star_half_black_48dp = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ic_voice_search_api_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_item_background_holo_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_item_background_holo_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_divider_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_focused_holo = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_longpressed_holo = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_pressed_holo_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_pressed_holo_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_disabled_holo_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_holo_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_list_selector_holo_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_popup_background_mtrl_mult = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ratingbar_indicator_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ratingbar_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_ratingbar_small_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_seekbar_thumb_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_seekbar_tick_mark_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_seekbar_track_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_spinner_textfield_background_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_switch_thumb_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_switch_track_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_tab_indicator_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_cursor_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_textfield_search_material = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.abc_vector_test = global::DiabetesFoodJournal.Droid.Resource.Drawable.abc_vector_test;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.avd_hide_password = global::DiabetesFoodJournal.Droid.Resource.Drawable.avd_hide_password;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.avd_show_password = global::DiabetesFoodJournal.Droid.Resource.Drawable.avd_show_password;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_bottom_navigation_item_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_fab_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_fab_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_ic_visibility = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_ic_visibility_off = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_password_eye = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_password_eye;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.design_snackbar_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.ic_arrow_back = global::DiabetesFoodJournal.Droid.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.navigation_empty_icon = global::DiabetesFoodJournal.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_action_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_action_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg_low = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg_low_normal = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg_low_pressed = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg_normal = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_bg_normal_pressed = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_icon_background = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_template_icon_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_template_icon_low_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notification_tile_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.notify_panel_notification_icon_bg = global::DiabetesFoodJournal.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.tooltip_frame_dark = global::DiabetesFoodJournal.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Drawable.tooltip_frame_light = global::DiabetesFoodJournal.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.ALT = global::DiabetesFoodJournal.Droid.Resource.Id.ALT;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.CTRL = global::DiabetesFoodJournal.Droid.Resource.Id.CTRL;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.FUNCTION = global::DiabetesFoodJournal.Droid.Resource.Id.FUNCTION;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.META = global::DiabetesFoodJournal.Droid.Resource.Id.META;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.SHIFT = global::DiabetesFoodJournal.Droid.Resource.Id.SHIFT;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.SYM = global::DiabetesFoodJournal.Droid.Resource.Id.SYM;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action0 = global::DiabetesFoodJournal.Droid.Resource.Id.action0;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_activity_content = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_activity_content;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_container = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_container;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_root = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_root;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_spinner = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_subtitle = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_bar_title = global::DiabetesFoodJournal.Droid.Resource.Id.action_bar_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_container = global::DiabetesFoodJournal.Droid.Resource.Id.action_container;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_context_bar = global::DiabetesFoodJournal.Droid.Resource.Id.action_context_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_divider = global::DiabetesFoodJournal.Droid.Resource.Id.action_divider;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_image = global::DiabetesFoodJournal.Droid.Resource.Id.action_image;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_menu_divider = global::DiabetesFoodJournal.Droid.Resource.Id.action_menu_divider;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_menu_presenter = global::DiabetesFoodJournal.Droid.Resource.Id.action_menu_presenter;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_mode_bar = global::DiabetesFoodJournal.Droid.Resource.Id.action_mode_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_mode_bar_stub = global::DiabetesFoodJournal.Droid.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_mode_close_button = global::DiabetesFoodJournal.Droid.Resource.Id.action_mode_close_button;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.action_text = global::DiabetesFoodJournal.Droid.Resource.Id.action_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.actions = global::DiabetesFoodJournal.Droid.Resource.Id.actions;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.activity_chooser_view_content = global::DiabetesFoodJournal.Droid.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.add = global::DiabetesFoodJournal.Droid.Resource.Id.add;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.alertTitle = global::DiabetesFoodJournal.Droid.Resource.Id.alertTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.all = global::DiabetesFoodJournal.Droid.Resource.Id.all;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.always = global::DiabetesFoodJournal.Droid.Resource.Id.always;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.async = global::DiabetesFoodJournal.Droid.Resource.Id.async;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.auto = global::DiabetesFoodJournal.Droid.Resource.Id.auto;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.beginning = global::DiabetesFoodJournal.Droid.Resource.Id.beginning;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.blocking = global::DiabetesFoodJournal.Droid.Resource.Id.blocking;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.bottom = global::DiabetesFoodJournal.Droid.Resource.Id.bottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.bottomtab_navarea = global::DiabetesFoodJournal.Droid.Resource.Id.bottomtab_navarea;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.bottomtab_tabbar = global::DiabetesFoodJournal.Droid.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.buttonPanel = global::DiabetesFoodJournal.Droid.Resource.Id.buttonPanel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.cancel_action = global::DiabetesFoodJournal.Droid.Resource.Id.cancel_action;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.center = global::DiabetesFoodJournal.Droid.Resource.Id.center;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.center_horizontal = global::DiabetesFoodJournal.Droid.Resource.Id.center_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.center_vertical = global::DiabetesFoodJournal.Droid.Resource.Id.center_vertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.checkbox = global::DiabetesFoodJournal.Droid.Resource.Id.checkbox;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.chronometer = global::DiabetesFoodJournal.Droid.Resource.Id.chronometer;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.clip_horizontal = global::DiabetesFoodJournal.Droid.Resource.Id.clip_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.clip_vertical = global::DiabetesFoodJournal.Droid.Resource.Id.clip_vertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.collapseActionView = global::DiabetesFoodJournal.Droid.Resource.Id.collapseActionView;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.container = global::DiabetesFoodJournal.Droid.Resource.Id.container;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.contentPanel = global::DiabetesFoodJournal.Droid.Resource.Id.contentPanel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.coordinator = global::DiabetesFoodJournal.Droid.Resource.Id.coordinator;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.custom = global::DiabetesFoodJournal.Droid.Resource.Id.custom;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.customPanel = global::DiabetesFoodJournal.Droid.Resource.Id.customPanel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.decor_content_parent = global::DiabetesFoodJournal.Droid.Resource.Id.decor_content_parent;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.default_activity_button = global::DiabetesFoodJournal.Droid.Resource.Id.default_activity_button;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.design_bottom_sheet = global::DiabetesFoodJournal.Droid.Resource.Id.design_bottom_sheet;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.design_menu_item_action_area = global::DiabetesFoodJournal.Droid.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.design_menu_item_action_area_stub = global::DiabetesFoodJournal.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.design_menu_item_text = global::DiabetesFoodJournal.Droid.Resource.Id.design_menu_item_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.design_navigation_view = global::DiabetesFoodJournal.Droid.Resource.Id.design_navigation_view;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.disableHome = global::DiabetesFoodJournal.Droid.Resource.Id.disableHome;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.edit_query = global::DiabetesFoodJournal.Droid.Resource.Id.edit_query;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.end = global::DiabetesFoodJournal.Droid.Resource.Id.end;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.end_padder = global::DiabetesFoodJournal.Droid.Resource.Id.end_padder;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.enterAlways = global::DiabetesFoodJournal.Droid.Resource.Id.enterAlways;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.enterAlwaysCollapsed = global::DiabetesFoodJournal.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.exitUntilCollapsed = global::DiabetesFoodJournal.Droid.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.expand_activities_button = global::DiabetesFoodJournal.Droid.Resource.Id.expand_activities_button;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.expanded_menu = global::DiabetesFoodJournal.Droid.Resource.Id.expanded_menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.fill = global::DiabetesFoodJournal.Droid.Resource.Id.fill;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.fill_horizontal = global::DiabetesFoodJournal.Droid.Resource.Id.fill_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.fill_vertical = global::DiabetesFoodJournal.Droid.Resource.Id.fill_vertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.@fixed = global::DiabetesFoodJournal.Droid.Resource.Id.@fixed;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.flyoutcontent_appbar = global::DiabetesFoodJournal.Droid.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.flyoutcontent_recycler = global::DiabetesFoodJournal.Droid.Resource.Id.flyoutcontent_recycler;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.forever = global::DiabetesFoodJournal.Droid.Resource.Id.forever;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.ghost_view = global::DiabetesFoodJournal.Droid.Resource.Id.ghost_view;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.home = global::DiabetesFoodJournal.Droid.Resource.Id.home;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.homeAsUp = global::DiabetesFoodJournal.Droid.Resource.Id.homeAsUp;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.icon = global::DiabetesFoodJournal.Droid.Resource.Id.icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.icon_group = global::DiabetesFoodJournal.Droid.Resource.Id.icon_group;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.ifRoom = global::DiabetesFoodJournal.Droid.Resource.Id.ifRoom;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.image = global::DiabetesFoodJournal.Droid.Resource.Id.image;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.info = global::DiabetesFoodJournal.Droid.Resource.Id.info;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.italic = global::DiabetesFoodJournal.Droid.Resource.Id.italic;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.item_touch_helper_previous_elevation = global::DiabetesFoodJournal.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.largeLabel = global::DiabetesFoodJournal.Droid.Resource.Id.largeLabel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.left = global::DiabetesFoodJournal.Droid.Resource.Id.left;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.line1 = global::DiabetesFoodJournal.Droid.Resource.Id.line1;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.line3 = global::DiabetesFoodJournal.Droid.Resource.Id.line3;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.listMode = global::DiabetesFoodJournal.Droid.Resource.Id.listMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.list_item = global::DiabetesFoodJournal.Droid.Resource.Id.list_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.main_appbar = global::DiabetesFoodJournal.Droid.Resource.Id.main_appbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.main_tablayout = global::DiabetesFoodJournal.Droid.Resource.Id.main_tablayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.main_toolbar = global::DiabetesFoodJournal.Droid.Resource.Id.main_toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.masked = global::DiabetesFoodJournal.Droid.Resource.Id.masked;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.media_actions = global::DiabetesFoodJournal.Droid.Resource.Id.media_actions;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.message = global::DiabetesFoodJournal.Droid.Resource.Id.message;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.middle = global::DiabetesFoodJournal.Droid.Resource.Id.middle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.mini = global::DiabetesFoodJournal.Droid.Resource.Id.mini;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.multiply = global::DiabetesFoodJournal.Droid.Resource.Id.multiply;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.navigation_header_container = global::DiabetesFoodJournal.Droid.Resource.Id.navigation_header_container;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.never = global::DiabetesFoodJournal.Droid.Resource.Id.never;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.none = global::DiabetesFoodJournal.Droid.Resource.Id.none;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.normal = global::DiabetesFoodJournal.Droid.Resource.Id.normal;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.notification_background = global::DiabetesFoodJournal.Droid.Resource.Id.notification_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.notification_main_column = global::DiabetesFoodJournal.Droid.Resource.Id.notification_main_column;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.notification_main_column_container = global::DiabetesFoodJournal.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.parallax = global::DiabetesFoodJournal.Droid.Resource.Id.parallax;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.parentPanel = global::DiabetesFoodJournal.Droid.Resource.Id.parentPanel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.parent_matrix = global::DiabetesFoodJournal.Droid.Resource.Id.parent_matrix;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.pin = global::DiabetesFoodJournal.Droid.Resource.Id.pin;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.progress_circular = global::DiabetesFoodJournal.Droid.Resource.Id.progress_circular;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.progress_horizontal = global::DiabetesFoodJournal.Droid.Resource.Id.progress_horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.radio = global::DiabetesFoodJournal.Droid.Resource.Id.radio;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.right = global::DiabetesFoodJournal.Droid.Resource.Id.right;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.right_icon = global::DiabetesFoodJournal.Droid.Resource.Id.right_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.right_side = global::DiabetesFoodJournal.Droid.Resource.Id.right_side;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.save_image_matrix = global::DiabetesFoodJournal.Droid.Resource.Id.save_image_matrix;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.save_non_transition_alpha = global::DiabetesFoodJournal.Droid.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.save_scale_type = global::DiabetesFoodJournal.Droid.Resource.Id.save_scale_type;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.screen = global::DiabetesFoodJournal.Droid.Resource.Id.screen;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.scroll = global::DiabetesFoodJournal.Droid.Resource.Id.scroll;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.scrollIndicatorDown = global::DiabetesFoodJournal.Droid.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.scrollIndicatorUp = global::DiabetesFoodJournal.Droid.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.scrollView = global::DiabetesFoodJournal.Droid.Resource.Id.scrollView;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.scrollable = global::DiabetesFoodJournal.Droid.Resource.Id.scrollable;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_badge = global::DiabetesFoodJournal.Droid.Resource.Id.search_badge;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_bar = global::DiabetesFoodJournal.Droid.Resource.Id.search_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_button = global::DiabetesFoodJournal.Droid.Resource.Id.search_button;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_close_btn = global::DiabetesFoodJournal.Droid.Resource.Id.search_close_btn;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_edit_frame = global::DiabetesFoodJournal.Droid.Resource.Id.search_edit_frame;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_go_btn = global::DiabetesFoodJournal.Droid.Resource.Id.search_go_btn;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_mag_icon = global::DiabetesFoodJournal.Droid.Resource.Id.search_mag_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_plate = global::DiabetesFoodJournal.Droid.Resource.Id.search_plate;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_src_text = global::DiabetesFoodJournal.Droid.Resource.Id.search_src_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.search_voice_btn = global::DiabetesFoodJournal.Droid.Resource.Id.search_voice_btn;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.select_dialog_listview = global::DiabetesFoodJournal.Droid.Resource.Id.select_dialog_listview;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.shellcontent_appbar = global::DiabetesFoodJournal.Droid.Resource.Id.shellcontent_appbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.shellcontent_toolbar = global::DiabetesFoodJournal.Droid.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.shortcut = global::DiabetesFoodJournal.Droid.Resource.Id.shortcut;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.showCustom = global::DiabetesFoodJournal.Droid.Resource.Id.showCustom;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.showHome = global::DiabetesFoodJournal.Droid.Resource.Id.showHome;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.showTitle = global::DiabetesFoodJournal.Droid.Resource.Id.showTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.smallLabel = global::DiabetesFoodJournal.Droid.Resource.Id.smallLabel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.snackbar_action = global::DiabetesFoodJournal.Droid.Resource.Id.snackbar_action;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.snackbar_text = global::DiabetesFoodJournal.Droid.Resource.Id.snackbar_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.snap = global::DiabetesFoodJournal.Droid.Resource.Id.snap;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.spacer = global::DiabetesFoodJournal.Droid.Resource.Id.spacer;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.split_action_bar = global::DiabetesFoodJournal.Droid.Resource.Id.split_action_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.src_atop = global::DiabetesFoodJournal.Droid.Resource.Id.src_atop;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.src_in = global::DiabetesFoodJournal.Droid.Resource.Id.src_in;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.src_over = global::DiabetesFoodJournal.Droid.Resource.Id.src_over;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.start = global::DiabetesFoodJournal.Droid.Resource.Id.start;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.status_bar_latest_event_content = global::DiabetesFoodJournal.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.submenuarrow = global::DiabetesFoodJournal.Droid.Resource.Id.submenuarrow;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.submit_area = global::DiabetesFoodJournal.Droid.Resource.Id.submit_area;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.tabMode = global::DiabetesFoodJournal.Droid.Resource.Id.tabMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.tag_transition_group = global::DiabetesFoodJournal.Droid.Resource.Id.tag_transition_group;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.text = global::DiabetesFoodJournal.Droid.Resource.Id.text;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.text2 = global::DiabetesFoodJournal.Droid.Resource.Id.text2;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.textSpacerNoButtons = global::DiabetesFoodJournal.Droid.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.textSpacerNoTitle = global::DiabetesFoodJournal.Droid.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.text_input_password_toggle = global::DiabetesFoodJournal.Droid.Resource.Id.text_input_password_toggle;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.textinput_counter = global::DiabetesFoodJournal.Droid.Resource.Id.textinput_counter;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.textinput_error = global::DiabetesFoodJournal.Droid.Resource.Id.textinput_error;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.time = global::DiabetesFoodJournal.Droid.Resource.Id.time;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.title = global::DiabetesFoodJournal.Droid.Resource.Id.title;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.titleDividerNoCustom = global::DiabetesFoodJournal.Droid.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.title_template = global::DiabetesFoodJournal.Droid.Resource.Id.title_template;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.top = global::DiabetesFoodJournal.Droid.Resource.Id.top;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.topPanel = global::DiabetesFoodJournal.Droid.Resource.Id.topPanel;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.touch_outside = global::DiabetesFoodJournal.Droid.Resource.Id.touch_outside;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.transition_current_scene = global::DiabetesFoodJournal.Droid.Resource.Id.transition_current_scene;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.transition_layout_save = global::DiabetesFoodJournal.Droid.Resource.Id.transition_layout_save;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.transition_position = global::DiabetesFoodJournal.Droid.Resource.Id.transition_position;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.transition_scene_layoutid_cache = global::DiabetesFoodJournal.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.transition_transform = global::DiabetesFoodJournal.Droid.Resource.Id.transition_transform;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.uniform = global::DiabetesFoodJournal.Droid.Resource.Id.uniform;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.up = global::DiabetesFoodJournal.Droid.Resource.Id.up;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.useLogo = global::DiabetesFoodJournal.Droid.Resource.Id.useLogo;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.view_offset_helper = global::DiabetesFoodJournal.Droid.Resource.Id.view_offset_helper;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.visible = global::DiabetesFoodJournal.Droid.Resource.Id.visible;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.webview = global::DiabetesFoodJournal.Droid.Resource.Id.webview;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.withText = global::DiabetesFoodJournal.Droid.Resource.Id.withText;
+			global::Xamarin.Auth.XamarinForms.Resource.Id.wrap_content = global::DiabetesFoodJournal.Droid.Resource.Id.wrap_content;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.abc_config_activityDefaultDur = global::DiabetesFoodJournal.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.abc_config_activityShortDur = global::DiabetesFoodJournal.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.app_bar_elevation_anim_duration = global::DiabetesFoodJournal.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.bottom_sheet_slide_duration = global::DiabetesFoodJournal.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.cancel_button_image_alpha = global::DiabetesFoodJournal.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.config_tooltipAnimTime = global::DiabetesFoodJournal.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.design_snackbar_text_max_lines = global::DiabetesFoodJournal.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.hide_password_duration = global::DiabetesFoodJournal.Droid.Resource.Integer.hide_password_duration;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.show_password_duration = global::DiabetesFoodJournal.Droid.Resource.Integer.show_password_duration;
+			global::Xamarin.Auth.XamarinForms.Resource.Integer.status_bar_notification_info_maxnum = global::DiabetesFoodJournal.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_bar_title_item = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_bar_up_container = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_menu_item_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_menu_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_mode_bar = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_action_mode_close_item_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_activity_chooser_view = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_activity_chooser_view_list_item = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_alert_dialog_button_bar_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_alert_dialog_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_alert_dialog_title_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_dialog_title_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_expanded_menu_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_list_menu_item_checkbox = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_list_menu_item_icon = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_list_menu_item_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_list_menu_item_radio = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_popup_menu_header_item_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_popup_menu_item_layout = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_screen_content_include = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_screen_simple = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_screen_simple;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_screen_simple_overlay_action_mode = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_screen_toolbar = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_search_dropdown_item_icons_2line = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_search_view = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_search_view;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.abc_select_dialog_material = global::DiabetesFoodJournal.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.activity_webview = global::DiabetesFoodJournal.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.BottomTabLayout = global::DiabetesFoodJournal.Droid.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_bottom_navigation_item = global::DiabetesFoodJournal.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_bottom_sheet_dialog = global::DiabetesFoodJournal.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_layout_snackbar = global::DiabetesFoodJournal.Droid.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_layout_snackbar_include = global::DiabetesFoodJournal.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_layout_tab_icon = global::DiabetesFoodJournal.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_layout_tab_text = global::DiabetesFoodJournal.Droid.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_menu_item_action_area = global::DiabetesFoodJournal.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_item = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_item_header = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_item_separator = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_item_subheader = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_menu = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_navigation_menu_item = global::DiabetesFoodJournal.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.design_text_input_password_icon = global::DiabetesFoodJournal.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.FlyoutContent = global::DiabetesFoodJournal.Droid.Resource.Layout.FlyoutContent;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_action = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_action;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_action_tombstone = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_media_action = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_media_action;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_media_cancel_action = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_big_media = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_big_media;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_big_media_custom = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_big_media_narrow = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_big_media_narrow_custom = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_custom_big = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_icon_group = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_lines_media = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_media = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_media;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_media_custom = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_part_chronometer = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.notification_template_part_time = global::DiabetesFoodJournal.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.RootLayout = global::DiabetesFoodJournal.Droid.Resource.Layout.RootLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.select_dialog_item_material = global::DiabetesFoodJournal.Droid.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.select_dialog_multichoice_material = global::DiabetesFoodJournal.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.select_dialog_singlechoice_material = global::DiabetesFoodJournal.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.ShellContent = global::DiabetesFoodJournal.Droid.Resource.Layout.ShellContent;
+			global::Xamarin.Auth.XamarinForms.Resource.Layout.support_simple_spinner_dropdown_item = global::DiabetesFoodJournal.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Auth.XamarinForms.Resource.String.ApplicationName = global::DiabetesFoodJournal.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Auth.XamarinForms.Resource.String.Hello = global::DiabetesFoodJournal.Droid.Resource.String.Hello;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_action_bar_home_description = global::DiabetesFoodJournal.Droid.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_action_bar_up_description = global::DiabetesFoodJournal.Droid.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_action_menu_overflow_description = global::DiabetesFoodJournal.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_action_mode_done = global::DiabetesFoodJournal.Droid.Resource.String.abc_action_mode_done;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_activity_chooser_view_see_all = global::DiabetesFoodJournal.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_activitychooserview_choose_application = global::DiabetesFoodJournal.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_capital_off = global::DiabetesFoodJournal.Droid.Resource.String.abc_capital_off;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_capital_on = global::DiabetesFoodJournal.Droid.Resource.String.abc_capital_on;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_body_1_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_body_2_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_button_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_button_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_caption_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_caption_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_display_1_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_display_2_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_display_3_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_display_4_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_headline_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_headline_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_menu_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_menu_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_subhead_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_font_family_title_material = global::DiabetesFoodJournal.Droid.Resource.String.abc_font_family_title_material;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_search_hint = global::DiabetesFoodJournal.Droid.Resource.String.abc_search_hint;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_searchview_description_clear = global::DiabetesFoodJournal.Droid.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_searchview_description_query = global::DiabetesFoodJournal.Droid.Resource.String.abc_searchview_description_query;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_searchview_description_search = global::DiabetesFoodJournal.Droid.Resource.String.abc_searchview_description_search;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_searchview_description_submit = global::DiabetesFoodJournal.Droid.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_searchview_description_voice = global::DiabetesFoodJournal.Droid.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_shareactionprovider_share_with = global::DiabetesFoodJournal.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_shareactionprovider_share_with_application = global::DiabetesFoodJournal.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.Auth.XamarinForms.Resource.String.abc_toolbar_collapse_description = global::DiabetesFoodJournal.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Auth.XamarinForms.Resource.String.appbar_scrolling_view_behavior = global::DiabetesFoodJournal.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.Auth.XamarinForms.Resource.String.bottom_sheet_behavior = global::DiabetesFoodJournal.Droid.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.Auth.XamarinForms.Resource.String.character_counter_pattern = global::DiabetesFoodJournal.Droid.Resource.String.character_counter_pattern;
+			global::Xamarin.Auth.XamarinForms.Resource.String.password_toggle_content_description = global::DiabetesFoodJournal.Droid.Resource.String.password_toggle_content_description;
+			global::Xamarin.Auth.XamarinForms.Resource.String.path_password_eye = global::DiabetesFoodJournal.Droid.Resource.String.path_password_eye;
+			global::Xamarin.Auth.XamarinForms.Resource.String.path_password_eye_mask_strike_through = global::DiabetesFoodJournal.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.Auth.XamarinForms.Resource.String.path_password_eye_mask_visible = global::DiabetesFoodJournal.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.Auth.XamarinForms.Resource.String.path_password_strike_through = global::DiabetesFoodJournal.Droid.Resource.String.path_password_strike_through;
+			global::Xamarin.Auth.XamarinForms.Resource.String.search_menu_title = global::DiabetesFoodJournal.Droid.Resource.String.search_menu_title;
+			global::Xamarin.Auth.XamarinForms.Resource.String.status_bar_notification_info_overflow = global::DiabetesFoodJournal.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.String.title_activity_webview = global::DiabetesFoodJournal.Droid.Resource.String.title_activity_webview;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.AlertDialog_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.AlertDialog_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Animation_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Animation_AppCompat_DropDownUp = global::DiabetesFoodJournal.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Animation_AppCompat_Tooltip = global::DiabetesFoodJournal.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Animation_Design_BottomSheetDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_AlertDialog_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_AlertDialog_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Animation_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Animation_AppCompat_Tooltip = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_CardView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_CardView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_DialogWindowTitle_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Button = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Large = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Title = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::DiabetesFoodJournal.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V21_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V21_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V22_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V22_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V23_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V23_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V26_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V26_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionButton = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActionMode = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Button_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_EditText = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ImageButton = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ListView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_RatingBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_SearchView = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_SeekBar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Toolbar = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Base_Widget_Design_TabLayout = global::DiabetesFoodJournal.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.CardView = global::DiabetesFoodJournal.Droid.Resource.Style.CardView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.CardView_Dark = global::DiabetesFoodJournal.Droid.Resource.Style.CardView_Dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.CardView_Light = global::DiabetesFoodJournal.Droid.Resource.Style.CardView_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_ThemeOverlay_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_V21_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_V21_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_V25_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_V25_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Platform_Widget_AppCompat_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::DiabetesFoodJournal.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::DiabetesFoodJournal.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Body1 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Body2 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Button = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Caption = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Display1 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Display2 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Display3 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Display4 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Headline = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Large = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Medium = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Small = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Subhead = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Tooltip = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Info = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Media = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Time = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Counter = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Counter_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Error = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Hint = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Snackbar_Message = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Design_Tab = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::DiabetesFoodJournal.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_CompactMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_AppCompat_NoActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design_BottomSheetDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design_Light = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design_Light_NoActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Theme_Design_NoActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_Dark = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.ThemeOverlay_AppCompat_Light = global::DiabetesFoodJournal.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionButton = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActionMode = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ActivityChooserView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button_Borderless = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button_Colored = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Button_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ButtonBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_EditText = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ImageButton = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionButton = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_SearchView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ListMenuView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ListPopupWindow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ListView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ListView_DropDown = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ListView_Menu = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_PopupMenu = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_PopupWindow = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ProgressBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_RatingBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_RatingBar_Small = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_SearchView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_SeekBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Spinner = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Toolbar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Compat_NotificationActionContainer = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Compat_NotificationActionText = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_AppBarLayout = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_BottomNavigationView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_BottomSheet_Modal = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_CollapsingToolbar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_FloatingActionButton = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_NavigationView = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_Snackbar = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_TabLayout = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Style.Widget_Design_TextInputLayout = global::DiabetesFoodJournal.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_background = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_backgroundSplit = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_backgroundStacked = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetLeft = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetRight = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_customNavigationLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_displayOptions = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_divider = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_height = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_hideOnContentScroll = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_homeAsUpIndicator = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_homeLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_icon = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_itemPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_logo = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_navigationMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_popupTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_progressBarPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_progressBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_subtitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_subtitleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_title = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBar_titleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBarLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMenuItemView = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMenuItemView_android_minWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMenuView = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMenuView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_background = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_backgroundSplit = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_closeItemLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_height = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_subtitleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActionMode_titleTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActivityChooserView = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ActivityChooserView_initialActivityCount = global::DiabetesFoodJournal.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_android_layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_listItemLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_listLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_showTitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_android_background = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_expanded = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayoutStates = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatImageView = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatImageView_android_src = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatImageView_srcCompat = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatImageView_tint = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatImageView_tintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatSeekBar = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatSeekBar_android_thumb = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatSeekBar_tickMark = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_android_textAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_fontFamily = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTextView_textAllCaps = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarDivider = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_checkboxStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorAccent = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorControlActivated = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorControlNormal = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorError = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorPrimary = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_controlBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dialogTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dividerVertical = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_editTextBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_editTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_editTextStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_panelBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_searchViewStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_seekBarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_spinnerStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_switchStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_toolbarStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowActionBar = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.AppCompatTheme_windowNoTitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView_itemBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView_itemIconTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView_itemTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomNavigationView_menu = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomSheetBehavior_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::DiabetesFoodJournal.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ButtonBarLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ButtonBarLayout_allowStacking = global::DiabetesFoodJournal.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_android_minHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_android_minWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardBackgroundColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardCornerRadius = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardElevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardMaxElevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardPreventCornerOverlap = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_cardUseCompatPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_contentPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_contentPaddingBottom = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_contentPaddingLeft = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_contentPaddingRight = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CardView_contentPaddingTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_title = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::DiabetesFoodJournal.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ColorStateListItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ColorStateListItem_alpha = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ColorStateListItem_android_alpha = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ColorStateListItem_android_color = global::DiabetesFoodJournal.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CompoundButton = global::DiabetesFoodJournal.Droid.Resource.Styleable.CompoundButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CompoundButton_android_button = global::DiabetesFoodJournal.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CompoundButton_buttonTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CompoundButton_buttonTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_keylines = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::DiabetesFoodJournal.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DesignTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.DesignTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DesignTheme_bottomSheetStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_barLength = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_color = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_drawableSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_spinBars = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.DrawerArrowToggle_thickness = global::DiabetesFoodJournal.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_backgroundTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_borderWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_fabSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_rippleColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_useCompatPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::DiabetesFoodJournal.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderAuthority = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderCerts = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderPackage = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamily_fontProviderQuery = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_android_font = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_android_fontStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_android_fontWeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_font = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_fontStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.FontFamilyFont_fontWeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ForegroundLinearLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::DiabetesFoodJournal.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_android_gravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_android_orientation = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_divider = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_showDividers = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::DiabetesFoodJournal.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ListPopupWindow = global::DiabetesFoodJournal.Droid.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::DiabetesFoodJournal.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::DiabetesFoodJournal.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_checkableBehavior = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_enabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_id = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_menuCategory = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_orderInCategory = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuGroup_android_visible = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_actionLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_actionProviderClass = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_actionViewClass = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_alphabeticModifiers = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_checkable = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_checked = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_enabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_icon = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_id = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_menuCategory = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_numericShortcut = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_onClick = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_orderInCategory = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_title = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_titleCondensed = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_android_visible = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_contentDescription = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_iconTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_iconTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_numericModifiers = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_showAsAction = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuItem_tooltipText = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_headerBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_horizontalDivider = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_itemBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_itemTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_verticalDivider = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_android_windowAnimationStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_preserveIconSpacing = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.MenuView_subMenuArrow = global::DiabetesFoodJournal.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_android_background = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_android_maxWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_headerLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_itemBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_itemIconTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_itemTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_itemTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.NavigationView_menu = global::DiabetesFoodJournal.Droid.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindow = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindow;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindow_android_popupBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindow_overlapAnchor = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindowBackgroundState = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::DiabetesFoodJournal.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecycleListView = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecycleListView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_android_descendantFocusability = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_android_orientation = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_fastScrollEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_layoutManager = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_reverseLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_spanCount = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.RecyclerView_stackFromEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ScrimInsetsFrameLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::DiabetesFoodJournal.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ScrollingViewBehavior_Layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_android_focusable = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_android_imeOptions = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_android_inputType = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_android_maxWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_closeIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_commitIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_defaultQueryHint = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_goIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_iconifiedByDefault = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_queryBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_queryHint = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_searchHintIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_searchIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_submitBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_suggestionRowLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SearchView_voiceIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SnackbarLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SnackbarLayout_android_maxWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SnackbarLayout_elevation = global::DiabetesFoodJournal.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner_android_dropDownWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner_android_entries = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner_android_popupBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner_android_prompt = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Spinner_popupTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_android_textOff = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_android_textOn = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_android_thumb = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_showText = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_splitTrack = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_switchMinWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_switchPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_switchTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_thumbTextPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_thumbTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_thumbTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_track = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_trackTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.SwitchCompat_trackTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabItem = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabItem;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabItem_android_icon = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabItem_android_layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabItem_android_text = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabBackground = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabContentStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabIndicatorColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabIndicatorHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabMaxWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabMinWidth = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabPadding = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabPaddingBottom = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabPaddingEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabPaddingStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabPaddingTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabSelectedTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TabLayout_tabTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_fontFamily = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_shadowColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_shadowDx = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_shadowDy = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_shadowRadius = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_textColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_textColorHint = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_textColorLink = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_textSize = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_textStyle = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_android_typeface = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_fontFamily = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextAppearance_textAllCaps = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_android_hint = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_android_textColorHint = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_counterEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_counterMaxLength = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_counterTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_errorEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_errorTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_hintEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_hintTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_passwordToggleTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_android_gravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_android_minHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_buttonGravity = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_collapseContentDescription = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_collapseIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetLeft = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetRight = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_logo = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_logoDescription = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_maxButtonHeight = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_navigationContentDescription = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_navigationIcon = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_popupTheme = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_subtitle = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_subtitleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_subtitleTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_title = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_title;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMargin = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMarginBottom = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMarginEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMarginStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMarginTop = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleMargins = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleTextAppearance = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.Toolbar_titleTextColor = global::DiabetesFoodJournal.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View = global::DiabetesFoodJournal.Droid.Resource.Styleable.View;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View_android_focusable = global::DiabetesFoodJournal.Droid.Resource.Styleable.View_android_focusable;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View_android_theme = global::DiabetesFoodJournal.Droid.Resource.Styleable.View_android_theme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View_paddingEnd = global::DiabetesFoodJournal.Droid.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View_paddingStart = global::DiabetesFoodJournal.Droid.Resource.Styleable.View_paddingStart;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.View_theme = global::DiabetesFoodJournal.Droid.Resource.Styleable.View_theme;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewBackgroundHelper = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewBackgroundHelper_android_background = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewStubCompat = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewStubCompat_android_id = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewStubCompat_android_inflatedId = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.Auth.XamarinForms.Resource.Styleable.ViewStubCompat_android_layout = global::DiabetesFoodJournal.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::DiabetesFoodJournal.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::DiabetesFoodJournal.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::DiabetesFoodJournal.Droid.Resource.Attribute.font;
@@ -5487,6 +7606,12 @@ namespace DiabetesFoodJournal.Droid
 			// aapt resource value: 0x7F010017
 			public const int SfChart_Scale_Out = 2130771991;
 			
+			// aapt resource value: 0x7F010018
+			public const int slide_in_right = 2130771992;
+			
+			// aapt resource value: 0x7F010019
+			public const int slide_out_left = 2130771993;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -8476,82 +10601,85 @@ namespace DiabetesFoodJournal.Droid
 			public const int design_snackbar_background = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int ic_mtrl_chip_checked_black = 2131165312;
+			public const int ic_arrow_back = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int ic_mtrl_chip_checked_circle = 2131165313;
+			public const int ic_mtrl_chip_checked_black = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int ic_mtrl_chip_close_circle = 2131165314;
-			
-			// aapt resource value: 0x7F070084
-			public const int inputlayout_togglecollapseicon = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int inputlayout_togglevisibleicon = 2131165317;
+			public const int ic_mtrl_chip_checked_circle = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int input_layout_drop_down_icon = 2131165315;
+			public const int ic_mtrl_chip_close_circle = 2131165315;
+			
+			// aapt resource value: 0x7F070085
+			public const int inputlayout_togglecollapseicon = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int mtrl_snackbar_background = 2131165318;
+			public const int inputlayout_togglevisibleicon = 2131165318;
+			
+			// aapt resource value: 0x7F070084
+			public const int input_layout_drop_down_icon = 2131165316;
 			
 			// aapt resource value: 0x7F070087
-			public const int mtrl_tabs_default_indicator = 2131165319;
+			public const int mtrl_snackbar_background = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int navigation_empty_icon = 2131165320;
+			public const int mtrl_tabs_default_indicator = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int notification_action_background = 2131165321;
+			public const int navigation_empty_icon = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int notification_bg = 2131165322;
+			public const int notification_action_background = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int notification_bg_low = 2131165323;
+			public const int notification_bg = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int notification_bg_low_normal = 2131165324;
+			public const int notification_bg_low = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int notification_bg_low_pressed = 2131165325;
+			public const int notification_bg_low_normal = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int notification_bg_normal = 2131165326;
+			public const int notification_bg_low_pressed = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int notification_bg_normal_pressed = 2131165327;
+			public const int notification_bg_normal = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int notification_icon_background = 2131165328;
+			public const int notification_bg_normal_pressed = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int notification_template_icon_bg = 2131165329;
+			public const int notification_icon_background = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int notification_template_icon_low_bg = 2131165330;
+			public const int notification_template_icon_bg = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int notification_tile_bg = 2131165331;
+			public const int notification_template_icon_low_bg = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int notify_panel_notification_icon_bg = 2131165332;
+			public const int notification_tile_bg = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int tab_about = 2131165333;
+			public const int notify_panel_notification_icon_bg = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int tab_feed = 2131165334;
+			public const int tab_about = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int tooltip_frame_dark = 2131165335;
+			public const int tab_feed = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int tooltip_frame_light = 2131165336;
+			public const int tooltip_frame_dark = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int xamarin_logo = 2131165337;
+			public const int tooltip_frame_light = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int xamarin_logo = 2131165338;
 			
 			static Drawable()
 			{
@@ -9248,10 +11376,13 @@ namespace DiabetesFoodJournal.Droid
 			public const int visible = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int withText = 2131230947;
+			public const int webview = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int wrap_content = 2131230948;
+			public const int withText = 2131230948;
+			
+			// aapt resource value: 0x7F0800E5
+			public const int wrap_content = 2131230949;
 			
 			static Id()
 			{
@@ -9434,145 +11565,148 @@ namespace DiabetesFoodJournal.Droid
 			public const int abc_tooltip = 2131427355;
 			
 			// aapt resource value: 0x7F0B001C
-			public const int BottomTabLayout = 2131427356;
+			public const int activity_webview = 2131427356;
 			
 			// aapt resource value: 0x7F0B001D
-			public const int browser_actions_context_menu_page = 2131427357;
+			public const int BottomTabLayout = 2131427357;
 			
 			// aapt resource value: 0x7F0B001E
-			public const int browser_actions_context_menu_row = 2131427358;
+			public const int browser_actions_context_menu_page = 2131427358;
 			
 			// aapt resource value: 0x7F0B001F
-			public const int chart_layout = 2131427359;
+			public const int browser_actions_context_menu_row = 2131427359;
 			
 			// aapt resource value: 0x7F0B0020
-			public const int chart_legend = 2131427360;
+			public const int chart_layout = 2131427360;
 			
 			// aapt resource value: 0x7F0B0021
-			public const int chart_legend_item = 2131427361;
+			public const int chart_legend = 2131427361;
 			
 			// aapt resource value: 0x7F0B0022
-			public const int design_bottom_navigation_item = 2131427362;
+			public const int chart_legend_item = 2131427362;
 			
 			// aapt resource value: 0x7F0B0023
-			public const int design_bottom_sheet_dialog = 2131427363;
+			public const int design_bottom_navigation_item = 2131427363;
 			
 			// aapt resource value: 0x7F0B0024
-			public const int design_layout_snackbar = 2131427364;
+			public const int design_bottom_sheet_dialog = 2131427364;
 			
 			// aapt resource value: 0x7F0B0025
-			public const int design_layout_snackbar_include = 2131427365;
+			public const int design_layout_snackbar = 2131427365;
 			
 			// aapt resource value: 0x7F0B0026
-			public const int design_layout_tab_icon = 2131427366;
+			public const int design_layout_snackbar_include = 2131427366;
 			
 			// aapt resource value: 0x7F0B0027
-			public const int design_layout_tab_text = 2131427367;
+			public const int design_layout_tab_icon = 2131427367;
 			
 			// aapt resource value: 0x7F0B0028
-			public const int design_menu_item_action_area = 2131427368;
+			public const int design_layout_tab_text = 2131427368;
 			
 			// aapt resource value: 0x7F0B0029
-			public const int design_navigation_item = 2131427369;
+			public const int design_menu_item_action_area = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int design_navigation_item_header = 2131427370;
+			public const int design_navigation_item = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int design_navigation_item_separator = 2131427371;
+			public const int design_navigation_item_header = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
-			public const int design_navigation_item_subheader = 2131427372;
+			public const int design_navigation_item_separator = 2131427372;
 			
 			// aapt resource value: 0x7F0B002D
-			public const int design_navigation_menu = 2131427373;
+			public const int design_navigation_item_subheader = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int design_navigation_menu_item = 2131427374;
+			public const int design_navigation_menu = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int design_text_input_password_icon = 2131427375;
+			public const int design_navigation_menu_item = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int FlyoutContent = 2131427376;
+			public const int design_text_input_password_icon = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int mtrl_layout_snackbar = 2131427377;
+			public const int FlyoutContent = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int mtrl_layout_snackbar_include = 2131427378;
+			public const int mtrl_layout_snackbar = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int notification_action = 2131427379;
+			public const int mtrl_layout_snackbar_include = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int notification_action_tombstone = 2131427380;
+			public const int notification_action = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int notification_media_action = 2131427381;
+			public const int notification_action_tombstone = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int notification_media_cancel_action = 2131427382;
+			public const int notification_media_action = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int notification_template_big_media = 2131427383;
+			public const int notification_media_cancel_action = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int notification_template_big_media_custom = 2131427384;
+			public const int notification_template_big_media = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int notification_template_big_media_narrow = 2131427385;
+			public const int notification_template_big_media_custom = 2131427385;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int notification_template_big_media_narrow_custom = 2131427386;
+			public const int notification_template_big_media_narrow = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int notification_template_custom_big = 2131427387;
+			public const int notification_template_big_media_narrow_custom = 2131427387;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int notification_template_icon_group = 2131427388;
+			public const int notification_template_custom_big = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int notification_template_lines_media = 2131427389;
+			public const int notification_template_icon_group = 2131427389;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int notification_template_media = 2131427390;
+			public const int notification_template_lines_media = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int notification_template_media_custom = 2131427391;
+			public const int notification_template_media = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int notification_template_part_chronometer = 2131427392;
+			public const int notification_template_media_custom = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int notification_template_part_time = 2131427393;
+			public const int notification_template_part_chronometer = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int range_navigator_layout = 2131427394;
+			public const int notification_template_part_time = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int RootLayout = 2131427395;
+			public const int range_navigator_layout = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int select_dialog_item_material = 2131427396;
+			public const int RootLayout = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int select_dialog_multichoice_material = 2131427397;
+			public const int select_dialog_item_material = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int select_dialog_singlechoice_material = 2131427398;
+			public const int select_dialog_multichoice_material = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int ShellContent = 2131427399;
+			public const int select_dialog_singlechoice_material = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int support_simple_spinner_dropdown_item = 2131427400;
+			public const int ShellContent = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int Tabbar = 2131427401;
+			public const int support_simple_spinner_dropdown_item = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int Toolbar = 2131427402;
+			public const int Tabbar = 2131427402;
+			
+			// aapt resource value: 0x7F0B004B
+			public const int Toolbar = 2131427403;
 			
 			static Layout()
 			{
@@ -9609,203 +11743,212 @@ namespace DiabetesFoodJournal.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F0D0000
-			public const int abc_action_bar_home_description = 2131558400;
-			
-			// aapt resource value: 0x7F0D0001
-			public const int abc_action_bar_up_description = 2131558401;
-			
 			// aapt resource value: 0x7F0D0002
-			public const int abc_action_menu_overflow_description = 2131558402;
+			public const int abc_action_bar_home_description = 2131558402;
 			
 			// aapt resource value: 0x7F0D0003
-			public const int abc_action_mode_done = 2131558403;
-			
-			// aapt resource value: 0x7F0D0005
-			public const int abc_activitychooserview_choose_application = 2131558405;
+			public const int abc_action_bar_up_description = 2131558403;
 			
 			// aapt resource value: 0x7F0D0004
-			public const int abc_activity_chooser_view_see_all = 2131558404;
+			public const int abc_action_menu_overflow_description = 2131558404;
 			
-			// aapt resource value: 0x7F0D0006
-			public const int abc_capital_off = 2131558406;
+			// aapt resource value: 0x7F0D0005
+			public const int abc_action_mode_done = 2131558405;
 			
 			// aapt resource value: 0x7F0D0007
-			public const int abc_capital_on = 2131558407;
+			public const int abc_activitychooserview_choose_application = 2131558407;
+			
+			// aapt resource value: 0x7F0D0006
+			public const int abc_activity_chooser_view_see_all = 2131558406;
 			
 			// aapt resource value: 0x7F0D0008
-			public const int abc_font_family_body_1_material = 2131558408;
+			public const int abc_capital_off = 2131558408;
 			
 			// aapt resource value: 0x7F0D0009
-			public const int abc_font_family_body_2_material = 2131558409;
+			public const int abc_capital_on = 2131558409;
 			
 			// aapt resource value: 0x7F0D000A
-			public const int abc_font_family_button_material = 2131558410;
+			public const int abc_font_family_body_1_material = 2131558410;
 			
 			// aapt resource value: 0x7F0D000B
-			public const int abc_font_family_caption_material = 2131558411;
+			public const int abc_font_family_body_2_material = 2131558411;
 			
 			// aapt resource value: 0x7F0D000C
-			public const int abc_font_family_display_1_material = 2131558412;
+			public const int abc_font_family_button_material = 2131558412;
 			
 			// aapt resource value: 0x7F0D000D
-			public const int abc_font_family_display_2_material = 2131558413;
+			public const int abc_font_family_caption_material = 2131558413;
 			
 			// aapt resource value: 0x7F0D000E
-			public const int abc_font_family_display_3_material = 2131558414;
+			public const int abc_font_family_display_1_material = 2131558414;
 			
 			// aapt resource value: 0x7F0D000F
-			public const int abc_font_family_display_4_material = 2131558415;
+			public const int abc_font_family_display_2_material = 2131558415;
 			
 			// aapt resource value: 0x7F0D0010
-			public const int abc_font_family_headline_material = 2131558416;
+			public const int abc_font_family_display_3_material = 2131558416;
 			
 			// aapt resource value: 0x7F0D0011
-			public const int abc_font_family_menu_material = 2131558417;
+			public const int abc_font_family_display_4_material = 2131558417;
 			
 			// aapt resource value: 0x7F0D0012
-			public const int abc_font_family_subhead_material = 2131558418;
+			public const int abc_font_family_headline_material = 2131558418;
 			
 			// aapt resource value: 0x7F0D0013
-			public const int abc_font_family_title_material = 2131558419;
+			public const int abc_font_family_menu_material = 2131558419;
 			
 			// aapt resource value: 0x7F0D0014
-			public const int abc_menu_alt_shortcut_label = 2131558420;
+			public const int abc_font_family_subhead_material = 2131558420;
 			
 			// aapt resource value: 0x7F0D0015
-			public const int abc_menu_ctrl_shortcut_label = 2131558421;
+			public const int abc_font_family_title_material = 2131558421;
 			
 			// aapt resource value: 0x7F0D0016
-			public const int abc_menu_delete_shortcut_label = 2131558422;
+			public const int abc_menu_alt_shortcut_label = 2131558422;
 			
 			// aapt resource value: 0x7F0D0017
-			public const int abc_menu_enter_shortcut_label = 2131558423;
+			public const int abc_menu_ctrl_shortcut_label = 2131558423;
 			
 			// aapt resource value: 0x7F0D0018
-			public const int abc_menu_function_shortcut_label = 2131558424;
+			public const int abc_menu_delete_shortcut_label = 2131558424;
 			
 			// aapt resource value: 0x7F0D0019
-			public const int abc_menu_meta_shortcut_label = 2131558425;
+			public const int abc_menu_enter_shortcut_label = 2131558425;
 			
 			// aapt resource value: 0x7F0D001A
-			public const int abc_menu_shift_shortcut_label = 2131558426;
+			public const int abc_menu_function_shortcut_label = 2131558426;
 			
 			// aapt resource value: 0x7F0D001B
-			public const int abc_menu_space_shortcut_label = 2131558427;
+			public const int abc_menu_meta_shortcut_label = 2131558427;
 			
 			// aapt resource value: 0x7F0D001C
-			public const int abc_menu_sym_shortcut_label = 2131558428;
+			public const int abc_menu_shift_shortcut_label = 2131558428;
 			
 			// aapt resource value: 0x7F0D001D
-			public const int abc_prepend_shortcut_label = 2131558429;
-			
-			// aapt resource value: 0x7F0D001F
-			public const int abc_searchview_description_clear = 2131558431;
-			
-			// aapt resource value: 0x7F0D0020
-			public const int abc_searchview_description_query = 2131558432;
-			
-			// aapt resource value: 0x7F0D0021
-			public const int abc_searchview_description_search = 2131558433;
-			
-			// aapt resource value: 0x7F0D0022
-			public const int abc_searchview_description_submit = 2131558434;
-			
-			// aapt resource value: 0x7F0D0023
-			public const int abc_searchview_description_voice = 2131558435;
+			public const int abc_menu_space_shortcut_label = 2131558429;
 			
 			// aapt resource value: 0x7F0D001E
-			public const int abc_search_hint = 2131558430;
+			public const int abc_menu_sym_shortcut_label = 2131558430;
+			
+			// aapt resource value: 0x7F0D001F
+			public const int abc_prepend_shortcut_label = 2131558431;
+			
+			// aapt resource value: 0x7F0D0021
+			public const int abc_searchview_description_clear = 2131558433;
+			
+			// aapt resource value: 0x7F0D0022
+			public const int abc_searchview_description_query = 2131558434;
+			
+			// aapt resource value: 0x7F0D0023
+			public const int abc_searchview_description_search = 2131558435;
 			
 			// aapt resource value: 0x7F0D0024
-			public const int abc_shareactionprovider_share_with = 2131558436;
+			public const int abc_searchview_description_submit = 2131558436;
 			
 			// aapt resource value: 0x7F0D0025
-			public const int abc_shareactionprovider_share_with_application = 2131558437;
+			public const int abc_searchview_description_voice = 2131558437;
+			
+			// aapt resource value: 0x7F0D0020
+			public const int abc_search_hint = 2131558432;
 			
 			// aapt resource value: 0x7F0D0026
-			public const int abc_toolbar_collapse_description = 2131558438;
+			public const int abc_shareactionprovider_share_with = 2131558438;
 			
 			// aapt resource value: 0x7F0D0027
-			public const int appbar_scrolling_view_behavior = 2131558439;
+			public const int abc_shareactionprovider_share_with_application = 2131558439;
 			
 			// aapt resource value: 0x7F0D0028
-			public const int bottom_sheet_behavior = 2131558440;
+			public const int abc_toolbar_collapse_description = 2131558440;
 			
 			// aapt resource value: 0x7F0D0029
-			public const int character_counter_content_description = 2131558441;
+			public const int appbar_scrolling_view_behavior = 2131558441;
+			
+			// aapt resource value: 0x7F0D0000
+			public const int ApplicationName = 2131558400;
 			
 			// aapt resource value: 0x7F0D002A
-			public const int character_counter_pattern = 2131558442;
+			public const int bottom_sheet_behavior = 2131558442;
 			
 			// aapt resource value: 0x7F0D002B
-			public const int fab_transformation_scrim_behavior = 2131558443;
+			public const int character_counter_content_description = 2131558443;
 			
 			// aapt resource value: 0x7F0D002C
-			public const int fab_transformation_sheet_behavior = 2131558444;
+			public const int character_counter_pattern = 2131558444;
 			
 			// aapt resource value: 0x7F0D002D
-			public const int hide_bottom_view_on_scroll_behavior = 2131558445;
+			public const int fab_transformation_scrim_behavior = 2131558445;
 			
 			// aapt resource value: 0x7F0D002E
-			public const int mtrl_chip_close_icon_content_description = 2131558446;
+			public const int fab_transformation_sheet_behavior = 2131558446;
+			
+			// aapt resource value: 0x7F0D0001
+			public const int Hello = 2131558401;
 			
 			// aapt resource value: 0x7F0D002F
-			public const int password_toggle_content_description = 2131558447;
+			public const int hide_bottom_view_on_scroll_behavior = 2131558447;
 			
 			// aapt resource value: 0x7F0D0030
-			public const int path_password_eye = 2131558448;
+			public const int mtrl_chip_close_icon_content_description = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int path_password_eye_mask_strike_through = 2131558449;
+			public const int password_toggle_content_description = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int path_password_eye_mask_visible = 2131558450;
+			public const int path_password_eye = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int path_password_strike_through = 2131558451;
+			public const int path_password_eye_mask_strike_through = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int q = 2131558452;
+			public const int path_password_eye_mask_visible = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int quarter = 2131558453;
+			public const int path_password_strike_through = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int search_menu_title = 2131558454;
+			public const int q = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int sfchart_close_label = 2131558455;
+			public const int quarter = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int sfchart_decrease_label = 2131558456;
+			public const int search_menu_title = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int sfchart_high_label = 2131558457;
+			public const int sfchart_close_label = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int sfchart_increase_label = 2131558458;
+			public const int sfchart_decrease_label = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int sfchart_low_label = 2131558459;
+			public const int sfchart_high_label = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int sfchart_open_label = 2131558460;
+			public const int sfchart_increase_label = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
-			public const int sfchart_others_label = 2131558461;
+			public const int sfchart_low_label = 2131558461;
 			
 			// aapt resource value: 0x7F0D003E
-			public const int sfchart_total_label = 2131558462;
+			public const int sfchart_open_label = 2131558462;
 			
 			// aapt resource value: 0x7F0D003F
-			public const int status_bar_notification_info_overflow = 2131558463;
+			public const int sfchart_others_label = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int w = 2131558464;
+			public const int sfchart_total_label = 2131558464;
 			
 			// aapt resource value: 0x7F0D0041
-			public const int week = 2131558465;
+			public const int status_bar_notification_info_overflow = 2131558465;
+			
+			// aapt resource value: 0x7F0D0042
+			public const int title_activity_webview = 2131558466;
+			
+			// aapt resource value: 0x7F0D0043
+			public const int w = 2131558467;
+			
+			// aapt resource value: 0x7F0D0044
+			public const int week = 2131558468;
 			
 			static String()
 			{

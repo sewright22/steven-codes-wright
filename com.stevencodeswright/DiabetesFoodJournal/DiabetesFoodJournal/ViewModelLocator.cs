@@ -18,6 +18,7 @@ namespace DiabetesFoodJournal
         {
             SimpleIoc.Default.Register<INavigationHelper, ShellNavigation>();
             SimpleIoc.Default.Register(() => { return Messenger.Default; });
+            SimpleIoc.Default.Register<IDexcomDataStore, DexcomDataStore>();
             SimpleIoc.Default.Register<IDataStore<JournalEntry>, MockJournalEntryDataStore>();
             SimpleIoc.Default.Register<IDataStore<GlucoseReading>, MockReadingDataStore>();
             SimpleIoc.Default.Register<IDataStore<Dose>, MockDoseDataStore>();
