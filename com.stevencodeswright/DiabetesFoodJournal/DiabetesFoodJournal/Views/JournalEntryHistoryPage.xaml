@@ -17,26 +17,26 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <chart:SfChart HorizontalOptions="FillAndExpand"
-                           VerticalOptions="FillAndExpand"
-                           IsVisible="True">
-                <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis>
-                    </chart:CategoryAxis>
-                </chart:SfChart.PrimaryAxis>
-                <chart:SfChart.SecondaryAxis>
-                    <chart:NumericalAxis>
-                    </chart:NumericalAxis>
-                </chart:SfChart.SecondaryAxis>
+            <RefreshView IsRefreshing="{Binding IsBusy}">
+                <chart:SfChart HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               IsVisible="True">
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis>
+                        </chart:CategoryAxis>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis Minimum="50" Maximum="400"/>
+                    </chart:SfChart.SecondaryAxis>
 
-                <chart:LineSeries ItemsSource="{Binding Path=GlucoseReadings}"
-                                  XBindingPath="DisplayTime"
-                                  YBindingPath="Reading"
-                                  Color="Black"
-                                  IsVisible="True"
-                                  EnableTooltip="True"/>
-            </chart:SfChart>
-
+                    <chart:LineSeries ItemsSource="{Binding Path=GlucoseReadings}"
+                                      XBindingPath="DisplayTime"
+                                      YBindingPath="Reading"
+                                      Color="Black"
+                                      IsVisible="True"
+                                      EnableTooltip="True" />
+                </chart:SfChart>
+            </RefreshView>
             <ScrollView Grid.Row="1"
                         Grid.ColumnSpan="1">
                 <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">

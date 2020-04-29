@@ -25,8 +25,19 @@ namespace DiabetesFoodJournal.DataServices
 
         public async Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime)
         {
-            await this.dexcomDataStore.GetEGV();
-            return await glucoseDataStore.GetItemsAsync();
+            var retVal = new List<GlucoseReading>();
+            var readings = await this.dexcomDataStore.GetEGV(startTime, endTime);
+
+            foreach(var reading in readings.Egvs)
+            {
+                retVal.Add(new GlucoseReading
+                {
+                    Reading = reading.Value,
+                    DisplayTime = reading.DisplayTime.DateTime
+                });
+            }
+
+            return retVal;
         }
 
         public async Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm)

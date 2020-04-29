@@ -25,9 +25,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollView  Grid.ColumnSpan="2"
-                         VerticalOptions="Fill">
-                <Grid>
+                <Grid Grid.ColumnSpan="2"
+                    VerticalOptions="Fill">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
@@ -172,14 +171,15 @@
                                 MinimumTrackColor="Green"
                                 MaximumTrackColor="Blue" />
                     </StackLayout>
-
-                    <Frame VerticalOptions="FillAndExpand"
-                           Grid.Row="1">
+                <ScrollView VerticalOptions="FillAndExpand"
+                            Grid.Row="1">
+                    <StackLayout >
                         <Editor Text="{Binding Path=Model.Notes}"
-                                Placeholder="Notes" />
-                    </Frame>
-                </Grid>
-            </ScrollView>
+                                Placeholder="Notes" 
+                                VerticalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
 
             <Button Text="Save"
                     Grid.Row="1"

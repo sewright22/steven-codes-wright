@@ -8,24 +8,28 @@
     using RestSharp;
     using Xamarin.Auth;
     using System.Diagnostics;
+    using Newtonsoft.Json;
+    using DiabetesFoodJournal.Models;
 
     public class DexcomDataStore : IDexcomDataStore
     {
 
         string _baseUrl = "https://sandbox-api.dexcom.com";
-        string _token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI5MzdjMjBjNy0yOThlLTQzNzgtODhiYS0zOWVhOGQ1MzIwMDgiLCJhdWQiOiJodHRwczovL3NhbmRib3gtYXBpLmRleGNvbS5jb20iLCJzY29wZSI6WyJlZ3YiLCJjYWxpYnJhdGlvbiIsImRldmljZSIsImV2ZW50Iiwic3RhdGlzdGljcyIsIm9mZmxpbmVfYWNjZXNzIl0sImlzcyI6Imh0dHBzOi8vc2FuZGJveC1hcGkuZGV4Y29tLmNvbSIsImV4cCI6MTU4ODA0NjYxOSwiaWF0IjoxNTg4MDM5NDE5LCJjbGllbnRfaWQiOiJXV3YyYVBSS0xzbTlTQUVnVGNySWc4YW5SaUhLYnY1ZSJ9.NHVlCke1PC14VKn4ScgLN8GSEbQ7zPa1B4_wkkpb1uqYn2mzs5cl1TlEVMWJ_3n_-Y_wNXq9F-3CD68qsD8_VLDiZ6hmsT4wRUFoSemVBfvlnGKNQrXaou642JjmbM4oyxAy31X60R37X2hW8sQhQfxfj8UrBfSydsiI3MAc_-eMPCHr1pS90posLI_y4-g66dOBRMrDViEgyCbp0sPgvEWa5LvZyVkMllBXjpAGMJqAQyvBa_5vOKGIny6laZVej-v6hSt19zvdgJpedMRlASZsk6ZuyBON5fqQlN7I6o9OxP0TDVVtzHJKaI5oY0zQ7tdaPp1O594OJg2dU8MLrw";
-        public async Task GetEGV()
+        string _token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI5MzdjMjBjNy0yOThlLTQzNzgtODhiYS0zOWVhOGQ1MzIwMDgiLCJhdWQiOiJodHRwczovL3NhbmRib3gtYXBpLmRleGNvbS5jb20iLCJzY29wZSI6WyJlZ3YiLCJjYWxpYnJhdGlvbiIsImRldmljZSIsImV2ZW50Iiwic3RhdGlzdGljcyIsIm9mZmxpbmVfYWNjZXNzIl0sImlzcyI6Imh0dHBzOi8vc2FuZGJveC1hcGkuZGV4Y29tLmNvbSIsImV4cCI6MTU4ODEyNjczMiwiaWF0IjoxNTg4MTE5NTMyLCJjbGllbnRfaWQiOiJXV3YyYVBSS0xzbTlTQUVnVGNySWc4YW5SaUhLYnY1ZSJ9.bPvtDfGuYzynBo7alJdUeYUMD4_4zkg5tSR_dsWfIAzppinh096swVI8nD4jWO_pi5KRgmh8O28bmEygH93rv8cfQJaUNjlXMkcCf0b2G8MyrDhyegpGFCDgKOvRYeK9U39hoEI_GYnIX58liRve5d4USPObqBw1pKSEIlMIGo-cKQ2p4Sv2Cu5MaJMsPuFy8lLZFuVq4cElAkWKRqZ8S0EIQyM5N8CsNsgQDQ9245ADw8vRRSLeDOAeu3ymBbDqdxQqFp1qKVOKp0A9DQXepE1Dz49MMr7HLG99UQAnuMC5YIJ-qQSsTkwYVHuIAI9H1Avr9AJ5BoJdRjpwkvcPTg";
+        public async Task<ReadingList> GetEGV(DateTime startTime, DateTime endTime)
         {
             // Login();
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("authorization", "Bearer " + _token);
-            var url = _baseUrl + "/v2/users/self/egvs?startDate=2020-02-22T16:08:19.514&endDate=2020-02-27T12:03:33.967";
+            //var url = _baseUrl + "/v2/users/self/egvs?startDate=2020-02-22T16:08:19.514&endDate=2020-02-27T12:03:33.967";
+            var url = _baseUrl + $"/v2/users/self/egvs?startDate={startTime.ToString("yyyy-MM-ddTHH:mm:ss.sss")}&endDate={endTime.ToString("yyyy-MM-ddTHH:mm:ss.sss")}";
             using (HttpResponseMessage response = await client.GetAsync(url))
             {
                 var result = await response.Content.ReadAsStringAsync();
-                var test = result;
+                var item = JsonConvert.DeserializeObject<ReadingList>(result);
+                return item;
             }
         }
 
@@ -55,6 +59,6 @@
 
     public interface IDexcomDataStore
     {
-        Task GetEGV();
+        Task<ReadingList> GetEGV(DateTime startTime, DateTime endTime);
     }
 }

@@ -11,6 +11,7 @@ using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
 using Xamarin.Forms;
+using GalaSoft.MvvmLight.Command;
 
 namespace DiabetesFoodJournal.ViewModels
 {
@@ -26,13 +27,33 @@ namespace DiabetesFoodJournal.ViewModels
 
             GlucoseReadings = new ObservableRangeCollection<GlucoseReading>();
             JournalEntries = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
-
+            ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(async (x)=> await ItemTapped(x));
             if (this.messenger != null)
             {
                 this.messenger.Register<JournalEntryDataModel>(this, async (x) => await JournalEntryReceived(x));
             }
 
         }
+
+        private async Task ItemTapped(JournalEntryDataModel foodResult)
+        {
+            IsBusy = true;
+            foreach (var group in JournalEntries)
+            {
+                foreach (var item in group.Items)
+                {
+                    item.IsSelected = false;
+                }
+            }
+
+            foodResult.IsSelected = true;
+            var readings = await this.dataService.GetGlucoseReadings(foodResult.Logged, foodResult.Logged.AddHours(5)).ConfigureAwait(true);
+
+            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings));
+            IsBusy = false;
+        }
+
+        public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; }
 
         public ObservableRangeCollection<GlucoseReading> GlucoseReadings { get; }
 
@@ -44,9 +65,7 @@ namespace DiabetesFoodJournal.ViewModels
 
             Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
 
-            var readings = await this.dataService.GetGlucoseReadings(DateTime.Now, DateTime.Now).ConfigureAwait(true);
-
-            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings));
+            
         }
     }
 }
