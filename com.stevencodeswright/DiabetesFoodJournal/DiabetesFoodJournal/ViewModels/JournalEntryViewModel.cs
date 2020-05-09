@@ -101,18 +101,18 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async void JournalEntryViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals(nameof(AmountUpFront)))
+            if (e.PropertyName.Equals(nameof(Model.Dose.UpFront)))
             {
                 if (AmountUpFront.HasValue)
                 {
-                    AmountExtended = 100 - AmountUpFront.Value;
+                    Model.Dose.Extended = 100 - Model.Dose.UpFront;
                 }
             }
-            else if(e.PropertyName.Equals(nameof(AmountExtended)))
+            else if(e.PropertyName.Equals(nameof(Model.Dose.Extended)))
             {
                 if (AmountExtended.HasValue)
                 {
-                    AmountUpFront = 100 - AmountExtended.Value;
+                    Model.Dose.UpFront = 100 - Model.Dose.Extended;
                 }
             }
             else if(e.PropertyName.Equals(nameof(TagSearchText)))
@@ -130,8 +130,6 @@ namespace DiabetesFoodJournal.ViewModels
         }
 
         public ObservableRangeCollection<Tag> ExistingTagSearch { get; }
-        public NutritionalInfoDataModel NutritionalInfo { get; }
-        public DoseDataModel Dose { get; }
         private void JournalEntryReceived(JournalEntryDataModel obj)
         {
             Model = obj;
