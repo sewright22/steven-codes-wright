@@ -1,7 +1,7 @@
 ﻿using DiabetesFoodJournal.Views;
 using System;
 using System.Collections.Generic;
-
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 namespace DiabetesFoodJournal

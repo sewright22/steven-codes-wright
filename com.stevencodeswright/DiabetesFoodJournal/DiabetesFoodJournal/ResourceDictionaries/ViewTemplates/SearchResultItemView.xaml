@@ -9,7 +9,8 @@
              x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.SearchResultItemView">
     <ContentView.Resources>
         <ControlTemplate x:Key="SearchResultItemTemplate">
-            <Frame>
+            <Frame Margin="0"
+                   Padding="5,0,5,0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
                                           CommandParameter="{TemplateBinding CommandParameter}" />
@@ -20,7 +21,14 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <StackLayout>
-                        <Label Text="{TemplateBinding FoodName}" />
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{TemplateBinding Logged, StringFormat='{0:t}'}"
+                                   FontSize="Micro"
+                                   FontAttributes="Bold"
+                                   Margin="0"/>
+                            <Label Text="{TemplateBinding FoodName}" 
+                                   FontSize="Medium"/>
+                        </StackLayout>
                         <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
                                     Wrap="Wrap"
                                     JustifyContent="Start"
@@ -29,6 +37,7 @@
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <templates:TagView TagText="{Binding Description}"
+                                                       CanDelete="False"
                                                        Margin="5" />
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>

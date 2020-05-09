@@ -16,6 +16,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(SearchResultItemView));
         public static readonly BindableProperty TappedCommandProperty = BindableProperty.Create(nameof(TappedCommand), typeof(ICommand), typeof(SearchResultItemView));
         public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(nameof(FoodName), typeof(string), typeof(SearchResultItemView), string.Empty);
+        public static readonly BindableProperty LoggedProperty = BindableProperty.Create(nameof(Logged), typeof(DateTime?), typeof(SearchResultItemView), null);
         public static readonly BindableProperty CarbCountProperty = BindableProperty.Create(nameof(CarbCount), typeof(int), typeof(SearchResultItemView), 0);
         public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(nameof(IsSelected), typeof(bool), typeof(SearchResultItemView), false, BindingMode.TwoWay);
 
@@ -40,6 +41,12 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         {
             get => (string)GetValue(FoodNameProperty);
             set => SetValue(FoodNameProperty, value);
+        }
+
+        public DateTime? Logged
+        {
+            get => (DateTime?)GetValue(LoggedProperty);
+            set => SetValue(LoggedProperty, value);
         }
 
         public int CarbCount

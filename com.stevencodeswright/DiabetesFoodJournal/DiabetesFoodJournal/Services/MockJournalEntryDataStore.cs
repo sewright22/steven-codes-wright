@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Models;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace DiabetesFoodJournal.Services
             Add(new JournalEntry { Title = "Pizza", Logged = new DateTime(2019, 12, 23, 16, 42, 24), Notes = "" });
         }
 
-        private void Add(JournalEntry item)
+        private int Add(JournalEntry item)
         {
             if (item.Id == 0)
             {
@@ -42,14 +43,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+            return item.Id;
         }
 
 
-        public async Task<bool> AddItemAsync(JournalEntry item)
+        public async Task<int> AddItemAsync(JournalEntry item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> UpdateItemAsync(JournalEntry item)
@@ -74,7 +76,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<JournalEntry>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<JournalEntry>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

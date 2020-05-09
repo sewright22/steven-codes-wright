@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.Views;
 using XamarinHelper.Core;
+using Xamarin.Auth;
 
 namespace DiabetesFoodJournal
 {
@@ -19,6 +20,8 @@ namespace DiabetesFoodJournal
 
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ3NDgwQDMxMzgyZTMxMmUzMGQzTlEwYXdPZ3FVeGpVNVNMclZkZW9SMzZTdTdSK1JrZjN1K2R3bG9zR1U9");
+
             InitializeComponent();
 
             MainPage = new AppShell();

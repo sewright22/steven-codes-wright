@@ -28,6 +28,7 @@ namespace DiabetesFoodJournal.ViewModels
             UpdateEntryCommand = new RelayCommand(async () => await UpdateClicked().ConfigureAwait(true));
             LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
             ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(x => ItemTapped(x));
+            CreateNewEntryCommand = new RelayCommand<string>(async entryTitle => await CreateNewEntryClicked(entryTitle).ConfigureAwait(true));
             this.dataService = dataService;
             this.navigation = navigation;
             this.messenger = messenger;
@@ -36,8 +37,26 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task LogAgainClicked()
         {
             await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
-            SelectedEntry.Id = 0;
-            this.messenger.Send(SelectedEntry);
+            var entry = this.dataService.Copy(SelectedEntry);
+            entry.Id = await this.dataService.SaveEntry(entry);
+
+            if(entry.Id>0)
+            {
+                this.messenger.Send(entry);
+            }
+        }
+
+        private async Task CreateNewEntryClicked(string entryTitle)
+        {
+            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
+            var newEntry = this.dataService.CreateEntry(entryTitle);
+            newEntry.Id = await this.dataService.SaveEntry(newEntry);
+
+            if (newEntry.Id > 0)
+            {
+                this.messenger.Send(newEntry);
+                await SearchClicked(entryTitle);
+            }
         }
 
         private async Task UpdateClicked()
@@ -67,6 +86,7 @@ namespace DiabetesFoodJournal.ViewModels
         public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> LocalSearchResults { get; }
 
         public RelayCommand<string> SearchCommand { get; set; }
+        public RelayCommand<string> CreateNewEntryCommand { get; set; }
         public RelayCommand LogAgainCommand { get; set; }
         public RelayCommand UpdateEntryCommand { get; set; }
         public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; set; }

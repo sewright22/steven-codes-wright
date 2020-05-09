@@ -9,66 +9,61 @@ using System.Linq;
 using System.Threading;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.DataModels;
+using DiabetesFoodJournal.DataServices;
+using Xamarin.Forms;
+using GalaSoft.MvvmLight.Command;
 
 namespace DiabetesFoodJournal.ViewModels
 {
     public class JournalEntryHistoryViewModel : BaseViewModel
     {
+        private readonly IJournalEntryHistoryDataService dataService;
         private readonly IMessenger messenger;
 
-        public JournalEntryHistoryViewModel(IMessenger messenger)
+        public JournalEntryHistoryViewModel(IJournalEntryHistoryDataService dataService, IMessenger messenger)
         {
+            this.dataService = dataService;
             this.messenger = messenger;
 
+            GlucoseReadings = new ObservableRangeCollection<GlucoseReading>();
             JournalEntries = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
-
+            ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(async (x)=> await ItemTapped(x));
             if (this.messenger != null)
             {
-                this.messenger.Register<FoodSearchResult>(this, async (food)=> { await FoodReceived(food); });
+                this.messenger.Register<JournalEntryDataModel>(this, async (x) => await JournalEntryReceived(x));
             }
 
         }
 
-        public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> JournalEntries { get; }
-
-        private async Task FoodReceived(FoodSearchResult food)
+        private async Task ItemTapped(JournalEntryDataModel foodResult)
         {
-            var foodList = new List<JournalEntryDataModel>();
+            IsBusy = true;
+            foreach (var group in JournalEntries)
+            {
+                foreach (var item in group.Items)
+                {
+                    item.IsSelected = false;
+                }
+            }
 
-            //foodList.Add(new JournalEntry()
-            //{
-            //    Id = 1,
-            //    FoodName = "Pizza 1",
-            //    Logged = new DateTime(2020, 3, 5, 5, 5, 12)
-            //});
-            //foodList.Add(new JournalEntry()
-            //{
-            //    Id = 2,
-            //    FoodName = "Pizza 1",
-            //    Logged = new DateTime(2020, 3, 5, 5, 5, 12)
-            //});
-            //foodList.Add(new JournalEntry()
-            //{
-            //    Id = 3,
-            //    FoodName = "Pizza 1",
-            //    Logged = new DateTime(2020, 4, 5, 5, 5, 12)
-            //});
-            //foodList.Add(new JournalEntry()
-            //{
-            //    Id = 4,
-            //    FoodName = "Pizza 1",
-            //    Logged = new DateTime(2020, 4, 5, 5, 5, 12)
-            //});
+            foodResult.IsSelected = true;
+            var readings = await this.dataService.GetGlucoseReadings(foodResult.Logged, foodResult.Logged.AddHours(5)).ConfigureAwait(true);
 
-            var sorted = from entry in foodList
-                         orderby entry.Logged descending
-                         group entry by entry.Group into entryGroup
-                         select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
-
-            JournalEntries.ReplaceRange(sorted);
-
-            await Task.Run(() => Thread.Sleep(100));
+            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings));
+            IsBusy = false;
         }
 
+        public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; }
+
+        public ObservableRangeCollection<GlucoseReading> GlucoseReadings { get; }
+
+        public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> JournalEntries { get; }
+
+        private async Task JournalEntryReceived(JournalEntryDataModel searchEntry)
+        {
+            var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
+
+            Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
+        }
     }
 }

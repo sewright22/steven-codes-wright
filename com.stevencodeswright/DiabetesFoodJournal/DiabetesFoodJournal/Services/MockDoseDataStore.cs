@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.ModelLinks;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,33 @@ namespace DiabetesFoodJournal.Services
             items = new List<Dose>();
 
             Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=7.54M, UpFront = 75, Extended = 25, TimeExtended = 2, TimeOffset = -10 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
+            Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
         }
 
-        private void Add(Dose item)
+        private int Add(Dose item)
         {
             if (item.Id == 0)
             {
@@ -27,13 +52,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(Dose item)
+        public async Task<int> AddItemAsync(Dose item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
@@ -49,7 +76,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<Dose>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<Dose>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

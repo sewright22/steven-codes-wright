@@ -76,7 +76,7 @@ namespace DiabetesFoodJournal.Services
                 new GlucoseReading(){Id = 60, Reading = 180, DisplayTime = new DateTime(2020, 02, 16, 1,5,5)},
             };                                         
         }                                              
-        public Task<bool> AddItemAsync(GlucoseReading item)
+        public Task<int> AddItemAsync(GlucoseReading item)
         {
             throw new NotImplementedException();
         }
@@ -91,7 +91,7 @@ namespace DiabetesFoodJournal.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<GlucoseReading>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<GlucoseReading>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(readings);
         }

@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Models;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Models;
 using MvvmHelpers;
 using Newtonsoft.Json;
 using System;
@@ -11,6 +12,7 @@ namespace DiabetesFoodJournal.DataModels
     {
         private int id;
         private string description;
+        private bool canDelete;
 
         [JsonIgnore]
         public Tag Model
@@ -22,6 +24,8 @@ namespace DiabetesFoodJournal.DataModels
         public int Id { get { return this.id; } set { SetProperty(ref this.id, value); } }
         public string Description { get { return this.description; } set { SetProperty(ref this.description, value); } }
 
+        public bool CanDelete { get { return this.canDelete; } set { SetProperty(ref this.canDelete, value); } }
+
         public bool IsChanged
         {
             get
@@ -29,6 +33,11 @@ namespace DiabetesFoodJournal.DataModels
                 return this.Model.Id != this.id ||
                 this.Model.Description != this.description;
             }
+        }
+
+        public Tag Copy()
+        {
+            return Save();
         }
 
         public void Load(Tag model)

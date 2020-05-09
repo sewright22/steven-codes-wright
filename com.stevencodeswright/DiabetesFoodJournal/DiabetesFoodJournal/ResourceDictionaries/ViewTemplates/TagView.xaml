@@ -3,27 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.TagView">
   <ContentView.Resources>
         <ControlTemplate x:Key="TagTemplate">
-            <Frame CornerRadius="15"
+            <!--<Frame CornerRadius="15"
                    Margin="0"
                    Padding="0"
-                   BorderColor="DarkGray">
-                <Label Text="{TemplateBinding TagText}" 
-                       Margin="10"/>
-                <Frame.GestureRecognizers>
+                   BorderColor="DarkGray">-->
+            <yummy:PancakeView BackgroundGradientAngle="45"
+                               BackgroundGradientEndColor="Azure"
+                               BackgroundGradientStartColor="LightSkyBlue"
+                               CornerRadius="16,0,0,16"
+                               HasShadow="True">
+                <StackLayout Orientation="Horizontal"
+                             Margin="0"
+                             Padding="0">
+                    <Label Text="{TemplateBinding TagText}"
+                           Margin="10,10,10,10" />
+                    <Label Text="X"
+                           FontAttributes="Bold"
+                           IsVisible="{TemplateBinding CanDelete}"
+                           Margin="0,10,10,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{TemplateBinding DeleteTappedCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <yummy:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
-                                          CommandParameter="{TemplateBinding CommandParameter}"/>
-                </Frame.GestureRecognizers>
-            </Frame>
+                                          CommandParameter="{TemplateBinding CommandParameter}" />
+                </yummy:PancakeView.GestureRecognizers>
+            </yummy:PancakeView>
         </ControlTemplate>
 
         <Style TargetType="templates:TagView">
             <Setter Property="ControlTemplate"
                     Value="{StaticResource TagTemplate}" />
-        </Style>
+        </Style> 
     </ContentView.Resources>
 </ContentView>

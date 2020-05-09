@@ -42,7 +42,7 @@ namespace DiabetesFoodJournal.Services
             Add(new JournalEntryNutritionalInfo() { JournalEntryId = 25, JournalEntryNutritionalInfoId = 25 });
         }
 
-        private void Add(JournalEntryNutritionalInfo item)
+        private int Add(JournalEntryNutritionalInfo item)
         {
             if (item.Id == 0)
             {
@@ -50,13 +50,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(JournalEntryNutritionalInfo item)
+        public async Task<int> AddItemAsync(JournalEntryNutritionalInfo item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
@@ -72,7 +74,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<JournalEntryNutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<JournalEntryNutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

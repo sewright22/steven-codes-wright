@@ -4,28 +4,68 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=JournalEntryHistory}"
+             xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             xmlns:views="clr-namespace:DiabetesFoodJournal.Views"
+             xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalEntryHistoryPage">
     <ContentPage.Content>
         <Grid>
-            <ListView ItemsSource="{Binding JournalEntries}"
-                      IsGroupingEnabled="True">
-                <ListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Key}" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.GroupHeaderTemplate>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding FoodName}" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <RefreshView IsRefreshing="{Binding IsBusy}">
+                <chart:SfChart HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               IsVisible="True">
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis>
+                        </chart:CategoryAxis>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis Minimum="50" Maximum="400"/>
+                    </chart:SfChart.SecondaryAxis>
+
+                    <chart:LineSeries ItemsSource="{Binding Path=GlucoseReadings}"
+                                      XBindingPath="DisplayTime"
+                                      YBindingPath="Reading"
+                                      Color="Black"
+                                      IsVisible="True"
+                                      EnableTooltip="True" />
+                </chart:SfChart>
+            </RefreshView>
+            <ScrollView Grid.Row="1"
+                        Grid.ColumnSpan="1">
+                <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label BackgroundColor="Gray"
+                                       Margin="0"
+                                       Padding="0"
+                                       Text="{Binding Key}" />
+
+                                <StackLayout BindableLayout.ItemsSource="{Binding Items}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <templates:SearchResultItemView FoodName="{Binding Path=Title}"
+                                                                            Logged="{Binding Path=Logged}"
+                                                                            TagList="{Binding Tags}"
+                                                                            CarbCount="{Binding NutritionalInfo.Carbohydrates}"
+                                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryHistoryViewModel}}, Path=ItemTappedCommand}"
+                                                                            IsSelected="{Binding Path=IsSelected}"
+                                                                            CommandParameter="{Binding}" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

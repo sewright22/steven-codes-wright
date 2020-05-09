@@ -1,11 +1,6 @@
-﻿using DiabetesFoodJournal.Services;
-using MvvmHelpers;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace DiabetesFoodJournal.Models
+namespace DiabetesFoodJournal.Entities
 {
     public class JournalEntry
     {

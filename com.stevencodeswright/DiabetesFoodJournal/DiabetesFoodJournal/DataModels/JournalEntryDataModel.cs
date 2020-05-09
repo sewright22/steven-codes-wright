@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Models;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Models;
 using MvvmHelpers;
 using Newtonsoft.Json;
 using System;
@@ -76,6 +77,7 @@ namespace DiabetesFoodJournal.DataModels
 
         public bool IsSelected { get { return this.isSelected; } set { SetProperty(ref this.isSelected, value); } }
 
+
         public void Load(JournalEntry model)
         {
             this.Id = model.Id;
@@ -90,14 +92,21 @@ namespace DiabetesFoodJournal.DataModels
             if (Model == null)
             {
                 Model = new JournalEntry();
-
             }
 
             this.Model.Id = this.id;
             this.Model.Logged = this.logged;
             this.Model.Notes = this.notes;
+            this.Model.Title = this.title;
 
             return this.Model;
+        }
+        public JournalEntry Copy()
+        {
+            var retVal = new JournalEntry();
+            retVal.Title = this.title;
+
+            return retVal;
         }
     }
 

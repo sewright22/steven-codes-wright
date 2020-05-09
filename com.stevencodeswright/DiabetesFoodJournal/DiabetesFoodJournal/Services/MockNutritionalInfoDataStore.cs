@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.ModelLinks;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace DiabetesFoodJournal.Services
             Add(new NutritionalInfo() { Carbohydrates=76 });
         }
 
-        private void Add(NutritionalInfo item)
+        private int Add(NutritionalInfo item)
         {
             if (item.Id == 0)
             {
@@ -44,13 +45,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(NutritionalInfo item)
+        public async Task<int> AddItemAsync(NutritionalInfo item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
@@ -66,7 +69,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<NutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<NutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
