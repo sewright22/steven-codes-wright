@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal", "Diab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinHelper.Core", "XamarinHelper.Core\XamarinHelper.Core.csproj", "{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Data", "DiabetesFoodJournal.Data\DiabetesFoodJournal.Data.csproj", "{BAF3A021-0793-4D39-AF26-2A83EEC8011C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal.Data", "DiabetesFoodJournal.Data\DiabetesFoodJournal.Data.csproj", "{BAF3A021-0793-4D39-AF26-2A83EEC8011C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Entities", "DiabetesFoodJournal.Entities\DiabetesFoodJournal.Entities.csproj", "{A437E35E-E80A-4DEA-80CA-6C39092515A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal.Entities", "DiabetesFoodJournal.Entities\DiabetesFoodJournal.Entities.csproj", "{A437E35E-E80A-4DEA-80CA-6C39092515A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.UnitTests", "DiabetesFoodJournal.UnitTests\DiabetesFoodJournal.UnitTests.csproj", "{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,18 @@ Global
 		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhone.Build.0 = Release|Any CPU
 		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhone.Build.0 = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,3 +19,5 @@
 /com.stevencodeswright/DiabetesFoodJournal.Entities/bin/Debug/netstandard2.0
 /com.stevencodeswright/DiabetesFoodJournal.Entities/obj/Debug/netstandard2.0
 /com.stevencodeswright/DiabetesFoodJournal.Entities/obj
+/com.stevencodeswright/DiabetesFoodJournal.UnitTests/obj
+/com.stevencodeswright/DiabetesFoodJournal.UnitTests/bin/Debug/netcoreapp3.1
