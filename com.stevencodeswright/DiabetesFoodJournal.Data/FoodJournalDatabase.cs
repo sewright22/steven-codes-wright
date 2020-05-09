@@ -9,7 +9,12 @@ using DiabetesFoodJournal.Entities;
 
 namespace DiabetesFoodJournal.Data
 {
-    public class FoodJournalDatabase
+    public interface IFoodJournalDatabase
+    {
+        SQLiteAsyncConnection Database { get; }
+    }
+
+    public class FoodJournalDatabase : IFoodJournalDatabase
     {
         private readonly ISqlLiteAsyncConnectionFactory sqlLiteAsyncConnectionFactory;
 
@@ -19,6 +24,7 @@ namespace DiabetesFoodJournal.Data
         public FoodJournalDatabase(ISqlLiteAsyncConnectionFactory sqlLiteAsyncConnectionFactory)
         {
             InitializeAsync().SafeFireAndForget(false);
+            this.sqlLiteAsyncConnectionFactory = sqlLiteAsyncConnectionFactory;
         }
 
         private async Task InitializeAsync()
@@ -30,8 +36,23 @@ namespace DiabetesFoodJournal.Data
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(JournalEntry).Name))
                 {
                     await Database.CreateTablesAsync(CreateFlags.None, typeof(JournalEntry)).ConfigureAwait(false);
-                    initialized = true;
                 }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Dose).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Dose)).ConfigureAwait(false);
+                }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(NutritionalInfo).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(NutritionalInfo)).ConfigureAwait(false);
+                }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Tag).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Tag)).ConfigureAwait(false);
+                }
+                initialized = true;
             }
         }
     }

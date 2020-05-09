@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.ModelLinks;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using System;
 using System.Collections.Generic;
@@ -66,7 +67,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<NutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<NutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

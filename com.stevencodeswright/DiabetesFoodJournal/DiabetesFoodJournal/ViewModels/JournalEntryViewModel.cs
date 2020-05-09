@@ -1,4 +1,5 @@
 ﻿using DiabetesFoodJournal.DataModels;
+using DiabetesFoodJournal.Entities;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using GalaSoft.MvvmLight.Command;
@@ -17,7 +18,6 @@ namespace DiabetesFoodJournal.ViewModels
     {
         private readonly IMessenger messenger;
         private readonly IDataStore<Tag> tags;
-        private string entryTitle;
         private int? carbCount;
         private decimal? timeExtended;
         private int? amountUpFront;

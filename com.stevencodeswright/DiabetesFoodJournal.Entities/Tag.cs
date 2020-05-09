@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DiabetesFoodJournal.Models
+namespace DiabetesFoodJournal.Entities
 {
     public class Tag
     {

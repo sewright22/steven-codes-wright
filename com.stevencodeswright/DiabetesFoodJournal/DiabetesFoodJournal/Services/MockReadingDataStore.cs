@@ -91,7 +91,7 @@ namespace DiabetesFoodJournal.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<GlucoseReading>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<GlucoseReading>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(readings);
         }

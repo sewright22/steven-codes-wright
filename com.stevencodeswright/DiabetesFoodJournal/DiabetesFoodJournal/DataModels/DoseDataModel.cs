@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Models;
+﻿using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Models;
 using MvvmHelpers;
 using Newtonsoft.Json;
 using System;

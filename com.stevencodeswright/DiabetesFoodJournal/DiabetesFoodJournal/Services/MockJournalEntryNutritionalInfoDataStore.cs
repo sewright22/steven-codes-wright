@@ -72,7 +72,7 @@ namespace DiabetesFoodJournal.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id.ToString() == id));
         }
 
-        public async Task<IEnumerable<JournalEntryNutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<List<JournalEntryNutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
