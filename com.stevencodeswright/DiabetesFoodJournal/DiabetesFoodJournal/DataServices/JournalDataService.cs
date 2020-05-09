@@ -1,4 +1,5 @@
 ﻿using DiabetesFoodJournal.DataModels;
+using DiabetesFoodJournal.Entities;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using System;
@@ -27,16 +28,37 @@ namespace DiabetesFoodJournal.DataServices
             return retVal;
         }
 
+        public JournalEntryDataModel CreateEntry(string entryTitle)
+        {
+            var entry = new JournalEntry
+            {
+                Title = entryTitle,
+                Logged = DateTime.Now
+            };
+
+            var entryModel = new JournalEntryDataModel();
+            entryModel.Load(entry);
+
+            return entryModel;
+        }
+
+        public async Task<int> SaveEntry(JournalEntryDataModel entryToSave)
+        {
+            return await this.appDataService.SaveEntry(entryToSave);
+        }
+
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
             return await this.appDataService.SearchJournal(searchString.Trim());
-            
+
         }
     }
 
     public interface IJournalDataService
     {
+        Task<int> SaveEntry(JournalEntryDataModel entryToSave);
         Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
+        JournalEntryDataModel CreateEntry(string entryTitle);
     }
 }

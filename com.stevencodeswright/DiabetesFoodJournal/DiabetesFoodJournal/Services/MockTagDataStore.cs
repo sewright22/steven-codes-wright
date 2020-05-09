@@ -36,7 +36,7 @@ namespace DiabetesFoodJournal.Services
             Add(new Tag() { Description = "Strawberry" });
         }
 
-        private void Add(Tag item)
+        private int Add(Tag item)
         {
             if (item.Id == 0)
             {
@@ -44,13 +44,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(Tag item)
+        public async Task<int> AddItemAsync(Tag item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)

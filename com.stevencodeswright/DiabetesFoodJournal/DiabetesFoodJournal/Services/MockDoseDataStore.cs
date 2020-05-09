@@ -44,7 +44,7 @@ namespace DiabetesFoodJournal.Services
             Add(new Dose() { InsulinAmount=32, UpFront = 100, Extended = 0, TimeExtended = 0, TimeOffset = 0 });
         }
 
-        private void Add(Dose item)
+        private int Add(Dose item)
         {
             if (item.Id == 0)
             {
@@ -52,13 +52,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(Dose item)
+        public async Task<int> AddItemAsync(Dose item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)

@@ -1,4 +1,5 @@
 ﻿using DiabetesFoodJournal.DataModels;
+using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Entities;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
@@ -16,6 +17,7 @@ namespace DiabetesFoodJournal.ViewModels
 {
     public class JournalEntryViewModel : BaseViewModel
     {
+        private readonly IJournalEntryDataService dataService;
         private readonly IMessenger messenger;
         private readonly IDataStore<Tag> tags;
         private int? carbCount;
@@ -26,8 +28,9 @@ namespace DiabetesFoodJournal.ViewModels
         private JournalEntryDataModel model;
         private string tagSearchText;
 
-        public JournalEntryViewModel(IMessenger messenger, IDataStore<Tag> tags)
+        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, IDataStore<Tag> tags)
         {
+            this.dataService = dataService;
             this.messenger = messenger;
             this.tags = tags;
             this.carbCount = 5;
@@ -41,17 +44,25 @@ namespace DiabetesFoodJournal.ViewModels
             ExistingTagTappedCommand = new RelayCommand<TagDataModel>(ExistingTagTapped);
             CreateNewTagCommand = new RelayCommand<string>(async(x)=> await CreateNewTag(x));
             TagTappedCommand = new RelayCommand<Tag>(SearchTagTapped);
+            SaveCommand = new RelayCommand(async () => await SaveEntry()) ;
             this.PropertyChanged += this.JournalEntryViewModel_PropertyChanged;
+        }
+
+        private async Task SaveEntry()
+        {
+            await this.dataService.SaveEntry(Model).ConfigureAwait(false);
         }
 
         private async Task CreateNewTag(string newTag)
         {
             if (ExistingTagSearch.FirstOrDefault(x => x.Description.Equals(newTag, StringComparison.OrdinalIgnoreCase)) == null)
             {
-                if(await this.tags.AddItemAsync(new Tag
+                var tagId = await this.tags.AddItemAsync(new Tag
                 {
                     Description = newTag
-                }))
+                });
+
+                if(tagId>0)
                 {
                     JournalEntryViewModel_PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(nameof(TagSearchText)));
                 }
@@ -130,6 +141,7 @@ namespace DiabetesFoodJournal.ViewModels
         public RelayCommand<Tag> TagTappedCommand { get; }
         public RelayCommand<TagDataModel> ExistingTagTappedCommand { get; }
         public RelayCommand ConfirmDeleteTappedCommand { get; }
+        public RelayCommand SaveCommand { get; }
         public RelayCommand<string> CreateNewTagCommand { get; }
 
         public JournalEntryDataModel Model

@@ -32,6 +32,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<IDataStore<JournalEntryDose>, MockJournalEntryDoseDataStore>();
             SimpleIoc.Default.Register<IAppDataService, MockAppDataService>();
             SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
+            SimpleIoc.Default.Register<IJournalEntryDataService, JournalEntryDataService>();
             SimpleIoc.Default.Register<IJournalEntryHistoryDataService, JournalEntryHistoryDataService>();
             SimpleIoc.Default.Register<JournalViewModel>();
             SimpleIoc.Default.Register<JournalEntryViewModel>();

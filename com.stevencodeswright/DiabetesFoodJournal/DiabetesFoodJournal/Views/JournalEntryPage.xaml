@@ -183,7 +183,8 @@
 
             <Button Text="Save"
                     Grid.Row="1"
-                    Grid.ColumnSpan="2" />
+                    Grid.ColumnSpan="2" 
+                    Command="{Binding Path=SaveCommand}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

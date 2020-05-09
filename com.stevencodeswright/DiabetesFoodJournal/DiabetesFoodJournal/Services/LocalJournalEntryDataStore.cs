@@ -17,10 +17,10 @@ namespace DiabetesFoodJournal.Services
             this.foodJournalDatabase = foodJournalDatabase;
         }
 
-        public async Task<bool> AddItemAsync(JournalEntry item)
+        public async Task<int> AddItemAsync(JournalEntry item)
         {
             var primaryKey = await this.foodJournalDatabase.Database.InsertAsync(item).ConfigureAwait(false);
-            return primaryKey > 0;
+            return primaryKey;
         }
 
         public Task<bool> DeleteItemAsync(string id)

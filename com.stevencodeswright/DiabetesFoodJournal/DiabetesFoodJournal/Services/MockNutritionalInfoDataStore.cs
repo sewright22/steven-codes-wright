@@ -37,7 +37,7 @@ namespace DiabetesFoodJournal.Services
             Add(new NutritionalInfo() { Carbohydrates=76 });
         }
 
-        private void Add(NutritionalInfo item)
+        private int Add(NutritionalInfo item)
         {
             if (item.Id == 0)
             {
@@ -45,13 +45,15 @@ namespace DiabetesFoodJournal.Services
             }
 
             items.Add(item);
+
+            return item.Id;
         }
 
-        public async Task<bool> AddItemAsync(NutritionalInfo item)
+        public async Task<int> AddItemAsync(NutritionalInfo item)
         {
-            Add(item);
+            item.Id = Add(item);
 
-            return await Task.FromResult(true);
+            return await Task.FromResult(item.Id);
         }
 
         public async Task<bool> DeleteItemAsync(string id)

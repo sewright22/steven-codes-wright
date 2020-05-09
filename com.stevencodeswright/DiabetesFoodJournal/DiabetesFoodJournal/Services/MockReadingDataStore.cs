@@ -76,7 +76,7 @@ namespace DiabetesFoodJournal.Services
                 new GlucoseReading(){Id = 60, Reading = 180, DisplayTime = new DateTime(2020, 02, 16, 1,5,5)},
             };                                         
         }                                              
-        public Task<bool> AddItemAsync(GlucoseReading item)
+        public Task<int> AddItemAsync(GlucoseReading item)
         {
             throw new NotImplementedException();
         }
