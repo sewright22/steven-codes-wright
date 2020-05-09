@@ -20,7 +20,8 @@ namespace DiabetesFoodJournal.DataServices
         private readonly IDataStore<JournalEntryDose> journalEntryDoses;
         private readonly IDataStore<Dose> doses;
 
-        public MockAppDataService(IDataStore<JournalEntry> journalEntries, IDataStore<Tag> tags, IDataStore<NutritionalInfo> nutritionalInfos, IDataStore<JournalEntryTag> journalEntryTags, IDataStore<JournalEntryNutritionalInfo> journalEntryNutritionalInfos, IDataStore<JournalEntryDose> journalEntryDoses, IDataStore<Dose> doses)       {
+        public MockAppDataService(IDataStore<JournalEntry> journalEntries, IDataStore<Tag> tags, IDataStore<NutritionalInfo> nutritionalInfos, IDataStore<JournalEntryTag> journalEntryTags, IDataStore<JournalEntryNutritionalInfo> journalEntryNutritionalInfos, IDataStore<JournalEntryDose> journalEntryDoses, IDataStore<Dose> doses)       
+        {
             this.journalEntries = journalEntries;
             this.tags = tags;
             this.nutritionalInfos = nutritionalInfos;

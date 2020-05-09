@@ -13,13 +13,11 @@ namespace DiabetesFoodJournal.DataServices
     public class JournalEntryHistoryDataService : IJournalEntryHistoryDataService
     {
         private readonly IAppDataService appDataService;
-        private readonly IDataStore<GlucoseReading> glucoseDataStore;
         private readonly IDexcomDataStore dexcomDataStore;
 
-        public JournalEntryHistoryDataService(IAppDataService appDataService, IDataStore<GlucoseReading> glucoseDataStore, IDexcomDataStore dexcomDataStore)
+        public JournalEntryHistoryDataService(IAppDataService appDataService, IDexcomDataStore dexcomDataStore)
         {
             this.appDataService = appDataService;
-            this.glucoseDataStore = glucoseDataStore;
             this.dexcomDataStore = dexcomDataStore;
         }
 

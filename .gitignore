@@ -13,3 +13,9 @@
 /com.stevencodeswright/XamarinHelper.Core/obj/**
 /com.stevencodeswright/.vs/**
 /com.stevencodeswright\DiabetesFoodJournal\DiabetesFoodJournal.Android/DiabetesFoodJournal.Android.csproj.user
+/com.stevencodeswright/DiabetesFoodJournal.Data/bin/Debug/netstandard2.0
+/com.stevencodeswright/DiabetesFoodJournal.Data/obj/Debug/netstandard2.0
+/com.stevencodeswright/DiabetesFoodJournal.Data/obj
+/com.stevencodeswright/DiabetesFoodJournal.Entities/bin/Debug/netstandard2.0
+/com.stevencodeswright/DiabetesFoodJournal.Entities/obj/Debug/netstandard2.0
+/com.stevencodeswright/DiabetesFoodJournal.Entities/obj

@@ -9,7 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.iOS", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal", "DiabetesFoodJournal\DiabetesFoodJournal\DiabetesFoodJournal.csproj", "{C471A7F4-8061-4231-B733-84F667222D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinHelper.Core", "XamarinHelper.Core\XamarinHelper.Core.csproj", "{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinHelper.Core", "XamarinHelper.Core\XamarinHelper.Core.csproj", "{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Data", "DiabetesFoodJournal.Data\DiabetesFoodJournal.Data.csproj", "{BAF3A021-0793-4D39-AF26-2A83EEC8011C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Entities", "DiabetesFoodJournal.Entities\DiabetesFoodJournal.Entities.csproj", "{A437E35E-E80A-4DEA-80CA-6C39092515A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,30 @@ Global
 		{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}.Release|iPhone.Build.0 = Release|Any CPU
 		{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{CB61AE06-06F6-46F1-8CD9-75D2E405CF76}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|iPhone.Build.0 = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{BAF3A021-0793-4D39-AF26-2A83EEC8011C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhone.Build.0 = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A437E35E-E80A-4DEA-80CA-6C39092515A1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

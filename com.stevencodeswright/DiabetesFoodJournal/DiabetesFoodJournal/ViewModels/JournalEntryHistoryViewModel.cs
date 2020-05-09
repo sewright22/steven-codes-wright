@@ -64,8 +64,6 @@ namespace DiabetesFoodJournal.ViewModels
             var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
 
             Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
-
-            
         }
     }
 }
