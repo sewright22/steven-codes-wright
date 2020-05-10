@@ -16,22 +16,19 @@ namespace DiabetesFoodJournal.Data
 
     public class FoodJournalDatabase : IFoodJournalDatabase
     {
-        private readonly ISqlLiteAsyncConnectionFactory sqlLiteAsyncConnectionFactory;
-
         public SQLiteAsyncConnection Database { get; private set; }
         static bool initialized = false;
 
         public FoodJournalDatabase(ISqlLiteAsyncConnectionFactory sqlLiteAsyncConnectionFactory)
         {
-            InitializeAsync().SafeFireAndForget(false);
-            this.sqlLiteAsyncConnectionFactory = sqlLiteAsyncConnectionFactory;
+            InitializeAsync(sqlLiteAsyncConnectionFactory).SafeFireAndForget(false);
         }
 
-        private async Task InitializeAsync()
+        private async Task InitializeAsync(ISqlLiteAsyncConnectionFactory sqlLiteAsyncConnectionFactory)
         {
             if (!initialized)
             {
-                Database = this.sqlLiteAsyncConnectionFactory.BuildConnection().Value;
+                Database = sqlLiteAsyncConnectionFactory.BuildConnection().Value;
 
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(JournalEntry).Name))
                 {
@@ -51,6 +48,21 @@ namespace DiabetesFoodJournal.Data
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Tag).Name))
                 {
                     await Database.CreateTablesAsync(CreateFlags.None, typeof(Tag)).ConfigureAwait(false);
+                }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(JournalEntryDose).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(JournalEntryDose)).ConfigureAwait(false);
+                }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(JournalEntryNutritionalInfo).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(JournalEntryNutritionalInfo)).ConfigureAwait(false);
+                }
+
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(JournalEntryTag).Name))
+                {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(JournalEntryTag)).ConfigureAwait(false);
                 }
                 initialized = true;
             }

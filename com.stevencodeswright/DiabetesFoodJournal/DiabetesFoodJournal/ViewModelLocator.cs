@@ -1,6 +1,6 @@
-﻿using DiabetesFoodJournal.DataServices;
+﻿using DiabetesFoodJournal.Data;
+using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Entities;
-using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.ViewModels;
@@ -19,17 +19,20 @@ namespace DiabetesFoodJournal
         {
             SimpleIoc.Default.Register<INavigationHelper, ShellNavigation>();
             SimpleIoc.Default.Register(() => { return Messenger.Default; });
+            SimpleIoc.Default.Register<IDatabaseSettings, DefaultDatabaseSettings>();
+            SimpleIoc.Default.Register<ISqlLiteAsyncConnectionFactory, SqlLiteAsyncConnectionFactory>();
+            SimpleIoc.Default.Register<IFoodJournalDatabase, FoodJournalDatabase>();
             SimpleIoc.Default.Register<ISecureStorage, SecureStorageHelper>();
             SimpleIoc.Default.Register<IUserInfo, UserInfoHelper>();
             SimpleIoc.Default.Register<IDexcomDataStore, DexcomDataStore>();
-            SimpleIoc.Default.Register<IDataStore<JournalEntry>, MockJournalEntryDataStore>();
-            SimpleIoc.Default.Register<IDataStore<GlucoseReading>, MockReadingDataStore>();
-            SimpleIoc.Default.Register<IDataStore<Dose>, MockDoseDataStore>();
-            SimpleIoc.Default.Register<IDataStore<Tag>, MockTagDataStore>();
-            SimpleIoc.Default.Register<IDataStore<NutritionalInfo>, MockNutritionalInfoDataStore>();
-            SimpleIoc.Default.Register<IDataStore<JournalEntryTag>, MockJournalEntryTagDataStore>();
-            SimpleIoc.Default.Register<IDataStore<JournalEntryNutritionalInfo>, MockJournalEntryNutritionalInfoDataStore>();
-            SimpleIoc.Default.Register<IDataStore<JournalEntryDose>, MockJournalEntryDoseDataStore>();
+            SimpleIoc.Default.Register<IDataStore<JournalEntry>, LocalJournalEntryDataStore>();
+            //SimpleIoc.Default.Register<IDataStore<GlucoseReading>, MockReadingDataStore>();
+            SimpleIoc.Default.Register<IDataStore<Dose>, LocalDoseDataStore>();
+            SimpleIoc.Default.Register<IDataStore<Tag>, LocalTagDataStore>();
+            SimpleIoc.Default.Register<IDataStore<NutritionalInfo>, LocalNutritionalInfoDataStore>();
+            SimpleIoc.Default.Register<IDataStore<JournalEntryTag>, LocalJournalEntryTagDataStore>();
+            SimpleIoc.Default.Register<IDataStore<JournalEntryNutritionalInfo>, LocalJournalEntryNutritionalInfoDataStore>();
+            SimpleIoc.Default.Register<IDataStore<JournalEntryDose>, LocalJournalEntryDoseDataStore>();
             SimpleIoc.Default.Register<IAppDataService, MockAppDataService>();
             SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
             SimpleIoc.Default.Register<IJournalEntryDataService, JournalEntryDataService>();

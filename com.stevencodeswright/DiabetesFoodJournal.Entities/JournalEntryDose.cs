@@ -1,11 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DiabetesFoodJournal.ModelLinks
+namespace DiabetesFoodJournal.Entities
 {
     public class JournalEntryDose
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public int JournalEntryId { get; set; }
         public int DoseId { get; set; }

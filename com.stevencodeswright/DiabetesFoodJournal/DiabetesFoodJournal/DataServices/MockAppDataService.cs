@@ -1,6 +1,5 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.Entities;
-using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.ViewModels;

@@ -4,20 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace DiabetesFoodJournal.Services
 {
-    public class LocalJournalEntryDataStore : IDataStore<JournalEntry>
+    public class LocalNutritionalInfoDataStore : IDataStore<NutritionalInfo>
     {
         private readonly IFoodJournalDatabase foodJournalDatabase;
 
-        public LocalJournalEntryDataStore(IFoodJournalDatabase foodJournalDatabase)
+        public LocalNutritionalInfoDataStore(IFoodJournalDatabase foodJournalDatabase)
         {
             this.foodJournalDatabase = foodJournalDatabase;
         }
-
-        public async Task<int> AddItemAsync(JournalEntry item)
+        public async Task<int> AddItemAsync(NutritionalInfo item)
         {
             var primaryKey = await this.foodJournalDatabase.Database.InsertAsync(item).ConfigureAwait(false);
             return primaryKey;
@@ -25,21 +23,21 @@ namespace DiabetesFoodJournal.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var rowsDeleted = await this.foodJournalDatabase.Database.Table<JournalEntry>().DeleteAsync(x => x.Id.ToString().Equals(id)).ConfigureAwait(false);
+            var rowsDeleted = await this.foodJournalDatabase.Database.Table<NutritionalInfo>().DeleteAsync(x => x.Id.ToString().Equals(id)).ConfigureAwait(false);
             return rowsDeleted > 0;
         }
 
-        public Task<JournalEntry> GetItemAsync(string id)
+        public Task<NutritionalInfo> GetItemAsync(string id)
         {
-            return this.foodJournalDatabase.Database.Table<JournalEntry>().FirstOrDefaultAsync(x => x.Id.ToString().Equals(id));
+            return this.foodJournalDatabase.Database.Table<NutritionalInfo>().FirstOrDefaultAsync(x => x.Id.ToString().Equals(id));
         }
 
-        public Task<List<JournalEntry>> GetItemsAsync(bool forceRefresh = false)
+        public Task<List<NutritionalInfo>> GetItemsAsync(bool forceRefresh = false)
         {
-            return this.foodJournalDatabase.Database.Table<JournalEntry>().Take(100).ToListAsync();
+            return this.foodJournalDatabase.Database.Table<NutritionalInfo>().Take(100).ToListAsync();
         }
 
-        public async Task<bool> UpdateItemAsync(JournalEntry item)
+        public async Task<bool> UpdateItemAsync(NutritionalInfo item)
         {
             var primaryKey = await this.foodJournalDatabase.Database.UpdateAsync(item).ConfigureAwait(false);
             return primaryKey > 0;

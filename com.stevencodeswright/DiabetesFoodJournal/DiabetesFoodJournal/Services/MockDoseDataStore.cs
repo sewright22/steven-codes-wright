@@ -1,5 +1,4 @@
 ﻿using DiabetesFoodJournal.Entities;
-using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using System;
 using System.Collections.Generic;
