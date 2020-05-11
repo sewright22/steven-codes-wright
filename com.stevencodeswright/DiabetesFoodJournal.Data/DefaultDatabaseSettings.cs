@@ -8,7 +8,7 @@ namespace DiabetesFoodJournal.Data
 {
     public class DefaultDatabaseSettings : IDatabaseSettings
     {
-        public string DbPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FoodDatabase.db3");
+        public string DbPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FoodDatabaseV1.db3");
 
         public SQLiteOpenFlags Flags => // open the database in read/write mode
         SQLite.SQLiteOpenFlags.ReadWrite |

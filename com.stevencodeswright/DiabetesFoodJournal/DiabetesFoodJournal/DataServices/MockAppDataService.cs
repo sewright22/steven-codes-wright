@@ -87,34 +87,37 @@ namespace DiabetesFoodJournal.DataServices
                           };
 
             var currentEntry = new JournalEntryDataModel();
-            foreach (var result in results)
+            if (results.Any())
             {
-                if (result.entry.Id != currentEntry.Id)
+                foreach (var result in results)
                 {
-                    if(currentEntry.Id > 0)
+                    if (result.entry.Id != currentEntry.Id)
                     {
-                        retVal.Add(currentEntry);
+                        if (currentEntry.Id > 0)
+                        {
+                            retVal.Add(currentEntry);
+                        }
+
+                        currentEntry = new JournalEntryDataModel();
+                        currentEntry.Load(result.entry);
+
+                        if (result.nutrition.Id > 0)
+                        {
+                            currentEntry.NutritionalInfo.Load(result.nutrition);
+                        }
+
+                        if (result.dose.Id > 0)
+                        {
+                            currentEntry.Dose.Load(result.dose);
+                        }
                     }
 
-                    currentEntry = new JournalEntryDataModel();
-                    currentEntry.Load(result.entry);
-
-                    if (result.nutrition.Id > 0)
+                    if (result.tag.Id > 0)
                     {
-                        currentEntry.NutritionalInfo.Load(result.nutrition);
+                        var tagViewModel = new TagDataModel();
+                        tagViewModel.Load(result.tag);
+                        currentEntry.Tags.Add(tagViewModel);
                     }
-
-                    if(result.dose.Id>0)
-                    {
-                        currentEntry.Dose.Load(result.dose);
-                    }
-                }
-
-                if (result.tag.Id > 0)
-                {
-                    var tagViewModel = new TagDataModel();
-                    tagViewModel.Load(result.tag);
-                    currentEntry.Tags.Add(tagViewModel);
                 }
             }
 
