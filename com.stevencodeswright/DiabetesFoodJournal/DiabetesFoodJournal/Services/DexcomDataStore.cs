@@ -14,7 +14,7 @@
     public class DexcomDataStore : IDexcomDataStore
     {
         private readonly IUserInfo userInfo;
-        private string baseUrl = "https://sandbox-api.dexcom.com";
+        private string baseUrl = "https://api.dexcom.com";
         private string client_id = "WWv2aPRKLsm9SAEgTcrIg8anRiHKbv5e";
         private string client_secret = "x4LTtwqRWJMiaubT";
         private string redirectString = "com.stevencodeswright.diabetesfoodjournal://";
@@ -86,7 +86,7 @@
         public async Task Login()
         {
             var oauth = await Xamarin.Essentials.WebAuthenticator.AuthenticateAsync(
-                                                                   new Uri($"https://sandbox-api.dexcom.com/v2/oauth2/login?client_id={client_id}&redirect_uri={redirectString}&response_type=code&scope={scope}"),
+                                                                   new Uri($"https://api.dexcom.com/v2/oauth2/login?client_id={client_id}&redirect_uri={redirectString}&response_type=code&scope={scope}"),
                                                                    new Uri(callback));
 
             var accessToken = oauth?.Get("code");
@@ -104,7 +104,7 @@
             var encodedContent = new FormUrlEncodedContent(parameters);
 
             client.DefaultRequestHeaders.Add("cache-control", "no-cache");
-            using (var response = await client.PostAsync("https://sandbox-api.dexcom.com/v2/oauth2/token", encodedContent))
+            using (var response = await client.PostAsync("https://api.dexcom.com/v2/oauth2/token", encodedContent))
             {
                 var result = await response.Content.ReadAsStringAsync();
                 var item = JsonConvert.DeserializeAnonymousType(result, new

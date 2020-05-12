@@ -18,7 +18,7 @@ namespace DiabetesFoodJournal.Services
         public async Task<int> AddItemAsync(Dose item)
         {
             var primaryKey = await this.foodJournalDatabase.Database.InsertAsync(item).ConfigureAwait(false);
-            return primaryKey;
+            return item.Id;
         }
 
         public async Task<bool> DeleteItemAsync(string id)
