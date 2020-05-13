@@ -26,3 +26,15 @@
 /com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/obj/Debug
 /com.stevencodeswright/DiabetesFoodJournal.Data.Server/bin/Debug
 /com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/bin/Debug
+/com.stevencodeswright/FJA_Pool.Data/bin
+/com.stevencodeswright/FJA_Pool.Data/obj
+/com.stevencodeswright/FJA_Pool.Data/App.config
+/com.stevencodeswright/FJA_Pool.Entities/bin
+/com.stevencodeswright/FJA_Pool.Entities/obj
+/com.stevencodeswright/Services/WebApi/bin
+/com.stevencodeswright/Services/WebApi/obj
+*.user
+/com.stevencodeswright/Services/WebApi/Properties/PublishProfiles/Prod.pubxml
+/com.stevencodeswright/Services/WebApi/Web.config
+/com.stevencodeswright/Services/WebApi/Web.Debug.config
+/com.stevencodeswright/Services/WebApi/Web.Release.config
