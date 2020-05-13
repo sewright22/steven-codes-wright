@@ -408,6 +408,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DiabetesFoodJournal.Data.Server\DiabetesFoodJournal.Data.Server.csproj">
+      <Project>{A392E0FC-E3D2-48BD-BCF9-480EC21CABEC}</Project>
+      <Name>DiabetesFoodJournal.Data.Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\FJA_Pool.Data\FJA_Pool.Data.csproj">
       <Project>{119ebdad-b6ae-4db0-917d-dd5c2fd7b3b6}</Project>
       <Name>FJA_Pool.Data</Name>
