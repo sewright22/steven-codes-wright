@@ -21,3 +21,8 @@
 /com.stevencodeswright/DiabetesFoodJournal.Entities/obj
 /com.stevencodeswright/DiabetesFoodJournal.UnitTests/obj
 /com.stevencodeswright/DiabetesFoodJournal.UnitTests/bin/Debug/netcoreapp3.1
+/com.stevencodeswright/DiabetesFoodJournal.Data.Server/obj/Debug
+/com.stevencodeswright/DiabetesFoodJournal.Data.Server/App.config
+/com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/obj/Debug
+/com.stevencodeswright/DiabetesFoodJournal.Data.Server/bin/Debug
+/com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/bin/Debug
