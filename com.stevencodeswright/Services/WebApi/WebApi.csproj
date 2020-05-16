@@ -220,12 +220,17 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BracketPickController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JournalEntryController.cs" />
     <Compile Include="Controllers\LeaderboardController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DoseModel.cs" />
+    <Compile Include="Models\JournalEntryModel.cs" />
+    <Compile Include="Models\NutritionalInfoModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
     <Compile Include="Modules\BasicAuthHttpModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -394,7 +399,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -411,6 +415,10 @@
     <ProjectReference Include="..\..\DiabetesFoodJournal.Data.Server\DiabetesFoodJournal.Data.Server.csproj">
       <Project>{A392E0FC-E3D2-48BD-BCF9-480EC21CABEC}</Project>
       <Name>DiabetesFoodJournal.Data.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DiabetesFoodJournal.Entities.4_5_2\DiabetesFoodJournal.Entities.4_5_2.csproj">
+      <Project>{0179ABFF-7DCA-423C-9469-B639A5E13407}</Project>
+      <Name>DiabetesFoodJournal.Entities.4_5_2</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FJA_Pool.Data\FJA_Pool.Data.csproj">
       <Project>{119ebdad-b6ae-4db0-917d-dd5c2fd7b3b6}</Project>

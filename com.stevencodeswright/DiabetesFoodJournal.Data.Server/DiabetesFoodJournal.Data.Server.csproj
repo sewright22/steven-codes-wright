@@ -107,6 +107,10 @@
     <Compile Include="Migrations\202005130126379_AddingFoodJournal.designer.cs">
       <DependentUpon>202005130126379_AddingFoodJournal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005160252442_Column Name Change.cs" />
+    <Compile Include="Migrations\202005160252442_Column Name Change.designer.cs">
+      <DependentUpon>202005160252442_Column Name Change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,6 +128,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005130126379_AddingFoodJournal.resx">
       <DependentUpon>202005130126379_AddingFoodJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005160252442_Column Name Change.resx">
+      <DependentUpon>202005160252442_Column Name Change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
