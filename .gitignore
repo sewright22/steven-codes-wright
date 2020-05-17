@@ -38,3 +38,7 @@
 /com.stevencodeswright/Services/WebApi/Web.config
 /com.stevencodeswright/Services/WebApi/Web.Debug.config
 /com.stevencodeswright/Services/WebApi/Web.Release.config
+/com.stevencodeswright/DiabetesFoodJournal.Data.Server/bin/Release
+/com.stevencodeswright/DiabetesFoodJournal.Data.Server/obj/Release
+/com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/bin/Release
+/com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/obj/Release

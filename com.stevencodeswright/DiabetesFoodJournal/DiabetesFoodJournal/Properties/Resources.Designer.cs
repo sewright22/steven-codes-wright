@@ -61,6 +61,15 @@ namespace DiabetesFoodJournal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://api.stevencodeswright.com/api.
+        /// </summary>
+        internal static string ApiBackendUrl {
+            get {
+                return ResourceManager.GetString("ApiBackendUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to com.stevencodeswright.diabetesfoodjournal://.
         /// </summary>
         internal static string CallbackURL {
@@ -111,6 +120,15 @@ namespace DiabetesFoodJournal.Properties {
         internal static string DexcomTestBaseURL {
             get {
                 return ResourceManager.GetString("DexcomTestBaseURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://10.0.2.2:44354/api.
+        /// </summary>
+        internal static string LocalApiUrl {
+            get {
+                return ResourceManager.GetString("LocalApiUrl", resourceCulture);
             }
         }
         

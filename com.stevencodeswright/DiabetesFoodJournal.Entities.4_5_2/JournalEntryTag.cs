@@ -6,7 +6,6 @@ using System.Text;
 
 namespace DiabetesFoodJournal.Entities._4_5_2
 {
-    [Table(nameof(JournalEntryTag), Schema = "FoodJournal")]
     public class JournalEntryTag
     {
         [Key]

@@ -1,6 +1,7 @@
 ﻿using DiabetesFoodJournal.Data;
 using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Factories;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.ViewModels;
@@ -33,7 +34,12 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<IDataStore<JournalEntryTag>, LocalJournalEntryTagDataStore>();
             SimpleIoc.Default.Register<IDataStore<JournalEntryNutritionalInfo>, LocalJournalEntryNutritionalInfoDataStore>();
             SimpleIoc.Default.Register<IDataStore<JournalEntryDose>, LocalJournalEntryDoseDataStore>();
-            SimpleIoc.Default.Register<IAppDataService, MockAppDataService>();
+            //SimpleIoc.Default.Register<IAppDataService, MockAppDataService>();
+            SimpleIoc.Default.Register<IDoseFactory, DoseFactory>();
+            SimpleIoc.Default.Register<IJournalEntryFactory, JournalEntryFactory>();
+            SimpleIoc.Default.Register<INutritionalInfoFactory, NutritionalInfoFactory>();
+            SimpleIoc.Default.Register<ITagFactory, TagFactory>();
+            SimpleIoc.Default.Register<IAppDataService, WebApiDataService>();
             SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
             SimpleIoc.Default.Register<IJournalEntryDataService, JournalEntryDataService>();
             SimpleIoc.Default.Register<IJournalEntryHistoryDataService, JournalEntryHistoryDataService>();

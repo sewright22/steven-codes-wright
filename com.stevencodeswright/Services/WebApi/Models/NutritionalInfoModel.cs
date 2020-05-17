@@ -2,9 +2,9 @@
 {
     public class NutritionalInfoModel
     {
-        public int Id { get; internal set; }
-        public int Calories { get; internal set; }
-        public int Carbohydrates { get; internal set; }
-        public int Protein { get; internal set; }
+        public int Id { get; set; }
+        public int Calories { get; set; }
+        public int Carbohydrates { get; set; }
+        public int Protein { get; set; }
     }
 }

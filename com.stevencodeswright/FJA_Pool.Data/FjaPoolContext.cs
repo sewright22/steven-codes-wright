@@ -1,7 +1,7 @@
 namespace FJA_Pool.Data
 {
     using FJA_Pool.Entities;
-    using MySql.Data.EntityFramework;
+    using MySql.Data.Entity;
     using System;
     using System.Data.Entity;
     using System.Linq;

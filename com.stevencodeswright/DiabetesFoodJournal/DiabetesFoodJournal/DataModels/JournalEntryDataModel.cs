@@ -50,6 +50,7 @@ namespace DiabetesFoodJournal.DataModels
             }
         }
 
+        [JsonIgnore]
         public bool IsChanged
         {
             get
@@ -75,6 +76,7 @@ namespace DiabetesFoodJournal.DataModels
             }
         }
 
+        [JsonIgnore]
         public bool IsSelected { get { return this.isSelected; } set { SetProperty(ref this.isSelected, value); } }
 
 
