@@ -10,6 +10,7 @@
         public DiabetesFoodJournalContext()
             : base("name=DiabetesFoodJournalEntity")
         {
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

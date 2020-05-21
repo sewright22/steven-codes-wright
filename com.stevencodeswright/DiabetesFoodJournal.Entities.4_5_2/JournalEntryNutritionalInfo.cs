@@ -12,5 +12,7 @@ namespace DiabetesFoodJournal.Entities._4_5_2
         public int Id { get; set; }
         public int JournalEntryId { get; set; }
         public int NutritionalInfoId { get; set; }
+        public JournalEntry JournalEntry { get; set; }
+        public NutritionalInfo NutritionalInfo { get; set; }
     }
 }

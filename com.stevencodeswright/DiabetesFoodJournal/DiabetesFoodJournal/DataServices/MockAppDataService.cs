@@ -188,5 +188,15 @@ namespace DiabetesFoodJournal.DataServices
 
             return retVal;
         }
+
+        public Task<IEnumerable<Tag>> GetTags(string tagSearchText)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> AddNewTag(Tag tag)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

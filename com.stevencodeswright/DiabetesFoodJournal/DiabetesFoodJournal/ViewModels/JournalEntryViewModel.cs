@@ -57,7 +57,7 @@ namespace DiabetesFoodJournal.ViewModels
         {
             if (ExistingTagSearch.FirstOrDefault(x => x.Description.Equals(newTag, StringComparison.OrdinalIgnoreCase)) == null)
             {
-                var tagId = await this.tags.AddItemAsync(new Tag
+                var tagId = await this.dataService.AddNewTag(new Tag
                 {
                     Description = newTag
                 });
@@ -119,12 +119,10 @@ namespace DiabetesFoodJournal.ViewModels
             {
                 if(this.tagSearchText.Length>0)
                 {
-                    var results = from t in await tags.GetItemsAsync().ConfigureAwait(true)
-                                  where t.Description.ToUpper().Contains(this.tagSearchText.ToUpper())
-                                  select t;
+                    var results = await this.dataService.GetTags(TagSearchText);
                                  
 
-                    ExistingTagSearch.ReplaceRange(results.Take(10));
+                    ExistingTagSearch.ReplaceRange(results);
                 }
             }
         }

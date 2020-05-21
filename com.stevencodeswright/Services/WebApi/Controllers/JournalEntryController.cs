@@ -2,6 +2,7 @@
 using DiabetesFoodJournal.Entities._4_5_2;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -11,28 +12,21 @@ namespace WebApi.Controllers
 {
     public class JournalEntryController : ApiController
     {
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         [Route("api/journalEntry/SearchJournal")]
         public IHttpActionResult SearchJournal(string searchValue)
         {
+            var upperSearchValue = searchValue.ToUpper();
             var retVal = new List<JournalEntryModel>();
             try
             {
                 using (var db = new DiabetesFoodJournalContext())
                 {
-                    var results = from entry in db.JournalEntries.AsNoTracking()
-                                  join entryNutrition in db.JournalEntryNutritionalInfos.AsNoTracking() on entry.Id equals entryNutrition.JournalEntryId
-                                  join nutrition in db.NutritionalInfos.AsNoTracking() on entryNutrition.NutritionalInfoId equals nutrition.Id
-                                  join entryDose in db.JournalEntryDoses.AsNoTracking() on entry.Id equals entryDose.JournalEntryId
-                                  join dose in db.Doses.AsNoTracking() on entryDose.DoseId equals dose.Id
-                                  where entry.Title.ToUpper().Contains(searchValue.ToUpper())
-                                  select new
-                                  {
-                                      entry,
-                                      nutrition,
-                                      dose
-                                  };
+                    var results = db.JournalEntries.AsNoTracking().Where(entry => entry.Title.ToUpper().Contains(upperSearchValue))
+                                                                                                       .Include(x => x.JournalEntryNutritionalInfos.Select(y => y.NutritionalInfo))
+                                                                                                       .Include(x => x.JournalEntryDoses.Select(y => y.Dose))
+                                                                                                       .Include(x => x.JournalEntryTags.Select(y => y.Tag));
 
                     if (results.Any())
                     {
@@ -41,35 +35,43 @@ namespace WebApi.Controllers
 
                             var currentEntry = new JournalEntryModel();
                             currentEntry.Tags = new List<TagModel>();
-                            currentEntry.Id = result.entry.Id;
-                            currentEntry.Logged = result.entry.Logged;
-                            currentEntry.Notes = result.entry.Notes;
-                            currentEntry.Title = result.entry.Title;
+                            currentEntry.Id = result.Id;
+                            currentEntry.Logged = result.Logged;
+                            currentEntry.Notes = result.Notes;
+                            currentEntry.Title = result.Title;
 
-                            if (result.nutrition.Id > 0)
+                            if (result.JournalEntryNutritionalInfos!= null && result.JournalEntryNutritionalInfos.Any())
                             {
-                                currentEntry.NutritionalInfo = new NutritionalInfoModel();
-                                currentEntry.NutritionalInfo.Id = result.nutrition.Id;
-                                currentEntry.NutritionalInfo.Calories = result.nutrition.Calories;
-                                currentEntry.NutritionalInfo.Carbohydrates = result.nutrition.Carbohydrates;
-                                currentEntry.NutritionalInfo.Protein = result.nutrition.Protein;
+                                var nutrition = result.JournalEntryNutritionalInfos.FirstOrDefault().NutritionalInfo;
+                                if (nutrition.Id > 0)
+                                {
+                                    currentEntry.NutritionalInfo = new NutritionalInfoModel();
+                                    currentEntry.NutritionalInfo.Id = nutrition.Id;
+                                    currentEntry.NutritionalInfo.Calories = nutrition.Calories;
+                                    currentEntry.NutritionalInfo.Carbohydrates = nutrition.Carbohydrates;
+                                    currentEntry.NutritionalInfo.Protein = nutrition.Protein;
+                                }
                             }
 
-                            if (result.dose.Id > 0)
+                            if (result.JournalEntryDoses != null && result.JournalEntryDoses.Any())
                             {
-                                currentEntry.Dose = new DoseModel();
-                                currentEntry.Dose.Id = result.dose.Id;
-                                currentEntry.Dose.Extended = result.dose.Extended;
-                                currentEntry.Dose.InsulinAmount = result.dose.InsulinAmount;
-                                currentEntry.Dose.TimeExtended = result.dose.TimeExtended;
-                                currentEntry.Dose.TimeOffset = result.dose.TimeOffset;
-                                currentEntry.Dose.UpFront = result.dose.UpFront;
+                                var dose = result.JournalEntryDoses.FirstOrDefault().Dose;
+                                if (dose.Id > 0)
+                                {
+                                    currentEntry.Dose = new DoseModel();
+                                    currentEntry.Dose.Id = dose.Id;
+                                    currentEntry.Dose.Extended = dose.Extended;
+                                    currentEntry.Dose.InsulinAmount = dose.InsulinAmount;
+                                    currentEntry.Dose.TimeExtended = dose.TimeExtended;
+                                    currentEntry.Dose.TimeOffset = dose.TimeOffset;
+                                    currentEntry.Dose.UpFront = dose.UpFront;
+                                }
                             }
 
 
-                            if (result.entry.JournalEntryTags.Any())
+                            if (result.JournalEntryTags != null && result.JournalEntryTags.Any())
                             {
-                                foreach (var tag in result.entry.JournalEntryTags)
+                                foreach (var tag in result.JournalEntryTags)
                                 {
                                     var tagViewModel = new TagModel();
                                     tagViewModel.Id = tag.Tag.Id;
@@ -270,6 +272,94 @@ namespace WebApi.Controllers
             }
 
             return Ok();
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("api/journalEntry/SearchTags")]
+        public IHttpActionResult SearchTags(string searchValue)
+        {
+            var upperSearchValue = searchValue.ToUpper();
+            var retVal = new List<JournalEntryModel>();
+            try
+            {
+                using (var db = new DiabetesFoodJournalContext())
+                {
+                    var results = db.Tags.AsNoTracking().Where(entry => entry.Description.ToUpper().Contains(upperSearchValue));
+
+                    return Ok(results.Take(10).ToList());
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        [Route("api/journalEntry/SaveTag")]
+        public IHttpActionResult SaveTag([FromBody] Tag tag)
+        {
+            try
+            {
+                if (tag == null)
+                {
+                    throw new ArgumentNullException(nameof(tag));
+                }
+
+                using (var db = new DiabetesFoodJournalContext())
+                {
+                    try
+                    {
+                        var tagFromDb = db.Tags.FirstOrDefault(x => x.Id == tag.Id);
+
+                        if (tagFromDb == null)
+                        {
+                            tagFromDb = db.Tags.Create();
+                        }
+
+                        tagFromDb.Description = tag.Description;
+
+                        if (tag.Id == 0)
+                        {
+                            db.Tags.Add(tagFromDb);
+                        }
+
+                        db.SaveChanges();
+                        tag.Id = tagFromDb.Id;
+                    }
+                    catch (Exception e)
+                    {
+                        db.Database.CurrentTransaction.Rollback();
+                        if (e.InnerException != null)
+                        {
+                            return BadRequest(e.InnerException.Message);
+                        }
+                        else
+                        {
+                            return BadRequest(e.Message);
+                        }
+                    }
+                }
+
+                return Ok(tag.Id);
+            }
+            catch (ArgumentNullException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception e)
+            {
+                if (e.InnerException != null)
+                {
+                    return BadRequest(e.InnerException.Message);
+                }
+                else
+                {
+                    return BadRequest(e.Message);
+                }
+            }
         }
     }
 }

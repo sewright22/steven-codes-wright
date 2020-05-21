@@ -12,7 +12,8 @@ namespace DiabetesFoodJournal.Data.Server
         protected override void Seed(DiabetesFoodJournalContext context)
         {
             base.Seed(context);
-
+            context.Configuration.ProxyCreationEnabled = true;
+            context.Configuration.LazyLoadingEnabled = true;
             context.SaveChanges();
         }
     }

@@ -35,6 +35,46 @@ namespace DiabetesFoodJournal.Services
             this.tagFactory = tagFactory;
         }
 
+        public async Task<int> AddNewTag(Tag tag)
+        {
+            var serializedItem = JsonConvert.SerializeObject(tag);
+
+            var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
+
+            var response = await this.client.PostAsync("journalEntry/SaveTag", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var retVal = JsonConvert.DeserializeObject<int>(responseContent);
+                return retVal;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        public async Task<IEnumerable<Tag>> GetTags(string tagSearchText)
+        {
+            var retVal = new List<Tag>();//journalEntry/SearchJournal?searchValue=test
+            using (var response = await client.GetAsync($"journalEntry/SearchTags?searchValue={tagSearchText}"))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var tags = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Tag>>(content));
+
+                    foreach (var tag in tags)
+                    {
+                        retVal.Add(tag);
+                    }
+                }
+            }
+
+            return retVal;
+        }
+
         public Task<int> SaveDose(DoseDataModel doseToSave)
         {
             throw new NotImplementedException();
@@ -100,8 +140,8 @@ namespace DiabetesFoodJournal.Services
                 else
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var message = await Task.Run(() => JsonConvert.DeserializeObject<string>(content));
-                    var test = message;
+                    //var message = await Task.Run(() => JsonConvert.DeserializeObject<string>(content));
+                    //var test = message;
                 }
             }
 

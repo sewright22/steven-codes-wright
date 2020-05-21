@@ -118,6 +118,18 @@
     <Compile Include="Migrations\202005210141392_Adding naviation properties.designer.cs">
       <DependentUpon>202005210141392_Adding naviation properties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005212145281_MoreNavigationProperties.cs" />
+    <Compile Include="Migrations\202005212145281_MoreNavigationProperties.designer.cs">
+      <DependentUpon>202005212145281_MoreNavigationProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005212224139_Virtual.cs" />
+    <Compile Include="Migrations\202005212224139_Virtual.designer.cs">
+      <DependentUpon>202005212224139_Virtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005212232397_Proxy.cs" />
+    <Compile Include="Migrations\202005212232397_Proxy.designer.cs">
+      <DependentUpon>202005212232397_Proxy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -150,6 +162,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005210141392_Adding naviation properties.resx">
       <DependentUpon>202005210141392_Adding naviation properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005212145281_MoreNavigationProperties.resx">
+      <DependentUpon>202005212145281_MoreNavigationProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005212224139_Virtual.resx">
+      <DependentUpon>202005212224139_Virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005212232397_Proxy.resx">
+      <DependentUpon>202005212232397_Proxy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
