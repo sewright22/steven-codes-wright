@@ -22,75 +22,64 @@ namespace WebApi.Controllers
                 using (var db = new DiabetesFoodJournalContext())
                 {
                     var results = from entry in db.JournalEntries.AsNoTracking()
-                                  join entryTag in db.JournalEntryTags.AsNoTracking() on entry.Id equals entryTag.JournalEntryId
-                                  join tag in db.Tags.AsNoTracking() on entryTag.TagId equals tag.Id
                                   join entryNutrition in db.JournalEntryNutritionalInfos.AsNoTracking() on entry.Id equals entryNutrition.JournalEntryId
                                   join nutrition in db.NutritionalInfos.AsNoTracking() on entryNutrition.NutritionalInfoId equals nutrition.Id
                                   join entryDose in db.JournalEntryDoses.AsNoTracking() on entry.Id equals entryDose.JournalEntryId
                                   join dose in db.Doses.AsNoTracking() on entryDose.DoseId equals dose.Id
-                                  where entry.Title.ToUpper().Contains(searchValue.ToUpper()) || tag.Description.ToUpper().Contains(searchValue.ToUpper())
+                                  where entry.Title.ToUpper().Contains(searchValue.ToUpper())
                                   select new
                                   {
                                       entry,
-                                      tag,
                                       nutrition,
                                       dose
                                   };
-
-                    var currentEntry = new JournalEntryModel();
 
                     if (results.Any())
                     {
                         foreach (var result in results)
                         {
-                            if (result.entry.Id != currentEntry.Id)
+
+                            var currentEntry = new JournalEntryModel();
+                            currentEntry.Tags = new List<TagModel>();
+                            currentEntry.Id = result.entry.Id;
+                            currentEntry.Logged = result.entry.Logged;
+                            currentEntry.Notes = result.entry.Notes;
+                            currentEntry.Title = result.entry.Title;
+
+                            if (result.nutrition.Id > 0)
                             {
-                                if (currentEntry.Id > 0)
-                                {
-                                    retVal.Add(currentEntry);
-                                }
+                                currentEntry.NutritionalInfo = new NutritionalInfoModel();
+                                currentEntry.NutritionalInfo.Id = result.nutrition.Id;
+                                currentEntry.NutritionalInfo.Calories = result.nutrition.Calories;
+                                currentEntry.NutritionalInfo.Carbohydrates = result.nutrition.Carbohydrates;
+                                currentEntry.NutritionalInfo.Protein = result.nutrition.Protein;
+                            }
 
-                                currentEntry = new JournalEntryModel();
-                                currentEntry.Tags = new List<TagModel>();
-                                currentEntry.Id = result.entry.Id;
-                                currentEntry.Logged = result.entry.Logged;
-                                currentEntry.Notes = result.entry.Notes;
-                                currentEntry.Title = result.entry.Title;
+                            if (result.dose.Id > 0)
+                            {
+                                currentEntry.Dose = new DoseModel();
+                                currentEntry.Dose.Id = result.dose.Id;
+                                currentEntry.Dose.Extended = result.dose.Extended;
+                                currentEntry.Dose.InsulinAmount = result.dose.InsulinAmount;
+                                currentEntry.Dose.TimeExtended = result.dose.TimeExtended;
+                                currentEntry.Dose.TimeOffset = result.dose.TimeOffset;
+                                currentEntry.Dose.UpFront = result.dose.UpFront;
+                            }
 
-                                if (result.nutrition.Id > 0)
-                                {
-                                    currentEntry.NutritionalInfo = new NutritionalInfoModel();
-                                    currentEntry.NutritionalInfo.Id = result.nutrition.Id;
-                                    currentEntry.NutritionalInfo.Calories = result.nutrition.Calories;
-                                    currentEntry.NutritionalInfo.Carbohydrates = result.nutrition.Carbohydrates;
-                                    currentEntry.NutritionalInfo.Protein = result.nutrition.Protein;
-                                }
 
-                                if (result.dose.Id > 0)
+                            if (result.entry.JournalEntryTags.Any())
+                            {
+                                foreach (var tag in result.entry.JournalEntryTags)
                                 {
-                                    currentEntry.Dose = new DoseModel();
-                                    currentEntry.Dose.Id = result.dose.Id;
-                                    currentEntry.Dose.Extended = result.dose.Extended;
-                                    currentEntry.Dose.InsulinAmount = result.dose.InsulinAmount;
-                                    currentEntry.Dose.TimeExtended = result.dose.TimeExtended;
-                                    currentEntry.Dose.TimeOffset = result.dose.TimeOffset;
-                                    currentEntry.Dose.UpFront = result.dose.UpFront;
+                                    var tagViewModel = new TagModel();
+                                    tagViewModel.Id = tag.Tag.Id;
+                                    tagViewModel.Description = tag.Tag.Description;
+                                    currentEntry.Tags.Add(tagViewModel);
                                 }
                             }
 
-                            if (result.tag.Id > 0)
-                            {
-                                var tagViewModel = new TagModel();
-                                tagViewModel.Id = result.tag.Id;
-                                tagViewModel.Description = result.tag.Description;
-                                currentEntry.Tags.Add(tagViewModel);
-                            }
+                            retVal.Add(currentEntry);
                         }
-                    }
-
-                    if (currentEntry.Id > 0)
-                    {
-                        retVal.Add(currentEntry);
                     }
                 }
             }
@@ -134,6 +123,7 @@ namespace WebApi.Controllers
                         {
                             db.JournalEntries.Add(entryFromDb);
                             db.SaveChanges();
+                            entry.Id = entryFromDb.Id;
                         }
 
                         var doseFromDb = db.Doses.FirstOrDefault(x => x.Id == entry.Dose.Id);
@@ -153,6 +143,7 @@ namespace WebApi.Controllers
                         {
                             db.Doses.Add(doseFromDb);
                             db.SaveChanges();
+                            entry.Dose.Id = doseFromDb.Id;
                         }
 
                         var entryDoseFromDb = db.JournalEntryDoses.FirstOrDefault(x => x.JournalEntryId == entryFromDb.Id && x.DoseId == doseFromDb.Id);
@@ -182,6 +173,7 @@ namespace WebApi.Controllers
                         {
                             db.NutritionalInfos.Add(nutritionalInfoFromDb);
                             db.SaveChanges();
+                            entry.NutritionalInfo.Id = nutritionalInfoFromDb.Id;
                         }
 
                         var entryNutritionalInfoFromDb = db.JournalEntryNutritionalInfos.FirstOrDefault(x => x.JournalEntryId == entryFromDb.Id && x.NutritionalInfoId == nutritionalInfoFromDb.Id);
@@ -231,7 +223,6 @@ namespace WebApi.Controllers
                     catch (Exception e)
                     {
                         db.Database.CurrentTransaction.Rollback();
-
                         if (e.InnerException != null)
                         {
                             return BadRequest(e.InnerException.Message);
@@ -242,7 +233,8 @@ namespace WebApi.Controllers
                         }
                     }
                 }
-                return Ok();
+
+                return Ok(entry);
             }
             catch (ArgumentNullException e)
             {

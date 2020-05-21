@@ -42,7 +42,7 @@ namespace DiabetesFoodJournal.DataServices
             return entryModel;
         }
 
-        public async Task<int> SaveEntry(JournalEntryDataModel entryToSave)
+        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
         {
             return await this.appDataService.SaveEntry(entryToSave);
         }
@@ -56,7 +56,7 @@ namespace DiabetesFoodJournal.DataServices
 
     public interface IJournalDataService
     {
-        Task<int> SaveEntry(JournalEntryDataModel entryToSave);
+        Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave);
         Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
         JournalEntryDataModel CreateEntry(string entryTitle);

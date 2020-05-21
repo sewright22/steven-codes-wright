@@ -114,6 +114,10 @@
     <Compile Include="Migrations\202005172018126_Removed schems.designer.cs">
       <DependentUpon>202005172018126_Removed schems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005210141392_Adding naviation properties.cs" />
+    <Compile Include="Migrations\202005210141392_Adding naviation properties.designer.cs">
+      <DependentUpon>202005210141392_Adding naviation properties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005172018126_Removed schems.resx">
       <DependentUpon>202005172018126_Removed schems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005210141392_Adding naviation properties.resx">
+      <DependentUpon>202005210141392_Adding naviation properties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

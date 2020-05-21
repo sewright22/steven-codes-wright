@@ -40,7 +40,7 @@ namespace DiabetesFoodJournal.Services
             throw new NotImplementedException();
         }
 
-        public async Task<int> SaveEntry(JournalEntryDataModel entryToSave)
+        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
         {
             var serializedItem = JsonConvert.SerializeObject(entryToSave);
 
@@ -50,13 +50,18 @@ namespace DiabetesFoodJournal.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return 1;
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var retVal = JsonConvert.DeserializeObject<JournalEntryDataModel>(responseContent);
+                entryToSave.Id = retVal.Id;
+                entryToSave.Dose.Id = retVal.Dose.Id;
+                entryToSave.NutritionalInfo.Id = retVal.NutritionalInfo.Id;
+                return entryToSave;
             }
             else
             {
-                    var errorContent = await response.Content.ReadAsStringAsync();
+                var errorContent = await response.Content.ReadAsStringAsync();
                 var test = errorContent;
-                return 0;
+                return null;
             }
         }
 
@@ -91,6 +96,12 @@ namespace DiabetesFoodJournal.Services
 
                         retVal.Add(entryDataModel);
                     }
+                }
+                else
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var message = await Task.Run(() => JsonConvert.DeserializeObject<string>(content));
+                    var test = message;
                 }
             }
 

@@ -31,19 +31,19 @@ namespace DiabetesFoodJournal.DataServices
             this.doses = doses;
         }
 
-        public async Task<int> SaveEntry(JournalEntryDataModel entryToSave)
+        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
         {
             var retVal = 0;
             var entry = entryToSave.Save();
 
             if (entry.Id == 0)
             {
-                retVal = await this.journalEntries.AddItemAsync(entry);
+                entryToSave.Id = await this.journalEntries.AddItemAsync(entry);
             }
             else
             {
                 await this.journalEntries.UpdateItemAsync(entry);
-                retVal = entry.Id;
+                entryToSave.Id = entry.Id;
             }
 
             entryToSave.Dose.Id = await SaveDose(entryToSave.Dose);
@@ -57,7 +57,7 @@ namespace DiabetesFoodJournal.DataServices
                 await SaveJournalEntryTag(entry.Id, tag.Id);
             }
 
-            return retVal;
+            return entryToSave;
         }
 
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
