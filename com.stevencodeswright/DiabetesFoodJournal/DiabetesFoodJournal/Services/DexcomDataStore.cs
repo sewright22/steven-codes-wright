@@ -72,7 +72,7 @@
             var encodedContent = new FormUrlEncodedContent(parameters);
 
             client.DefaultRequestHeaders.Add("cache-control", "no-cache");
-            using (var response = await client.PostAsync("https://sandbox-api.dexcom.com/v2/oauth2/token", encodedContent))
+            using (var response = await client.PostAsync("https://api.dexcom.com/v2/oauth2/token", encodedContent))
             {
                 var result = await response.Content.ReadAsStringAsync();
                 var item = JsonConvert.DeserializeAnonymousType(result, new

@@ -38,8 +38,9 @@ namespace DiabetesFoodJournal.ViewModels
         {
             await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
             var entry = this.dataService.Copy(SelectedEntry);
-            entry = await this.dataService.SaveEntry(entry);
+            entry.Logged = DateTime.Now;
 
+            entry = await this.dataService.SaveEntry(entry);
             if(entry.Id>0)
             {
                 this.messenger.Send(entry);
