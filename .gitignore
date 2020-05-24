@@ -42,3 +42,12 @@
 /com.stevencodeswright/DiabetesFoodJournal.Data.Server/obj/Release
 /com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/bin/Release
 /com.stevencodeswright/DiabetesFoodJournal.Entities.4_5_2/obj/Release
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Data/obj
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Data/bin/Debug/netcoreapp3.1
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Models/obj
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Services/bin/Debug/netcoreapp3.1
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Services/obj
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Services/appsettings.json
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Entities/bin/Debug/netcoreapp3.1
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Entities/obj
+/com.stevencodeswright/TypeOneFoodJournal/TypeOneFoodJournal.Models/bin/Debug/netstandard2.0
