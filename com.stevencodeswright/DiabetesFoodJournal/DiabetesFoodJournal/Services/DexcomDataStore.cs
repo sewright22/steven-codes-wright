@@ -48,7 +48,7 @@
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("authorization", "Bearer " + token);
-            var url = baseUrl + $"/v2/users/self/egvs?startDate={startTime.ToString("yyyy-MM-ddTHH:mm:ss")}&endDate={endTime.ToString("yyyy-MM-ddTHH:mm:ss")}";
+            var url = baseUrl + $"/v2/users/self/egvs?startDate={startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss")}&endDate={endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss")}";
             using (HttpResponseMessage response = await client.GetAsync(url))
             {
                 var result = await response.Content.ReadAsStringAsync();

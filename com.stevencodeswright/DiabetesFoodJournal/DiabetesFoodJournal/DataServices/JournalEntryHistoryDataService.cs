@@ -30,7 +30,7 @@ namespace DiabetesFoodJournal.DataServices
             {
                 retVal.Add(new GlucoseReading
                 {
-                    Reading = reading.Value,
+                    Reading = reading.RealtimeValue,
                     DisplayTime = reading.DisplayTime.DateTime
                 });
             }

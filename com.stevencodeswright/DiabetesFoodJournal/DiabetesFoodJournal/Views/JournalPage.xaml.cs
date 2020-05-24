@@ -29,17 +29,17 @@ namespace DiabetesFoodJournal.Views
             {
                 this.timer.Stop();
                 this.searchButton.Command.Execute(this.searchEntry.Text.Trim());
-                this.loadingAnimation.IsRunning = false;
-                this.loadingAnimation.IsVisible = false;
+                //this.loadingAnimation.IsRunning = false;
+                //this.loadingAnimation.IsVisible = false;
             });
         }
 
         private void searchEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.loadingAnimation.IsRunning = true;
-            this.loadingAnimation.IsVisible = true;
+            //this.loadingAnimation.IsRunning = true;
+            //this.loadingAnimation.IsVisible = true;
             this.timer.Stop();
-            if (string.IsNullOrEmpty(this.searchEntry.Text.TrimEnd()) == false)
+            //if (string.IsNullOrEmpty(this.searchEntry.Text.TrimEnd()) == false)
             {
                 this.timer.Start();
             }

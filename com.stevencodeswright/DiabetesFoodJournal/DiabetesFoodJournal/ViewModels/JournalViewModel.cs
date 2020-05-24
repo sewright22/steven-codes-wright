@@ -4,6 +4,7 @@ using DiabetesFoodJournal.Models;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
+using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,11 +21,13 @@ namespace DiabetesFoodJournal.ViewModels
         private readonly INavigationHelper navigation;
         private readonly IMessenger messenger;
         private bool rowIsSelected;
+        private bool refreshing;
+        private bool searching;
 
         public JournalViewModel(IJournalDataService dataService, INavigationHelper navigation, IMessenger messenger)
         {
             LocalSearchResults = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
-            SearchCommand = new RelayCommand<string>(async x => await SearchClicked(x).ConfigureAwait(true));
+            SearchCommand = new AsyncCommand<string>(SearchClicked);
             UpdateEntryCommand = new RelayCommand(async () => await UpdateClicked().ConfigureAwait(true));
             LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
             ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(x => ItemTapped(x));
@@ -81,12 +84,13 @@ namespace DiabetesFoodJournal.ViewModels
             RowIsSelected = true;
         }
 
+        public bool Refreshing { get { return this.refreshing; } set { SetProperty(ref this.refreshing, value); } }
         public bool RowIsSelected { get { return this.rowIsSelected; } set { SetProperty(ref this.rowIsSelected, value); } }
         public JournalEntryDataModel SelectedEntry { get; set; }
 
         public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> LocalSearchResults { get; }
 
-        public RelayCommand<string> SearchCommand { get; set; }
+        public AsyncCommand<string> SearchCommand { get; set; }
         public RelayCommand<string> CreateNewEntryCommand { get; set; }
         public RelayCommand LogAgainCommand { get; set; }
         public RelayCommand UpdateEntryCommand { get; set; }
@@ -94,15 +98,22 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task SearchClicked(string searchString)
         {
-            var entryList = await this.dataService.SearchJournal(searchString);
+            if (!this.searching && ! string.IsNullOrEmpty(searchString))
+            {
+                this.searching = true;
+                Refreshing = true;
+                var entryList = await this.dataService.SearchJournal(searchString).ConfigureAwait(true);
 
-            var sorted = from entry in entryList
-                         orderby entry.Logged descending
-                         group entry by entry.Group into entryGroup
-                         select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
+                var sorted = from entry in entryList
+                             orderby entry.Logged descending
+                             group entry by entry.Group into entryGroup
+                             select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
 
-            RowIsSelected = false;
-            LocalSearchResults.ReplaceRange(sorted);
+                RowIsSelected = false;
+                Refreshing = false;
+                this.searching = false;
+                LocalSearchResults.ReplaceRange(sorted);
+            }
         }
     }
 }

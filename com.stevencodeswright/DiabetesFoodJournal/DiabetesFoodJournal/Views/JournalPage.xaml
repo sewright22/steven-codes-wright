@@ -45,49 +45,48 @@
                     </Grid>
                 </yummy:PancakeView>
 
-                <ActivityIndicator Grid.Row="1"
-                                   Grid.ColumnSpan="2"
-                                   x:Name="loadingAnimation"
-                                   IsVisible="False"
-                                   IsRunning="False" />
+                <RefreshView Command="{Binding Path=SearchCommand}"
+                             CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"
+                             IsRefreshing="{Binding Path=Refreshing, Mode=TwoWay}"
+                             Grid.Row="2"
+                             Grid.ColumnSpan="2">
+                    <ScrollView >
+                        <StackLayout>
+                            <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <yummy:PancakeView>
+                                            <StackLayout>
+                                                <Label Margin="0"
+                                                       Padding="0"
+                                                       Text="{Binding Key}" />
 
-                <ScrollView Grid.Row="2"
-                            Grid.ColumnSpan="2">
-                    <StackLayout>
-                        <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <yummy:PancakeView>
-                                        <StackLayout>
-                                            <Label Margin="0"
-                                                   Padding="0"
-                                                   Text="{Binding Key}" />
-
-                                            <StackLayout BindableLayout.ItemsSource="{Binding Items}">
-                                                <BindableLayout.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <templates:SearchResultItemView FoodName="{Binding Path=Title}"
-                                                                                        Logged="{Binding Path=Logged}"
-                                                                                        TagList="{Binding Tags}"
-                                                                                        CarbCount="{Binding NutritionalInfo.Carbohydrates}"
-                                                                                        TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
-                                                                                        IsSelected="{Binding Path=IsSelected}"
-                                                                                        CommandParameter="{Binding}" />
-                                                    </DataTemplate>
-                                                </BindableLayout.ItemTemplate>
+                                                <StackLayout BindableLayout.ItemsSource="{Binding Items}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <templates:SearchResultItemView FoodName="{Binding Path=Title}"
+                                                                                            Logged="{Binding Path=Logged}"
+                                                                                            TagList="{Binding Tags}"
+                                                                                            CarbCount="{Binding NutritionalInfo.Carbohydrates}"
+                                                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
+                                                                                            IsSelected="{Binding Path=IsSelected}"
+                                                                                            CommandParameter="{Binding}" />
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                    </yummy:PancakeView>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
+                                        </yummy:PancakeView>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
 
-                        <Button Text="Create New Entry"
-                                VerticalOptions="End" 
-                                Command="{Binding CreateNewEntryCommand}"
-                                CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"/>
-                    </StackLayout>
-                </ScrollView>
+                            <Button Text="Create New Entry"
+                                    VerticalOptions="End"
+                                    Command="{Binding CreateNewEntryCommand}"
+                                    CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}" />
+                        </StackLayout>
+                    </ScrollView>
+                </RefreshView>
 
                 <Button Text="Update"
                         Grid.Row="3"

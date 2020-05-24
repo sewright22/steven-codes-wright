@@ -49,7 +49,7 @@ namespace DiabetesFoodJournal.ViewModels
             foodResult.IsSelected = true;
             var readings = await this.dataService.GetGlucoseReadings(foodResult.Logged, foodResult.Logged.AddHours(5)).ConfigureAwait(true);
 
-            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings));
+            Device.BeginInvokeOnMainThread(() => GlucoseReadings.ReplaceRange(readings.OrderBy(x=>x.DisplayTime)));
             IsBusy = false;
         }
 

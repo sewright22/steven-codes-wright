@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.ViewModels
 {
@@ -19,6 +20,7 @@ namespace DiabetesFoodJournal.ViewModels
     {
         private readonly IJournalEntryDataService dataService;
         private readonly IMessenger messenger;
+        private readonly INavigationHelper navigation;
         private readonly IDataStore<Tag> tags;
         private int? carbCount;
         private decimal? timeExtended;
@@ -28,10 +30,11 @@ namespace DiabetesFoodJournal.ViewModels
         private JournalEntryDataModel model;
         private string tagSearchText;
 
-        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, IDataStore<Tag> tags)
+        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, INavigationHelper navigation, IDataStore<Tag> tags)
         {
             this.dataService = dataService;
             this.messenger = messenger;
+            this.navigation = navigation;
             this.tags = tags;
             this.carbCount = 5;
             ExistingTagSearch = new ObservableRangeCollection<Tag>();
@@ -50,7 +53,8 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task SaveEntry()
         {
-            await this.dataService.SaveEntry(Model).ConfigureAwait(false);
+                await this.dataService.SaveEntry(Model).ConfigureAwait(false);
+            await this.navigation.GoToAsync("..").ConfigureAwait(false);
         }
 
         private async Task CreateNewTag(string newTag)
