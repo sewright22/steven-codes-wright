@@ -26,6 +26,7 @@ namespace DiabetesFoodJournal.DataModels
 
         public bool CanDelete { get { return this.canDelete; } set { SetProperty(ref this.canDelete, value); } }
 
+        [JsonIgnore]
         public bool IsChanged
         {
             get

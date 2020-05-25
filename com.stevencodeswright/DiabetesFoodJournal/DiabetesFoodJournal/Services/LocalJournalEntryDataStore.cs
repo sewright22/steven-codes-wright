@@ -20,12 +20,13 @@ namespace DiabetesFoodJournal.Services
         public async Task<int> AddItemAsync(JournalEntry item)
         {
             var primaryKey = await this.foodJournalDatabase.Database.InsertAsync(item).ConfigureAwait(false);
-            return primaryKey;
+            return item.Id;
         }
 
-        public Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(string id)
         {
-            throw new NotImplementedException();
+            var rowsDeleted = await this.foodJournalDatabase.Database.Table<JournalEntry>().DeleteAsync(x => x.Id.ToString().Equals(id)).ConfigureAwait(false);
+            return rowsDeleted > 0;
         }
 
         public Task<JournalEntry> GetItemAsync(string id)

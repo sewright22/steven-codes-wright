@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.ViewModels
 {
@@ -19,6 +20,7 @@ namespace DiabetesFoodJournal.ViewModels
     {
         private readonly IJournalEntryDataService dataService;
         private readonly IMessenger messenger;
+        private readonly INavigationHelper navigation;
         private readonly IDataStore<Tag> tags;
         private int? carbCount;
         private decimal? timeExtended;
@@ -28,10 +30,11 @@ namespace DiabetesFoodJournal.ViewModels
         private JournalEntryDataModel model;
         private string tagSearchText;
 
-        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, IDataStore<Tag> tags)
+        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, INavigationHelper navigation, IDataStore<Tag> tags)
         {
             this.dataService = dataService;
             this.messenger = messenger;
+            this.navigation = navigation;
             this.tags = tags;
             this.carbCount = 5;
             ExistingTagSearch = new ObservableRangeCollection<Tag>();
@@ -50,14 +53,15 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task SaveEntry()
         {
-            await this.dataService.SaveEntry(Model).ConfigureAwait(false);
+                await this.dataService.SaveEntry(Model).ConfigureAwait(false);
+            await this.navigation.GoToAsync("..").ConfigureAwait(false);
         }
 
         private async Task CreateNewTag(string newTag)
         {
             if (ExistingTagSearch.FirstOrDefault(x => x.Description.Equals(newTag, StringComparison.OrdinalIgnoreCase)) == null)
             {
-                var tagId = await this.tags.AddItemAsync(new Tag
+                var tagId = await this.dataService.AddNewTag(new Tag
                 {
                     Description = newTag
                 });
@@ -101,37 +105,33 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async void JournalEntryViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals(nameof(AmountUpFront)))
+            if (e.PropertyName.Equals(nameof(Model.Dose.UpFront)))
             {
                 if (AmountUpFront.HasValue)
                 {
-                    AmountExtended = 100 - AmountUpFront.Value;
+                    Model.Dose.Extended = 100 - Model.Dose.UpFront;
                 }
             }
-            else if(e.PropertyName.Equals(nameof(AmountExtended)))
+            else if(e.PropertyName.Equals(nameof(Model.Dose.Extended)))
             {
                 if (AmountExtended.HasValue)
                 {
-                    AmountUpFront = 100 - AmountExtended.Value;
+                    Model.Dose.UpFront = 100 - Model.Dose.Extended;
                 }
             }
             else if(e.PropertyName.Equals(nameof(TagSearchText)))
             {
                 if(this.tagSearchText.Length>0)
                 {
-                    var results = from t in await tags.GetItemsAsync().ConfigureAwait(true)
-                                  where t.Description.ToUpper().Contains(this.tagSearchText.ToUpper())
-                                  select t;
+                    var results = await this.dataService.GetTags(TagSearchText);
                                  
 
-                    ExistingTagSearch.ReplaceRange(results.Take(10));
+                    ExistingTagSearch.ReplaceRange(results);
                 }
             }
         }
 
         public ObservableRangeCollection<Tag> ExistingTagSearch { get; }
-        public NutritionalInfoDataModel NutritionalInfo { get; }
-        public DoseDataModel Dose { get; }
         private void JournalEntryReceived(JournalEntryDataModel obj)
         {
             Model = obj;

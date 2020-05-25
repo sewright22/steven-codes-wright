@@ -13,7 +13,7 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
     public partial class LabelEntry : ContentView
     {
         public static readonly BindableProperty LabelProperty = BindableProperty.Create(nameof(Label), typeof(string), typeof(LabelEntry), string.Empty);
-        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LabelEntry), string.Empty);
+        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LabelEntry), string.Empty, BindingMode.TwoWay);
         public static readonly BindableProperty AppendProperty = BindableProperty.Create(nameof(Append), typeof(string), typeof(LabelEntry), string.Empty);
         public static readonly BindableProperty EntryIsVisibleProperty = BindableProperty.Create(nameof(EntryIsVisible), typeof(bool), typeof(LabelEntry), false);
         public static readonly BindableProperty LabelIsVisibleProperty = BindableProperty.Create(nameof(LabelIsVisible), typeof(bool), typeof(LabelEntry), true);

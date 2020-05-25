@@ -27,6 +27,7 @@ namespace DiabetesFoodJournal.DataModels
         public int Protein { get { return this.protein; } set { SetProperty(ref this.protein, value); } }
         public int Carbohydrates { get { return this.carbohydrates; } set { SetProperty(ref this.carbohydrates, value); } }
 
+        [JsonIgnore]
         public bool IsChanged
         {
             get

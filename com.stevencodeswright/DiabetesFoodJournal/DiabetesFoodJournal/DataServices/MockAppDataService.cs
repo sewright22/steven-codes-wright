@@ -1,6 +1,5 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.Entities;
-using DiabetesFoodJournal.ModelLinks;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.ViewModels;
@@ -32,33 +31,33 @@ namespace DiabetesFoodJournal.DataServices
             this.doses = doses;
         }
 
-        public async Task<int> SaveEntry(JournalEntryDataModel entryToSave)
+        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
         {
             var retVal = 0;
             var entry = entryToSave.Save();
 
             if (entry.Id == 0)
             {
-                retVal = await this.journalEntries.AddItemAsync(entry);
+                entryToSave.Id = await this.journalEntries.AddItemAsync(entry);
             }
             else
             {
                 await this.journalEntries.UpdateItemAsync(entry);
-                retVal = entry.Id;
+                entryToSave.Id = entry.Id;
             }
 
             entryToSave.Dose.Id = await SaveDose(entryToSave.Dose);
-            await SaveJournalEntryDose(entryToSave, entryToSave.Dose);
+            await SaveJournalEntryDose(entry.Id, entryToSave.Dose.Id);
 
             entryToSave.NutritionalInfo.Id = await SaveNurtritionalInfo(entryToSave.NutritionalInfo);
-            await SaveJournalEntryNutritionalInfo(entryToSave, entryToSave.NutritionalInfo);
+            await SaveJournalEntryNutritionalInfo(entry.Id, entryToSave.NutritionalInfo.Id);
 
             foreach (var tag in entryToSave.Tags)
             {
-                await SaveJournalEntryTag(entryToSave, tag);
+                await SaveJournalEntryTag(entry.Id, tag.Id);
             }
 
-            return retVal;
+            return entryToSave;
         }
 
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
@@ -88,34 +87,37 @@ namespace DiabetesFoodJournal.DataServices
                           };
 
             var currentEntry = new JournalEntryDataModel();
-            foreach (var result in results)
+            if (results.Any())
             {
-                if (result.entry.Id != currentEntry.Id)
+                foreach (var result in results)
                 {
-                    if(currentEntry.Id > 0)
+                    if (result.entry.Id != currentEntry.Id)
                     {
-                        retVal.Add(currentEntry);
+                        if (currentEntry.Id > 0)
+                        {
+                            retVal.Add(currentEntry);
+                        }
+
+                        currentEntry = new JournalEntryDataModel();
+                        currentEntry.Load(result.entry);
+
+                        if (result.nutrition.Id > 0)
+                        {
+                            currentEntry.NutritionalInfo.Load(result.nutrition);
+                        }
+
+                        if (result.dose.Id > 0)
+                        {
+                            currentEntry.Dose.Load(result.dose);
+                        }
                     }
 
-                    currentEntry = new JournalEntryDataModel();
-                    currentEntry.Load(result.entry);
-
-                    if (result.nutrition.Id > 0)
+                    if (result.tag.Id > 0)
                     {
-                        currentEntry.NutritionalInfo.Load(result.nutrition);
+                        var tagViewModel = new TagDataModel();
+                        tagViewModel.Load(result.tag);
+                        currentEntry.Tags.Add(tagViewModel);
                     }
-
-                    if(result.dose.Id>0)
-                    {
-                        currentEntry.Dose.Load(result.dose);
-                    }
-                }
-
-                if (result.tag.Id > 0)
-                {
-                    var tagViewModel = new TagDataModel();
-                    tagViewModel.Load(result.tag);
-                    currentEntry.Tags.Add(tagViewModel);
                 }
             }
 
@@ -127,27 +129,27 @@ namespace DiabetesFoodJournal.DataServices
             return retVal;
         }
 
-        private async Task SaveJournalEntryTag(JournalEntryDataModel entryToSave, TagDataModel tag)
+        private async Task SaveJournalEntryTag(int journalEntryId, int tagId)
         {
-            if ((await journalEntryTags.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == entryToSave.Id && x.TagId == tag.Id) == null)
+            if ((await journalEntryTags.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == journalEntryId && x.TagId == tagId) == null)
             {
-                await journalEntryTags.AddItemAsync(new JournalEntryTag { JournalEntryId = entryToSave.Id, TagId = tag.Id });
+                await journalEntryTags.AddItemAsync(new JournalEntryTag { JournalEntryId = journalEntryId, TagId = tagId });
             }
         }
 
-        private async Task SaveJournalEntryNutritionalInfo(JournalEntryDataModel entryToSave, NutritionalInfoDataModel tag)
+        private async Task SaveJournalEntryNutritionalInfo(int journalEntryId, int nutritionalInfoId)
         {
-            if ((await journalEntryNutritionalInfos.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == entryToSave.Id && x.JournalEntryNutritionalInfoId == tag.Id) == null)
+            if ((await journalEntryNutritionalInfos.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == journalEntryId && x.JournalEntryNutritionalInfoId == nutritionalInfoId) == null)
             {
-                await journalEntryNutritionalInfos.AddItemAsync(new JournalEntryNutritionalInfo { JournalEntryId = entryToSave.Id, JournalEntryNutritionalInfoId = tag.Id });
+                await journalEntryNutritionalInfos.AddItemAsync(new JournalEntryNutritionalInfo { JournalEntryId = journalEntryId, JournalEntryNutritionalInfoId = nutritionalInfoId });
             }
         }
 
-        private async Task SaveJournalEntryDose(JournalEntryDataModel entryToSave, DoseDataModel dose)
+        private async Task SaveJournalEntryDose(int journalEntryId, int doseId)
         {
-            if ((await journalEntryDoses.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == entryToSave.Id && x.DoseId == dose.Id) == null)
+            if ((await journalEntryDoses.GetItemsAsync()).FirstOrDefault(x => x.JournalEntryId == journalEntryId && x.DoseId == doseId) == null)
             {
-                await journalEntryDoses.AddItemAsync(new JournalEntryDose { JournalEntryId = entryToSave.Id, DoseId = dose.Id });
+                await journalEntryDoses.AddItemAsync(new JournalEntryDose { JournalEntryId = journalEntryId, DoseId = doseId });
             }
         }
 
@@ -185,6 +187,16 @@ namespace DiabetesFoodJournal.DataServices
             }
 
             return retVal;
+        }
+
+        public Task<IEnumerable<Tag>> GetTags(string tagSearchText)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> AddNewTag(Tag tag)
+        {
+            throw new NotImplementedException();
         }
     }
 }

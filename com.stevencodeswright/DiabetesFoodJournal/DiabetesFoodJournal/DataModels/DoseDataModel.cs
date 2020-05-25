@@ -40,6 +40,7 @@ namespace DiabetesFoodJournal.DataModels
             } 
         }
 
+        [JsonIgnore]
         public bool IsChanged
         {
             get
