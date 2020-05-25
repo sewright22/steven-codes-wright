@@ -98,7 +98,7 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task SearchClicked(string searchString)
         {
-            if (!this.searching && ! string.IsNullOrEmpty(searchString))
+            if (!this.searching)
             {
                 this.searching = true;
                 Refreshing = true;

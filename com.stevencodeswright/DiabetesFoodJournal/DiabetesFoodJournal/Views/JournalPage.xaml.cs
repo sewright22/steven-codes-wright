@@ -23,6 +23,13 @@ namespace DiabetesFoodJournal.Views
             this.timer.Elapsed += this.Timer_Elapsed;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            this.searchButton.Command.Execute("");
+        }
+
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>

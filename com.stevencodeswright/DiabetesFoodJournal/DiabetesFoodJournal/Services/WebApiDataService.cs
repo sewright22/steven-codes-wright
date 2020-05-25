@@ -113,7 +113,14 @@ namespace DiabetesFoodJournal.Services
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
             var retVal = new List<JournalEntryDataModel>();//journalEntry/SearchJournal?searchValue=test
-            using (var response = await client.GetAsync($"journalEntries?searchValue={searchString}"))
+            var endPoint = $"journalEntries?searchValue={searchString}";
+
+            if(string.IsNullOrEmpty(searchString))
+            {
+                endPoint = "journalEntries";
+            }
+
+            using (var response = await client.GetAsync(endPoint))
             {
                 if (response.IsSuccessStatusCode)
                 {

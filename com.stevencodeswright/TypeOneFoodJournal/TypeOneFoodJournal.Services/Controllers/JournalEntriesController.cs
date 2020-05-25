@@ -26,20 +26,24 @@ namespace TypeOneFoodJournal.Services.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] string searchValue)
+        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] string searchValue = "")
         {
             var upperSearchValue = searchValue.ToUpper();
             var retVal = new List<JournalEntryModel>();
             try
             {
-                var results = await this.context.JournalEntries
-                                                .Where(entry => entry.Title.ToUpper().Contains(upperSearchValue) || 
-                                                                entry.JournalEntryTags.Where(t=>t.Tag.Description.ToUpper().Contains(upperSearchValue)).Any())
-                                                                .ToListAsync();
+                var results = this.context.JournalEntries.AsQueryable();
+                                                
+
+                if(!string.IsNullOrEmpty(upperSearchValue))
+                {
+                    results = results.Where(entry => entry.Title.ToUpper().Contains(upperSearchValue) ||
+                                                                entry.JournalEntryTags.Where(t => t.Tag.Description.ToUpper().Contains(upperSearchValue)).Any());
+                }
 
                 if (results.Any())
                 {
-                    foreach (var result in results.Take(100))
+                    foreach (var result in await results.Take(10).ToListAsync())
                     {
 
                         var currentEntry = this.journalEntryModelFactory.Build(result);

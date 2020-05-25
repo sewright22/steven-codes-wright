@@ -33,6 +33,7 @@
 
                         <Entry x:Name="searchEntry"
                                Placeholder="Search for Food..."
+                               Text=""
                                TextChanged="searchEntry_TextChanged"
                                IsEnabled="True">
                         </Entry>
