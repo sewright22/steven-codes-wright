@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using TypeOneFoodJournal.Data;
 using TypeOneFoodJournal.Entities;
 using TypeOneFoodJournal.Models;
+using TypeOneFoodJournal.Services.Factories;
 
 namespace TypeOneFoodJournal.Services.Controllers
 {
@@ -16,10 +17,12 @@ namespace TypeOneFoodJournal.Services.Controllers
     public class JournalEntriesController : ControllerBase
     {
         private readonly FoodJournalContext context;
+        private readonly IJournalEntryModelFactory journalEntryModelFactory;
 
-        public JournalEntriesController(FoodJournalContext context)
+        public JournalEntriesController(FoodJournalContext context, IJournalEntryModelFactory journalEntryModelFactory)
         {
             this.context = context;
+            this.journalEntryModelFactory = journalEntryModelFactory;
         }
 
         [HttpGet]
@@ -36,56 +39,11 @@ namespace TypeOneFoodJournal.Services.Controllers
 
                 if (results.Any())
                 {
-                    foreach (var result in results)
+                    foreach (var result in results.Take(100))
                     {
 
-                        var currentEntry = new JournalEntryModel();
-                        currentEntry.Tags = new List<TagModel>();
-                        currentEntry.Id = result.Id;
-                        currentEntry.Logged = result.Logged;
-                        currentEntry.Notes = result.Notes;
-                        currentEntry.Title = result.Title;
-
-                        if (result.JournalEntryNutritionalInfos != null && result.JournalEntryNutritionalInfos.Any())
-                        {
-                            var nutrition = result.JournalEntryNutritionalInfos.FirstOrDefault().NutritionalInfo;
-                            if (nutrition.Id > 0)
-                            {
-                                currentEntry.NutritionalInfo = new NutritionalInfoModel();
-                                currentEntry.NutritionalInfo.Id = nutrition.Id;
-                                currentEntry.NutritionalInfo.Calories = nutrition.Calories;
-                                currentEntry.NutritionalInfo.Carbohydrates = nutrition.Carbohydrates;
-                                currentEntry.NutritionalInfo.Protein = nutrition.Protein;
-                            }
-                        }
-
-                        if (result.JournalEntryDoses != null && result.JournalEntryDoses.Any())
-                        {
-                            var dose = result.JournalEntryDoses.FirstOrDefault().Dose;
-                            if (dose.Id > 0)
-                            {
-                                currentEntry.Dose = new DoseModel();
-                                currentEntry.Dose.Id = dose.Id;
-                                currentEntry.Dose.Extended = dose.Extended;
-                                currentEntry.Dose.InsulinAmount = dose.InsulinAmount;
-                                currentEntry.Dose.TimeExtended = dose.TimeExtended;
-                                currentEntry.Dose.TimeOffset = dose.TimeOffset;
-                                currentEntry.Dose.UpFront = dose.UpFront;
-                            }
-                        }
-
-
-                        if (result.JournalEntryTags != null && result.JournalEntryTags.Any())
-                        {
-                            foreach (var tag in result.JournalEntryTags)
-                            {
-                                var tagViewModel = new TagModel();
-                                tagViewModel.Id = tag.Tag.Id;
-                                tagViewModel.Description = tag.Tag.Description;
-                                currentEntry.Tags.Add(tagViewModel);
-                            }
-                        }
-
+                        var currentEntry = this.journalEntryModelFactory.Build(result);
+                        
                         retVal.Add(currentEntry);
                     }
                 }
@@ -95,12 +53,12 @@ namespace TypeOneFoodJournal.Services.Controllers
                 return BadRequest(e.Message);
             }
 
-            return Ok(retVal.Take(100));
+            return Ok(retVal);
         }
 
         // GET: api/JournalEntries/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<JournalEntry>> GetJournalEntry(int id)
+        public async Task<ActionResult<JournalEntryModel>> GetJournalEntry(int id)
         {
             var journalEntry = await context.JournalEntries.FindAsync(id);
 
@@ -109,7 +67,7 @@ namespace TypeOneFoodJournal.Services.Controllers
                 return NotFound();
             }
 
-            return journalEntry;
+            return this.journalEntryModelFactory.Build(journalEntry);
         }
 
         // PUT: api/JournalEntries/5
@@ -288,8 +246,7 @@ namespace TypeOneFoodJournal.Services.Controllers
                     }
                 }
 
-            //return CreatedAtAction("GetJournalEntry", new { id = journalEntry.Id }, journalEntry);
-                return Ok(entry);
+                return CreatedAtAction("GetJournalEntry", new { id = entry.Id }, entry);
             }
             catch (ArgumentNullException e)
             {

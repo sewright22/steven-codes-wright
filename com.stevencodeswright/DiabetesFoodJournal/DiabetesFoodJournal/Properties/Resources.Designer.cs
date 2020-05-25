@@ -61,7 +61,7 @@ namespace DiabetesFoodJournal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://api.stevencodeswright.com/api.
+        ///   Looks up a localized string similar to http://typeonefoodjournal.stevencodeswright.com/api.
         /// </summary>
         internal static string ApiBackendUrl {
             get {

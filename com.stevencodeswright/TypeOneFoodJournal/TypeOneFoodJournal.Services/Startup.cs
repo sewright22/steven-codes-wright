@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TypeOneFoodJournal.Services.Factories;
 
 namespace TypeOneFoodJournal.Services
 {
@@ -26,6 +27,7 @@ namespace TypeOneFoodJournal.Services
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureMySqlContext(Configuration);
+            services.AddTransient<IJournalEntryModelFactory, JournalEntryModelFactory>();
             services.AddControllers();
         }
 

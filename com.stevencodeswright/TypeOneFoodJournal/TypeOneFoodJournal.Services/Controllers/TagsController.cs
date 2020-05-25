@@ -23,9 +23,12 @@ namespace TypeOneFoodJournal.Services.Controllers
 
         // GET: api/Tags
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tag>>> GetTags()
+        public async Task<ActionResult<IEnumerable<Tag>>> GetTags(string searchValue)
         {
-            return await _context.Tags.ToListAsync();
+            var upperSearchValue = searchValue.ToUpper();
+            var results = await _context.Tags.Where(entry => entry.Description.ToUpper().Contains(upperSearchValue)).Take(10).ToListAsync();
+
+            return Ok(results);
         }
 
         // GET: api/Tags/5
@@ -80,8 +83,22 @@ namespace TypeOneFoodJournal.Services.Controllers
         [HttpPost]
         public async Task<ActionResult<Tag>> PostTag(Tag tag)
         {
-            _context.Tags.Add(tag);
+            var tagFromDb = _context.Tags.FirstOrDefault(x => x.Id == tag.Id);
+
+            if (tagFromDb == null)
+            {
+                tagFromDb = new Tag();
+            }
+
+            tagFromDb.Description = tag.Description;
+
+            if (tag.Id == 0)
+            {
+                _context.Tags.Add(tagFromDb);
+            }
+
             await _context.SaveChangesAsync();
+            tag.Id = tagFromDb.Id;
 
             return CreatedAtAction("GetTag", new { id = tag.Id }, tag);
         }

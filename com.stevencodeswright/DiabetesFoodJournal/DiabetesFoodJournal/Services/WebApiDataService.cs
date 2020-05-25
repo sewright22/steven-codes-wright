@@ -41,13 +41,13 @@ namespace DiabetesFoodJournal.Services
 
             var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
 
-            var response = await this.client.PostAsync("journalEntry/SaveTag", content);
+            var response = await this.client.PostAsync("tags", content);
 
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                var retVal = JsonConvert.DeserializeObject<int>(responseContent);
-                return retVal;
+                var retVal = JsonConvert.DeserializeObject<Tag>(responseContent);
+                return retVal.Id;
             }
             else
             {
@@ -58,7 +58,7 @@ namespace DiabetesFoodJournal.Services
         public async Task<IEnumerable<Tag>> GetTags(string tagSearchText)
         {
             var retVal = new List<Tag>();//journalEntry/SearchJournal?searchValue=test
-            using (var response = await client.GetAsync($"journalEntry/SearchTags?searchValue={tagSearchText}"))
+            using (var response = await client.GetAsync($"tags?searchValue={tagSearchText}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -86,7 +86,7 @@ namespace DiabetesFoodJournal.Services
 
             var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
 
-            var response = await this.client.PostAsync("journalEntry/SaveJournalEntry", content);
+            var response = await this.client.PostAsync("journalEntries", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -113,7 +113,7 @@ namespace DiabetesFoodJournal.Services
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
             var retVal = new List<JournalEntryDataModel>();//journalEntry/SearchJournal?searchValue=test
-            using (var response = await client.GetAsync($"journalEntry/SearchJournal?searchValue={searchString}"))
+            using (var response = await client.GetAsync($"journalEntries?searchValue={searchString}"))
             {
                 if (response.IsSuccessStatusCode)
                 {
