@@ -13,7 +13,7 @@ namespace TypeOneFoodJournal.Services
     {
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
-            var connectionString = config["mysqlconnection:connectionString"];
+            var connectionString = config["ConnectionStrings:FoodJournal"];
             services.AddDbContext<FoodJournalContext>(o => o.UseLazyLoadingProxies().UseMySql(connectionString));
         }
     }

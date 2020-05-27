@@ -32,7 +32,7 @@ namespace TypeOneFoodJournal.Services.Controllers
             var retVal = new List<JournalEntryModel>();
             try
             {
-                var results = this.context.JournalEntries.AsQueryable();
+                var results = this.context.JournalEntries.OrderByDescending(j=>j.Logged).AsQueryable();
                                                 
 
                 if(!string.IsNullOrEmpty(upperSearchValue))

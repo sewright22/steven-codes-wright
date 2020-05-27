@@ -135,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config.suggested" />
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

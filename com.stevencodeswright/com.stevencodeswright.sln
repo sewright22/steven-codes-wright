@@ -21,21 +21,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Data.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiabetesFoodJournal.Entities.4_5_2", "DiabetesFoodJournal.Entities.4_5_2\DiabetesFoodJournal.Entities.4_5_2.csproj", "{0179ABFF-7DCA-423C-9469-B639A5E13407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Services\WebApi\WebApi.csproj", "{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FJA_Pool.Data", "FJA_Pool.Data\FJA_Pool.Data.csproj", "{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FJA_Pool.Entities", "FJA_Pool.Entities\FJA_Pool.Entities.csproj", "{B7F1DF32-3682-443C-A403-D645E1997E46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeOneFoodJournal", "TypeOneFoodJournal", "{1A63AAE3-55F5-4E76-A082-0AC90C739BD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOneFoodJournal.Data", "TypeOneFoodJournal\TypeOneFoodJournal.Data\TypeOneFoodJournal.Data.csproj", "{7E283137-8285-4F5D-88A3-D4BB9A6997C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOneFoodJournal.Data", "TypeOneFoodJournal\TypeOneFoodJournal.Data\TypeOneFoodJournal.Data.csproj", "{7E283137-8285-4F5D-88A3-D4BB9A6997C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOneFoodJournal.Entities", "TypeOneFoodJournal\TypeOneFoodJournal.Entities\TypeOneFoodJournal.Entities.csproj", "{DEE5DD6B-CFD6-44ED-BB94-7812C7E2957E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOneFoodJournal.Entities", "TypeOneFoodJournal\TypeOneFoodJournal.Entities\TypeOneFoodJournal.Entities.csproj", "{DEE5DD6B-CFD6-44ED-BB94-7812C7E2957E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOneFoodJournal.Services", "TypeOneFoodJournal\TypeOneFoodJournal.Services\TypeOneFoodJournal.Services.csproj", "{E486C5F2-D7C8-40D4-9602-49DB3A026782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOneFoodJournal.Services", "TypeOneFoodJournal\TypeOneFoodJournal.Services\TypeOneFoodJournal.Services.csproj", "{E486C5F2-D7C8-40D4-9602-49DB3A026782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOneFoodJournal.Models", "TypeOneFoodJournal\TypeOneFoodJournal.Models\TypeOneFoodJournal.Models.csproj", "{682B8E05-FC34-47C8-8190-47A168DDCD38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOneFoodJournal.Models", "TypeOneFoodJournal\TypeOneFoodJournal.Models\TypeOneFoodJournal.Models.csproj", "{682B8E05-FC34-47C8-8190-47A168DDCD38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,18 +157,6 @@ Global
 		{0179ABFF-7DCA-423C-9469-B639A5E13407}.Release|iPhone.Build.0 = Release|Any CPU
 		{0179ABFF-7DCA-423C-9469-B639A5E13407}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0179ABFF-7DCA-423C-9469-B639A5E13407}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|iPhone.Build.0 = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{2B4A7081-FAAA-4A5C-A023-AD88B1AFC8D8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
