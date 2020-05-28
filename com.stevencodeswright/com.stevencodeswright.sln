@@ -17,10 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal.Entitie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiabetesFoodJournal.UnitTests", "DiabetesFoodJournal.UnitTests\DiabetesFoodJournal.UnitTests.csproj", "{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FJA_Pool.Data", "FJA_Pool.Data\FJA_Pool.Data.csproj", "{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FJA_Pool.Entities", "FJA_Pool.Entities\FJA_Pool.Entities.csproj", "{B7F1DF32-3682-443C-A403-D645E1997E46}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeOneFoodJournal", "TypeOneFoodJournal", "{1A63AAE3-55F5-4E76-A082-0AC90C739BD1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOneFoodJournal.Data", "TypeOneFoodJournal\TypeOneFoodJournal.Data\TypeOneFoodJournal.Data.csproj", "{7E283137-8285-4F5D-88A3-D4BB9A6997C3}"
@@ -129,30 +125,6 @@ Global
 		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhone.Build.0 = Release|Any CPU
 		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{433E89C8-07D5-4FFB-B36E-BAEC3F0C4CF9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|iPhone.Build.0 = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{119EBDAD-B6AE-4DB0-917D-DD5C2FD7B3B6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|iPhone.Build.0 = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B7F1DF32-3682-443C-A403-D645E1997E46}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{7E283137-8285-4F5D-88A3-D4BB9A6997C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7E283137-8285-4F5D-88A3-D4BB9A6997C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E283137-8285-4F5D-88A3-D4BB9A6997C3}.Debug|iPhone.ActiveCfg = Debug|Any CPU

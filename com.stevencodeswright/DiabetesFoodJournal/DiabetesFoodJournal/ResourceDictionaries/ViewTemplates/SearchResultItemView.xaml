@@ -4,17 +4,21 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Name="JournalEntrySummaryView"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.SearchResultItemView">
     <ContentView.Resources>
         <ControlTemplate x:Key="SearchResultItemTemplate">
-            <Frame Margin="0"
-                   Padding="5,0,5,0">
-                <Frame.GestureRecognizers>
+            <yummy:PancakeView BorderThickness="5"
+                               Margin="0"
+                               Padding="10"
+                               CornerRadius="20"
+                               BackgroundColor="Ivory">
+                <yummy:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
                                           CommandParameter="{TemplateBinding CommandParameter}" />
-                </Frame.GestureRecognizers>
+                </yummy:PancakeView.GestureRecognizers>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -25,9 +29,10 @@
                             <Label Text="{TemplateBinding Logged, StringFormat='{0:t}'}"
                                    FontSize="Micro"
                                    FontAttributes="Bold"
-                                   Margin="0"/>
-                            <Label Text="{TemplateBinding FoodName}" 
-                                   FontSize="Medium"/>
+                                   Margin="0" />
+                            <Label Text="{TemplateBinding FoodName}"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation" />
                         </StackLayout>
                         <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
                                     Wrap="Wrap"
@@ -49,21 +54,22 @@
                            FontSize="18"
                            Grid.Column="1" />
                 </Grid>
-                <Frame.Triggers>
-                    <DataTrigger TargetType="Frame"
+
+                <yummy:PancakeView.Triggers>
+                    <DataTrigger TargetType="yummy:PancakeView"
                                  Binding="{TemplateBinding Path=IsSelected}"
                                  Value="true">
-                        <Setter Property="BackgroundColor"
-                                Value="LightBlue" />
+                        <Setter Property="BorderColor"
+                                Value="Black" />
                     </DataTrigger>
-                    <DataTrigger TargetType="Frame"
+                    <DataTrigger TargetType="yummy:PancakeView"
                                  Binding="{TemplateBinding Path=IsSelected}"
                                  Value="false">
-                        <Setter Property="BackgroundColor"
+                        <Setter Property="BorderColor"
                                 Value="Transparent" />
                     </DataTrigger>
-                </Frame.Triggers>
-            </Frame>
+                </yummy:PancakeView.Triggers>
+            </yummy:PancakeView>
         </ControlTemplate>
 
         <Style TargetType="templates:SearchResultItemView">

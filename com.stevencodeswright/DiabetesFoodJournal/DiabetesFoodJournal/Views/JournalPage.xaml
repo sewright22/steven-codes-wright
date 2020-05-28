@@ -11,8 +11,9 @@
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
         <yummy:PancakeView BackgroundGradientAngle="135"
-                           BackgroundGradientEndColor="Azure"
-                           BackgroundGradientStartColor="LightSkyBlue">
+                           BackgroundGradientEndColor="LightBlue"
+                           BackgroundGradientStartColor="LightSkyBlue"
+                           Padding="5">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -71,7 +72,8 @@
                                                                                             CarbCount="{Binding NutritionalInfo.Carbohydrates}"
                                                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
                                                                                             IsSelected="{Binding Path=IsSelected}"
-                                                                                            CommandParameter="{Binding}" />
+                                                                                            CommandParameter="{Binding}"
+                                                                                            Padding="0" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
