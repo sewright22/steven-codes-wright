@@ -138,12 +138,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DiabetesFoodJournal.Entities.4_5_2\DiabetesFoodJournal.Entities.4_5_2.csproj">
-      <Project>{0179ABFF-7DCA-423C-9469-B639A5E13407}</Project>
-      <Name>DiabetesFoodJournal.Entities.4_5_2</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\202005130126379_AddingFoodJournal.resx">
       <DependentUpon>202005130126379_AddingFoodJournal.cs</DependentUpon>
     </EmbeddedResource>
