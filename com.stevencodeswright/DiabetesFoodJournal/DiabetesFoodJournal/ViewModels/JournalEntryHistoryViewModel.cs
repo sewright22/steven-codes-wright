@@ -26,7 +26,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.messenger = messenger;
 
             GlucoseReadings = new ObservableRangeCollection<GlucoseReading>();
-            JournalEntries = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
+            JournalEntries = new ObservableRangeCollection<JournalEntryDataModel>();
             ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(async (x)=> await ItemTapped(x));
             if (this.messenger != null)
             {
@@ -40,10 +40,10 @@ namespace DiabetesFoodJournal.ViewModels
             IsBusy = true;
             foreach (var group in JournalEntries)
             {
-                foreach (var item in group.Items)
-                {
-                    item.IsSelected = false;
-                }
+                //foreach (var item in group.Items)
+                //{
+                //    item.IsSelected = false;
+                //}
             }
 
             foodResult.IsSelected = true;
@@ -57,7 +57,7 @@ namespace DiabetesFoodJournal.ViewModels
 
         public ObservableRangeCollection<GlucoseReading> GlucoseReadings { get; }
 
-        public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> JournalEntries { get; }
+        public ObservableRangeCollection<JournalEntryDataModel> JournalEntries { get; }
 
         private async Task JournalEntryReceived(JournalEntryDataModel searchEntry)
         {

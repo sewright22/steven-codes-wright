@@ -38,16 +38,16 @@ namespace DiabetesFoodJournal.DataServices
             return retVal;
         }
 
-        public async Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm)
+        public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchTerm)
         {
             var entryList = await this.appDataService.SearchJournal(searchTerm);
 
-            var sorted = from entry in entryList
-                         orderby entry.Logged descending
-                         group entry by entry.Group into entryGroup
-                         select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
+            //var sorted = from entry in entryList
+            //             orderby entry.Logged descending
+            //             group entry by entry.Group into entryGroup
+            //             select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
 
-            return sorted;
+            return entryList;
         }
 
 
@@ -55,7 +55,7 @@ namespace DiabetesFoodJournal.DataServices
 
     public interface IJournalEntryHistoryDataService
     {
-        Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm);
+        Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchTerm);
 
         Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime);
     }
