@@ -17,13 +17,16 @@
                            BackgroundGradientEndColor="LightBlue"
                            BackgroundGradientStartColor="LightSkyBlue"
                            Padding="5">
-            <CarouselView ItemsSource="{Binding JournalEntries}" 
+            <CarouselView ItemsSource="{Binding JournalEntries}"
+                          CurrentItemChangedCommand="{Binding ItemTappedCommand}"
+                          CurrentItemChangedCommandParameter="{Binding Source={x:Reference carousel}, Path=CurrentItem}"
+                          x:Name="carousel"
                           PeekAreaInsets="25">
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal"
                                        SnapPointsType="MandatorySingle"
-                                       SnapPointsAlignment="Start" 
-                                       ItemSpacing="10"/>
+                                       SnapPointsAlignment="Center" 
+                                       ItemSpacing="0"/>
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -31,6 +34,40 @@
                                            BorderColor="Black"
                                            CornerRadius="20"
                                            Padding="10">
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="CurrentItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale"
+                                                    Value="1" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PreviousItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Opacity"
+                                                    Value="0.5" />
+                                            <Setter Property="Scale"
+                                                    Value="0.9" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="NextItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Opacity"
+                                                    Value="0.5" />
+                                            <Setter Property="Scale"
+                                                    Value="0.9" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="DefaultItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Opacity"
+                                                    Value="0.25" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -51,6 +88,9 @@
                                                    IsVisible="True">
                                         <chart:SfChart.PrimaryAxis>
                                             <chart:CategoryAxis>
+                                                <chart:CategoryAxis.Title>
+                                                    <chart:ChartAxisTitle Text="Time since eating (minutes)" />
+                                                </chart:CategoryAxis.Title>
                                             </chart:CategoryAxis>
                                         </chart:SfChart.PrimaryAxis>
                                         <chart:SfChart.SecondaryAxis>
@@ -66,9 +106,6 @@
                                                           EnableTooltip="True" />
                                     </chart:SfChart>
                                 </RefreshView>
-                                <Button Grid.Row="2"
-                                        Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference historyTab}}"
-                                        CommandParameter="{Binding BindingContext, Source={x:Reference bgChart}}" />
                                 <!--<ScrollView Grid.Row="1"
                                         Grid.ColumnSpan="1">
                                 <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">

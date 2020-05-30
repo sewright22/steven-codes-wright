@@ -8,6 +8,6 @@ namespace DiabetesFoodJournal.Models
     {
         public int Id { get; set; }
         public float Reading { get; set; }
-        public DateTime DisplayTime { get; set; }
+        public int? DisplayTime { get; set; }
     }
 }

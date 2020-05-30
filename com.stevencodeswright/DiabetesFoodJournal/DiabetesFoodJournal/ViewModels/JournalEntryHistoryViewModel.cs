@@ -38,13 +38,6 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task ItemTapped(JournalEntryDataModel foodResult)
         {
             IsBusy = true;
-            foreach (var group in JournalEntries)
-            {
-                //foreach (var item in group.Items)
-                //{
-                //    item.IsSelected = false;
-                //}
-            }
 
             foodResult.IsSelected = true;
             var readings = await this.dataService.GetGlucoseReadings(foodResult.Logged, foodResult.Logged.AddHours(5)).ConfigureAwait(true);

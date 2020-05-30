@@ -19,7 +19,7 @@ namespace DiabetesFoodJournal.Models
         public long RealtimeValue { get; set; }
         public long SmoothedValue { get; set; }
         public object Status { get; set; }
-        public Trend Trend { get; set; }
+        //public Trend Trend { get; set; }
         public double? TrendRate { get; set; }
     }
 
