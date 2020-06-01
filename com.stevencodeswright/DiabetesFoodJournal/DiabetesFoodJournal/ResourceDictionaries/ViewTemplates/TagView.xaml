@@ -13,9 +13,11 @@
                    Margin="0"
                    Padding="0"
                    BorderColor="DarkGray">-->
-            <yummy:PancakeView BackgroundGradientAngle="45"
-                               BackgroundGradientEndColor="Azure"
-                               BackgroundGradientStartColor="LightSkyBlue"
+            <yummy:PancakeView BackgroundColor="White"
+                               BorderGradientStartColor="#FF7234"
+                               BorderGradientEndColor="#0055FF"
+                               BorderGradientAngle="270"
+                               BorderThickness="2"
                                CornerRadius="16,0,0,16"
                                HasShadow="True">
                 <StackLayout Orientation="Horizontal"

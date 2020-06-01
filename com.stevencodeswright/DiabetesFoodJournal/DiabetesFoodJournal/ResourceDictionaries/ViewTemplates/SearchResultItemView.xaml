@@ -59,14 +59,20 @@
                     <DataTrigger TargetType="yummy:PancakeView"
                                  Binding="{TemplateBinding Path=IsSelected}"
                                  Value="true">
-                        <Setter Property="BorderColor"
-                                Value="Black" />
+                        <Setter Property="Scale"
+                                Value="1" />
+                        <!--<Setter Property="BorderGradientStartColor"
+                                Value="#FF7234" />
+                        <Setter Property="BorderGradientEndColor"
+                                Value="#0055FF" />-->
                     </DataTrigger>
                     <DataTrigger TargetType="yummy:PancakeView"
                                  Binding="{TemplateBinding Path=IsSelected}"
                                  Value="false">
                         <Setter Property="BorderColor"
                                 Value="Transparent" />
+                        <Setter Property="Scale"
+                                Value=".9" />
                     </DataTrigger>
                 </yummy:PancakeView.Triggers>
             </yummy:PancakeView>

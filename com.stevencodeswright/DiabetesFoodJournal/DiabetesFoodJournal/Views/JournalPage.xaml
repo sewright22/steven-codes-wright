@@ -11,8 +11,8 @@
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
         <yummy:PancakeView BackgroundGradientAngle="135"
-                           BackgroundGradientEndColor="LightBlue"
-                           BackgroundGradientStartColor="LightSkyBlue"
+                           BackgroundGradientEndColor="#FF7234"
+                           BackgroundGradientStartColor="#0055FF"
                            Padding="5">
             <Grid>
                 <Grid.RowDefinitions>
@@ -59,8 +59,10 @@
                                     <DataTemplate>
                                         <yummy:PancakeView>
                                             <StackLayout>
-                                                <Label Margin="0"
+                                                <Label Margin="5"
                                                        Padding="0"
+                                                       FontSize="Medium"
+                                                       TextColor="Ivory"
                                                        Text="{Binding Key}" />
 
                                                 <StackLayout BindableLayout.ItemsSource="{Binding Items}">

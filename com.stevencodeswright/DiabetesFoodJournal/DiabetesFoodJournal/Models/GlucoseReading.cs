@@ -7,7 +7,7 @@ namespace DiabetesFoodJournal.Models
     public class GlucoseReading
     {
         public int Id { get; set; }
-        public float Reading { get; set; }
+        public float? Reading { get; set; }
         public int? DisplayTime { get; set; }
     }
 }

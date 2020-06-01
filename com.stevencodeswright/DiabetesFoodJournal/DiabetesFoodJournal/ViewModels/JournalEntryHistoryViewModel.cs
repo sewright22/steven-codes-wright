@@ -54,9 +54,15 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task JournalEntryReceived(JournalEntryDataModel searchEntry)
         {
-            var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
-
-            Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
+            try
+            {
+                var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
+                Device.BeginInvokeOnMainThread(() => JournalEntries.ReplaceRange(entryList));
+            }
+            catch (Exception)
+            {
+                Device.BeginInvokeOnMainThread(() => JournalEntries.Clear());
+            }
         }
     }
 }

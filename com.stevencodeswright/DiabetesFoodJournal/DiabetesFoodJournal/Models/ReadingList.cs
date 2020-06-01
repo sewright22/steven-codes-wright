@@ -15,9 +15,9 @@ namespace DiabetesFoodJournal.Models
     {
         public DateTimeOffset SystemTime { get; set; }
         public DateTimeOffset DisplayTime { get; set; }
-        public long Value { get; set; }
-        public long RealtimeValue { get; set; }
-        public long SmoothedValue { get; set; }
+        public long? Value { get; set; }
+        public long? RealtimeValue { get; set; }
+        public long? SmoothedValue { get; set; }
         public object Status { get; set; }
         //public Trend Trend { get; set; }
         public double? TrendRate { get; set; }

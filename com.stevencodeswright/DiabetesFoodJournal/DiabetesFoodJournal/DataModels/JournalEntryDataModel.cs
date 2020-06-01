@@ -45,7 +45,7 @@ namespace DiabetesFoodJournal.DataModels
                 }
                 else
                 {
-                    return string.Format("{0} {1}", Logged.ToString("MM/dd/yyyy"), Logged.Year.ToString());
+                    return string.Format("{0}", Logged.ToString("MM/dd/yyyy"));
                 }
             }
         }
