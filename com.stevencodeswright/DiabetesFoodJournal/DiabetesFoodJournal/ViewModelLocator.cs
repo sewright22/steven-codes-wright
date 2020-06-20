@@ -22,6 +22,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register(() => { return Messenger.Default; });
             SimpleIoc.Default.Register<IDatabaseSettings, DefaultDatabaseSettings>();
             SimpleIoc.Default.Register<ISqlLiteAsyncConnectionFactory, SqlLiteAsyncConnectionFactory>();
+            SimpleIoc.Default.Register<IHashHelper, HashHelper>();
             SimpleIoc.Default.Register<IFoodJournalDatabase, FoodJournalDatabase>();
             SimpleIoc.Default.Register<ISecureStorage, SecureStorageHelper>();
             SimpleIoc.Default.Register<IUserInfo, UserInfoHelper>();

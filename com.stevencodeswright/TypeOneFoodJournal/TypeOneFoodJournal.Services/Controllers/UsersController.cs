@@ -74,13 +74,13 @@ namespace TypeOneFoodJournal.Services.Controllers
                     {
                         Password = new Password()
                         {
-                            Text = model.Password
+                            Text = SecurePasswordHasher.Hash(model.Password),
                         }
                     }
                 };
 
                 this.context.Users.Add(newUser);
-                    await this.context.SaveChangesAsync();
+                await this.context.SaveChangesAsync();
 
                 return Ok(new UserModel()
                 {

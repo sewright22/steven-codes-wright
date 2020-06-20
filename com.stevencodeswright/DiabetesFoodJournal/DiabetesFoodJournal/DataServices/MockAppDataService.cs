@@ -213,5 +213,10 @@ namespace DiabetesFoodJournal.DataServices
         {
             throw new NotImplementedException();
         }
+
+        public Task<UserDataModel> CreateAccount(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

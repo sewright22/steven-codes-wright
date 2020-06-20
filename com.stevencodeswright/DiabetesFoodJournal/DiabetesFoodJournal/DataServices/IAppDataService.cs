@@ -14,5 +14,6 @@ namespace DiabetesFoodJournal.DataServices
         Task<IEnumerable<Tag>> GetTags(string tagSearchText);
         Task<int> AddNewTag(Tag tag);
         Task<UserDataModel> Login(string email, string password);
+        Task<UserDataModel> CreateAccount(string email, string password);
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.DataServices
 {
@@ -10,15 +11,28 @@ namespace DiabetesFoodJournal.DataServices
     {
         private readonly IAppDataService appDataService;
         private readonly IUserInfo userInfo;
+        private readonly IHashHelper hashHelper;
 
-        public LoginDataService(IAppDataService appDataService, IUserInfo userInfo)
+        public LoginDataService(IAppDataService appDataService, IUserInfo userInfo, IHashHelper hashHelper)
         {
             this.appDataService = appDataService;
             this.userInfo = userInfo;
+            this.hashHelper = hashHelper;
         }
-        public Task CreateAccount(string email, string password)
+        public async Task CreateAccount(string email, string password)
         {
-            throw new NotImplementedException();
+            var user = await this.appDataService.CreateAccount(email, password).ConfigureAwait(false);
+
+            if (user != null)
+            {
+                await this.userInfo.SetUserId(user.Id);
+                await this.userInfo.SetUserEmail(user.Email);
+                await this.userInfo.SetUserPassword(password);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         public async Task<bool> Login(string email, string password)

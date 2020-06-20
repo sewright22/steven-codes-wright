@@ -43,7 +43,12 @@ namespace TypeOneFoodJournal.Services.Handlers
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
                 var username = credentials[0];
                 var password = credentials[1];
-                user = await this.context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(username.ToUpper()) && x.UserPassword.Password.Text.Equals(password));
+                user = await this.context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(username.ToUpper()));
+
+                if(!SecurePasswordHasher.Verify(password, user.UserPassword.Password.Text.ToString()))
+                {
+                    return AuthenticateResult.Fail("Invalid Username or Password");
+                }
             }
             catch
             {
@@ -62,5 +67,6 @@ namespace TypeOneFoodJournal.Services.Handlers
 
             return AuthenticateResult.Success(ticket);
         }
+
     }
 }

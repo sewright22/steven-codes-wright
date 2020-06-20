@@ -101,6 +101,35 @@ namespace DiabetesFoodJournal.Services
             return retVal;
         }
 
+        public async Task<UserDataModel> CreateAccount(string email, string password)
+        {
+            var user = new User();
+            user.Email = email;
+            user.Password = password;
+
+            var serializedItem = JsonConvert.SerializeObject(user);
+
+            var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
+
+            var response = await this.client.PostAsync($"users/createaccount", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var retVal = JsonConvert.DeserializeObject<User>(responseContent);
+                var userModel = new UserDataModel();
+                user.Id = retVal.Id;
+                userModel.Load(user);
+                return userModel;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var test = errorContent;
+                return null;
+            }
+        }
+
         public Task<int> SaveDose(DoseDataModel doseToSave)
         {
             throw new NotImplementedException();

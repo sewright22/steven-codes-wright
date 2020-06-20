@@ -4,6 +4,7 @@ using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using XamarinHelper.Core;
@@ -52,10 +53,10 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task CreateAccount()
         {
             ErrorIsVisible = false;
-
             if (this.password.Equals(this.reenterPassword))
             {
                 await this.loginDataService.CreateAccount(this.email, this.password);
+                await this.navigationHelper.GoToAsync("///main", true);
             }
             else
             {
