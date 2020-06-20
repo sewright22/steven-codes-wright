@@ -198,5 +198,20 @@ namespace DiabetesFoodJournal.DataServices
         {
             throw new NotImplementedException();
         }
+
+        public Task<UserDataModel> Login(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<JournalEntryDataModel>> SearchJournal(int userId, string searchString)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave, int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

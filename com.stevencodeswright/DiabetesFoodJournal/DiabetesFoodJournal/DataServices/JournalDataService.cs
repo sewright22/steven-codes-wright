@@ -12,10 +12,17 @@ namespace DiabetesFoodJournal.DataServices
     public class JournalDataService : IJournalDataService
     {
         private readonly IAppDataService appDataService;
+        private readonly IUserInfo userInfo;
 
-        public JournalDataService(IAppDataService appDataService)
+        public JournalDataService(IAppDataService appDataService, IUserInfo userInfo)
         {
             this.appDataService = appDataService;
+            this.userInfo = userInfo;
+        }
+
+        public bool CheckLogin()
+        {
+            return false;
         }
 
         public JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry)
@@ -44,12 +51,12 @@ namespace DiabetesFoodJournal.DataServices
 
         public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
         {
-            return await this.appDataService.SaveEntry(entryToSave);
+            return await this.appDataService.SaveEntry(entryToSave, await this.userInfo.GetUserId().ConfigureAwait(false));
         }
 
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
-            return await this.appDataService.SearchJournal(searchString.Trim());
+            return await this.appDataService.SearchJournal(await this.userInfo.GetUserId().ConfigureAwait(false), searchString.Trim());
 
         }
     }
@@ -60,5 +67,6 @@ namespace DiabetesFoodJournal.DataServices
         Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
         JournalEntryDataModel CreateEntry(string entryTitle);
+        bool CheckLogin();
     }
 }

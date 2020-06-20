@@ -3,13 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
+             BackgroundColor="Ivory"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=Login}"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.LoginPage">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" />
+    </Shell.BackButtonBehavior>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center"
+                         HorizontalOptions="Fill"
+                         Padding="10">
+                <yummy:PancakeView BorderGradientAngle="135"
+                                   BorderGradientEndColor="#FF7234"
+                                   BorderGradientStartColor="#0055FF"
+                                   BackgroundColor="Ivory"
+                                   BorderThickness="3"
+                                   Padding="10">
+                    <StackLayout>
+                        <Label Text="Email" />
+                        <Entry Placeholder="Email Address"
+                               Text="{Binding Email}"
+                               Keyboard="Email" />
+                        <Label Text="Password" />
+                        <Entry Placeholder="Password"
+                               x:Name="entryPassword"
+                               IsPassword="True" />
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center">
+                            <Label Text="New User?"
+                                   TextColor="Gray" />
+                            <Label Text="Create Account"
+                                   TextColor="Blue"
+                                   TextDecorations="Underline">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CreateCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <Button Text="Login"
+                                HorizontalOptions="Fill"
+                                Margin="10"
+                                CornerRadius="25"
+                                TextColor="White"
+                                BackgroundColor="#0055FF"
+                                Command="{Binding LoginCommand}"
+                                CommandParameter="{Binding Source={x:Reference entryPassword}, Path=Text}" />
+                    </StackLayout>
+                </yummy:PancakeView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -29,6 +29,21 @@ namespace DiabetesFoodJournal.Services
             return this.secureStorage.GetAsync("tokenType");
         }
 
+        public Task<string> GetUserEmail()
+        {
+            return this.secureStorage.GetAsync("userEmail");
+        }
+
+        public async Task<int> GetUserId()
+        {
+            return Convert.ToInt32(await this.secureStorage.GetAsync("userId").ConfigureAwait(false));
+        }
+
+        public Task<string> GetUserPassword()
+        {
+            return this.secureStorage.GetAsync("userPassword");
+        }
+
         public Task SetDexcomRefreshToken(string refreshToken)
         {
             return this.secureStorage.SetAsync("refresh", refreshToken);
@@ -43,13 +58,34 @@ namespace DiabetesFoodJournal.Services
         {
             return this.secureStorage.SetAsync("tokenType", tokenType);
         }
+
+        public Task SetUserEmail(string userEmail)
+        {
+            return this.secureStorage.SetAsync("userEmail", userEmail);
+        }
+
+        public Task SetUserId(int userId)
+        {
+            return this.secureStorage.SetAsync("userId", userId.ToString()); ;
+        }
+
+        public Task SetUserPassword(string password)
+        {
+            return this.secureStorage.SetAsync("userPassword", password);
+        }
     }
 
     public interface IUserInfo
     {
+        Task<int> GetUserId();
+        Task<string> GetUserEmail();
+        Task<string> GetUserPassword();
         Task<string> GetDexcomToken();
         Task<string> GetDexcomRefreshToken();
         Task SetDexcomToken(string token);
         Task SetDexcomRefreshToken(string refreshToken);
+        Task SetUserId(int userId);
+        Task SetUserEmail(string userEmail);
+        Task SetUserPassword(string password);
     }
 }

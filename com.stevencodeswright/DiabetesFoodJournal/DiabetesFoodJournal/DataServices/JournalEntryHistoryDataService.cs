@@ -14,11 +14,13 @@ namespace DiabetesFoodJournal.DataServices
     {
         private readonly IAppDataService appDataService;
         private readonly IDexcomDataStore dexcomDataStore;
+        private readonly IUserInfo userInfo;
 
-        public JournalEntryHistoryDataService(IAppDataService appDataService, IDexcomDataStore dexcomDataStore)
+        public JournalEntryHistoryDataService(IAppDataService appDataService, IDexcomDataStore dexcomDataStore, IUserInfo userInfo)
         {
             this.appDataService = appDataService;
             this.dexcomDataStore = dexcomDataStore;
+            this.userInfo = userInfo;
         }
 
         public async Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime)
@@ -40,7 +42,7 @@ namespace DiabetesFoodJournal.DataServices
 
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchTerm)
         {
-            var entryList = await this.appDataService.SearchJournal(searchTerm);
+            var entryList = await this.appDataService.SearchJournal(await this.userInfo.GetUserId().ConfigureAwait(false), searchTerm);
 
             //var sorted = from entry in entryList
             //             orderby entry.Logged descending

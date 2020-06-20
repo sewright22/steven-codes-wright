@@ -27,6 +27,10 @@
             }
         }
 
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserPassword> UserPasswords { get; set; }
+        public DbSet<UserJournalEntry> UserJournalEntries { get; set; }
+        public DbSet<Password> Passwords { get; set; }
         public DbSet<JournalEntry> JournalEntries { get; set; }
         public DbSet<Dose> Doses { get; set; }
         public DbSet<Tag> Tags { get; set; }

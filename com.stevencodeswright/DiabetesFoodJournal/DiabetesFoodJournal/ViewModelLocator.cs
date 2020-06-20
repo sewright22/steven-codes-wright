@@ -40,15 +40,32 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<INutritionalInfoFactory, NutritionalInfoFactory>();
             SimpleIoc.Default.Register<ITagFactory, TagFactory>();
             SimpleIoc.Default.Register<IAppDataService, WebApiDataService>();
+            SimpleIoc.Default.Register<ILoginDataService, LoginDataService>();
             SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
             SimpleIoc.Default.Register<IJournalEntryDataService, JournalEntryDataService>();
             SimpleIoc.Default.Register<IJournalEntryHistoryDataService, JournalEntryHistoryDataService>();
+            SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<CreateAccountViewModel>();
             SimpleIoc.Default.Register<JournalViewModel>();
             SimpleIoc.Default.Register<JournalEntryViewModel>();
             SimpleIoc.Default.Register<JournalEntryHistoryViewModel>();
         }
 
+        public LoginViewModel Login
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<LoginViewModel>();
+            }
+        }
 
+        public CreateAccountViewModel CreateAccount
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<CreateAccountViewModel>();
+            }
+        }
         public JournalViewModel Journal
         {
             get

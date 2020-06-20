@@ -7,8 +7,10 @@ using DiabetesFoodJournal.WebApiModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -75,18 +77,42 @@ namespace DiabetesFoodJournal.Services
             return retVal;
         }
 
+        public async Task<UserDataModel> Login(string email, string password)
+        {
+            var retVal = new UserDataModel();
+            var authToken = Encoding.ASCII.GetBytes($"{email}:{password}");
+            this.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",Convert.ToBase64String(authToken));
+
+            using (var response = await this.client.GetAsync($"users?email={email}").ConfigureAwait(false))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var users = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<User>>(content)).ConfigureAwait(false);
+                    var user = users.SingleOrDefault();
+
+                    if(user != null)
+                    {
+                        retVal.Load(user);
+                    }
+                }
+            }
+
+            return retVal;
+        }
+
         public Task<int> SaveDose(DoseDataModel doseToSave)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave)
+        public async Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave, int userId)
         {
             var serializedItem = JsonConvert.SerializeObject(entryToSave);
 
             var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
 
-            var response = await this.client.PostAsync("journalEntries", content);
+            var response = await this.client.PostAsync($"journalEntries/v2?userId={userId}", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -110,14 +136,14 @@ namespace DiabetesFoodJournal.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
+        public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(int userId, string searchString)
         {
             var retVal = new List<JournalEntryDataModel>();//journalEntry/SearchJournal?searchValue=test
-            var endPoint = $"journalEntries?searchValue={searchString}";
+            var endPoint = $"journalEntries/V2/?userId={userId}&searchValue={searchString}";
 
             if(string.IsNullOrEmpty(searchString))
             {
-                endPoint = "journalEntries";
+                endPoint = $"journalEntries/V2/?userId={userId}";
             }
 
             using (var response = await client.GetAsync(endPoint))

@@ -12,6 +12,8 @@ namespace DiabetesFoodJournal
         {
             InitializeComponent();
 
+            Routing.RegisterRoute("Login", typeof(LoginPage));
+            Routing.RegisterRoute("CreateAccount", typeof(CreateAccountPage));
             Routing.RegisterRoute("journalEntry", typeof(FoodDetailsPage));
         }
     }
