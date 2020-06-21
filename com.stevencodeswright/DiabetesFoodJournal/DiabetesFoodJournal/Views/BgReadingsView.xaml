@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,7 +7,7 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.BgReadingsView">
-  <ContentView.Content>
+    <ContentView.Content>
         <yummy:PancakeView BorderThickness="5"
                            BorderColor="Black"
                            CornerRadius="20"
@@ -17,6 +17,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label Text="{Binding Model.Title}"
@@ -42,7 +43,7 @@
                                                  Maximum="400" />
                         </chart:SfChart.SecondaryAxis>
 
-                        <chart:LineSeries ItemsSource="{Binding Path=Model.GlucoseReadings}"
+                        <chart:LineSeries ItemsSource="{Binding Path=Model.BgReadings}"
                                           XBindingPath="DisplayTime"
                                           YBindingPath="Reading"
                                           Color="Black"
@@ -50,35 +51,91 @@
                                           EnableTooltip="True" />
                     </chart:SfChart>
                 </RefreshView>
-                <!--<ScrollView Grid.Row="1"
-                                        Grid.ColumnSpan="1">
-                                <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackLayout>
-                                                <Label BackgroundColor="Gray"
-                                                       Margin="0"
-                                                       Padding="0"
-                                                       Text="{Binding Key}" />
 
-                                                <StackLayout BindableLayout.ItemsSource="{Binding Items}">
-                                                    <BindableLayout.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <templates:SearchResultItemView FoodName="{Binding Path=Title}"
-                                                                                            Logged="{Binding Path=Logged}"
-                                                                                            TagList="{Binding Tags}"
-                                                                                            CarbCount="{Binding NutritionalInfo.Carbohydrates}"
-                                                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryHistoryViewModel}}, Path=ItemTappedCommand}"
-                                                                                            IsSelected="{Binding Path=IsSelected}"
-                                                                                            CommandParameter="{Binding}" />
-                                                        </DataTemplate>
-                                                    </BindableLayout.ItemTemplate>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
-                                </StackLayout>
-                            </ScrollView>-->
+                <yummy:PancakeView Grid.Row="2">
+                    <StackLayout>
+                        <Label FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Logged: " />
+                                        <Span Text="{Binding Path=Model.Logged}"
+                                              FontAttributes="Bold"
+                                              TextColor="#0055FF" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <StackLayout Orientation="Vertical">
+                            <Label FontSize="Medium">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.InsulinAmount}" 
+                                                  FontAttributes="Bold"
+                                                  TextColor="#0055FF"/>
+                                            <Span Text=" " />
+                                            <Span Text="Units" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label FontSize="Medium">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.UpFront}"
+                                                  TextColor="#0055FF"
+                                                  FontAttributes="Bold" />
+                                            <Span Text="% " />
+                                            <Span Text="Up Front" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label FontSize="Medium">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.Extended}"
+                                                  TextColor="#0055FF"
+                                                  FontAttributes="Bold" />
+                                            <Span Text="% " />
+                                            <Span Text="Extended" />
+                                            <Span Text=" for " />
+                                            <Span Text="{Binding Path=Model.Dose.TimeExtended}"
+                                                  TextColor="#0055FF"
+                                                  FontAttributes="Bold" />
+                                            <Span Text=" hours."
+                                                  FontAttributes="Bold" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                        <Label >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Notes: " />
+                                        <Span Text="{Binding Path=Model.Notes}"
+                                              TextColor="#0055FF" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </yummy:PancakeView>
+
+                <Button Text="Log Again"
+                        Command="{Binding LogAgainCommand}"
+                        Grid.Row="3"
+                        Margin="10"
+                        CornerRadius="25"
+                        TextColor="White"
+                        BackgroundColor="#0055FF" />
             </Grid>
         </yummy:PancakeView>
     </ContentView.Content>
