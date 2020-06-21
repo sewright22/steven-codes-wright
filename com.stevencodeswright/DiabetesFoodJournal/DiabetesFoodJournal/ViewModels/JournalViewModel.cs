@@ -32,9 +32,16 @@ namespace DiabetesFoodJournal.ViewModels
             LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
             ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(x => ItemTapped(x));
             CreateNewEntryCommand = new RelayCommand<string>(async entryTitle => await CreateNewEntryClicked(entryTitle).ConfigureAwait(true));
+            ViewReadingsCommand = new AsyncCommand(this.ViewReadingsClicked);
             this.dataService = dataService;
             this.navigation = navigation;
             this.messenger = messenger;
+        }
+
+        private async Task ViewReadingsClicked()
+        {
+            await this.navigation.GoToAsync($"BgReadings").ConfigureAwait(false);
+            this.messenger.Send(SelectedEntry);
         }
 
         private async Task LogAgainClicked()
@@ -94,6 +101,7 @@ namespace DiabetesFoodJournal.ViewModels
         public RelayCommand<string> CreateNewEntryCommand { get; set; }
         public RelayCommand LogAgainCommand { get; set; }
         public RelayCommand UpdateEntryCommand { get; set; }
+        public AsyncCommand ViewReadingsCommand { get; set; }
         public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; set; }
 
         private async Task SearchClicked(string searchString)

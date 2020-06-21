@@ -50,6 +50,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<JournalViewModel>();
             SimpleIoc.Default.Register<JournalEntryViewModel>();
             SimpleIoc.Default.Register<JournalEntryHistoryViewModel>();
+            SimpleIoc.Default.Register<BgReadingsViewModel>();
         }
 
         public LoginViewModel Login
@@ -80,6 +81,14 @@ namespace DiabetesFoodJournal
             get
             {
                 return SimpleIoc.Default.GetInstance<JournalEntryViewModel>();
+            }
+        }
+
+        public BgReadingsViewModel BgReadings
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<BgReadingsViewModel>();
             }
         }
 

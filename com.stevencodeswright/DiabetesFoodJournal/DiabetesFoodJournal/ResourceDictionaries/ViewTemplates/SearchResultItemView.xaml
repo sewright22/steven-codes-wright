@@ -20,6 +20,10 @@
                                           CommandParameter="{TemplateBinding CommandParameter}" />
                 </yummy:PancakeView.GestureRecognizers>
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
@@ -53,6 +57,27 @@
                            FontAttributes="Bold"
                            FontSize="18"
                            Grid.Column="1" />
+
+                    <Grid Grid.Row="1"
+                          Grid.ColumnSpan="2"
+                          IsVisible="{TemplateBinding IsSelected}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Text="View Readings"
+                                CornerRadius="25"
+                                TextColor="White"
+                                BackgroundColor="#0055FF"
+                                Command="{TemplateBinding ViewReadingsCommand}" />
+                        <Button Text="Update"
+                                Grid.Column="1"
+                                CornerRadius="25"
+                                TextColor="White"
+                                BackgroundColor="#0055FF"
+                                Command="{TemplateBinding  UpdateCommand}" />
+                    </Grid>
                 </Grid>
 
                 <yummy:PancakeView.Triggers>

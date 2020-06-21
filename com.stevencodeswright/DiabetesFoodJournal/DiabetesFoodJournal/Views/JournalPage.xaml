@@ -75,6 +75,8 @@
                                                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
                                                                                             IsSelected="{Binding Path=IsSelected}"
                                                                                             CommandParameter="{Binding}"
+                                                                                            UpdateCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=UpdateEntryCommand}"
+                                                                                            ViewReadingsCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ViewReadingsCommand}"
                                                                                             Padding="0" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
@@ -88,12 +90,15 @@
                             <Button Text="Create New Entry"
                                     VerticalOptions="End"
                                     Command="{Binding CreateNewEntryCommand}"
+                                    CornerRadius="25"
+                                    TextColor="White"
+                                    BackgroundColor="#0055FF"
                                     CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}" />
                         </StackLayout>
                     </ScrollView>
                 </RefreshView>
 
-                <Button Text="Update"
+                <!--<Button Text="Update"
                         Grid.Row="3"
                         Grid.Column="0"
                         IsVisible="{Binding RowIsSelected}"
@@ -103,7 +108,7 @@
                         Grid.Row="3"
                         Grid.Column="1"
                         IsVisible="{Binding RowIsSelected}"
-                        Command="{Binding LogAgainCommand}" />
+                        Command="{Binding LogAgainCommand}" />-->
             </Grid>
         </yummy:PancakeView>
     </ContentPage.Content>

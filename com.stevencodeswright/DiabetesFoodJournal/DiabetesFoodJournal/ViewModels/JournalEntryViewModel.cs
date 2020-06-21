@@ -38,6 +38,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.tags = tags;
             this.carbCount = 5;
             ExistingTagSearch = new ObservableRangeCollection<Tag>();
+
             if(this.messenger != null)
             {
                 this.messenger.Register<JournalEntryDataModel>(this, JournalEntryReceived);

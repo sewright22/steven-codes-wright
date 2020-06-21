@@ -9,6 +9,7 @@
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=JournalEntry}"
              Title="New Entry"
              mc:Ignorable="d"
+             Padding="0,5,0,10"
              x:Class="DiabetesFoodJournal.Views.JournalEntryPage">
     <ContentPage.Resources>
         <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
@@ -182,6 +183,9 @@
             </Grid>
 
             <Button Text="Save"
+                    CornerRadius="25"
+                    TextColor="White"
+                    BackgroundColor="#0055FF"
                     Grid.Row="1"
                     Grid.ColumnSpan="2" 
                     Command="{Binding Path=SaveCommand}"/>

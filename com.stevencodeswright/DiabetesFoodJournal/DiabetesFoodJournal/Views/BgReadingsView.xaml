@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.Views.BgReadingsView">
+  <ContentView.Content>
+        <yummy:PancakeView BorderThickness="5"
+                           BorderColor="Black"
+                           CornerRadius="20"
+                           Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Text="{Binding Model.Title}"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Large" />
+
+                <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                             x:Name="bgChart"
+                             Grid.Row="1">
+                    <chart:SfChart HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   IsVisible="True">
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis>
+                                <chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Time since eating (minutes)" />
+                                </chart:CategoryAxis.Title>
+                            </chart:CategoryAxis>
+                        </chart:SfChart.PrimaryAxis>
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis Minimum="50"
+                                                 Maximum="400" />
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:LineSeries ItemsSource="{Binding Path=Model.GlucoseReadings}"
+                                          XBindingPath="DisplayTime"
+                                          YBindingPath="Reading"
+                                          Color="Black"
+                                          IsVisible="True"
+                                          EnableTooltip="True" />
+                    </chart:SfChart>
+                </RefreshView>
+                <!--<ScrollView Grid.Row="1"
+                                        Grid.ColumnSpan="1">
+                                <StackLayout BindableLayout.ItemsSource="{Binding JournalEntries}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout>
+                                                <Label BackgroundColor="Gray"
+                                                       Margin="0"
+                                                       Padding="0"
+                                                       Text="{Binding Key}" />
+
+                                                <StackLayout BindableLayout.ItemsSource="{Binding Items}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <templates:SearchResultItemView FoodName="{Binding Path=Title}"
+                                                                                            Logged="{Binding Path=Logged}"
+                                                                                            TagList="{Binding Tags}"
+                                                                                            CarbCount="{Binding NutritionalInfo.Carbohydrates}"
+                                                                                            TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryHistoryViewModel}}, Path=ItemTappedCommand}"
+                                                                                            IsSelected="{Binding Path=IsSelected}"
+                                                                                            CommandParameter="{Binding}" />
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>-->
+            </Grid>
+        </yummy:PancakeView>
+    </ContentView.Content>
+</ContentView>
