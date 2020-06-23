@@ -438,6 +438,16 @@ namespace TypeOneFoodJournal.Services.Controllers
                                 this.context.JournalEntryNutritionalInfos.Add(entryNutritionalInfoFromDb);
                             }
 
+                            var journalEntryTagsFromDb = this.context.JournalEntryTags.Where(x => x.JournalEntryId == entryFromDb.Id);
+                            foreach(var dbTag in journalEntryTagsFromDb.ToList())
+                            {
+                                if(entry.Tags.Where(x=>x.Id==dbTag.TagId).Any()==false)
+                                {
+                                    this.context.Remove(dbTag);
+                                    this.context.SaveChanges();
+                                }
+                            }
+
                             foreach (var tag in entry.Tags)
                             {
                                 var tagFromDb = this.context.Tags.FirstOrDefault(x => x.Id == tag.Id);
