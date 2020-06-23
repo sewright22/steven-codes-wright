@@ -1,4 +1,6 @@
 ﻿using DiabetesFoodJournal.DataServices;
+using DiabetesFoodJournal.Messages;
+using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
 using System;
@@ -14,14 +16,29 @@ namespace DiabetesFoodJournal.ViewModels
     {
         private readonly ILoginDataService loginDataService;
         private readonly INavigationHelper navigationHelper;
+        private readonly IMessenger messenger;
         private string email;
 
-        public LoginViewModel(ILoginDataService loginDataService, INavigationHelper navigationHelper)
+        public LoginViewModel(ILoginDataService loginDataService, INavigationHelper navigationHelper, IMessenger messenger)
         {
             this.loginDataService = loginDataService;
             this.navigationHelper = navigationHelper;
+            this.messenger = messenger;
             LoginCommand = new AsyncCommand<string>(password=>Login(password), CanLogin);
             CreateCommand = new AsyncCommand(()=>CreateAccount());
+
+            this.messenger.Register<AppLoadedMessage>(this, async (message) => await this.AppLoaded(message).ConfigureAwait(false));
+        }
+
+        private async Task AppLoaded(AppLoadedMessage message)
+        {
+            this.Email = await this.loginDataService.GetUserName();
+            var password = await this.loginDataService.GetPassword();
+
+            if(!string.IsNullOrEmpty(this.Email) && !string.IsNullOrEmpty(password))
+            {
+                await this.Login(password).ConfigureAwait(false);
+            }
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = "")

@@ -35,6 +35,16 @@ namespace DiabetesFoodJournal.DataServices
             }
         }
 
+        public Task<string> GetPassword()
+        {
+            return this.userInfo.GetUserPassword();
+        }
+
+        public Task<string> GetUserName()
+        {
+            return this.userInfo.GetUserEmail();
+        }
+
         public async Task<bool> Login(string email, string password)
         {
             var user = await this.appDataService.Login(email, password).ConfigureAwait(false);
@@ -57,5 +67,7 @@ namespace DiabetesFoodJournal.DataServices
     {
         Task<bool> Login(string email, string password);
         Task CreateAccount(string email, string password);
+        Task<string> GetUserName();
+        Task<string> GetPassword();
     }
 }

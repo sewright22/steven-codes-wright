@@ -9,5 +9,10 @@
              x:Class="DiabetesFoodJournal.App">
     <Application.Resources>
             <local:ViewModelLocator x:Key="ViewModelLocator" />
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor"
+                    Value="Ivory" />
+        </Style>
     </Application.Resources>
 </Application>

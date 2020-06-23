@@ -6,14 +6,13 @@
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="Ivory"
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=Journal}"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
-        <yummy:PancakeView BackgroundGradientAngle="135"
-                           BackgroundGradientEndColor="#FF7234"
-                           BackgroundGradientStartColor="#0055FF"
-                           Padding="5">
+        <yummy:PancakeView Padding="5"
+                           BackgroundColor="Transparent">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -62,7 +61,7 @@
                                                 <Label Margin="5"
                                                        Padding="0"
                                                        FontSize="Medium"
-                                                       TextColor="Ivory"
+                                                       TextColor="Black"
                                                        Text="{Binding Key}" />
 
                                                 <StackLayout BindableLayout.ItemsSource="{Binding Items}">

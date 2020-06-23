@@ -13,7 +13,7 @@
                    Margin="0"
                    Padding="0"
                    BorderColor="DarkGray">-->
-            <yummy:PancakeView BackgroundColor="White"
+            <yummy:PancakeView BackgroundColor="Ivory"
                                BorderGradientStartColor="#FF7234"
                                BorderGradientEndColor="#0055FF"
                                BorderGradientAngle="270"

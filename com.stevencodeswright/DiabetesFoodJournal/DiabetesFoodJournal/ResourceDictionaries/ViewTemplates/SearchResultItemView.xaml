@@ -14,7 +14,8 @@
                                Margin="0"
                                Padding="10"
                                CornerRadius="20"
-                               BackgroundColor="Ivory">
+                               BackgroundColor="White"
+                               BorderColor="DarkGray">
                 <yummy:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{TemplateBinding TappedCommand}"
                                           CommandParameter="{TemplateBinding CommandParameter}" />
@@ -95,7 +96,7 @@
                                  Binding="{TemplateBinding Path=IsSelected}"
                                  Value="false">
                         <Setter Property="BorderColor"
-                                Value="Transparent" />
+                                Value="DarkGray" />
                         <Setter Property="Scale"
                                 Value=".9" />
                     </DataTrigger>
