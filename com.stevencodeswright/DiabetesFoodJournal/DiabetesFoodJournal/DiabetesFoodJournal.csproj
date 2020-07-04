@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SharedImage Include="Images\TypeOneFoodJournal.png" BaseSize="50,50"/>
+    <SharedImage Include="Images\TypeOneFoodJournal.png" BaseSize="50,50" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,7 +11,7 @@
             <Frame CornerRadius="2"
                    BorderColor="Black"
                    Padding="5,5,0,0">
-                <Grid Margin="0">
+                <Grid Margin="{StaticResource DefaultMargin}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -24,7 +24,7 @@
                            TextColor="Black"
                            IsVisible="{TemplateBinding LabelIsVisible}"
                            Grid.Row="1"
-                           Padding="0">
+                           Padding="{StaticResource DefaultMargin}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>

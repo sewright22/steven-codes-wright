@@ -21,8 +21,8 @@
                                CornerRadius="16,0,0,16"
                                HasShadow="True">
                 <StackLayout Orientation="Horizontal"
-                             Margin="0"
-                             Padding="0">
+                             Margin="{StaticResource DefaultMargin}"
+                             Padding="{StaticResource DefaultMargin}">
                     <Label Text="{TemplateBinding TagText}"
                            Margin="10,10,10,10" />
                     <Label Text="X"

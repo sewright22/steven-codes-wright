@@ -11,7 +11,7 @@
     <ContentView.Resources>
         <ControlTemplate x:Key="SearchResultItemTemplate">
             <yummy:PancakeView BorderThickness="5"
-                               Margin="0"
+                               Margin="{StaticResource DefaultMargin}"
                                Padding="10"
                                CornerRadius="20"
                                BackgroundColor="White"
@@ -34,7 +34,7 @@
                             <Label Text="{TemplateBinding Logged, StringFormat='{0:t}'}"
                                    FontSize="Micro"
                                    FontAttributes="Bold"
-                                   Margin="0" />
+                                   Margin="{StaticResource DefaultMargin}" />
                             <Label Text="{TemplateBinding FoodName}"
                                    FontSize="Medium"
                                    LineBreakMode="TailTruncation" />

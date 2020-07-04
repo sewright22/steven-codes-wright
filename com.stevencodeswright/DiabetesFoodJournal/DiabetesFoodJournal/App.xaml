@@ -8,6 +8,12 @@
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="AppOrange">#FF7234</Color>
+            <Thickness x:Key="DefaultMargin">0,0,0,0</Thickness>
+            <Color x:Key="AppBackground">Ivory</Color>
+            <Color x:Key="AppBlue">#0055FF</Color>
+        </ResourceDictionary>
             <local:ViewModelLocator x:Key="ViewModelLocator" />
 
         <Style TargetType="ContentPage">

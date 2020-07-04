@@ -59,7 +59,7 @@
                                         <yummy:PancakeView>
                                             <StackLayout>
                                                 <Label Margin="5"
-                                                       Padding="0"
+                                                       Padding="{StaticResource DefaultMargin}"
                                                        FontSize="Medium"
                                                        TextColor="Black"
                                                        Text="{Binding Key}" />
@@ -76,7 +76,7 @@
                                                                                             CommandParameter="{Binding}"
                                                                                             UpdateCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=UpdateEntryCommand}"
                                                                                             ViewReadingsCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ViewReadingsCommand}"
-                                                                                            Padding="0" />
+                                                                                            Padding="{StaticResource DefaultMargin}" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>

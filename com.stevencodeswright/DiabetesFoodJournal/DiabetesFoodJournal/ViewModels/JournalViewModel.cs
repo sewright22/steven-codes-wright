@@ -59,7 +59,7 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task CreateNewEntryClicked(string entryTitle)
         {
-            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
+            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(true);
             var newEntry = this.dataService.CreateEntry(entryTitle);
             newEntry = await this.dataService.SaveEntry(newEntry);
 
