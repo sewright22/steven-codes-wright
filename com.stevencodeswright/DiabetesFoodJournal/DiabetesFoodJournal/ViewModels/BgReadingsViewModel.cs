@@ -1,5 +1,6 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
+using DiabetesFoodJournal.Models;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
@@ -62,8 +63,9 @@ namespace DiabetesFoodJournal.ViewModels
 
                     if (readingsFromCgm.Any())
                     {
-
                         Device.BeginInvokeOnMainThread(() => this.Model.BgReadings.ReplaceRange(readingsFromCgm.OrderBy(x => x.DisplayTime)));
+                        Device.BeginInvokeOnMainThread(() => this.Model.StartingBg = this.Model.BgReadings.FirstOrDefault().Reading);
+                        await AnalyzeReadings(readingsFromCgm);
                     }
                 }
                 catch (Exception)
@@ -73,6 +75,17 @@ namespace DiabetesFoodJournal.ViewModels
             }
 
             IsBusy = false;
+        }
+
+        private async Task AnalyzeReadings(IEnumerable<GlucoseReading> readingsFromCgm)
+        {
+            var highReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading >= r2.Reading ? r1 : r2));
+            var lowReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading <= r2.Reading ? r1 : r2));
+
+            Device.BeginInvokeOnMainThread(() => this.Model.HighestBg = highReading.Reading);
+            Device.BeginInvokeOnMainThread(() => this.Model.HighestBgTimeSpanInMinutes = highReading.DisplayTime);
+            Device.BeginInvokeOnMainThread(() => this.Model.LowestBg = lowReading.Reading);
+            Device.BeginInvokeOnMainThread(() => this.Model.LowestBgTimeSpanInMinutes = lowReading.DisplayTime);
         }
     }
 }

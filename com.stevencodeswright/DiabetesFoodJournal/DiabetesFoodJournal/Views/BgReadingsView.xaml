@@ -7,6 +7,20 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.BgReadingsView">
+    <ContentView.Resources>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" /> 
+        </Style>
+    </ContentView.Resources>
     <ContentView.Content>
         <yummy:PancakeView BorderThickness="5"
                            BorderColor="Black"
@@ -53,80 +67,136 @@
                 </RefreshView>
 
                 <yummy:PancakeView Grid.Row="2">
-                    <StackLayout>
-                        <Label FontSize="Medium">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               FontSize="Medium">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
                                         <Span Text="Logged: " />
                                         <Span Text="{Binding Path=Model.Logged}"
-                                              FontAttributes="Bold"
-                                              TextColor="#0055FF" />
+                                              Style="{StaticResource StrongSpan}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <StackLayout Orientation="Vertical">
-                            <Label FontSize="Medium">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.Dose.InsulinAmount}" 
-                                                  FontAttributes="Bold"
-                                                  TextColor="#0055FF"/>
-                                            <Span Text=" " />
-                                            <Span Text="Units" />
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
 
-                            <Label FontSize="Medium">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.Dose.UpFront}"
-                                                  TextColor="#0055FF"
-                                                  FontAttributes="Bold" />
-                                            <Span Text="% " />
-                                            <Span Text="Up Front" />
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
+                        <Label Grid.Row="1"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.InsulinAmount}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" " />
+                                        <Span Text="Units" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
-                            <Label FontSize="Medium">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.Dose.Extended}"
-                                                  TextColor="#0055FF"
-                                                  FontAttributes="Bold" />
-                                            <Span Text="% " />
-                                            <Span Text="Extended" />
-                                            <Span Text=" for " />
-                                            <Span Text="{Binding Path=Model.Dose.TimeExtended}"
-                                                  TextColor="#0055FF"
-                                                  FontAttributes="Bold" />
-                                            <Span Text=" hours."
-                                                  FontAttributes="Bold" />
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                        </StackLayout>
-                        <Label >
+                        <Label Grid.Row="2"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.UpFront}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text="% " />
+                                        <Span Text="Up Front" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="3"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.Extended}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text="% " />
+                                        <Span Text="Extended" />
+                                        <Span Text=" for " />
+                                        <Span Text="{Binding Path=Model.Dose.TimeExtended}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" hours."
+                                              FontAttributes="Bold" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="4">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
                                         <Span Text="Notes: " />
                                         <Span Text="{Binding Path=Model.Notes}"
-                                              TextColor="#0055FF" />
+                                              Style="{StaticResource BlueSpan}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    </StackLayout>
+
+                        <Label Grid.Row="5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Starting BG: " />
+                                        <Span Text="{Binding Path=Model.StartingBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="6">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Lowest BG: " />
+                                        <Span Text="{Binding Path=Model.LowestBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" after " />
+                                        <Span Text="{Binding Path=Model.LowestBgTimeSpanInMinutes}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" minutes."
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="7">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Highest BG: " />
+                                        <Span Text="{Binding Path=Model.HighestBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" after " />
+                                        <Span Text="{Binding Path=Model.HighestBgTimeSpanInMinutes}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" minutes."
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
                 </yummy:PancakeView>
 
                 <Button Text="Log Again"
@@ -135,7 +205,7 @@
                         Margin="10"
                         CornerRadius="25"
                         TextColor="White"
-                        BackgroundColor="#0055FF" />
+                        BackgroundColor="{StaticResource AppBlue}" />
             </Grid>
         </yummy:PancakeView>
     </ContentView.Content>
