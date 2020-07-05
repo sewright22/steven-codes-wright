@@ -36,13 +36,16 @@
 
                 <StackLayout Margin="5"
                              Grid.Row="0">
-                    <Entry Text="{Binding Path=Model.Title}" />
+                    <Entry Text="{Binding Path=Model.Title}"
+                           ReturnType="Next"
+                           TabIndex="0" />
 
                     <FlexLayout BindableLayout.ItemsSource="{Binding Model.Tags}"
                                 Wrap="Wrap"
                                 JustifyContent="Start"
                                 AlignItems="Start"
-                                AlignContent="Start">
+                                AlignContent="Start"
+                                IsTabStop="False">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <templates:TagView TagText="{Binding Path=Description}"
@@ -68,24 +71,32 @@
 
                         <Entry Placeholder="Add Tag"
                                x:Name="TagSearchEntry"
+                               IsTabStop="True"
+                               TabIndex="1"
+                               ReturnType="Next"
                                Text="{Binding TagSearchText, Mode=TwoWay}"
                                ClearButtonVisibility="WhileEditing" />
                         <Button Grid.Column="1"
                                 HeightRequest="40"
                                 CornerRadius="25"
                                 Margin="5"
+                                IsTabStop="True"
+                                TabIndex="2"
                                 Command="{Binding CreateNewTagCommand}"
                                 CommandParameter="{Binding Source={x:Reference TagSearchEntry}, Path=Text}"
                                 Text="+" />
                         <Label Text="Existing Tags"
                                Grid.Row="1"
+                               IsTabStop="False"
                                IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}" />
+                        
                         <FlexLayout BindableLayout.ItemsSource="{Binding ExistingTagSearch}"
                                     Wrap="Wrap"
                                     JustifyContent="Start"
                                     AlignItems="Start"
                                     AlignContent="Start"
                                     Grid.Row="2"
+                                    IsTabStop="False"
                                     IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
@@ -107,7 +118,10 @@
                         <templates:LabelEntry Label="Carb Estimate"
                                               Text="{Binding Path=Model.NutritionalInfo.Carbohydrates}"
                                               Append=" Carbs"
+                                              IsTabStop="True"
+                                              TabIndex="3"
                                               Grid.Column="0" />
+                        
                         <Grid Margin="{StaticResource DefaultMargin}"
                               Grid.Column="1">
                             <Grid.ColumnDefinitions>
@@ -185,11 +199,9 @@
             </Grid>
 
             <Button Text="Save"
-                    CornerRadius="25"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource AppBlue}"
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
+                    Style="{StaticResource AppButtonStyle}"
                     Command="{Binding Path=SaveCommand}" />
         </Grid>
     </ContentPage.Content>

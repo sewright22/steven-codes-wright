@@ -68,15 +68,11 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Text="View Readings"
-                                CornerRadius="25"
-                                TextColor="White"
-                                BackgroundColor="#0055FF"
+                                Style="{StaticResource AppButtonStyle}"
                                 Command="{TemplateBinding ViewReadingsCommand}" />
                         <Button Text="Update"
                                 Grid.Column="1"
-                                CornerRadius="25"
-                                TextColor="White"
-                                BackgroundColor="#0055FF"
+                                Style="{StaticResource AppButtonStyle}"
                                 Command="{TemplateBinding  UpdateCommand}" />
                     </Grid>
                 </Grid>

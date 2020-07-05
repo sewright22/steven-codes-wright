@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             x:Name="LabelEntryTemplate"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.ResourceDictionaries.ViewTemplates.LabelEntry">
     <ContentView.Resources>
@@ -11,40 +12,7 @@
             <Frame CornerRadius="2"
                    BorderColor="Black"
                    Padding="5,5,0,0">
-                <Grid Margin="{StaticResource DefaultMargin}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Label FontSize="10"
-                           Text="{TemplateBinding Label}" />
-                    
-                    <Label FontSize="18"
-                           FontAttributes="Bold"
-                           TextColor="Black"
-                           IsVisible="{TemplateBinding LabelIsVisible}"
-                           Grid.Row="1"
-                           Padding="{StaticResource DefaultMargin}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="{TemplateBinding Path=Text}" />
-                                    <Span Text="{TemplateBinding Path=Append}" />
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Entry IsVisible="{TemplateBinding EntryIsVisible}"
-                           Text="{TemplateBinding Path=Text}"
-                           Keyboard="Numeric"
-                           Unfocused="Entry_Unfocused"
-                           Margin="0,5,0,0"/>
-                </Grid>
+                <ContentPresenter />
             </Frame>
         </ControlTemplate>
 
@@ -53,4 +21,48 @@
                     Value="{StaticResource LabelEntryTemplate}" />
         </Style>
     </ContentView.Resources>
+    <ContentView.Content>
+        <Grid Margin="{StaticResource DefaultMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label FontSize="10"
+                   IsTabStop="False"
+                   Text="{Binding Label, Source={x:Reference LabelEntryTemplate}}" />
+
+            <Label FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   IsTabStop="False"
+                   IsVisible="{Binding LabelIsVisible, Source={x:Reference LabelEntryTemplate}}"
+                   Grid.Row="1"
+                   Padding="{StaticResource DefaultMargin}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding Path=Text, Source={x:Reference LabelEntryTemplate}}" />
+                            <Span Text="{Binding Path=Append, Source={x:Reference LabelEntryTemplate}}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Entry IsVisible="{Binding EntryIsVisible, Source={x:Reference LabelEntryTemplate}}"
+                   Text="{Binding Path=Text, Source={x:Reference LabelEntryTemplate}}"
+                   x:Name="editableEntry"
+                   IsTabStop="True"
+                   TabIndex="0"
+                   Keyboard="Numeric"
+                   ReturnType="Next"
+                   Unfocused="Entry_Unfocused"
+                   Focused="EditableEntry_Focused"
+                   Margin="0,5,0,0" />
+
+        </Grid>
+    </ContentView.Content>
 </ContentView>

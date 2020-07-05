@@ -102,13 +102,14 @@ namespace DiabetesFoodJournal.ViewModels
             tagDataModel.Load(tappedTag);
 
             Model.Tags.Add(tagDataModel);
+            this.TagSearchText = "";
         }
 
         private async void JournalEntryViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Equals(nameof(TagSearchText)))
             {
-                if (this.tagSearchText.Length > 0)
+                if (string.IsNullOrWhiteSpace(this.TagSearchText) == false)
                 {
                     var results = await this.dataService.GetTags(TagSearchText);
 

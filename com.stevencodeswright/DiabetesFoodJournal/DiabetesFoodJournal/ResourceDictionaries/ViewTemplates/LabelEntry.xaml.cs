@@ -23,6 +23,13 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         {
             InitializeComponent();
         }
+
+        private void EditableEntry_Focused(object sender, FocusEventArgs e)
+        {
+            this.editableEntry.CursorPosition = 0;
+            this.editableEntry.SelectionLength = this.editableEntry.Text.Length;
+        }
+
         public string Label
         {
             get => (string)GetValue(LabelProperty);
@@ -53,10 +60,21 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
             set => SetValue(LabelIsVisibleProperty, value);
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            EntryIsVisible = true;
             LabelIsVisible = false;
+            EntryIsVisible = true;
+            if(this.editableEntry.IsFocused==false)
+            {
+                await Task.Run(() =>
+                {
+                    Task.Delay(100);
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        this.editableEntry.Focus();
+                    });
+                });
+            }
         }
 
         private void Entry_Unfocused(object sender, FocusEventArgs e)
