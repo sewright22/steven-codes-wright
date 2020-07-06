@@ -32,12 +32,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height=".5*" />
                 </Grid.RowDefinitions>
 
                 <StackLayout Margin="5"
                              Grid.Row="0">
-                    <Entry Text="{Binding Path=Model.Title}"
+                    <Entry x:Name="TitleEntry" 
+                           Text="{Binding Path=Model.Title}"
                            ReturnType="Next"
+                           Focused="TitleEntry_Focused"
                            TabIndex="0" />
 
                     <FlexLayout BindableLayout.ItemsSource="{Binding Model.Tags}"
@@ -71,6 +74,7 @@
 
                         <Entry Placeholder="Add Tag"
                                x:Name="TagSearchEntry"
+                               Focused="TagSearchEntry_Focused"
                                IsTabStop="True"
                                TabIndex="1"
                                ReturnType="Next"
@@ -188,13 +192,14 @@
                             MinimumTrackColor="Green"
                             MaximumTrackColor="Blue" />
                 </StackLayout>
-                <ScrollView VerticalOptions="FillAndExpand"
-                            Grid.Row="1">
-                    <StackLayout>
+                <Label Text="Notes"
+                       Grid.Row="1"
+                       Style="{StaticResource AppLabelStyle}"/>
+                <ScrollView Grid.Row="2">
                         <Editor Text="{Binding Path=Model.Notes}"
                                 Placeholder="Notes"
-                                VerticalOptions="FillAndExpand" />
-                    </StackLayout>
+                                VerticalOptions="FillAndExpand" 
+                                AutoSize="TextChanges"/>
                 </ScrollView>
             </Grid>
 

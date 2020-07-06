@@ -36,8 +36,6 @@ namespace DiabetesFoodJournal.Views
             {
                 this.timer.Stop();
                 this.searchButton.Command.Execute(this.searchEntry.Text.Trim());
-                //this.loadingAnimation.IsRunning = false;
-                //this.loadingAnimation.IsVisible = false;
             });
         }
 
@@ -50,6 +48,11 @@ namespace DiabetesFoodJournal.Views
             {
                 this.timer.Start();
             }
+        }
+
+        private void searchEntry_Focused(object sender, FocusEventArgs e)
+        {
+            this.searchEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
         }
     }
 }

@@ -16,5 +16,15 @@ namespace DiabetesFoodJournal.Views
         {
             InitializeComponent();
         }
+
+        private void TagSearchEntry_Focused(object sender, FocusEventArgs e)
+        {
+            this.TagSearchEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+        }
+
+        private void TitleEntry_Focused(object sender, FocusEventArgs e)
+        {
+            this.TitleEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+        }
     }
 }

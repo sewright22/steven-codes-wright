@@ -110,8 +110,8 @@ namespace DiabetesFoodJournal.ViewModels
             {
                 this.searching = true;
                 Refreshing = true;
+                var tempSelected = this.SelectedEntry;
                 var entryList = await this.dataService.SearchJournal(searchString).ConfigureAwait(true);
-
                 var sorted = from entry in entryList
                              orderby entry.Logged descending
                              group entry by entry.Group into entryGroup
@@ -121,6 +121,12 @@ namespace DiabetesFoodJournal.ViewModels
                 Refreshing = false;
                 this.searching = false;
                 LocalSearchResults.ReplaceRange(sorted);
+                if (tempSelected != null)
+                {
+                    var selectedEntry = entryList.FirstOrDefault(e => e.Id == tempSelected.Id);
+                    this.SelectedEntry = selectedEntry;
+                    this.SelectedEntry.IsSelected = true;
+                }
             }
         }
     }

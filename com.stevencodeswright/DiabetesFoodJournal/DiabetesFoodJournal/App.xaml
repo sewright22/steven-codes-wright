@@ -43,6 +43,18 @@
                 <Setter Property="BackgroundColor"
                         Value="{StaticResource AppBlue}" />
             </Style>
+
+            <Style x:Key="AppLabelStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource AppOrange}" />
+                <Setter Property="FontSize"
+                        Value="Medium" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="TextDecorations"
+                        Value="Underline" />
+            </Style>
         </ResourceDictionary>
 
         <Style TargetType="ContentPage">

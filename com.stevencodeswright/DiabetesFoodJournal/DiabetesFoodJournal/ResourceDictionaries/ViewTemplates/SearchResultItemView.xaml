@@ -29,7 +29,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <StackLayout>
+                    <StackLayout >
                         <StackLayout Orientation="Vertical">
                             <Label Text="{TemplateBinding Logged, StringFormat='{0:t}'}"
                                    FontSize="Micro"
@@ -39,19 +39,30 @@
                                    FontSize="Medium"
                                    LineBreakMode="TailTruncation" />
                         </StackLayout>
-                        <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
-                                    Wrap="Wrap"
-                                    JustifyContent="Start"
-                                    AlignItems="Start"
-                                    AlignContent="Start">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:TagView TagText="{Binding Description}"
-                                                       CanDelete="False"
-                                                       Margin="5" />
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </FlexLayout>
+                        <StackLayout  HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      AutomationId="stackLayoutTop">
+                            <FlexLayout AutomationId="FlexLayoutTop"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start">
+                                <StackLayout HeightRequest="{Binding Height, Source={x:Reference FlexLayoutCtrls}}">
+                                    <FlexLayout BindableLayout.ItemsSource="{TemplateBinding TagList}"
+                                                x:Name="FlexLayoutCtrls"
+                                                Wrap="Wrap"
+                                                JustifyContent="Start"
+                                                AlignItems="Start"
+                                                AlignContent="Start">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <templates:TagView TagText="{Binding Description}"
+                                                                   CanDelete="False"
+                                                                   Margin="5" />
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </FlexLayout>
+                                </StackLayout>
+                            </FlexLayout>
+                        </StackLayout>
                     </StackLayout>
 
                     <Label Text="{TemplateBinding CarbCount, StringFormat='{0} Carbs'}"

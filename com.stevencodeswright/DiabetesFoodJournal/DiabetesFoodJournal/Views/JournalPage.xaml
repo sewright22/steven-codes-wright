@@ -35,6 +35,7 @@
                                Placeholder="Search for Food..."
                                Text=""
                                TextChanged="searchEntry_TextChanged"
+                               Focused="searchEntry_Focused"
                                IsEnabled="True">
                         </Entry>
 
