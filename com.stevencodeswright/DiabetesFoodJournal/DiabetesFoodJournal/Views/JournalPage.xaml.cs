@@ -27,7 +27,7 @@ namespace DiabetesFoodJournal.Views
         {
             base.OnAppearing();
 
-            this.searchButton.Command.Execute("");
+            this.searchButton.Command.Execute(this.searchEntry.Text ?? "");
         }
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)

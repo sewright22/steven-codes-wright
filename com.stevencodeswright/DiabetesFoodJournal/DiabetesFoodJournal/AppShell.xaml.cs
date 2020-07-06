@@ -1,4 +1,5 @@
-﻿using DiabetesFoodJournal.Views;
+﻿using DiabetesFoodJournal.Pages;
+using DiabetesFoodJournal.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Auth;
@@ -12,7 +13,10 @@ namespace DiabetesFoodJournal
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("journalEntry", typeof(FoodDetailsPage));
+            Routing.RegisterRoute("Login", typeof(LoginPage));
+            Routing.RegisterRoute("CreateAccount", typeof(CreateAccountPage));
+            Routing.RegisterRoute("journalEntry", typeof(JournalEntryPage));
+            Routing.RegisterRoute("BgReadings", typeof(BgReadingPage));
         }
     }
 }

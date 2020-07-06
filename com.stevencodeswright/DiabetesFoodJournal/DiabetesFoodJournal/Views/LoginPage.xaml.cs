@@ -8,6 +8,9 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
+using DiabetesFoodJournal.Messages;
 
 namespace DiabetesFoodJournal.Views
 {
@@ -17,6 +20,13 @@ namespace DiabetesFoodJournal.Views
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            SimpleIoc.Default.GetInstance<IMessenger>().Send(new AppLoadedMessage());
         }
     }
 }

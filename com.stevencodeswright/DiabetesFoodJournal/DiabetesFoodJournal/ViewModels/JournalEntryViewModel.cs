@@ -38,22 +38,23 @@ namespace DiabetesFoodJournal.ViewModels
             this.tags = tags;
             this.carbCount = 5;
             ExistingTagSearch = new ObservableRangeCollection<Tag>();
-            if(this.messenger != null)
+
+            if (this.messenger != null)
             {
                 this.messenger.Register<JournalEntryDataModel>(this, JournalEntryReceived);
             }
 
             ConfirmDeleteTappedCommand = new RelayCommand(ConfirmDeleteTapped);
             ExistingTagTappedCommand = new RelayCommand<TagDataModel>(ExistingTagTapped);
-            CreateNewTagCommand = new RelayCommand<string>(async(x)=> await CreateNewTag(x));
+            CreateNewTagCommand = new RelayCommand<string>(async (x) => await CreateNewTag(x));
             TagTappedCommand = new RelayCommand<Tag>(SearchTagTapped);
-            SaveCommand = new RelayCommand(async () => await SaveEntry()) ;
+            SaveCommand = new RelayCommand(async () => await SaveEntry());
             this.PropertyChanged += this.JournalEntryViewModel_PropertyChanged;
         }
 
         private async Task SaveEntry()
         {
-                await this.dataService.SaveEntry(Model).ConfigureAwait(false);
+            await this.dataService.SaveEntry(Model).ConfigureAwait(false);
             await this.navigation.GoToAsync("..").ConfigureAwait(false);
         }
 
@@ -66,7 +67,7 @@ namespace DiabetesFoodJournal.ViewModels
                     Description = newTag
                 });
 
-                if(tagId>0)
+                if (tagId > 0)
                 {
                     JournalEntryViewModel_PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(nameof(TagSearchText)));
                 }
@@ -75,9 +76,9 @@ namespace DiabetesFoodJournal.ViewModels
 
         private void ConfirmDeleteTapped()
         {
-            var selectedTag = Model.Tags.FirstOrDefault(x=>x.CanDelete);
+            var selectedTag = Model.Tags.FirstOrDefault(x => x.CanDelete);
 
-            if(selectedTag!= null)
+            if (selectedTag != null)
             {
                 Model.Tags.Remove(selectedTag);
             }
@@ -101,30 +102,17 @@ namespace DiabetesFoodJournal.ViewModels
             tagDataModel.Load(tappedTag);
 
             Model.Tags.Add(tagDataModel);
+            this.TagSearchText = "";
         }
 
         private async void JournalEntryViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals(nameof(Model.Dose.UpFront)))
+            if (e.PropertyName.Equals(nameof(TagSearchText)))
             {
-                if (AmountUpFront.HasValue)
-                {
-                    Model.Dose.Extended = 100 - Model.Dose.UpFront;
-                }
-            }
-            else if(e.PropertyName.Equals(nameof(Model.Dose.Extended)))
-            {
-                if (AmountExtended.HasValue)
-                {
-                    Model.Dose.UpFront = 100 - Model.Dose.Extended;
-                }
-            }
-            else if(e.PropertyName.Equals(nameof(TagSearchText)))
-            {
-                if(this.tagSearchText.Length>0)
+                if (string.IsNullOrWhiteSpace(this.TagSearchText) == false)
                 {
                     var results = await this.dataService.GetTags(TagSearchText);
-                                 
+
 
                     ExistingTagSearch.ReplaceRange(results);
                 }
@@ -134,8 +122,26 @@ namespace DiabetesFoodJournal.ViewModels
         public ObservableRangeCollection<Tag> ExistingTagSearch { get; }
         private void JournalEntryReceived(JournalEntryDataModel obj)
         {
+            if (Model != null && Model.Dose != null)
+            {
+                Model.Dose.PropertyChanged -= this.Dose_PropertyChanged;
+            }
             Model = obj;
             TagSearchText = "";
+            Model.Dose.PropertyChanged += this.Dose_PropertyChanged;
+        }
+
+        private void Dose_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals(nameof(Model.Dose.UpFront)))
+            {
+                Model.Dose.Extended = 100 - Model.Dose.UpFront;
+            }
+            else if (e.PropertyName.Equals(nameof(Model.Dose.Extended)))
+            {
+                Model.Dose.UpFront = 100 - Model.Dose.Extended;
+            }
+
         }
 
         public RelayCommand<Tag> TagTappedCommand { get; }
@@ -222,7 +228,7 @@ namespace DiabetesFoodJournal.ViewModels
             {
                 var newStep = Math.Round(value / 5);
 
-                SetProperty(ref this.mealTimeOffset, newStep*5);
+                SetProperty(ref this.mealTimeOffset, newStep * 5);
             }
         }
     }

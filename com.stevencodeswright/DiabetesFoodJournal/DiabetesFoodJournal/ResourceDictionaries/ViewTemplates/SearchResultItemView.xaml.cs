@@ -15,6 +15,8 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
     {
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(SearchResultItemView));
         public static readonly BindableProperty TappedCommandProperty = BindableProperty.Create(nameof(TappedCommand), typeof(ICommand), typeof(SearchResultItemView));
+        public static readonly BindableProperty UpdateCommandProperty = BindableProperty.Create(nameof(UpdateCommand), typeof(ICommand), typeof(SearchResultItemView));
+        public static readonly BindableProperty ViewReadingsCommandProperty = BindableProperty.Create(nameof(ViewReadingsCommand), typeof(ICommand), typeof(SearchResultItemView));
         public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(nameof(FoodName), typeof(string), typeof(SearchResultItemView), string.Empty);
         public static readonly BindableProperty LoggedProperty = BindableProperty.Create(nameof(Logged), typeof(DateTime?), typeof(SearchResultItemView), null);
         public static readonly BindableProperty CarbCountProperty = BindableProperty.Create(nameof(CarbCount), typeof(int), typeof(SearchResultItemView), 0);
@@ -65,6 +67,18 @@ namespace DiabetesFoodJournal.ResourceDictionaries.ViewTemplates
         {
             get => (ICommand)GetValue(TappedCommandProperty);
             set => SetValue(TappedCommandProperty, value);
+        }
+
+        public ICommand UpdateCommand
+        {
+            get => (ICommand)GetValue(UpdateCommandProperty);
+            set => SetValue(UpdateCommandProperty, value);
+        }
+
+        public ICommand ViewReadingsCommand
+        {
+            get => (ICommand)GetValue(ViewReadingsCommandProperty);
+            set => SetValue(ViewReadingsCommandProperty, value);
         }
 
         public object CommandParameter

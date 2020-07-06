@@ -6,13 +6,13 @@
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
              xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="Ivory"
              BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=Journal}"
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Views.JournalPage">
     <ContentPage.Content>
-        <yummy:PancakeView BackgroundGradientAngle="135"
-                           BackgroundGradientEndColor="Azure"
-                           BackgroundGradientStartColor="LightSkyBlue">
+        <yummy:PancakeView Padding="5"
+                           BackgroundColor="Transparent">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -58,8 +58,10 @@
                                     <DataTemplate>
                                         <yummy:PancakeView>
                                             <StackLayout>
-                                                <Label Margin="0"
-                                                       Padding="0"
+                                                <Label Margin="5"
+                                                       Padding="{StaticResource DefaultMargin}"
+                                                       FontSize="Medium"
+                                                       TextColor="Black"
                                                        Text="{Binding Key}" />
 
                                                 <StackLayout BindableLayout.ItemsSource="{Binding Items}">
@@ -71,7 +73,10 @@
                                                                                             CarbCount="{Binding NutritionalInfo.Carbohydrates}"
                                                                                             TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ItemTappedCommand}"
                                                                                             IsSelected="{Binding Path=IsSelected}"
-                                                                                            CommandParameter="{Binding}" />
+                                                                                            CommandParameter="{Binding}"
+                                                                                            UpdateCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=UpdateEntryCommand}"
+                                                                                            ViewReadingsCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalViewModel}}, Path=ViewReadingsCommand}"
+                                                                                            Padding="{StaticResource DefaultMargin}" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
@@ -84,12 +89,15 @@
                             <Button Text="Create New Entry"
                                     VerticalOptions="End"
                                     Command="{Binding CreateNewEntryCommand}"
+                                    CornerRadius="25"
+                                    TextColor="White"
+                                    BackgroundColor="#0055FF"
                                     CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}" />
                         </StackLayout>
                     </ScrollView>
                 </RefreshView>
 
-                <Button Text="Update"
+                <!--<Button Text="Update"
                         Grid.Row="3"
                         Grid.Column="0"
                         IsVisible="{Binding RowIsSelected}"
@@ -99,7 +107,7 @@
                         Grid.Row="3"
                         Grid.Column="1"
                         IsVisible="{Binding RowIsSelected}"
-                        Command="{Binding LogAgainCommand}" />
+                        Command="{Binding LogAgainCommand}" />-->
             </Grid>
         </yummy:PancakeView>
     </ContentPage.Content>

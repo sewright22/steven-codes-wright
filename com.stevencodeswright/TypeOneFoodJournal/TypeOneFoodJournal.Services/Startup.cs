@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TypeOneFoodJournal.Services.Factories;
+using TypeOneFoodJournal.Services.Handlers;
 
 namespace TypeOneFoodJournal.Services
 {
@@ -26,8 +28,11 @@ namespace TypeOneFoodJournal.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.ConfigureMySqlContext(Configuration);
             services.AddTransient<IJournalEntryModelFactory, JournalEntryModelFactory>();
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             services.AddControllers();
         }
 
@@ -43,6 +48,12 @@ namespace TypeOneFoodJournal.Services
 
             app.UseRouting();
 
+            app.UseCors(x => x
+                 .AllowAnyOrigin()
+                 .AllowAnyMethod()
+                 .AllowAnyHeader());
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

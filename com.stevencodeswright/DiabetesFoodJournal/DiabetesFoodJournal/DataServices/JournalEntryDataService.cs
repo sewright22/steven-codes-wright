@@ -1,5 +1,6 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.Entities;
+using DiabetesFoodJournal.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,10 +11,12 @@ namespace DiabetesFoodJournal.DataServices
     public class JournalEntryDataService  : IJournalEntryDataService
     {
         private IAppDataService appDataService;
+        private readonly IUserInfo userInfo;
 
-        public JournalEntryDataService(IAppDataService appDataService)
+        public JournalEntryDataService(IAppDataService appDataService, IUserInfo userInfo)
         {
             this.appDataService = appDataService;
+            this.userInfo = userInfo;
         }
 
         public Task<int> AddNewTag(Tag tag)
@@ -26,9 +29,9 @@ namespace DiabetesFoodJournal.DataServices
             return this.appDataService.GetTags(tagSearchText);
         }
 
-        public Task SaveEntry(JournalEntryDataModel model)
+        public async Task SaveEntry(JournalEntryDataModel model)
         {
-            return this.appDataService.SaveEntry(model);
+            await this.appDataService.SaveEntry(model, await this.userInfo.GetUserId().ConfigureAwait(false)).ConfigureAwait(false);
         }
     }
 

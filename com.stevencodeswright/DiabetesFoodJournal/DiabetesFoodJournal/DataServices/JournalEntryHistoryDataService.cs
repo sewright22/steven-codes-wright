@@ -14,11 +14,13 @@ namespace DiabetesFoodJournal.DataServices
     {
         private readonly IAppDataService appDataService;
         private readonly IDexcomDataStore dexcomDataStore;
+        private readonly IUserInfo userInfo;
 
-        public JournalEntryHistoryDataService(IAppDataService appDataService, IDexcomDataStore dexcomDataStore)
+        public JournalEntryHistoryDataService(IAppDataService appDataService, IDexcomDataStore dexcomDataStore, IUserInfo userInfo)
         {
             this.appDataService = appDataService;
             this.dexcomDataStore = dexcomDataStore;
+            this.userInfo = userInfo;
         }
 
         public async Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime)
@@ -30,24 +32,24 @@ namespace DiabetesFoodJournal.DataServices
             {
                 retVal.Add(new GlucoseReading
                 {
-                    Reading = reading.RealtimeValue,
-                    DisplayTime = reading.DisplayTime.DateTime
+                    Reading = reading.RealtimeValue.HasValue ? reading.RealtimeValue.Value : (float?)null,
+                    DisplayTime = Convert.ToInt32(Math.Round(reading.DisplayTime.DateTime.Subtract(startTime).TotalMinutes, 0))
                 });
             }
 
             return retVal;
         }
 
-        public async Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm)
+        public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchTerm)
         {
-            var entryList = await this.appDataService.SearchJournal(searchTerm);
+            var entryList = await this.appDataService.SearchJournal(await this.userInfo.GetUserId().ConfigureAwait(false), searchTerm);
 
-            var sorted = from entry in entryList
-                         orderby entry.Logged descending
-                         group entry by entry.Group into entryGroup
-                         select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
+            //var sorted = from entry in entryList
+            //             orderby entry.Logged descending
+            //             group entry by entry.Group into entryGroup
+            //             select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
 
-            return sorted;
+            return entryList;
         }
 
 
@@ -55,7 +57,7 @@ namespace DiabetesFoodJournal.DataServices
 
     public interface IJournalEntryHistoryDataService
     {
-        Task<IEnumerable<Grouping<string, JournalEntryDataModel>>> SearchJournal(string searchTerm);
+        Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchTerm);
 
         Task<IEnumerable<GlucoseReading>> GetGlucoseReadings(DateTime startTime, DateTime endTime);
     }

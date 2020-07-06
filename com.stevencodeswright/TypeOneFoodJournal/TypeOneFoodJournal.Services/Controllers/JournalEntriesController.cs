@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,17 +27,17 @@ namespace TypeOneFoodJournal.Services.Controllers
             this.journalEntryModelFactory = journalEntryModelFactory;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] string searchValue = "")
+        [Authorize]
+        [HttpGet("v2")]
+        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] int userId, [FromQuery] string searchValue = "")
         {
             var upperSearchValue = searchValue.ToUpper();
             var retVal = new List<JournalEntryModel>();
             try
             {
-                var results = this.context.JournalEntries.AsQueryable();
-                                                
+                var results = this.context.UserJournalEntries.Where(u=>u.UserId==userId).Select(uje=>uje.JournalEntry).OrderByDescending(j => j.Logged).AsQueryable();
 
-                if(!string.IsNullOrEmpty(upperSearchValue))
+                if (!string.IsNullOrEmpty(upperSearchValue))
                 {
                     results = results.Where(entry => entry.Title.ToUpper().Contains(upperSearchValue) ||
                                                                 entry.JournalEntryTags.Where(t => t.Tag.Description.ToUpper().Contains(upperSearchValue)).Any());
@@ -45,7 +47,6 @@ namespace TypeOneFoodJournal.Services.Controllers
                 {
                     foreach (var result in await results.Take(10).ToListAsync())
                     {
-
                         var currentEntry = this.journalEntryModelFactory.Build(result);
                         
                         retVal.Add(currentEntry);
@@ -58,6 +59,55 @@ namespace TypeOneFoodJournal.Services.Controllers
             }
 
             return Ok(retVal);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] string searchValue = "")
+        {
+            var upperSearchValue = searchValue.ToUpper();
+            var retVal = new List<JournalEntryModel>();
+            try
+            {
+                var results = this.context.JournalEntries.OrderByDescending(j => j.Logged).AsQueryable();
+
+                if (!string.IsNullOrEmpty(upperSearchValue))
+                {
+                    results = results.Where(entry => entry.Title.ToUpper().Contains(upperSearchValue) ||
+                                                                entry.JournalEntryTags.Where(t => t.Tag.Description.ToUpper().Contains(upperSearchValue)).Any());
+                }
+
+                if (results.Any())
+                {
+                    foreach (var result in await results.Take(10).ToListAsync())
+                    {
+                        var currentEntry = this.journalEntryModelFactory.Build(result);
+
+                        retVal.Add(currentEntry);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(retVal);
+        }
+        
+        // GET: api/JournalEntries/5
+        [Authorize]
+        [HttpGet("v2/{id}")]
+        public async Task<ActionResult<JournalEntryModel>> GetJournalEntry([FromQuery]int userId, int id)
+        {
+            var journalEntry = await context.UserJournalEntries.SingleOrDefaultAsync(x => x.UserId == userId && x.JournalEntryId == id);
+
+            if (journalEntry == null)
+            {
+                return NotFound();
+            }
+
+            return this.journalEntryModelFactory.Build(journalEntry.JournalEntry);
         }
 
         // GET: api/JournalEntries/5
@@ -235,6 +285,201 @@ namespace TypeOneFoodJournal.Services.Controllers
 
                         this.context.SaveChanges();
                         this.context.Database.CurrentTransaction.Commit();
+                    }
+                    catch (Exception e)
+                    {
+                        this.context.Database.CurrentTransaction.Rollback();
+                        if (e.InnerException != null)
+                        {
+                            return BadRequest(e.InnerException.Message);
+                        }
+                        else
+                        {
+                            return BadRequest(e.Message);
+                        }
+                    }
+                }
+
+                return CreatedAtAction("GetJournalEntry", new { id = entry.Id }, entry);
+            }
+            catch (ArgumentNullException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception e)
+            {
+                if (e.InnerException != null)
+                {
+                    return BadRequest(e.InnerException.Message);
+                }
+                else
+                {
+                    return BadRequest(e.Message);
+                }
+            }
+        }
+
+        // POST: api/JournalEntries
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [Authorize]
+        [HttpPost("v2")]
+        public async Task<ActionResult<JournalEntry>> PostJournalEntry([FromBody] JournalEntryModel entry, [FromQuery] int userId)
+        {
+
+            try
+            {
+                if (entry == null)
+                {
+                    throw new ArgumentNullException(nameof(entry));
+                }
+
+                {
+                    try
+                    {
+                        this.context.Database.BeginTransaction();
+                        var userExists = await this.context.Users.AnyAsync(x => x.Id == userId);
+
+                        if (userExists)
+                        {
+                            var userJournalEntryFromDb = await this.context.UserJournalEntries.FirstOrDefaultAsync(x => x.UserId == userId && x.JournalEntryId == entry.Id);
+
+                            if(userJournalEntryFromDb==null)
+                            {
+                                userJournalEntryFromDb = new UserJournalEntry();
+                            }
+
+                            userJournalEntryFromDb.UserId = userId;
+
+                            var entryFromDb = await this.context.JournalEntries.FirstOrDefaultAsync(x => x.Id == entry.Id);
+
+                            if (entryFromDb == null)
+                            {
+                                entryFromDb = new JournalEntry();
+                            }
+
+                            entryFromDb.Logged = entry.Logged;
+                            entryFromDb.Notes = entry.Notes ?? "";
+                            entryFromDb.Title = entry.Title;
+
+                            if (entryFromDb.Id == 0)
+                            {
+                                this.context.JournalEntries.Add(entryFromDb);
+                                this.context.SaveChanges();
+                                entry.Id = entryFromDb.Id;
+                            }
+
+                            userJournalEntryFromDb.JournalEntryId = entry.Id;
+
+                            if(userJournalEntryFromDb.Id==0)
+                            {
+                                this.context.UserJournalEntries.Add(userJournalEntryFromDb);
+                            }
+
+                            var doseFromDb = this.context.Doses.FirstOrDefault(x => x.Id == entry.Dose.Id);
+
+                            if (doseFromDb == null)
+                            {
+                                doseFromDb = new Dose();
+                            }
+
+                            doseFromDb.Extended = entry.Dose.Extended;
+                            doseFromDb.InsulinAmount = entry.Dose.InsulinAmount;
+                            doseFromDb.TimeExtended = entry.Dose.TimeExtended;
+                            doseFromDb.TimeOffset = entry.Dose.TimeOffset;
+                            doseFromDb.UpFront = entry.Dose.UpFront;
+
+                            if (doseFromDb.Id == 0)
+                            {
+                                this.context.Doses.Add(doseFromDb);
+                                this.context.SaveChanges();
+                                entry.Dose.Id = doseFromDb.Id;
+                            }
+
+                            var entryDoseFromDb = this.context.JournalEntryDoses.FirstOrDefault(x => x.JournalEntryId == entryFromDb.Id && x.DoseId == doseFromDb.Id);
+
+                            if (entryDoseFromDb == null)
+                            {
+                                entryDoseFromDb = new JournalEntryDose();
+
+                                entryDoseFromDb.JournalEntryId = entryFromDb.Id;
+                                entryDoseFromDb.DoseId = doseFromDb.Id;
+
+                                this.context.JournalEntryDoses.Add(entryDoseFromDb);
+                            }
+
+                            var nutritionalInfoFromDb = this.context.NutritionalInfos.FirstOrDefault(x => x.Id == entry.NutritionalInfo.Id);
+
+                            if (nutritionalInfoFromDb == null)
+                            {
+                                nutritionalInfoFromDb = new NutritionalInfo();
+                            }
+
+                            nutritionalInfoFromDb.Protein = entry.NutritionalInfo.Protein;
+                            nutritionalInfoFromDb.Calories = entry.NutritionalInfo.Calories;
+                            nutritionalInfoFromDb.Carbohydrates = entry.NutritionalInfo.Carbohydrates;
+
+                            if (nutritionalInfoFromDb.Id == 0)
+                            {
+                                this.context.NutritionalInfos.Add(nutritionalInfoFromDb);
+                                this.context.SaveChanges();
+                                entry.NutritionalInfo.Id = nutritionalInfoFromDb.Id;
+                            }
+
+                            var entryNutritionalInfoFromDb = this.context.JournalEntryNutritionalInfos.FirstOrDefault(x => x.JournalEntryId == entryFromDb.Id && x.NutritionalInfoId == nutritionalInfoFromDb.Id);
+
+                            if (entryNutritionalInfoFromDb == null)
+                            {
+                                entryNutritionalInfoFromDb = new JournalEntryNutritionalInfo();
+
+                                entryNutritionalInfoFromDb.JournalEntryId = entryFromDb.Id;
+                                entryNutritionalInfoFromDb.NutritionalInfoId = nutritionalInfoFromDb.Id;
+
+                                this.context.JournalEntryNutritionalInfos.Add(entryNutritionalInfoFromDb);
+                            }
+
+                            var journalEntryTagsFromDb = this.context.JournalEntryTags.Where(x => x.JournalEntryId == entryFromDb.Id);
+                            foreach(var dbTag in journalEntryTagsFromDb.ToList())
+                            {
+                                if(entry.Tags.Where(x=>x.Id==dbTag.TagId).Any()==false)
+                                {
+                                    this.context.Remove(dbTag);
+                                    this.context.SaveChanges();
+                                }
+                            }
+
+                            foreach (var tag in entry.Tags)
+                            {
+                                var tagFromDb = this.context.Tags.FirstOrDefault(x => x.Id == tag.Id);
+
+                                if (tagFromDb == null)
+                                {
+                                    tagFromDb = new Tag();
+                                }
+
+                                tagFromDb.Description = tag.Description;
+
+                                if (tagFromDb.Id == 0)
+                                {
+                                    this.context.Tags.Add(tagFromDb);
+                                    this.context.SaveChanges();
+                                }
+
+                                var journalEntryTagFromDb = this.context.JournalEntryTags.FirstOrDefault(x => x.JournalEntryId == entryFromDb.Id && x.TagId == tagFromDb.Id);
+
+                                if (journalEntryTagFromDb == null)
+                                {
+                                    journalEntryTagFromDb = new JournalEntryTag();
+
+                                    journalEntryTagFromDb.JournalEntryId = entryFromDb.Id;
+                                    journalEntryTagFromDb.TagId = tagFromDb.Id;
+                                    this.context.JournalEntryTags.Add(journalEntryTagFromDb);
+                                }
+                            }
+
+                            this.context.SaveChanges();
+                            this.context.Database.CurrentTransaction.Commit();
+                        }
                     }
                     catch (Exception e)
                     {

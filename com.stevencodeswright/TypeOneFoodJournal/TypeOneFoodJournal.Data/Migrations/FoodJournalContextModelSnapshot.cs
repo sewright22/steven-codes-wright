@@ -17,7 +17,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.Dose", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.Dose", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -27,10 +27,10 @@ namespace TypeOneFoodJournal.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("InsulinAmount")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("TimeExtended")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("TimeOffset")
                         .HasColumnType("int");
@@ -43,7 +43,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("Doses");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntry", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntry", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("JournalEntries");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryDose", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryDose", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("JournalEntryDoses");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryNutritionalInfo", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryNutritionalInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -105,7 +105,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("JournalEntryNutritionalInfos");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryTag", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryTag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -126,7 +126,7 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("JournalEntryTags");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.NutritionalInfo", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.NutritionalInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -146,7 +146,21 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("NutritionalInfos");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.Tag", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.Password", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Passwords");
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.Tag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,47 +174,134 @@ namespace TypeOneFoodJournal.Data.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryDose", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.User", b =>
                 {
-                    b.HasOne("TypeOneFoodJournal.Models.Dose", "Dose")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.UserJournalEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("JournalEntryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JournalEntryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserJournalEntries");
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.UserPassword", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("PasswordId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PasswordId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("UserPasswords");
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryDose", b =>
+                {
+                    b.HasOne("TypeOneFoodJournal.Entities.Dose", "Dose")
                         .WithMany()
                         .HasForeignKey("DoseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TypeOneFoodJournal.Models.JournalEntry", "JournalEntry")
+                    b.HasOne("TypeOneFoodJournal.Entities.JournalEntry", "JournalEntry")
                         .WithMany("JournalEntryDoses")
                         .HasForeignKey("JournalEntryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryNutritionalInfo", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryNutritionalInfo", b =>
                 {
-                    b.HasOne("TypeOneFoodJournal.Models.JournalEntry", "JournalEntry")
+                    b.HasOne("TypeOneFoodJournal.Entities.JournalEntry", "JournalEntry")
                         .WithMany("JournalEntryNutritionalInfos")
                         .HasForeignKey("JournalEntryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TypeOneFoodJournal.Models.NutritionalInfo", "NutritionalInfo")
+                    b.HasOne("TypeOneFoodJournal.Entities.NutritionalInfo", "NutritionalInfo")
                         .WithMany()
                         .HasForeignKey("NutritionalInfoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TypeOneFoodJournal.Models.JournalEntryTag", b =>
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.JournalEntryTag", b =>
                 {
-                    b.HasOne("TypeOneFoodJournal.Models.JournalEntry", "JournalEntry")
+                    b.HasOne("TypeOneFoodJournal.Entities.JournalEntry", "JournalEntry")
                         .WithMany("JournalEntryTags")
                         .HasForeignKey("JournalEntryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TypeOneFoodJournal.Models.Tag", "Tag")
+                    b.HasOne("TypeOneFoodJournal.Entities.Tag", "Tag")
                         .WithMany()
                         .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.UserJournalEntry", b =>
+                {
+                    b.HasOne("TypeOneFoodJournal.Entities.JournalEntry", "JournalEntry")
+                        .WithMany()
+                        .HasForeignKey("JournalEntryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TypeOneFoodJournal.Entities.User", "User")
+                        .WithMany("UserJournalEntries")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TypeOneFoodJournal.Entities.UserPassword", b =>
+                {
+                    b.HasOne("TypeOneFoodJournal.Entities.Password", "Password")
+                        .WithMany()
+                        .HasForeignKey("PasswordId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TypeOneFoodJournal.Entities.User", "User")
+                        .WithOne("UserPassword")
+                        .HasForeignKey("TypeOneFoodJournal.Entities.UserPassword", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

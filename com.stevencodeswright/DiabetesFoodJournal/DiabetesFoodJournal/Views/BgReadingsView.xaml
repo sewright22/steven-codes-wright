@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="DiabetesFoodJournal.Views.BgReadingsView">
+    <ContentView.Resources>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" /> 
+        </Style>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <yummy:PancakeView BorderThickness="5"
+                           BorderColor="Black"
+                           CornerRadius="20"
+                           Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Text="{Binding Model.Title}"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Large" />
+
+                <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                             x:Name="bgChart"
+                             Grid.Row="1">
+                    <chart:SfChart HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   IsVisible="True">
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis>
+                                <chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Time since eating (minutes)" />
+                                </chart:CategoryAxis.Title>
+                            </chart:CategoryAxis>
+                        </chart:SfChart.PrimaryAxis>
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis Minimum="50"
+                                                 Maximum="400" />
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:LineSeries ItemsSource="{Binding Path=Model.BgReadings}"
+                                          XBindingPath="DisplayTime"
+                                          YBindingPath="Reading"
+                                          Color="Black"
+                                          IsVisible="True"
+                                          EnableTooltip="True" />
+                    </chart:SfChart>
+                </RefreshView>
+
+                <yummy:PancakeView Grid.Row="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Logged: " />
+                                        <Span Text="{Binding Path=Model.Logged}"
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="1"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.InsulinAmount}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" " />
+                                        <Span Text="Units" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="2"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.UpFront}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text="% " />
+                                        <Span Text="Up Front" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="3"
+                               FontSize="Medium">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="{Binding Path=Model.Dose.Extended}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text="% " />
+                                        <Span Text="Extended" />
+                                        <Span Text=" for " />
+                                        <Span Text="{Binding Path=Model.Dose.TimeExtended}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" hours."
+                                              FontAttributes="Bold" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="4">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Notes: " />
+                                        <Span Text="{Binding Path=Model.Notes}"
+                                              Style="{StaticResource BlueSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Starting BG: " />
+                                        <Span Text="{Binding Path=Model.StartingBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="6">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Lowest BG: " />
+                                        <Span Text="{Binding Path=Model.LowestBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" after " />
+                                        <Span Text="{Binding Path=Model.LowestBgTimeSpanInMinutes}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" minutes."
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="7">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Highest BG: " />
+                                        <Span Text="{Binding Path=Model.HighestBg}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" after " />
+                                        <Span Text="{Binding Path=Model.HighestBgTimeSpanInMinutes}"
+                                              Style="{StaticResource StrongSpan}" />
+                                        <Span Text=" minutes."
+                                              Style="{StaticResource StrongSpan}" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </yummy:PancakeView>
+
+                <Button Text="Log Again"
+                        Command="{Binding LogAgainCommand}"
+                        Grid.Row="3"
+                        Margin="10"
+                        CornerRadius="25"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource AppBlue}" />
+            </Grid>
+        </yummy:PancakeView>
+    </ContentView.Content>
+</ContentView>

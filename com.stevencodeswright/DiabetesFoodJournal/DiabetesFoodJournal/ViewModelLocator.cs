@@ -22,6 +22,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register(() => { return Messenger.Default; });
             SimpleIoc.Default.Register<IDatabaseSettings, DefaultDatabaseSettings>();
             SimpleIoc.Default.Register<ISqlLiteAsyncConnectionFactory, SqlLiteAsyncConnectionFactory>();
+            SimpleIoc.Default.Register<IHashHelper, HashHelper>();
             SimpleIoc.Default.Register<IFoodJournalDatabase, FoodJournalDatabase>();
             SimpleIoc.Default.Register<ISecureStorage, SecureStorageHelper>();
             SimpleIoc.Default.Register<IUserInfo, UserInfoHelper>();
@@ -40,15 +41,34 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<INutritionalInfoFactory, NutritionalInfoFactory>();
             SimpleIoc.Default.Register<ITagFactory, TagFactory>();
             SimpleIoc.Default.Register<IAppDataService, WebApiDataService>();
+            SimpleIoc.Default.Register<ILoginDataService, LoginDataService>();
             SimpleIoc.Default.Register<IJournalDataService, JournalDataService>();
             SimpleIoc.Default.Register<IJournalEntryDataService, JournalEntryDataService>();
             SimpleIoc.Default.Register<IJournalEntryHistoryDataService, JournalEntryHistoryDataService>();
+            SimpleIoc.Default.Register<IBgReadingsDataService, BgReadingsDataService>();
+            SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<CreateAccountViewModel>();
             SimpleIoc.Default.Register<JournalViewModel>();
             SimpleIoc.Default.Register<JournalEntryViewModel>();
             SimpleIoc.Default.Register<JournalEntryHistoryViewModel>();
+            SimpleIoc.Default.Register<BgReadingsViewModel>();
         }
 
+        public LoginViewModel Login
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<LoginViewModel>();
+            }
+        }
 
+        public CreateAccountViewModel CreateAccount
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<CreateAccountViewModel>();
+            }
+        }
         public JournalViewModel Journal
         {
             get
@@ -62,6 +82,14 @@ namespace DiabetesFoodJournal
             get
             {
                 return SimpleIoc.Default.GetInstance<JournalEntryViewModel>();
+            }
+        }
+
+        public BgReadingsViewModel BgReadings
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<BgReadingsViewModel>();
             }
         }
 

@@ -26,7 +26,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.messenger = messenger;
 
             GlucoseReadings = new ObservableRangeCollection<GlucoseReading>();
-            JournalEntries = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
+            JournalEntries = new ObservableRangeCollection<JournalEntryDataModel>();
             ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(async (x)=> await ItemTapped(x));
             if (this.messenger != null)
             {
@@ -38,13 +38,6 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task ItemTapped(JournalEntryDataModel foodResult)
         {
             IsBusy = true;
-            foreach (var group in JournalEntries)
-            {
-                foreach (var item in group.Items)
-                {
-                    item.IsSelected = false;
-                }
-            }
 
             foodResult.IsSelected = true;
             var readings = await this.dataService.GetGlucoseReadings(foodResult.Logged, foodResult.Logged.AddHours(5)).ConfigureAwait(true);
@@ -57,13 +50,19 @@ namespace DiabetesFoodJournal.ViewModels
 
         public ObservableRangeCollection<GlucoseReading> GlucoseReadings { get; }
 
-        public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> JournalEntries { get; }
+        public ObservableRangeCollection<JournalEntryDataModel> JournalEntries { get; }
 
         private async Task JournalEntryReceived(JournalEntryDataModel searchEntry)
         {
-            var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
-
-            Device.BeginInvokeOnMainThread(()=> JournalEntries.ReplaceRange(entryList));
+            try
+            {
+                var entryList = await this.dataService.SearchJournal(searchEntry.Title).ConfigureAwait(true);
+                Device.BeginInvokeOnMainThread(() => JournalEntries.ReplaceRange(entryList));
+            }
+            catch (Exception)
+            {
+                Device.BeginInvokeOnMainThread(() => JournalEntries.Clear());
+            }
         }
     }
 }
