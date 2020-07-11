@@ -1,0 +1,27 @@
+﻿@using AmerPlayoffPool_blazor.Models;
+
+<style>
+    .matchup{
+        float: left;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        min-width:@MinWidth;
+    }
+</style>
+
+<div class="matchup">
+    <strong>@HomeTeam.Name</strong>
+    <span>VS</span>
+    <strong>@AwayTeam</strong>
+</div>
+
+@code {
+    [Parameter]
+    public Team HomeTeam { get; set; }
+
+    [Parameter]
+    public string AwayTeam { get; set; }
+
+    public string MinWidth { get; set; }
+}

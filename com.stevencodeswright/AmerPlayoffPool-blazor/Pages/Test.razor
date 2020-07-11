@@ -1,0 +1,11 @@
+@page "/test"
+
+<div>
+    <SelectTeam HomeTeam=@TeamOne AwayTeam="Houston Texans" />
+    <SelectTeam HomeTeam=@TeamTwo AwayTeam="Baltimore Ravens" />
+</div>
+
+@code{
+    public AmerPlayoffPool_blazor.Models.Team TeamOne = new Models.Team() { Name = "Tennessee Titans" };
+    public AmerPlayoffPool_blazor.Models.Team TeamTwo = new Models.Team() { Name = "New England Patriots" };
+}

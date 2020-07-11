@@ -63,3 +63,6 @@
 /com.stevencodeswright/DiabetesFoodJournal.Entities/bin/Release/netstandard2.0
 /com.stevencodeswright/.mfractor
 /com.stevencodeswright/DiabetesFoodJournal.UnitTests/bin/Release/netcoreapp3.1
+/com.stevencodeswright/AmerPlayoffPool-blazor/obj
+/com.stevencodeswright/AmerPlayoffPool-blazor/bin/Debug/netstandard2.1
+/com.stevencodeswright/AmerPlayoffPool-blazor/bin/Release/netstandard2.1
