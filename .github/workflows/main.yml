@@ -35,8 +35,8 @@ jobs:
       
     - name: Android
       run: |
-        cd Blank
+        cd com.stevencodeswright/DiabetesFoodJournal
         nuget restore
-        cd Blank.Android
-        msbuild Blank.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+        cd DiabetesFoodJournal.Android
+        msbuild DiabetesFoodJournal.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
   
