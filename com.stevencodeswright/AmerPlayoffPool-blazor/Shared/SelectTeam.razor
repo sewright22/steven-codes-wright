@@ -2,28 +2,29 @@
 
 <style>
     .matchup {
-        display: flex;
-        flex-direction: column;
+        /*display: flex;
+        flex-direction: column;*/
         border: 1px solid black;
-        padding: 10px;
-        border-radius: 10px;
+        /*padding: 10px;*/
+        border-radius: 5px;
         width: 100%;
-        margin: 10px;
+        margin: 0px;
+        /*text-align: start;*/
     }
 
-        .matchup span {
-            text-align: center;
-        }
-
-        .matchup strong {
-            text-align: center;
-        }
+    hr.new1 {
+        border-top: 1px solid black;
+    }
 </style>
 
-<div class="matchup">
-    <strong>@HomeTeam.Name</strong>
-    <span>VS</span>
-    <strong>@AwayTeam</strong>
+<div class="matchup container">
+    <div class="row" style="background-color: @AwayTeam.PrimaryColor">
+        <strong>@AwayTeam.Name</strong>
+    </div>
+    
+    <div class="row" style="background-color: @HomeTeam.PrimaryColor">
+        <strong>@HomeTeam.Name</strong>
+    </div>
 </div>
 
 @code {
@@ -31,7 +32,7 @@
     public Team HomeTeam { get; set; }
 
     [Parameter]
-    public string AwayTeam { get; set; }
+    public Team AwayTeam { get; set; }
 
     public string MinWidth { get; set; }
 }
