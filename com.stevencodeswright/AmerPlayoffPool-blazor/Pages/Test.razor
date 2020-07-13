@@ -1,8 +1,50 @@
 @page "/test"
 
-<div>
-    <SelectTeam HomeTeam=@TeamOne AwayTeam="Houston Texans" />
-    <SelectTeam HomeTeam=@TeamTwo AwayTeam="Baltimore Ravens" />
+<style>
+    .list-container {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-item {
+        text-transform: capitalize;
+        font-size: 1.3em;
+        text-align: left;
+        padding: 10px;
+        margin: 1px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+</style>
+
+<div class="list-container">
+    <div class="list">
+        <div class="list-item">
+            <SelectTeam HomeTeam=@TeamOne AwayTeam="Houston Texans" />
+        </div>
+
+        <div class="list-item">
+            <SelectTeam HomeTeam=@TeamTwo AwayTeam="Baltimore Ravens" />
+        </div>
+    </div>
+
+    <div class="list">
+        <div class="list-item">
+            <SelectTeam HomeTeam=@TeamOne AwayTeam="Houston Texans" />
+        </div>
+
+        <div class="list-item">
+            <SelectTeam HomeTeam=@TeamTwo AwayTeam="Baltimore Ravens" />
+        </div>
+    </div>
 </div>
 
 @code{

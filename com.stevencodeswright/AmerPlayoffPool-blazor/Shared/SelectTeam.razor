@@ -1,13 +1,23 @@
 ﻿@using AmerPlayoffPool_blazor.Models;
 
 <style>
-    .matchup{
-        float: left;
+    .matchup {
+        display: flex;
+        flex-direction: column;
         border: 1px solid black;
         padding: 10px;
         border-radius: 10px;
-        min-width:@MinWidth;
+        width: 100%;
+        margin: 10px;
     }
+
+        .matchup span {
+            text-align: center;
+        }
+
+        .matchup strong {
+            text-align: center;
+        }
 </style>
 
 <div class="matchup">
