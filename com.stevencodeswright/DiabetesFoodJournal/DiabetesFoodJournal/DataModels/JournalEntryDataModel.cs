@@ -44,7 +44,9 @@ namespace DiabetesFoodJournal.DataModels
         public DoseDataModel Dose { get; } = new DoseDataModel();
         public NutritionalInfoDataModel NutritionalInfo { get; } = new NutritionalInfoDataModel();
         public ObservableRangeCollection<TagDataModel> Tags { get; } = new ObservableRangeCollection<TagDataModel>();
+        public ObservableRangeCollection<GlucoseReading> HighReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
         public ObservableRangeCollection<GlucoseReading> BgReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
+        public ObservableRangeCollection<GlucoseReading> LowReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
 
         [JsonIgnore]
         public string Group

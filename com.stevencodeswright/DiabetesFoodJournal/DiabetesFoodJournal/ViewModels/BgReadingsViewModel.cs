@@ -63,7 +63,9 @@ namespace DiabetesFoodJournal.ViewModels
 
                     if (readingsFromCgm.Any())
                     {
-                        Device.BeginInvokeOnMainThread(() => this.Model.BgReadings.ReplaceRange(readingsFromCgm.OrderBy(x => x.DisplayTime)));
+                        Device.BeginInvokeOnMainThread(() => this.Model.HighReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading >= 180).OrderBy(x => x.DisplayTime)));
+                        Device.BeginInvokeOnMainThread(() => this.Model.BgReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 180 && x.Reading >= 80).OrderBy(x => x.DisplayTime)));
+                        Device.BeginInvokeOnMainThread(() => this.Model.LowReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 80).OrderBy(x => x.DisplayTime)));
                         Device.BeginInvokeOnMainThread(() => this.Model.StartingBg = this.Model.BgReadings.FirstOrDefault().Reading);
                         await AnalyzeReadings(readingsFromCgm);
                     }
