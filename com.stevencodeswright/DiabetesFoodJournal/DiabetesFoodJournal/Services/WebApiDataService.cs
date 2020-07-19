@@ -209,5 +209,45 @@ namespace DiabetesFoodJournal.Services
 
             return retVal;
         }
+
+        public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(int userId, DateTime startTime, DateTime endTime, int idToExclude)
+        {
+            var retVal = new List<JournalEntryDataModel>();//journalEntry/SearchJournal?searchValue=test
+            var endPoint = $"journalEntries/V2/?userId={userId}&startTime={startTime.ToString("f")}&endTime={endTime.ToString("f")}&idToExclude={idToExclude}";
+
+            using (var response = await client.GetAsync(endPoint))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var entries = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<JournalEntryWebApiModel>>(content));
+
+                    foreach (var entry in entries)
+                    {
+                        var entryDataModel = new JournalEntryDataModel();
+                        entryDataModel.Load(this.journalEntryFactory.Build(entry));
+                        entryDataModel.Dose.Load(this.doseFactory.Build(entry.Dose));
+                        entryDataModel.NutritionalInfo.Load(this.nutritionalInfoFactory.Build(entry.NutritionalInfo));
+
+                        foreach (var tag in entry.Tags)
+                        {
+                            var tagDataModel = new TagDataModel();
+                            tagDataModel.Load(this.tagFactory.Build(tag));
+                            entryDataModel.Tags.Add(tagDataModel);
+                        }
+
+                        retVal.Add(entryDataModel);
+                    }
+                }
+                else
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    //var message = await Task.Run(() => JsonConvert.DeserializeObject<string>(content));
+                    //var test = message;
+                }
+            }
+
+            return retVal;
+        }
     }
 }

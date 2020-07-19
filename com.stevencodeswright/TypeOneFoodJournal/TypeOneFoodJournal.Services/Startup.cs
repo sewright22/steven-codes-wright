@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TypeOneFoodJournal.Services.DataServices;
 using TypeOneFoodJournal.Services.Factories;
 using TypeOneFoodJournal.Services.Handlers;
 
@@ -30,6 +31,7 @@ namespace TypeOneFoodJournal.Services
         {
             services.AddCors();
             services.ConfigureMySqlContext(Configuration);
+            services.AddTransient<IFoodJournalDataService, FoodJournalDataService>();
             services.AddTransient<IJournalEntryModelFactory, JournalEntryModelFactory>();
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);

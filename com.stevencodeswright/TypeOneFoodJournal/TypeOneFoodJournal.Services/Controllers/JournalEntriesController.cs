@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using TypeOneFoodJournal.Data;
 using TypeOneFoodJournal.Entities;
 using TypeOneFoodJournal.Models;
+using TypeOneFoodJournal.Services.DataServices;
 using TypeOneFoodJournal.Services.Factories;
 
 namespace TypeOneFoodJournal.Services.Controllers
@@ -20,35 +21,45 @@ namespace TypeOneFoodJournal.Services.Controllers
     {
         private readonly FoodJournalContext context;
         private readonly IJournalEntryModelFactory journalEntryModelFactory;
+        private readonly IFoodJournalDataService journalEntryDataService;
 
-        public JournalEntriesController(FoodJournalContext context, IJournalEntryModelFactory journalEntryModelFactory)
+        public JournalEntriesController(FoodJournalContext context, IJournalEntryModelFactory journalEntryModelFactory, IFoodJournalDataService journalEntryDataService)
         {
             this.context = context;
             this.journalEntryModelFactory = journalEntryModelFactory;
+            this.journalEntryDataService = journalEntryDataService;
         }
 
         [Authorize]
         [HttpGet("v2")]
-        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] int userId, [FromQuery] string searchValue = "")
+        public async Task<ActionResult<IEnumerable<JournalEntryModel>>> GetJournalEntries([FromQuery] int userId,
+                                                                                          [FromQuery] string searchValue = "",
+                                                                                          [FromQuery] DateTime? startTime = null,
+                                                                                          [FromQuery] DateTime? endTime = null,
+                                                                                          [FromQuery] int? idToExclude = null)
         {
-            var upperSearchValue = searchValue.ToUpper();
             var retVal = new List<JournalEntryModel>();
+
             try
             {
-                var results = this.context.UserJournalEntries.Where(u=>u.UserId==userId).Select(uje=>uje.JournalEntry).OrderByDescending(j => j.Logged).AsQueryable();
+                var results = new List<JournalEntry>();
 
-                if (!string.IsNullOrEmpty(upperSearchValue))
+                if (idToExclude.HasValue && startTime.HasValue && endTime.HasValue)
                 {
-                    results = results.Where(entry => entry.Title.ToUpper().Contains(upperSearchValue) ||
-                                                                entry.JournalEntryTags.Where(t => t.Tag.Description.ToUpper().Contains(upperSearchValue)).Any());
+                    results = await this.journalEntryDataService.SearchByTimeFrame(userId, startTime.Value, endTime.Value, idToExclude.Value, 10);
+                }
+                else
+                {
+                    var upperSearchValue = searchValue.ToUpper();
+                    results = await this.journalEntryDataService.SearchByName(userId, upperSearchValue, 10);
                 }
 
                 if (results.Any())
                 {
-                    foreach (var result in await results.Take(10).ToListAsync())
+                    foreach (var result in results)
                     {
                         var currentEntry = this.journalEntryModelFactory.Build(result);
-                        
+
                         retVal.Add(currentEntry);
                     }
                 }
@@ -94,11 +105,11 @@ namespace TypeOneFoodJournal.Services.Controllers
 
             return Ok(retVal);
         }
-        
+
         // GET: api/JournalEntries/5
         [Authorize]
         [HttpGet("v2/{id}")]
-        public async Task<ActionResult<JournalEntryModel>> GetJournalEntry([FromQuery]int userId, int id)
+        public async Task<ActionResult<JournalEntryModel>> GetJournalEntry([FromQuery] int userId, int id)
         {
             var journalEntry = await context.UserJournalEntries.SingleOrDefaultAsync(x => x.UserId == userId && x.JournalEntryId == id);
 
@@ -344,7 +355,7 @@ namespace TypeOneFoodJournal.Services.Controllers
                         {
                             var userJournalEntryFromDb = await this.context.UserJournalEntries.FirstOrDefaultAsync(x => x.UserId == userId && x.JournalEntryId == entry.Id);
 
-                            if(userJournalEntryFromDb==null)
+                            if (userJournalEntryFromDb == null)
                             {
                                 userJournalEntryFromDb = new UserJournalEntry();
                             }
@@ -371,7 +382,7 @@ namespace TypeOneFoodJournal.Services.Controllers
 
                             userJournalEntryFromDb.JournalEntryId = entry.Id;
 
-                            if(userJournalEntryFromDb.Id==0)
+                            if (userJournalEntryFromDb.Id == 0)
                             {
                                 this.context.UserJournalEntries.Add(userJournalEntryFromDb);
                             }
@@ -439,9 +450,9 @@ namespace TypeOneFoodJournal.Services.Controllers
                             }
 
                             var journalEntryTagsFromDb = this.context.JournalEntryTags.Where(x => x.JournalEntryId == entryFromDb.Id);
-                            foreach(var dbTag in journalEntryTagsFromDb.ToList())
+                            foreach (var dbTag in journalEntryTagsFromDb.ToList())
                             {
-                                if(entry.Tags.Where(x=>x.Id==dbTag.TagId).Any()==false)
+                                if (entry.Tags.Where(x => x.Id == dbTag.TagId).Any() == false)
                                 {
                                     this.context.Remove(dbTag);
                                     this.context.SaveChanges();
