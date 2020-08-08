@@ -35,7 +35,7 @@ namespace DiabetesFoodJournal.DataServices
                 retVal.Add(new GlucoseReading
                 {
                     Reading = reading.RealtimeValue.HasValue ? reading.RealtimeValue.Value : (float?)null,
-                    DisplayTime = Convert.ToInt32(Math.Round(reading.DisplayTime.DateTime.Subtract(startTime).TotalMinutes, 0))
+                    DisplayTime = Convert.ToInt32(Math.Round(reading.DisplayTime.DateTime.Subtract(logTime).TotalMinutes, 0))
                 });
             }
 
@@ -56,10 +56,47 @@ namespace DiabetesFoodJournal.DataServices
             retVal.Tags.AddRange(selectedEntry.Tags.ToList());
             return retVal;
         }
+
+        public async Task<IEnumerable<ChartReading>> GetOtherEntries(DateTime logTime, int idToExclude)
+        {
+            var retVal = new List<ChartReading>();
+            var startTime = logTime.AddMinutes(-30);
+            var endTime = logTime.AddHours(5);
+            var userId = await this.userInfo.GetUserId();
+
+            var otherEntries = await this.appDataService.SearchJournal(userId, startTime, endTime, idToExclude);
+
+            //Convert to glucose readings, so they can be put on the chart.
+
+            foreach (var entry in otherEntries)
+            {
+                var insulinAmountString = "";
+
+                if(entry.Dose.Extended>0)
+                {
+                    insulinAmountString = $"{entry.Dose.InsulinAmount}u ({entry.Dose.UpFront}/{entry.Dose.Extended} - {entry.Dose.TimeExtended}H)";
+                }
+                else
+                {
+                    insulinAmountString = $"{entry.Dose.InsulinAmount}u";
+                }
+
+                retVal.Add(new ChartReading
+                {
+                    Reading = 60,
+                    DisplayTime = Convert.ToInt32(Math.Round(entry.Logged.Subtract(logTime).TotalMinutes, 0)),
+                    FoodName = entry.Model.Title,
+                    InsulinAmount = insulinAmountString,
+                });
+            }
+
+            return retVal;
+        }
     }
 
     public interface IBgReadingsDataService
     {
+        Task<IEnumerable<ChartReading>> GetOtherEntries(DateTime logTime, int idToExclude);
         Task<IEnumerable<GlucoseReading>> GetCgmReadings(DateTime logTime);
         Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);

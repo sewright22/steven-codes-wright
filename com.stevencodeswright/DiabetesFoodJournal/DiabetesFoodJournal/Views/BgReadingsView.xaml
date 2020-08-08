@@ -18,7 +18,7 @@
         <Style TargetType="Span"
                x:Key="BlueSpan">
             <Setter Property="TextColor"
-                    Value="{StaticResource AppBlue}" /> 
+                    Value="{StaticResource AppBlue}" />
         </Style>
     </ContentView.Resources>
     <ContentView.Content>
@@ -48,10 +48,13 @@
                                    AreaBackgroundColor="#151415"
                                    BackgroundColor="#3F3F41">
                         <chart:SfChart.PrimaryAxis>
-                            <chart:NumericalAxis Minimum="-30" Maximum="300" Interval="30">
+                            <chart:NumericalAxis Minimum="-30"
+                                                 Maximum="300"
+                                                 Interval="30">
                                 <chart:NumericalAxis.Title>
-                                    <chart:ChartAxisTitle Text="Time since eating (minutes)" TextColor="White"
-                                                          FontSize="20"/>
+                                    <chart:ChartAxisTitle Text="Time since eating (minutes)"
+                                                          TextColor="White"
+                                                          FontSize="20" />
                                 </chart:NumericalAxis.Title>
                                 <chart:NumericalAxis.LabelStyle>
                                     <chart:ChartAxisLabelStyle TextColor="White">
@@ -61,7 +64,7 @@
                                 <chart:NumericalAxis.MajorGridLineStyle>
                                     <chart:ChartLineStyle StrokeColor="Transparent" />
                                 </chart:NumericalAxis.MajorGridLineStyle>
-                                
+
                             </chart:NumericalAxis>
                         </chart:SfChart.PrimaryAxis>
                         <chart:SfChart.SecondaryAxis>
@@ -69,7 +72,7 @@
                                                  Maximum="400">
                                 <chart:NumericalAxis.LabelStyle>
                                     <chart:ChartAxisLabelStyle TextColor="White">
-                                        
+
                                     </chart:ChartAxisLabelStyle>
                                 </chart:NumericalAxis.LabelStyle>
 
@@ -80,7 +83,7 @@
                                     <chart:NumericalStripLineCollection>
                                         <chart:NumericalStripLine Start="80"
                                                                   Width="100"
-                                                                  FillColor="#58585A"/>
+                                                                  FillColor="#58585A" />
 
                                         <chart:NumericalStripLine Start="180"
                                                                   StrokeWidth="5"
@@ -97,12 +100,12 @@
                         </chart:SfChart.SecondaryAxis>
 
                         <chart:ScatterSeries ItemsSource="{Binding Path=Model.HighReadings}"
-                                          XBindingPath="DisplayTime"
-                                          YBindingPath="Reading"
-                                          Color="#FDF063"
+                                             XBindingPath="DisplayTime"
+                                             YBindingPath="Reading"
+                                             Color="#FDF063"
                                              ShapeType="Triangle"
-                                          IsVisible="True"
-                                          EnableTooltip="True" />
+                                             IsVisible="True"
+                                             EnableTooltip="True" />
 
                         <chart:ScatterSeries ItemsSource="{Binding Path=Model.BgReadings}"
                                              XBindingPath="DisplayTime"
@@ -113,12 +116,35 @@
                                              EnableTooltip="True" />
 
                         <chart:ScatterSeries ItemsSource="{Binding Path=Model.LowReadings}"
-                                          XBindingPath="DisplayTime"
-                                          YBindingPath="Reading"
+                                             XBindingPath="DisplayTime"
+                                             YBindingPath="Reading"
                                              ShapeType="InvertedTriangle"
                                              Color="#FA172A"
-                                          IsVisible="True"
-                                          EnableTooltip="True" />
+                                             IsVisible="True"
+                                             EnableTooltip="True" />
+
+                        <chart:ScatterSeries ItemsSource="{Binding Path=OtherEntries}"
+                                             XBindingPath="DisplayTime"
+                                             YBindingPath="Reading"
+                                             IsVisible="True"
+                                             ScatterHeight="15"
+                                             ScatterWidth="15"
+                                             EnableTooltip="True">
+                            <chart:ScatterSeries.TooltipTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Food: " />
+                                            <Label Text="{Binding FoodName}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Bolus: " />
+                                            <Label Text="{Binding InsulinAmount}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </chart:ScatterSeries.TooltipTemplate>
+                        </chart:ScatterSeries>
                     </chart:SfChart>
                 </RefreshView>
 

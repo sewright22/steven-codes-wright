@@ -46,6 +46,7 @@ namespace DiabetesFoodJournal.ViewModels
                 this.messenger.Send(entry);
             }
         }
+        public ObservableRangeCollection<ChartReading> OtherEntries { get; } = new ObservableRangeCollection<ChartReading>();
 
         public JournalEntryDataModel Model { get { return this.model; } set { SetProperty(ref this.model, value); } }
         public AsyncCommand LogAgainCommand { get; set; }
@@ -60,6 +61,7 @@ namespace DiabetesFoodJournal.ViewModels
                 try
                 {
                     var readingsFromCgm = await this.dataService.GetCgmReadings(this.model.Logged).ConfigureAwait(true);
+                    var otherEntries = await this.dataService.GetOtherEntries(this.model.Logged, this.model.Id);
 
                     if (readingsFromCgm.Any())
                     {
@@ -68,6 +70,15 @@ namespace DiabetesFoodJournal.ViewModels
                         Device.BeginInvokeOnMainThread(() => this.Model.LowReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 80).OrderBy(x => x.DisplayTime)));
                         Device.BeginInvokeOnMainThread(() => this.Model.StartingBg = this.Model.BgReadings.FirstOrDefault().Reading);
                         await AnalyzeReadings(readingsFromCgm);
+                    }
+
+                    if(otherEntries.Any())
+                    {
+                        Device.BeginInvokeOnMainThread(() => this.OtherEntries.ReplaceRange(otherEntries.Where(x=>x.DisplayTime!=0).OrderBy(x => x.DisplayTime)));
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(() => this.OtherEntries.Clear());
                     }
                 }
                 catch (Exception)

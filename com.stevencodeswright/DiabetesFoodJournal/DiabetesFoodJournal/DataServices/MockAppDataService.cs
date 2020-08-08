@@ -218,5 +218,10 @@ namespace DiabetesFoodJournal.DataServices
         {
             throw new NotImplementedException();
         }
+
+        public Task<IEnumerable<JournalEntryDataModel>> SearchJournal(int userId, DateTime startTime, DateTime endTime, int idToExclude)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
