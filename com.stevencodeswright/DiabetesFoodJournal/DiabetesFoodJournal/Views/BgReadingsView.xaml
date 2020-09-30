@@ -6,7 +6,8 @@
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
-             x:Class="DiabetesFoodJournal.Views.BgReadingsView">
+             x:Class="DiabetesFoodJournal.Views.BgReadingsView"
+             x:Name="readingsView">
     <ContentView.Resources>
         <Style TargetType="Span"
                x:Key="StrongSpan">
@@ -22,272 +23,434 @@
         </Style>
     </ContentView.Resources>
     <ContentView.Content>
-        <yummy:PancakeView BorderThickness="5"
-                           BorderColor="Black"
-                           CornerRadius="20"
-                           Padding="10">
+        <yummy:PancakeView CornerRadius="0"
+                           Padding="0">
+
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                <Grid BackgroundColor="{StaticResource AppBackgroundColor}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                <Label Text="{Binding Model.Title}"
-                       HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       FontSize="Large" />
+                    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                                 x:Name="bgChart">
+                        <chart:SfChart HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                       IsVisible="True"
+                                       AreaBackgroundColor="#151415"
+                                       BackgroundColor="#3F3F41">
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:NumericalAxis Minimum="-30"
+                                                     Maximum="300"
+                                                     Interval="30">
+                                    <chart:NumericalAxis.Title>
+                                        <chart:ChartAxisTitle Text="Time since eating (minutes)"
+                                                              TextColor="White"
+                                                              FontSize="20" />
+                                    </chart:NumericalAxis.Title>
+                                    <chart:NumericalAxis.LabelStyle>
+                                        <chart:ChartAxisLabelStyle TextColor="White">
 
-                <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
-                             x:Name="bgChart"
-                             Grid.Row="1">
-                    <chart:SfChart HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="FillAndExpand"
-                                   IsVisible="True"
-                                   AreaBackgroundColor="#151415"
-                                   BackgroundColor="#3F3F41">
-                        <chart:SfChart.PrimaryAxis>
-                            <chart:NumericalAxis Minimum="-30"
-                                                 Maximum="300"
-                                                 Interval="30">
-                                <chart:NumericalAxis.Title>
-                                    <chart:ChartAxisTitle Text="Time since eating (minutes)"
-                                                          TextColor="White"
-                                                          FontSize="20" />
-                                </chart:NumericalAxis.Title>
-                                <chart:NumericalAxis.LabelStyle>
-                                    <chart:ChartAxisLabelStyle TextColor="White">
+                                        </chart:ChartAxisLabelStyle>
+                                    </chart:NumericalAxis.LabelStyle>
+                                    <chart:NumericalAxis.MajorGridLineStyle>
+                                        <chart:ChartLineStyle StrokeColor="Transparent" />
+                                    </chart:NumericalAxis.MajorGridLineStyle>
 
-                                    </chart:ChartAxisLabelStyle>
-                                </chart:NumericalAxis.LabelStyle>
-                                <chart:NumericalAxis.MajorGridLineStyle>
-                                    <chart:ChartLineStyle StrokeColor="Transparent" />
-                                </chart:NumericalAxis.MajorGridLineStyle>
+                                </chart:NumericalAxis>
+                            </chart:SfChart.PrimaryAxis>
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis Minimum="50"
+                                                     Maximum="400">
+                                    <chart:NumericalAxis.LabelStyle>
+                                        <chart:ChartAxisLabelStyle TextColor="White">
 
-                            </chart:NumericalAxis>
-                        </chart:SfChart.PrimaryAxis>
-                        <chart:SfChart.SecondaryAxis>
-                            <chart:NumericalAxis Minimum="50"
-                                                 Maximum="400">
-                                <chart:NumericalAxis.LabelStyle>
-                                    <chart:ChartAxisLabelStyle TextColor="White">
+                                        </chart:ChartAxisLabelStyle>
+                                    </chart:NumericalAxis.LabelStyle>
 
-                                    </chart:ChartAxisLabelStyle>
-                                </chart:NumericalAxis.LabelStyle>
+                                    <chart:NumericalAxis.MajorGridLineStyle>
+                                        <chart:ChartLineStyle StrokeColor="Transparent" />
+                                    </chart:NumericalAxis.MajorGridLineStyle>
+                                    <chart:NumericalAxis.StripLines>
+                                        <chart:NumericalStripLineCollection>
+                                            <chart:NumericalStripLine Start="80"
+                                                                      Width="100"
+                                                                      FillColor="#58585A" />
 
-                                <chart:NumericalAxis.MajorGridLineStyle>
-                                    <chart:ChartLineStyle StrokeColor="Transparent" />
-                                </chart:NumericalAxis.MajorGridLineStyle>
-                                <chart:NumericalAxis.StripLines>
-                                    <chart:NumericalStripLineCollection>
-                                        <chart:NumericalStripLine Start="80"
-                                                                  Width="100"
-                                                                  FillColor="#58585A" />
+                                            <chart:NumericalStripLine Start="180"
+                                                                      StrokeWidth="5"
+                                                                      Width="2"
+                                                                      FillColor="#FADD55" />
 
-                                        <chart:NumericalStripLine Start="180"
-                                                                  StrokeWidth="5"
-                                                                  Width="2"
-                                                                  FillColor="#FADD55" />
+                                            <chart:NumericalStripLine Start="80"
+                                                                      StrokeWidth="5"
+                                                                      Width="2"
+                                                                      FillColor="#B53238" />
+                                        </chart:NumericalStripLineCollection>
+                                    </chart:NumericalAxis.StripLines>
+                                </chart:NumericalAxis>
+                            </chart:SfChart.SecondaryAxis>
 
-                                        <chart:NumericalStripLine Start="80"
-                                                                  StrokeWidth="5"
-                                                                  Width="2"
-                                                                  FillColor="#B53238" />
-                                    </chart:NumericalStripLineCollection>
-                                </chart:NumericalAxis.StripLines>
-                            </chart:NumericalAxis>
-                        </chart:SfChart.SecondaryAxis>
+                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.HighReadings}"
+                                                 XBindingPath="DisplayTime"
+                                                 YBindingPath="Reading"
+                                                 Color="#FDF063"
+                                                 ShapeType="Triangle"
+                                                 IsVisible="True"
+                                                 EnableTooltip="True" />
 
-                        <chart:ScatterSeries ItemsSource="{Binding Path=Model.HighReadings}"
-                                             XBindingPath="DisplayTime"
-                                             YBindingPath="Reading"
-                                             Color="#FDF063"
-                                             ShapeType="Triangle"
-                                             IsVisible="True"
-                                             EnableTooltip="True" />
+                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.BgReadings}"
+                                                 XBindingPath="DisplayTime"
+                                                 YBindingPath="Reading"
+                                                 ShapeType="Diamond"
+                                                 Color="White"
+                                                 IsVisible="True"
+                                                 EnableTooltip="True" />
 
-                        <chart:ScatterSeries ItemsSource="{Binding Path=Model.BgReadings}"
-                                             XBindingPath="DisplayTime"
-                                             YBindingPath="Reading"
-                                             ShapeType="Diamond"
-                                             Color="White"
-                                             IsVisible="True"
-                                             EnableTooltip="True" />
+                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.LowReadings}"
+                                                 XBindingPath="DisplayTime"
+                                                 YBindingPath="Reading"
+                                                 ShapeType="InvertedTriangle"
+                                                 Color="#FA172A"
+                                                 IsVisible="True"
+                                                 EnableTooltip="True" />
 
-                        <chart:ScatterSeries ItemsSource="{Binding Path=Model.LowReadings}"
-                                             XBindingPath="DisplayTime"
-                                             YBindingPath="Reading"
-                                             ShapeType="InvertedTriangle"
-                                             Color="#FA172A"
-                                             IsVisible="True"
-                                             EnableTooltip="True" />
-
-                        <chart:ScatterSeries ItemsSource="{Binding Path=OtherEntries}"
-                                             XBindingPath="DisplayTime"
-                                             YBindingPath="Reading"
-                                             IsVisible="True"
-                                             ScatterHeight="15"
-                                             ScatterWidth="15"
-                                             EnableTooltip="True">
-                            <chart:ScatterSeries.TooltipTemplate>
-                                <DataTemplate>
-                                    <StackLayout Orientation="Vertical">
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="Food: " />
-                                            <Label Text="{Binding FoodName}" />
+                            <chart:ScatterSeries ItemsSource="{Binding Path=OtherEntries}"
+                                                 XBindingPath="DisplayTime"
+                                                 YBindingPath="Reading"
+                                                 IsVisible="True"
+                                                 ScatterHeight="15"
+                                                 ScatterWidth="15"
+                                                 EnableTooltip="True">
+                                <chart:ScatterSeries.TooltipTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Food: " />
+                                                <Label Text="{Binding FoodName}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Bolus: " />
+                                                <Label Text="{Binding InsulinAmount}" />
+                                            </StackLayout>
                                         </StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="Bolus: " />
-                                            <Label Text="{Binding InsulinAmount}" />
-                                        </StackLayout>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </chart:ScatterSeries.TooltipTemplate>
-                        </chart:ScatterSeries>
-                    </chart:SfChart>
-                </RefreshView>
+                                    </DataTemplate>
+                                </chart:ScatterSeries.TooltipTemplate>
+                            </chart:ScatterSeries>
+                        </chart:SfChart>
+                    </RefreshView>
 
-                <yummy:PancakeView Grid.Row="2">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
+                    <Label Text="{Binding Title}"
+                           HorizontalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           Grid.Row="1" />
 
-                        <Label Grid.Row="0"
-                               FontSize="Medium">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Logged: " />
-                                        <Span Text="{Binding Path=Model.Logged}"
-                                              Style="{StaticResource StrongSpan}" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
 
-                        <Label Grid.Row="1"
-                               FontSize="Medium">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding Path=Model.Dose.InsulinAmount}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" " />
-                                        <Span Text="Units" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                    <yummy:PancakeView Grid.Row="2"
+                                       Padding="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
-                        <Label Grid.Row="2"
-                               FontSize="Medium">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding Path=Model.Dose.UpFront}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text="% " />
-                                        <Span Text="Up Front" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                            <Label Grid.Row="0"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Logged" />
 
-                        <Label Grid.Row="3"
-                               FontSize="Medium">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding Path=Model.Dose.Extended}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text="% " />
-                                        <Span Text="Extended" />
-                                        <Span Text=" for " />
-                                        <Span Text="{Binding Path=Model.Dose.TimeExtended}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" hours."
-                                              FontAttributes="Bold" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                            <Label Grid.Row="0"
+                                   HorizontalOptions="End"
+                                   Text="{Binding Path=Model.Logged}"/>
 
-                        <Label Grid.Row="4">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Notes: " />
-                                        <Span Text="{Binding Path=Model.Notes}"
-                                              Style="{StaticResource BlueSpan}" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                            <Label Grid.Row="1"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Insulin Given" />
 
-                        <Label Grid.Row="5">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Starting BG: " />
-                                        <Span Text="{Binding Path=Model.StartingBg}"
-                                              Style="{StaticResource StrongSpan}" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                            <Label Grid.Row="1"
+                                   FontSize="Medium"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.InsulinAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" " />
+                                            <Span Text="Units" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
 
-                        <Label Grid.Row="6">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Lowest BG: " />
-                                        <Span Text="{Binding Path=Model.LowestBg}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" after " />
-                                        <Span Text="{Binding Path=Model.LowestBgTimeSpanInMinutes}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" minutes."
-                                              Style="{StaticResource StrongSpan}" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                            <Label Grid.Row="2"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Up Front" />
 
-                        <Label Grid.Row="7">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Highest BG: " />
-                                        <Span Text="{Binding Path=Model.HighestBg}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" after " />
-                                        <Span Text="{Binding Path=Model.HighestBgTimeSpanInMinutes}"
-                                              Style="{StaticResource StrongSpan}" />
-                                        <Span Text=" minutes."
-                                              Style="{StaticResource StrongSpan}" />
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                    </Grid>
-                </yummy:PancakeView>
+                            <Label Grid.Row="2"
+                                   FontSize="Medium"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.UpFront}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding Path=Model.Dose.UpFrontAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
 
-                <Button Text="Log Again"
-                        Command="{Binding LogAgainCommand}"
-                        Grid.Row="3"
-                        Margin="10"
-                        CornerRadius="25"
-                        TextColor="White"
-                        BackgroundColor="{StaticResource AppBlue}" />
+                            <Label Grid.Row="3"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Extended" />
+
+                            <Label Grid.Row="3"
+                                   FontSize="Medium"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Dose.Extended}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding Path=Model.Dose.ExtendedAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                            <Span Text=" for " />
+                                            <Span Text="{Binding Path=Model.Dose.TimeExtended}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" hours"
+                                                  FontAttributes="Bold" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="4"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Notes" />
+
+                            <Label Grid.Row="4"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.Notes}"
+                                                  Style="{StaticResource BlueSpan}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="5"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Starting BG" />
+
+                            <Label Grid.Row="5"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.StartingBg}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="6"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Lowest BG" />
+
+                            <Label Grid.Row="6"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.LowestBg}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" after " />
+                                            <Span Text="{Binding Path=Model.LowestBgTimeSpanInMinutes}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" minutes."
+                                                  Style="{StaticResource StrongSpan}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="7"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Text="Highest BG" />
+
+                            <Label Grid.Row="7"
+                                   HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=Model.HighestBg}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" after " />
+                                            <Span Text="{Binding Path=Model.HighestBgTimeSpanInMinutes}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" minutes."
+                                                  Style="{StaticResource StrongSpan}" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                    </yummy:PancakeView>
+
+                    <Button Text="Log Again"
+                            x:Name="logAgainButton"
+                            Clicked="logAgainButton_Clicked"
+                            Command="{Binding LogAgainCommand}"
+                            Grid.Row="3"
+                            Margin="10"
+                            CornerRadius="25"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource AppBlue}" />
+                </Grid>
+
+                <Grid TranslationY="{Binding Height, Source={x:Reference readingsView}}"
+                      x:Name="hiddenGrid"
+                      BackgroundColor="{StaticResource AppBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ScrollView>
+                        <StackLayout>
+                            <Label Text="Would you like to adjust the total insulin?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   WidthRequest="100">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.InsulinAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" " />
+                                            <Span Text="Units" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="adjustInsulinSlider" 
+                                    Minimum="0"
+                                    Maximum="20"
+                                    ValueChanged="Slider_ValueChanged"
+                                    Value="{Binding LogAgainModel.Dose.InsulinAmount}"/>
+
+                            <Label Text="Would you like to adjust the amount up front?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.UpFront}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.UpFrontAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                            <Span Text="/" />
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.Extended}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.ExtendedAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                                    Minimum="0"
+                                    Maximum="{Binding LogAgainModel.Dose.InsulinAmount}"
+                                    Value="{Binding LogAgainModel.Dose.UpFrontAmount}" />
+
+                            <Label Text="Would you like to adjust the length of the extended bolus?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtended}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" minutes" />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtendedHours}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" " />
+                                            <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtendedMinutes}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=")" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="TimeExtendedSlider"
+                                    Minimum="0"
+                                    Maximum="2"
+                                    Value="{Binding LogAgainModel.Dose.TimeExtended}" />
+
+                            <Button Text="Log Again"
+                                    Command="{Binding LogCommand}"
+                                    Grid.Row="3"
+                                    Margin="10"
+                                    CornerRadius="25"
+                                    TextColor="White"
+                                    BackgroundColor="{StaticResource AppBlue}" />
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
             </Grid>
         </yummy:PancakeView>
     </ContentView.Content>

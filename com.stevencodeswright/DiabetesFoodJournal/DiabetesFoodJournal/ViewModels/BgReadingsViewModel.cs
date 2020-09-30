@@ -1,6 +1,7 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Models;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
@@ -20,13 +21,15 @@ namespace DiabetesFoodJournal.ViewModels
         private readonly IMessenger messenger;
         private readonly INavigationHelper navigation;
         private JournalEntryDataModel model;
+        private JournalEntryDataModel logAgainModel;
 
         public BgReadingsViewModel(IBgReadingsDataService dataService, IMessenger messenger, INavigationHelper navigation)
         {
             this.dataService = dataService;
             this.messenger = messenger;
             this.navigation = navigation;
-            this.LogAgainCommand = new AsyncCommand(this.LogAgainClicked);
+            this.LogAgainCommand = new RelayCommand(this.LogAgainClicked);
+            this.LogCommand = new AsyncCommand(this.LogClicked);
 
             if (this.messenger != null)
             {
@@ -34,26 +37,38 @@ namespace DiabetesFoodJournal.ViewModels
             }
         }
 
-        private async Task LogAgainClicked()
+        private void LogAgainClicked()
+        {
+            this.LogAgainModel = this.dataService.Copy(this.Model);
+        }
+
+        private async Task LogClicked()
         {
             await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
-            var entry = this.dataService.Copy(this.Model);
-            entry.Logged = DateTime.Now;
+            this.LogAgainModel.Logged = DateTime.Now;
 
-            entry = await this.dataService.SaveEntry(entry).ConfigureAwait(false);
-            if (entry.Id > 0)
+            this.LogAgainModel = await this.dataService.SaveEntry(this.LogAgainModel).ConfigureAwait(false);
+            if (this.LogAgainModel.Id > 0)
             {
-                this.messenger.Send(entry);
+                this.messenger.Send(this.LogAgainModel);
             }
         }
+
         public ObservableRangeCollection<ChartReading> OtherEntries { get; } = new ObservableRangeCollection<ChartReading>();
 
         public JournalEntryDataModel Model { get { return this.model; } set { SetProperty(ref this.model, value); } }
-        public AsyncCommand LogAgainCommand { get; set; }
+        public JournalEntryDataModel LogAgainModel 
+        { 
+            get { return this.logAgainModel; } 
+            set { SetProperty(ref this.logAgainModel, value); } 
+        }
+        public RelayCommand LogAgainCommand { get; set; }
+        public AsyncCommand LogCommand { get; set; }
 
         private async Task JournalEntryReceived(JournalEntryDataModel model)
         {
             this.Model = model;
+            this.Title = this.Model.Title;
 
             if (this.Model.BgReadings.Any() == false)
             {

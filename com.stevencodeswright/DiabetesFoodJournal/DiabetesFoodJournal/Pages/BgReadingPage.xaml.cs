@@ -16,5 +16,18 @@ namespace DiabetesFoodJournal.Pages
         {
             InitializeComponent();
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (this.readingsView.LogAgainIsOpen)
+            {
+                this.readingsView.CloseMenu();
+                return true;
+            }
+            else
+            {
+                return base.OnBackButtonPressed();
+            }
+        }
     }
 }

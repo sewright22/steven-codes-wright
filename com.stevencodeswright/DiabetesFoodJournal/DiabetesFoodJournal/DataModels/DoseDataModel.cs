@@ -16,6 +16,44 @@ namespace DiabetesFoodJournal.DataModels
         private decimal timeExtended;
         private int timeOffset;
         private decimal insulinAmount;
+        private decimal upFrontAmount;
+        private decimal extendedAmount;
+        private int timeExtendedHours;
+        private int timeExtendedMinutes;
+
+        public DoseDataModel()
+        {
+            this.PropertyChanged += DoseDataModel_PropertyChanged;
+        }
+
+        private void DoseDataModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(this.InsulinAmount) ||
+                e.PropertyName == nameof(this.UpFront) ||
+                e.PropertyName == nameof(this.Extended))
+            {
+                CalculateAmounts();
+            }
+            else if (e.PropertyName == nameof(this.UpFrontAmount) ||
+                     e.PropertyName == nameof(this.ExtendedAmount))
+            {
+                this.CalculatePercents();
+            }
+            
+            if (e.PropertyName == nameof(this.UpFront))
+            {
+                this.Extended = 100 - this.UpFront;
+            }
+            else if (e.PropertyName == nameof(this.Extended))
+            {
+                this.UpFront = 100 - this.Extended;
+            }
+            else if (e.PropertyName == nameof(this.TimeExtended))
+            {
+                this.TimeExtendedHours = ((int)this.TimeExtended) / 60;
+                this.TimeExtendedMinutes = ((int)this.TimeExtended) % 60;
+            }
+        }
 
         [JsonIgnore]
         public Dose Model
@@ -28,7 +66,11 @@ namespace DiabetesFoodJournal.DataModels
         public decimal InsulinAmount { get { return this.insulinAmount; } set { SetProperty(ref this.insulinAmount, value); } }
         public int UpFront { get { return this.upFront; } set { SetProperty(ref this.upFront, value); } }
         public int Extended { get { return this.extended; } set { SetProperty(ref this.extended, value); } }
+        public decimal UpFrontAmount { get { return this.upFrontAmount; } set { SetProperty(ref this.upFrontAmount, value); } }
+        public decimal ExtendedAmount { get { return this.extendedAmount; } set { SetProperty(ref this.extendedAmount, value); } }
         public decimal TimeExtended { get { return this.timeExtended; } set { SetProperty(ref this.timeExtended, value); } }
+        public int TimeExtendedHours { get { return this.timeExtendedHours; } set { SetProperty(ref this.timeExtendedHours, value); } }
+        public int TimeExtendedMinutes { get { return this.timeExtendedMinutes; } set { SetProperty(ref this.timeExtendedMinutes, value); } }
         public int TimeOffset 
         { 
             get { return this.timeOffset; } 
@@ -63,6 +105,7 @@ namespace DiabetesFoodJournal.DataModels
             this.timeExtended = model.TimeExtended;
             this.timeOffset = model.TimeOffset;
             Model = model;
+            this.CalculateAmounts();
         }
 
         public Dose Copy()
@@ -94,6 +137,22 @@ namespace DiabetesFoodJournal.DataModels
             this.Model.TimeOffset = this.timeOffset;
 
             return this.Model;
+        }
+
+        private void CalculateAmounts()
+        {
+            var upFrontPercentAsDecimal = this.UpFront / (decimal)100;
+            var extendedPercentAsDecimal = this.Extended / (decimal)100;
+            this.UpFrontAmount = this.InsulinAmount * upFrontPercentAsDecimal;
+            this.ExtendedAmount = this.InsulinAmount * extendedPercentAsDecimal;
+        }
+
+        private void CalculatePercents()
+        {
+            if (this.UpFrontAmount > 0)
+            {
+                this.UpFront = (int)Math.Round((this.UpFrontAmount / this.InsulinAmount) * 100);
+            }
         }
     }
 

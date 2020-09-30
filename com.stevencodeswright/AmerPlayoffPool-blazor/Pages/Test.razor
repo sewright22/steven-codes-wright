@@ -1,3 +1,4 @@
+@inherits TestBase
 @page "/test"
 
 <style>
@@ -6,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <SelectTeam HomeTeam=@TeamTwo AwayTeam=@TeamOne />
+            <SelectTeam HomeTeam=@AfcSeedTwo AwayTeam=@AfcSeedOne />
         </div>
 
         <div class="col" />
@@ -16,21 +17,21 @@
         <div class="col" />
 
         <div class="col">
-            <SelectTeam HomeTeam=@TeamFour AwayTeam=@TeamThree />
+            <SelectTeam HomeTeam=@AfcSeedFour AwayTeam=@AfcSeedThree />
         </div>
     </div>
 
     <div class="row">
         <div class="col" />
         <div class="col">
-            <SelectTeam HomeTeam=@TeamFive AwayTeam=@TeamOne />
+            <SelectTeam HomeTeam=@AfcSeedFive AwayTeam=@AfcSeedOne />
         </div>
         <div class="col" />
         <div class="col" />
         <div class="col" />
 
         <div class="col">
-            <SelectTeam HomeTeam=@TeamSix AwayTeam=@TeamThree />
+            <SelectTeam HomeTeam=@AfcSeedSix AwayTeam=@AfcSeedThree />
         </div>
         <div class="col" />
     </div>
@@ -39,13 +40,13 @@
         <div class="col" />
         <div class="col" />
         <div class="col">
-            <SelectTeam HomeTeam=@TeamSeven AwayTeam=@TeamOne />
+            <SelectTeam HomeTeam=@TeamSeven AwayTeam=@AfcSeedOne />
         </div>
         <div class="col">
-            <SelectTeam HomeTeam=@TeamSeven AwayTeam=@TeamSix />
+            <SelectTeam HomeTeam=@TeamSeven AwayTeam=@AfcSeedSix />
         </div>
         <div class="col">
-            <SelectTeam HomeTeam=@TeamSix AwayTeam=@TeamEight />
+            <SelectTeam HomeTeam=@AfcSeedSix AwayTeam=@TeamEight />
         </div>
         <div class="col" />
         <div class="col" />
@@ -56,14 +57,14 @@
     <div class="row">
         <div class="col" />
         <div class="col">
-            <SelectTeam HomeTeam=@TeamFive AwayTeam=@TeamOne />
+            <SelectTeam HomeTeam=@AfcSeedFive AwayTeam=@AfcSeedOne />
         </div>
         <div class="col" />
         <div class="col" />
         <div class="col" />
 
         <div class="col">
-            <SelectTeam HomeTeam=@TeamSix AwayTeam=@TeamThree />
+            <SelectTeam HomeTeam=@AfcSeedSix AwayTeam=@AfcSeedThree />
         </div>
         <div class="col" />
     </div>
@@ -71,7 +72,7 @@
 
     <div class="row">
         <div class="col">
-            <SelectTeam HomeTeam=@TeamTwo AwayTeam=@TeamOne />
+            <SelectTeam HomeTeam=@AfcSeedTwo AwayTeam=@AfcSeedOne />
         </div>
 
         <div class="col" />
@@ -81,22 +82,7 @@
         <div class="col" />
 
         <div class="col">
-            <SelectTeam HomeTeam=@TeamFour AwayTeam=@TeamThree />
+            <SelectTeam HomeTeam=@AfcSeedFour AwayTeam=@AfcSeedThree />
         </div>
     </div>
 </div>
-
-@code{
-    public AmerPlayoffPool_blazor.Models.Team TeamOne = new Models.Team() { Name = "Tennessee Titans", PrimaryColor = "#4790DE" };
-    public AmerPlayoffPool_blazor.Models.Team TeamTwo = new Models.Team() { Name = "New England Patriots", PrimaryColor = "#002145" };
-    public AmerPlayoffPool_blazor.Models.Team TeamThree = new Models.Team() { Name = "Minnesota Vikings", PrimaryColor = "#4F2683" };
-    public AmerPlayoffPool_blazor.Models.Team TeamFour = new Models.Team() { Name = "New Orleans Saints", PrimaryColor = "#D3BC8D" };
-    public AmerPlayoffPool_blazor.Models.Team TeamFive = new Models.Team() { Name = "Baltimore Ravens", PrimaryColor = "#241075" };
-    public AmerPlayoffPool_blazor.Models.Team TeamSix = new Models.Team() { Name = "San Francisco 49ers", PrimaryColor = "#AA0000" };
-    public AmerPlayoffPool_blazor.Models.Team TeamSeven = new Models.Team() { Name = "Kansas City Chiefs", PrimaryColor = "#E60F31" };
-    public AmerPlayoffPool_blazor.Models.Team TeamEight = new Models.Team() { Name = "Green Bay Packers", PrimaryColor = "#203731" };
-    public AmerPlayoffPool_blazor.Models.Team TeamNine = new Models.Team() { Name = "Seattle Seahawks", PrimaryColor = "#002244" };
-    public AmerPlayoffPool_blazor.Models.Team TeamTen = new Models.Team() { Name = "Buffalo Bills", PrimaryColor = "#00338D" };
-    public AmerPlayoffPool_blazor.Models.Team TeamEleven = new Models.Team() { Name = "Houston Texans", PrimaryColor = "#03202F" };
-    public AmerPlayoffPool_blazor.Models.Team TeamTwelve = new Models.Team() { Name = "Philadelphia Eagles", PrimaryColor = "#004C55" };
-}

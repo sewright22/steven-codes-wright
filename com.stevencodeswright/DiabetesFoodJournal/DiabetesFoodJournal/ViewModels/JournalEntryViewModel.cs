@@ -141,7 +141,6 @@ namespace DiabetesFoodJournal.ViewModels
             {
                 Model.Dose.UpFront = 100 - Model.Dose.Extended;
             }
-
         }
 
         public RelayCommand<Tag> TagTappedCommand { get; }

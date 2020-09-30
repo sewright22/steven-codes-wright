@@ -9,6 +9,6 @@
              mc:Ignorable="d"
              x:Class="DiabetesFoodJournal.Pages.BgReadingPage">
     <ContentPage.Content>
-        <views:BgReadingsView />
+        <views:BgReadingsView x:Name="readingsView" />
     </ContentPage.Content>
 </ContentPage>

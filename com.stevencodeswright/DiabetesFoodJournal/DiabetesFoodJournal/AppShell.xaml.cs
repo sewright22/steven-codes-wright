@@ -18,5 +18,19 @@ namespace DiabetesFoodJournal
             Routing.RegisterRoute("journalEntry", typeof(JournalEntryPage));
             Routing.RegisterRoute("BgReadings", typeof(BgReadingPage));
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            var currentPage = (Shell.Current?.CurrentItem?.CurrentItem as IShellSectionController)?.PresentedPage;
+
+            if (currentPage.GetType() == typeof(BgReadingPage))
+            {
+                return currentPage.SendBackButtonPressed();
+            }
+            else
+            {
+                return base.OnBackButtonPressed();
+            }
+        }
     }
 }
