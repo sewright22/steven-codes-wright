@@ -20,26 +20,35 @@ namespace DiabetesFoodJournal.DataModels
         private decimal extendedAmount;
         private int timeExtendedHours;
         private int timeExtendedMinutes;
+        private bool isUpdating;
 
         public DoseDataModel()
         {
+            this.isUpdating = false;
             this.PropertyChanged += DoseDataModel_PropertyChanged;
         }
 
         private void DoseDataModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(this.InsulinAmount) ||
-                e.PropertyName == nameof(this.UpFront) ||
+            if (e.PropertyName == nameof(this.UpFront) ||
                 e.PropertyName == nameof(this.Extended))
             {
                 CalculateAmounts();
             }
-            else if (e.PropertyName == nameof(this.UpFrontAmount) ||
-                     e.PropertyName == nameof(this.ExtendedAmount))
+            else if (e.PropertyName == nameof(this.InsulinAmount))
             {
+                if (this.UpFrontAmount > 0)
+                {
+                    this.ExtendedAmount = this.InsulinAmount - this.UpFrontAmount;
+                    this.CalculatePercents();
+                }
+            }
+            else if (e.PropertyName == nameof(this.UpFrontAmount))
+            {
+                this.ExtendedAmount = this.InsulinAmount - this.UpFrontAmount;
                 this.CalculatePercents();
             }
-            
+
             if (e.PropertyName == nameof(this.UpFront))
             {
                 this.Extended = 100 - this.UpFront;
@@ -50,8 +59,8 @@ namespace DiabetesFoodJournal.DataModels
             }
             else if (e.PropertyName == nameof(this.TimeExtended))
             {
-                this.TimeExtendedHours = ((int)this.TimeExtended) / 60;
-                this.TimeExtendedMinutes = ((int)this.TimeExtended) % 60;
+                this.TimeExtendedHours = (int)Math.Floor(this.TimeExtended);
+                this.TimeExtendedMinutes = (int)((this.TimeExtended - TimeExtendedHours) * 60);
             }
         }
 
@@ -71,15 +80,15 @@ namespace DiabetesFoodJournal.DataModels
         public decimal TimeExtended { get { return this.timeExtended; } set { SetProperty(ref this.timeExtended, value); } }
         public int TimeExtendedHours { get { return this.timeExtendedHours; } set { SetProperty(ref this.timeExtendedHours, value); } }
         public int TimeExtendedMinutes { get { return this.timeExtendedMinutes; } set { SetProperty(ref this.timeExtendedMinutes, value); } }
-        public int TimeOffset 
-        { 
-            get { return this.timeOffset; } 
-            set 
+        public int TimeOffset
+        {
+            get { return this.timeOffset; }
+            set
             {
                 var newStep = (int)Math.Round((double)value / 5);
 
                 SetProperty(ref this.timeOffset, newStep * 5);
-            } 
+            }
         }
 
         [JsonIgnore]
@@ -111,12 +120,13 @@ namespace DiabetesFoodJournal.DataModels
         public Dose Copy()
         {
             var retVal = new Dose();
-
+            this.isUpdating = true;
             retVal.InsulinAmount = this.insulinAmount;
             retVal.UpFront = this.upFront;
             retVal.Extended = this.extended;
             retVal.TimeExtended = this.timeExtended;
             retVal.TimeOffset = this.timeOffset;
+            this.isUpdating = false;
 
             return retVal;
         }
@@ -141,19 +151,29 @@ namespace DiabetesFoodJournal.DataModels
 
         private void CalculateAmounts()
         {
-            var upFrontPercentAsDecimal = this.UpFront / (decimal)100;
-            var extendedPercentAsDecimal = this.Extended / (decimal)100;
-            this.UpFrontAmount = this.InsulinAmount * upFrontPercentAsDecimal;
-            this.ExtendedAmount = this.InsulinAmount * extendedPercentAsDecimal;
+            if (!this.isUpdating)
+            {
+                this.isUpdating = true;
+                var upFrontPercentAsDecimal = this.UpFront / (decimal)100;
+                this.UpFrontAmount = this.InsulinAmount * upFrontPercentAsDecimal;
+                this.ExtendedAmount = this.InsulinAmount - this.UpFrontAmount;
+                this.isUpdating = false;
+            }
         }
 
         private void CalculatePercents()
         {
-            if (this.UpFrontAmount > 0)
+            if (!this.isUpdating)
             {
-                this.UpFront = (int)Math.Round((this.UpFrontAmount / this.InsulinAmount) * 100);
+                this.isUpdating = true;
+                if (this.UpFrontAmount > 0)
+                {
+                    this.UpFront = (int)Math.Round((this.UpFrontAmount / this.InsulinAmount) * 100);
+                    this.Extended = 100 - this.UpFront;
+                    this.isUpdating = false;
+                }
             }
         }
-    }
 
+    }
 }

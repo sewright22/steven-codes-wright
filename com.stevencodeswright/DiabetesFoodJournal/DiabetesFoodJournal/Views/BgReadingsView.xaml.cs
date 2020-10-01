@@ -49,8 +49,27 @@ namespace DiabetesFoodJournal.Views
             var stepValue = 25;
             var tempValue = e.NewValue * 100;
             var newStep = Math.Round(tempValue / stepValue);
-
+            var amountUpFront = this.adjustInsulinUpFrontAmountSlider.Value;
             this.adjustInsulinSlider.Value = (newStep * stepValue) / 100;
+            this.adjustInsulinUpFrontAmountSlider.Value = amountUpFront;
+        }
+
+        private void TimeExtendedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var stepValue = 25;
+            var tempValue = e.NewValue * 100;
+            var newStep = Math.Round(tempValue / stepValue);
+
+            this.TimeExtendedSlider.Value = (newStep * stepValue) / 100;
+        }
+
+        private void adjustInsulinUpFrontAmountSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var stepValue = 5;
+            var tempValue = e.NewValue * 100;
+            var newStep = Math.Round(tempValue / stepValue);
+
+            this.adjustInsulinUpFrontAmountSlider.Value = (newStep * stepValue) / 100;
         }
     }
 }

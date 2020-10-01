@@ -407,6 +407,7 @@
                             </Label>
 
                             <Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                                    ValueChanged="adjustInsulinUpFrontAmountSlider_ValueChanged"
                                     Minimum="0"
                                     Maximum="{Binding LogAgainModel.Dose.InsulinAmount}"
                                     Value="{Binding LogAgainModel.Dose.UpFrontAmount}" />
@@ -421,16 +422,12 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtended}"
-                                                  Style="{StaticResource StrongSpan}" />
-                                            <Span Text=" minutes" />
-                                            <Span Text="(" />
                                             <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtendedHours}"
                                                   Style="{StaticResource StrongSpan}" />
-                                            <Span Text=" " />
+                                            <Span Text=" hours " />
                                             <Span Text="{Binding Path=LogAgainModel.Dose.TimeExtendedMinutes}"
                                                   Style="{StaticResource StrongSpan}" />
-                                            <Span Text=")" />
+                                            <Span Text=" minutes" />
                                         </FormattedString.Spans>
                                     </FormattedString>
                                 </Label.FormattedText>
@@ -439,9 +436,10 @@
                             <Slider x:Name="TimeExtendedSlider"
                                     Minimum="0"
                                     Maximum="2"
+                                    ValueChanged="TimeExtendedSlider_ValueChanged"
                                     Value="{Binding LogAgainModel.Dose.TimeExtended}" />
 
-                            <Button Text="Log Again"
+                            <Button Text="Log"
                                     Command="{Binding LogCommand}"
                                     Grid.Row="3"
                                     Margin="10"
