@@ -1,0 +1,12 @@
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.deps.json
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Entities.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Entities.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.csprojAssemblyReference.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.AssemblyInfoInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.AssemblyInfo.cs
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.csproj.CoreCompileInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.csproj.CopyComplete
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.pdb

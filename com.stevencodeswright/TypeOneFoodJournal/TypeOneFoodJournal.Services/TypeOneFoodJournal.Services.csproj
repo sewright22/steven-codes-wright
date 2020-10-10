@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TypeOneFoodJournal.Business.EFCore\TypeOneFoodJournal.Business.EFCore.csproj" />
+    <ProjectReference Include="..\..\TypeOneFoodJournal.Business\TypeOneFoodJournal.Business.csproj" />
     <ProjectReference Include="..\TypeOneFoodJournal.Data\TypeOneFoodJournal.Data.csproj" />
     <ProjectReference Include="..\TypeOneFoodJournal.Entities\TypeOneFoodJournal.Entities.csproj" />
     <ProjectReference Include="..\TypeOneFoodJournal.Models\TypeOneFoodJournal.Models.csproj" />

@@ -23,7 +23,9 @@ namespace TypeOneFoodJournal.Services.Controllers
             this.context = context;
         }
 
+#if !DEBUG
         [Authorize]
+#endif
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserModel>>> GetUsers([FromQuery] string email)
         {

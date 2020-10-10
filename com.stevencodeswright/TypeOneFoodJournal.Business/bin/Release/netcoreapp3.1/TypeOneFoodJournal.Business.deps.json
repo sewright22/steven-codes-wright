@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TypeOneFoodJournal.Business/1.0.0": {
+        "dependencies": {
+          "TypeOneFoodJournal.Entities": "1.0.0"
+        },
+        "runtime": {
+          "TypeOneFoodJournal.Business.dll": {}
+        }
+      },
+      "TypeOneFoodJournal.Entities/1.0.0": {
+        "runtime": {
+          "TypeOneFoodJournal.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TypeOneFoodJournal.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TypeOneFoodJournal.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

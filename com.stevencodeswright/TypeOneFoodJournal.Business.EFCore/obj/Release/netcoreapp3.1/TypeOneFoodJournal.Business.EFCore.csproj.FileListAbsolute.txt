@@ -1,0 +1,16 @@
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.deps.json
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Data.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Entities.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Business.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Data.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\bin\Release\netcoreapp3.1\TypeOneFoodJournal.Entities.pdb
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.csprojAssemblyReference.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.AssemblyInfoInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.AssemblyInfo.cs
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.csproj.CoreCompileInputs.cache
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.csproj.CopyComplete
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.dll
+D:\git\repos\steven-codes-wright\com.stevencodeswright\TypeOneFoodJournal.Business.EFCore\obj\Release\netcoreapp3.1\TypeOneFoodJournal.Business.EFCore.pdb
