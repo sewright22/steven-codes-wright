@@ -9,9 +9,17 @@ namespace TypeOneFoodJournal.Business
 {
     public static class JournalEntryExtensions
     {
-        public static IQueryable<JournalEntry> GetByTitle(this IQueryable<JournalEntry> journalEntries, string name)
+        public static IQueryable<JournalEntry> ContainsStringInTitleOrTag(this IQueryable<JournalEntry> journalEntries, string name)
         {
-            return journalEntries.Where(je => je.Title == name);
+            if (string.IsNullOrEmpty(name))
+            {
+                return journalEntries;
+            }
+            else
+            {
+                return journalEntries.Where(je => je.Title.ToUpper().Contains(name) ||
+                                                  je.JournalEntryTags.Where(t => t.Tag.Description.ToUpper().Contains(name)).Any());
+            }
         }
 
         public static string GetTagsAsString(this JournalEntry journalEntry)
@@ -28,7 +36,10 @@ namespace TypeOneFoodJournal.Business
                 retVal.Append(", ");
             }
 
-            retVal.Remove(retVal.Length - 2, 2);
+            if (retVal.Length > 4)
+            {
+                retVal.Remove(retVal.Length - 2, 2);
+            }
 
             return retVal.ToString();
         }

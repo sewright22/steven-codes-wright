@@ -1,6 +1,7 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Models;
+using DiabetesFoodJournal.ViewModels.Journal;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using TypeOneFoodJournal.Models;
 using Xamarin.Forms;
 using XamarinHelper.Core;
 
@@ -26,11 +28,11 @@ namespace DiabetesFoodJournal.ViewModels
 
         public JournalViewModel(IJournalDataService dataService, INavigationHelper navigation, IMessenger messenger)
         {
-            LocalSearchResults = new ObservableRangeCollection<Grouping<string, JournalEntryDataModel>>();
+            LocalSearchResults = new ObservableRangeCollection<Grouping<string, JournalEntrySummaryViewModel>>();
             SearchCommand = new AsyncCommand<string>(SearchClicked);
             UpdateEntryCommand = new RelayCommand(async () => await UpdateClicked().ConfigureAwait(true));
             LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
-            ItemTappedCommand = new RelayCommand<JournalEntryDataModel>(x => ItemTapped(x));
+            ItemTappedCommand = new RelayCommand<JournalEntrySummaryViewModel>(x => ItemTapped(x));
             CreateNewEntryCommand = new RelayCommand<string>(async entryTitle => await CreateNewEntryClicked(entryTitle).ConfigureAwait(true));
             ViewReadingsCommand = new AsyncCommand(this.ViewReadingsClicked);
             this.dataService = dataService;
@@ -47,14 +49,14 @@ namespace DiabetesFoodJournal.ViewModels
         private async Task LogAgainClicked()
         {
             await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(false);
-            var entry = this.dataService.Copy(SelectedEntry);
-            entry.Logged = DateTime.Now;
+            //var entry = this.dataService.Copy(SelectedEntry);
+            //entry.Logged = DateTime.Now;
 
-            entry = await this.dataService.SaveEntry(entry);
-            if(entry.Id>0)
-            {
-                this.messenger.Send(entry);
-            }
+            //entry = await this.dataService.SaveEntry(entry);
+            //if(entry.Id>0)
+            //{
+            //    this.messenger.Send(entry);
+            //}
         }
 
         private async Task CreateNewEntryClicked(string entryTitle)
@@ -76,7 +78,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.messenger.Send(SelectedEntry);
         }
 
-        private void ItemTapped(JournalEntryDataModel foodResult)
+        private void ItemTapped(JournalEntrySummaryViewModel foodResult)
         {
             foreach(var group in LocalSearchResults)
             {
@@ -93,16 +95,16 @@ namespace DiabetesFoodJournal.ViewModels
 
         public bool Refreshing { get { return this.refreshing; } set { SetProperty(ref this.refreshing, value); } }
         public bool RowIsSelected { get { return this.rowIsSelected; } set { SetProperty(ref this.rowIsSelected, value); } }
-        public JournalEntryDataModel SelectedEntry { get; set; }
+        public JournalEntrySummaryViewModel SelectedEntry { get; set; }
 
-        public ObservableRangeCollection<Grouping<string, JournalEntryDataModel>> LocalSearchResults { get; }
+        public ObservableRangeCollection<Grouping<string, JournalEntrySummaryViewModel>> LocalSearchResults { get; }
 
         public AsyncCommand<string> SearchCommand { get; set; }
         public RelayCommand<string> CreateNewEntryCommand { get; set; }
         public RelayCommand LogAgainCommand { get; set; }
         public RelayCommand UpdateEntryCommand { get; set; }
         public AsyncCommand ViewReadingsCommand { get; set; }
-        public RelayCommand<JournalEntryDataModel> ItemTappedCommand { get; set; }
+        public RelayCommand<JournalEntrySummaryViewModel> ItemTappedCommand { get; set; }
 
         private async Task SearchClicked(string searchString)
         {
@@ -111,11 +113,14 @@ namespace DiabetesFoodJournal.ViewModels
                 this.searching = true;
                 Refreshing = true;
                 var tempSelected = this.SelectedEntry;
-                var entryList = await this.dataService.SearchJournal(searchString).ConfigureAwait(true);
+                var entryList = await this.dataService.SearchJournal(searchString, false).ConfigureAwait(true);
+
+                var entryViewModelList = new List<JournalEntrySummaryViewModel>();
+
                 var sorted = from entry in entryList
-                             orderby entry.Logged descending
+                             orderby entry.Model.DateLogged descending
                              group entry by entry.Group into entryGroup
-                             select new Grouping<string, JournalEntryDataModel>(entryGroup.Key, entryGroup);
+                             select new Grouping<string, JournalEntrySummaryViewModel>(entryGroup.Key, entryGroup);
 
                 RowIsSelected = false;
                 Refreshing = false;
@@ -123,7 +128,7 @@ namespace DiabetesFoodJournal.ViewModels
                 LocalSearchResults.ReplaceRange(sorted);
                 if (tempSelected != null)
                 {
-                    var selectedEntry = entryList.FirstOrDefault(e => e.Id == tempSelected.Id);
+                    var selectedEntry = entryList.FirstOrDefault(e => e.Model.ID == tempSelected.Model.ID);
                     this.SelectedEntry = selectedEntry;
                     this.SelectedEntry.IsSelected = true;
                 }

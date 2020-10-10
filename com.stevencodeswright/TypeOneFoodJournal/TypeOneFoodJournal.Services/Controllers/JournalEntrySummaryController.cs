@@ -46,13 +46,15 @@ namespace TypeOneFoodJournal.Services.Controllers
                 else
                 {
                     var upperSearchValue = searchValue.ToUpper();
-                    journalEntries = journalEntries.GetByTitle(upperSearchValue).Take(10);
+                    journalEntries = journalEntries.ContainsStringInTitleOrTag(upperSearchValue);
                 }
 
                 if (await journalEntries.AnyAsync())
                 {
-                    foreach (var result in await journalEntries.ToListAsync())
+                    foreach (var result in await journalEntries.OrderByDescending(je => je.Logged).Take(10).ToListAsync())
                     {
+                        var group = this.DetermineGroup(result.Logged);
+
                         retVal.Add(new JournalEntrySummary
                         {
                             ID = result.Id,
@@ -60,6 +62,8 @@ namespace TypeOneFoodJournal.Services.Controllers
                             Title = result.Title,
                             Tags = result.GetTagsAsString(),
                             CarbCount = result.GetCarbCount(),
+                            IsSelected = false,
+                            Group = group,
                         });
                     }
                 }
@@ -70,6 +74,22 @@ namespace TypeOneFoodJournal.Services.Controllers
             }
 
             return Ok(retVal);
+        }
+
+        private string DetermineGroup(DateTime logged)
+        {
+            if (logged.Date.Equals(DateTime.Today))
+            {
+                return "Today";
+            }
+            else if (logged.Date.Equals(DateTime.Today.Add(TimeSpan.FromDays(-1))))
+            {
+                return "Yesterday";
+            }
+            else
+            {
+                return string.Format("{0}", logged.ToString("MM/dd/yyyy"));
+            }
         }
     }
 }

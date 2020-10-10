@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="DiabetesFoodJournal.Views.Journal.JournalEntrySummaryView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label"
+                   x:Key="DateStyle">
+                <Setter Property="FontSize"
+                        Value="Small" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="Margin"
+                        Value="{StaticResource DefaultMargin}" />
+            </Style>
+            
+            <Style TargetType="Label"
+                   x:Key="TitleStyle">
+                <Setter Property="FontSize"
+                        Value="Large" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="LineBreakMode"
+                        Value="TailTruncation" />
+            </Style>
+
+            <Style TargetType="Label"
+                   x:Key="TagListStyle">
+                <Setter Property="FontSize"
+                        Value="Small" />
+                <Setter Property="LineBreakMode"
+                        Value="TailTruncation" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <yummy:PancakeView BorderThickness="5"
+                           Margin="{StaticResource DefaultMargin}"
+                           Padding="10"
+                           CornerRadius="20"
+                           BackgroundColor="White"
+                           BorderColor="DarkGray">
+            <yummy:PancakeView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TappedCommand}"
+                                      CommandParameter="{Binding CommandParameter}" />
+            </yummy:PancakeView.GestureRecognizers>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Model.DateLogged, StringFormat='{0:t}'}"
+                               Style="{StaticResource DateStyle}"/>
+
+                        <Label Text="{Binding Model.Title}"
+                               Style="{StaticResource TitleStyle}" />
+
+                        <Label Text="{Binding Model.Tags}"
+                               Style="{StaticResource TagListStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="{Binding Model.CarbCount, StringFormat='{0} Carbs'}"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       Grid.Column="1" />
+
+                <Grid Grid.Row="1"
+                      Grid.ColumnSpan="2"
+                      IsVisible="{Binding IsSelected}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="View Readings"
+                            Style="{StaticResource AppButtonStyle}"
+                            Command="{TemplateBinding ViewReadingsCommand}" />
+                    <Button Text="Update"
+                            Grid.Column="1"
+                            Style="{StaticResource AppButtonStyle}"
+                            Command="{TemplateBinding  UpdateCommand}" />
+                </Grid>
+            </Grid>
+
+            <yummy:PancakeView.Triggers>
+                <DataTrigger TargetType="yummy:PancakeView"
+                             Binding="{Binding Path=IsSelected}"
+                             Value="true">
+                    <Setter Property="Scale"
+                            Value="1" />
+                    <!--<Setter Property="BorderGradientStartColor"
+                                Value="#FF7234" />
+                        <Setter Property="BorderGradientEndColor"
+                                Value="#0055FF" />-->
+                </DataTrigger>
+                <DataTrigger TargetType="yummy:PancakeView"
+                             Binding="{Binding Path=IsSelected}"
+                             Value="false">
+                    <Setter Property="BorderColor"
+                            Value="DarkGray" />
+                    <Setter Property="Scale"
+                            Value=".9" />
+                </DataTrigger>
+            </yummy:PancakeView.Triggers>
+        </yummy:PancakeView>
+    </ContentView.Content>
+</ContentView>

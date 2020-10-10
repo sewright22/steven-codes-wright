@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\DiabetesFoodJournal.Data\DiabetesFoodJournal.Data.csproj" />
     <ProjectReference Include="..\..\DiabetesFoodJournal.Entities\DiabetesFoodJournal.Entities.csproj" />
+    <ProjectReference Include="..\..\TypeOneFoodJournal\TypeOneFoodJournal.Models\TypeOneFoodJournal.Models.csproj" />
     <ProjectReference Include="..\..\XamarinHelper.Core\XamarinHelper.Core.csproj" />
   </ItemGroup>
 
@@ -86,6 +87,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\JournalEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Journal\JournalEntrySummaryListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Journal\JournalEntrySummaryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Journal\JournalView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">

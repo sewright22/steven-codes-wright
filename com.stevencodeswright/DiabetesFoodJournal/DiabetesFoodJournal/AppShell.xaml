@@ -5,6 +5,7 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        xmlns:local="clr-namespace:DiabetesFoodJournal.Views"
+       xmlns:journal="clr-namespace:DiabetesFoodJournal.Views.Journal"
        xmlns:controls="clr-namespace:DiabetesFoodJournal.Controls"
        xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
        xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
@@ -52,7 +53,7 @@
     <TabBar Route="main">
         <Tab Title="Chart"
              Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:JournalPage}" />
+            <ShellContent ContentTemplate="{DataTemplate journal:JournalView}" />
         </Tab>
     </TabBar>
 </Shell>

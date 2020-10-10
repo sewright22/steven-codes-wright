@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DiabetesFoodJournal.Views.Journal"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="Ivory"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=Journal}"
+             x:Class="DiabetesFoodJournal.Views.Journal.JournalView">
+    <ContentPage.Content>
+        <yummy:PancakeView Padding="5"
+                           BackgroundColor="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <yummy:PancakeView Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Entry x:Name="searchEntry"
+                               Placeholder="Search for Food..."
+                               Text=""
+                               TextChanged="searchEntry_TextChanged"
+                               Focused="searchEntry_Focused"
+                               IsEnabled="True">
+                        </Entry>
+
+                        <Button IsVisible="False"
+                                x:Name="searchButton"
+                                Grid.Column="1"
+                                Command="{Binding Path=SearchCommand}"
+                                CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}" />
+                    </Grid>
+                </yummy:PancakeView>
+
+                <ScrollView Grid.Row="1"
+                            Grid.ColumnSpan="2">
+                    <StackLayout>
+                        <RefreshView Command="{Binding Path=SearchCommand}"
+                                     CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}"
+                                     IsRefreshing="{Binding Path=Refreshing, Mode=TwoWay}"
+                                     Grid.Row="2"
+                                     Grid.ColumnSpan="2">
+                            <local:JournalEntrySummaryListView />
+                        </RefreshView>
+
+                        <Button Text="Create New Entry"
+                                VerticalOptions="End"
+                                Command="{Binding CreateNewEntryCommand}"
+                                CornerRadius="25"
+                                TextColor="White"
+                                BackgroundColor="#0055FF"
+                                CommandParameter="{Binding Path=Text, Source={x:Reference searchEntry}}" />
+                    </StackLayout>
+                </ScrollView>
+
+            </Grid>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

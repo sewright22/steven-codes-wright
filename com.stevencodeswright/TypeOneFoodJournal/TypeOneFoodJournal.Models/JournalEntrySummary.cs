@@ -11,5 +11,7 @@ namespace TypeOneFoodJournal.Models
         public string Tags { get; set; }
         public int? CarbCount { get; set; }
         public DateTime? DateLogged { get; set; }
+        public string Group { get; set; }
+        public bool IsSelected { get; set; }
     }
 }

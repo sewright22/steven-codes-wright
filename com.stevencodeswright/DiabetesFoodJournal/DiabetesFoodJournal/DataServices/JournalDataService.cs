@@ -2,6 +2,7 @@
 using DiabetesFoodJournal.Entities;
 using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
+using DiabetesFoodJournal.ViewModels.Journal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace DiabetesFoodJournal.DataServices
     {
         private readonly IAppDataService appDataService;
         private readonly IUserInfo userInfo;
+        private readonly IJournalEntrySummaryService journalEntrySummaryService;
 
-        public JournalDataService(IAppDataService appDataService, IUserInfo userInfo)
+        public JournalDataService(IAppDataService appDataService, IUserInfo userInfo, IJournalEntrySummaryService journalEntrySummaryService)
         {
             this.appDataService = appDataService;
             this.userInfo = userInfo;
+            this.journalEntrySummaryService = journalEntrySummaryService;
         }
 
         public bool CheckLogin()
@@ -57,7 +60,28 @@ namespace DiabetesFoodJournal.DataServices
         public async Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString)
         {
             return await this.appDataService.SearchJournal(await this.userInfo.GetUserId().ConfigureAwait(false), searchString.Trim());
+        }
 
+        public async Task<IEnumerable<JournalEntrySummaryViewModel>> SearchJournal(string searchString, bool isFalse)
+        {
+            var retVal = new List<JournalEntrySummaryViewModel>();
+
+            this.journalEntrySummaryService.UserID = await this.userInfo.GetUserId().ConfigureAwait(false);
+            this.journalEntrySummaryService.SearchString = searchString;
+
+            var results = await this.journalEntrySummaryService.Search().ConfigureAwait(false);
+
+            foreach (var result in results)
+            {
+                var viewModel = new JournalEntrySummaryViewModel()
+                {
+                    Model = result,
+                };
+
+                retVal.Add(viewModel);
+            }
+
+            return retVal;
         }
     }
 
@@ -65,6 +89,7 @@ namespace DiabetesFoodJournal.DataServices
     {
         Task<JournalEntryDataModel> SaveEntry(JournalEntryDataModel entryToSave);
         Task<IEnumerable<JournalEntryDataModel>> SearchJournal(string searchString);
+        Task<IEnumerable<JournalEntrySummaryViewModel>> SearchJournal(string searchString, bool isFalse);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
         JournalEntryDataModel CreateEntry(string entryTitle);
         bool CheckLogin();
