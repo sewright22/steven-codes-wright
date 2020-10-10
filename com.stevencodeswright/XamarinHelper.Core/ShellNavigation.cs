@@ -8,6 +8,10 @@ namespace XamarinHelper.Core
 {
     public class ShellNavigation : INavigationHelper
     {
+        public ShellNavigation()
+        {
+        }
+
         public Task GoToAsync(string path, bool animate = true)
         {
             return Shell.Current.GoToAsync(path, animate);

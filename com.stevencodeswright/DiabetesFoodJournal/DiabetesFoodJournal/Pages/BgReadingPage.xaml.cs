@@ -26,7 +26,8 @@ namespace DiabetesFoodJournal.Pages
             }
             else
             {
-                return base.OnBackButtonPressed();
+                Shell.Current.GoToAsync("..", true);
+                return true;
             }
         }
     }
