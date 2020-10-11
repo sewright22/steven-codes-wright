@@ -1,4 +1,5 @@
 ﻿using DiabetesFoodJournal.Pages;
+using DiabetesFoodJournal.ViewModels;
 using DiabetesFoodJournal.Views;
 using System;
 using System.Collections.Generic;

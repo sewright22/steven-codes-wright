@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TypeOneFoodJournal.Models;
+using Xamarin.Forms;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.DataServices
 {
@@ -15,12 +18,16 @@ namespace DiabetesFoodJournal.DataServices
         private readonly IAppDataService appDataService;
         private readonly IUserInfo userInfo;
         private readonly IJournalEntrySummaryService journalEntrySummaryService;
+        private readonly INavigationHelper navigationHelper;
+        private readonly IMessagingCenter messagingCenter;
 
-        public JournalDataService(IAppDataService appDataService, IUserInfo userInfo, IJournalEntrySummaryService journalEntrySummaryService)
+        public JournalDataService(IAppDataService appDataService, IUserInfo userInfo, IJournalEntrySummaryService journalEntrySummaryService, INavigationHelper navigationHelper, IMessagingCenter messagingCenter)
         {
             this.appDataService = appDataService;
             this.userInfo = userInfo;
             this.journalEntrySummaryService = journalEntrySummaryService;
+            this.navigationHelper = navigationHelper;
+            this.messagingCenter = messagingCenter;
         }
 
         public bool CheckLogin()
@@ -73,7 +80,7 @@ namespace DiabetesFoodJournal.DataServices
 
             foreach (var result in results)
             {
-                var viewModel = new JournalEntrySummaryViewModel()
+                var viewModel = new JournalEntrySummaryViewModel(this.navigationHelper, this.messagingCenter)
                 {
                     Model = result,
                 };
@@ -82,6 +89,11 @@ namespace DiabetesFoodJournal.DataServices
             }
 
             return retVal;
+        }
+
+        public void Select(JournalEntrySummary journalEntrySummary)
+        {
+            this.journalEntrySummaryService.SelectedJournalEntrySummary = journalEntrySummary;
         }
     }
 
@@ -92,6 +104,7 @@ namespace DiabetesFoodJournal.DataServices
         Task<IEnumerable<JournalEntrySummaryViewModel>> SearchJournal(string searchString, bool isFalse);
         JournalEntryDataModel Copy(JournalEntryDataModel selectedEntry);
         JournalEntryDataModel CreateEntry(string entryTitle);
+        void Select(JournalEntrySummary journalEntrySummary);
         bool CheckLogin();
     }
 }

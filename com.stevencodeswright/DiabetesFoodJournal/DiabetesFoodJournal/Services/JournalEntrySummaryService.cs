@@ -20,6 +20,7 @@ namespace DiabetesFoodJournal.Services
 
         public int UserID { get; set; }
         public string SearchString { get; set; }
+        public JournalEntrySummary SelectedJournalEntrySummary { get; set; }
 
         public async Task<IEnumerable<JournalEntrySummary>> Search()
         {

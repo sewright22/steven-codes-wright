@@ -5,7 +5,8 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="DiabetesFoodJournal.Views.Journal.JournalEntrySummaryListView">
     <ContentView.Content>
-        <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}">
+        <StackLayout BindableLayout.ItemsSource="{Binding LocalSearchResults}"
+                     x:Name="CardList">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <yummy:PancakeView>
@@ -19,7 +20,12 @@
                             <StackLayout BindableLayout.ItemsSource="{Binding Items}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <local:JournalEntrySummaryView />
+                                        <local:JournalEntrySummaryView>
+                                            <local:JournalEntrySummaryView.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference CardList}}" 
+                                                                      CommandParameter="{Binding .}"/>
+                                            </local:JournalEntrySummaryView.GestureRecognizers>
+                                        </local:JournalEntrySummaryView>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>

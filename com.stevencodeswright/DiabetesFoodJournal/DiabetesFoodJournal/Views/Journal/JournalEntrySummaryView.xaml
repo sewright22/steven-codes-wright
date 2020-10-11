@@ -26,25 +26,40 @@
             </Style>
 
             <Style TargetType="Label"
+                   x:Key="CarbCountStyle">
+                <Setter Property="FontSize"
+                        Value="18" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+            </Style>
+
+            <Style TargetType="Label"
                    x:Key="TagListStyle">
                 <Setter Property="FontSize"
                         Value="Small" />
                 <Setter Property="LineBreakMode"
                         Value="TailTruncation" />
             </Style>
+
+            <Style TargetType="yummy:PancakeView"
+                   x:Key="CardStyle">
+                <Setter Property="Padding"
+                        Value="10" />
+                <Setter Property="CornerRadius"
+                        Value="20" />
+                <Setter Property="BackgroundColor"
+                        Value="White" />
+                <Setter Property="BorderColor"
+                        Value="DarkGray" />
+                <Setter Property="BorderThickness"
+                        Value="5" />
+                <Setter Property="Margin"
+                        Value="{StaticResource DefaultMargin}" />
+            </Style>
         </ResourceDictionary>
     </ContentView.Resources>
   <ContentView.Content>
-        <yummy:PancakeView BorderThickness="5"
-                           Margin="{StaticResource DefaultMargin}"
-                           Padding="10"
-                           CornerRadius="20"
-                           BackgroundColor="White"
-                           BorderColor="DarkGray">
-            <yummy:PancakeView.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding TappedCommand}"
-                                      CommandParameter="{Binding CommandParameter}" />
-            </yummy:PancakeView.GestureRecognizers>
+        <yummy:PancakeView Style="{StaticResource CardStyle}">
             
             <Grid>
                 <Grid.RowDefinitions>
@@ -69,8 +84,7 @@
                 </StackLayout>
 
                 <Label Text="{Binding Model.CarbCount, StringFormat='{0} Carbs'}"
-                       FontAttributes="Bold"
-                       FontSize="18"
+                       Style="{StaticResource CarbCountStyle}"
                        Grid.Column="1" />
 
                 <Grid Grid.Row="1"
@@ -83,11 +97,11 @@
 
                     <Button Text="View Readings"
                             Style="{StaticResource AppButtonStyle}"
-                            Command="{TemplateBinding ViewReadingsCommand}" />
+                            Command="{Binding ViewReadingsCommand}" />
                     <Button Text="Update"
                             Grid.Column="1"
                             Style="{StaticResource AppButtonStyle}"
-                            Command="{TemplateBinding  UpdateCommand}" />
+                            Command="{Binding  UpdateCommand}" />
                 </Grid>
             </Grid>
 
@@ -97,10 +111,6 @@
                              Value="true">
                     <Setter Property="Scale"
                             Value="1" />
-                    <!--<Setter Property="BorderGradientStartColor"
-                                Value="#FF7234" />
-                        <Setter Property="BorderGradientEndColor"
-                                Value="#0055FF" />-->
                 </DataTrigger>
                 <DataTrigger TargetType="yummy:PancakeView"
                              Binding="{Binding Path=IsSelected}"

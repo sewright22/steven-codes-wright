@@ -94,7 +94,7 @@
                                 </chart:NumericalAxis>
                             </chart:SfChart.SecondaryAxis>
 
-                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.HighReadings}"
+                            <chart:ScatterSeries ItemsSource="{Binding Path=HighReadings}"
                                                  XBindingPath="DisplayTime"
                                                  YBindingPath="Reading"
                                                  Color="#FDF063"
@@ -102,7 +102,7 @@
                                                  IsVisible="True"
                                                  EnableTooltip="True" />
 
-                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.BgReadings}"
+                            <chart:ScatterSeries ItemsSource="{Binding Path=BgReadings}"
                                                  XBindingPath="DisplayTime"
                                                  YBindingPath="Reading"
                                                  ShapeType="Diamond"
@@ -110,7 +110,7 @@
                                                  IsVisible="True"
                                                  EnableTooltip="True" />
 
-                            <chart:ScatterSeries ItemsSource="{Binding Path=Model.LowReadings}"
+                            <chart:ScatterSeries ItemsSource="{Binding Path=LowReadings}"
                                                  XBindingPath="DisplayTime"
                                                  YBindingPath="Reading"
                                                  ShapeType="InvertedTriangle"
@@ -143,11 +143,15 @@
                         </chart:SfChart>
                     </RefreshView>
 
-                    <Label Text="{Binding Title}"
-                           HorizontalOptions="Center"
-                           FontAttributes="Bold"
-                           FontSize="Large"
-                           Grid.Row="1" />
+                    <StackLayout Grid.Row="1">
+                        <Label Text="{Binding Model.Title}"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large" />
+                        <Label Text="{Binding Model.Tags}"
+                               HorizontalOptions="Center"
+                               FontSize="Small" />
+                    </StackLayout>
 
 
                     <yummy:PancakeView Grid.Row="2"
@@ -275,7 +279,7 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.StartingBg}"
+                                            <Span Text="{Binding Path=StartingBg}"
                                                   Style="{StaticResource StrongSpan}" />
                                         </FormattedString.Spans>
                                     </FormattedString>
@@ -292,10 +296,10 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.LowestBg}"
+                                            <Span Text="{Binding Path=LowestBg}"
                                                   Style="{StaticResource StrongSpan}" />
                                             <Span Text=" after " />
-                                            <Span Text="{Binding Path=Model.LowestBgTimeSpanInMinutes}"
+                                            <Span Text="{Binding Path=LowestBgTimeSpanInMinutes}"
                                                   Style="{StaticResource StrongSpan}" />
                                             <Span Text=" minutes."
                                                   Style="{StaticResource StrongSpan}" />
@@ -314,10 +318,10 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <FormattedString.Spans>
-                                            <Span Text="{Binding Path=Model.HighestBg}"
+                                            <Span Text="{Binding Path=HighestBg}"
                                                   Style="{StaticResource StrongSpan}" />
                                             <Span Text=" after " />
-                                            <Span Text="{Binding Path=Model.HighestBgTimeSpanInMinutes}"
+                                            <Span Text="{Binding Path=HighestBgTimeSpanInMinutes}"
                                                   Style="{StaticResource StrongSpan}" />
                                             <Span Text=" minutes."
                                                   Style="{StaticResource StrongSpan}" />

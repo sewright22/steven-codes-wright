@@ -1,6 +1,8 @@
 ﻿using DiabetesFoodJournal.DataModels;
 using DiabetesFoodJournal.DataServices;
 using DiabetesFoodJournal.Models;
+using DiabetesFoodJournal.Services;
+using DiabetesFoodJournal.ViewModels.Journal;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
@@ -10,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TypeOneFoodJournal.Models;
 using Xamarin.Forms;
 using XamarinHelper.Core;
 
@@ -18,28 +21,33 @@ namespace DiabetesFoodJournal.ViewModels
     public class BgReadingsViewModel : BaseViewModel
     {
         private readonly IBgReadingsDataService dataService;
+        private readonly IMessagingCenter messagingCenter;
         private readonly IMessenger messenger;
         private readonly INavigationHelper navigation;
-        private JournalEntryDataModel model;
+        private readonly IJournalEntrySummaryService journalEntrySummaryService;
+        private JournalEntrySummary model;
         private JournalEntryDataModel logAgainModel;
+        private string tags;
+        private float? startingBg;
+        private float? highestBg;
+        private float? lowestBg;
+        private int? highestBgTimeSpanInMinutes;
+        private int? lowestBgTimeSpanInMinutes;
 
-        public BgReadingsViewModel(IBgReadingsDataService dataService, IMessenger messenger, INavigationHelper navigation)
+        public BgReadingsViewModel(IBgReadingsDataService dataService, IMessagingCenter messagingCenter, INavigationHelper navigation, IJournalEntrySummaryService journalEntrySummaryService)
         {
             this.dataService = dataService;
-            this.messenger = messenger;
+            this.messagingCenter = messagingCenter;
             this.navigation = navigation;
+            this.journalEntrySummaryService = journalEntrySummaryService ?? throw new ArgumentNullException(nameof(journalEntrySummaryService));
             this.LogAgainCommand = new RelayCommand(this.LogAgainClicked);
             this.LogCommand = new AsyncCommand(this.LogClicked);
-
-            if (this.messenger != null)
-            {
-                this.messenger.Register<JournalEntryDataModel>(this, async (model) => await JournalEntryReceived(model));
-            }
+            this.messagingCenter.Subscribe<JournalEntrySummary>(this, "LoadReadings", async (s) => await this.Refresh(s));
         }
 
         private void LogAgainClicked()
         {
-            this.LogAgainModel = this.dataService.Copy(this.Model);
+            //this.LogAgainModel = this.dataService.Copy(this.Model);
         }
 
         private async Task LogClicked()
@@ -55,8 +63,18 @@ namespace DiabetesFoodJournal.ViewModels
         }
 
         public ObservableRangeCollection<ChartReading> OtherEntries { get; } = new ObservableRangeCollection<ChartReading>();
+        public ObservableRangeCollection<GlucoseReading> HighReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
+        public ObservableRangeCollection<GlucoseReading> BgReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
+        public ObservableRangeCollection<GlucoseReading> LowReadings { get; } = new ObservableRangeCollection<GlucoseReading>();
+        
+        public float? StartingBg { get { return this.startingBg; } set { SetProperty(ref this.startingBg, value); } }
+        public float? HighestBg { get { return this.highestBg; } set { SetProperty(ref this.highestBg, value); } }
+        public int? HighestBgTimeSpanInMinutes { get { return this.highestBgTimeSpanInMinutes; } set { SetProperty(ref this.highestBgTimeSpanInMinutes, value); } }
+        public float? LowestBg { get { return this.lowestBg; } set { SetProperty(ref this.lowestBg, value); } }
+        public int? LowestBgTimeSpanInMinutes { get { return this.lowestBgTimeSpanInMinutes; } set { SetProperty(ref this.lowestBgTimeSpanInMinutes, value); } }
 
-        public JournalEntryDataModel Model { get { return this.model; } set { SetProperty(ref this.model, value); } }
+        public JournalEntrySummary Model { get { return this.model; } set { SetProperty(ref this.model, value); } }
+        public string Tags { get { return this.tags; } set { SetProperty(ref this.tags, value); } }
         public JournalEntryDataModel LogAgainModel 
         { 
             get { return this.logAgainModel; } 
@@ -65,55 +83,52 @@ namespace DiabetesFoodJournal.ViewModels
         public RelayCommand LogAgainCommand { get; set; }
         public AsyncCommand LogCommand { get; set; }
 
-        private async Task JournalEntryReceived(JournalEntryDataModel model)
+        private async Task AnalyzeReadings(IEnumerable<GlucoseReading> readingsFromCgm)
         {
-            this.Model = model;
-            this.Title = this.Model.Title;
+            var highReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading >= r2.Reading ? r1 : r2));
+            var lowReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading <= r2.Reading ? r1 : r2));
 
-            if (this.Model.BgReadings.Any() == false)
+            Device.BeginInvokeOnMainThread(() => this.HighestBg = highReading.Reading);
+            Device.BeginInvokeOnMainThread(() => this.HighestBgTimeSpanInMinutes = highReading.DisplayTime);
+            Device.BeginInvokeOnMainThread(() => this.LowestBg = lowReading.Reading);
+            Device.BeginInvokeOnMainThread(() => this.LowestBgTimeSpanInMinutes = lowReading.DisplayTime);
+        }
+
+        public async Task Refresh(JournalEntrySummary journalEntrySummary)
+        {
+            IsBusy = true;
+            try
             {
-                IsBusy = true;
-                try
+                this.Model = journalEntrySummary;
+                if (model != null)
                 {
-                    var readingsFromCgm = await this.dataService.GetCgmReadings(this.model.Logged).ConfigureAwait(true);
-                    var otherEntries = await this.dataService.GetOtherEntries(this.model.Logged, this.model.Id);
+                    this.Title = model.Title;
+                    this.Tags = model.Tags;
 
-                    if (readingsFromCgm.Any())
-                    {
-                        Device.BeginInvokeOnMainThread(() => this.Model.HighReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading >= 180).OrderBy(x => x.DisplayTime)));
-                        Device.BeginInvokeOnMainThread(() => this.Model.BgReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 180 && x.Reading >= 80).OrderBy(x => x.DisplayTime)));
-                        Device.BeginInvokeOnMainThread(() => this.Model.LowReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 80).OrderBy(x => x.DisplayTime)));
-                        Device.BeginInvokeOnMainThread(() => this.Model.StartingBg = this.Model.BgReadings.FirstOrDefault().Reading);
-                        await AnalyzeReadings(readingsFromCgm);
-                    }
+                    var readingsFromCgm = await this.dataService.GetCgmReadings(model.DateLogged.Value).ConfigureAwait(true);
+                    var otherEntries = await this.dataService.GetOtherEntries(model.DateLogged.Value, model.ID);
 
-                    if(otherEntries.Any())
+                    Device.BeginInvokeOnMainThread(() => this.HighReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading >= 180).OrderBy(x => x.DisplayTime)));
+                    Device.BeginInvokeOnMainThread(() => this.BgReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 180 && x.Reading >= 80).OrderBy(x => x.DisplayTime)));
+                    Device.BeginInvokeOnMainThread(() => this.LowReadings.ReplaceRange(readingsFromCgm.Where(x => x.Reading < 80).OrderBy(x => x.DisplayTime)));
+                    await this.AnalyzeReadings(readingsFromCgm);
+
+                    if (otherEntries.Any())
                     {
-                        Device.BeginInvokeOnMainThread(() => this.OtherEntries.ReplaceRange(otherEntries.Where(x=>x.DisplayTime!=0).OrderBy(x => x.DisplayTime)));
+                        Device.BeginInvokeOnMainThread(() => this.OtherEntries.ReplaceRange(otherEntries.Where(x => x.DisplayTime != 0).OrderBy(x => x.DisplayTime)));
                     }
                     else
                     {
                         Device.BeginInvokeOnMainThread(() => this.OtherEntries.Clear());
                     }
                 }
-                catch (Exception)
-                {
-                    Device.BeginInvokeOnMainThread(() => this.Model.BgReadings.Clear());
-                }
+            }
+            catch (Exception)
+            {
+                Device.BeginInvokeOnMainThread(() => this.BgReadings.Clear());
             }
 
-            IsBusy = false;
-        }
-
-        private async Task AnalyzeReadings(IEnumerable<GlucoseReading> readingsFromCgm)
-        {
-            var highReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading >= r2.Reading ? r1 : r2));
-            var lowReading = await Task.Run(() => readingsFromCgm.Aggregate((r1, r2) => r1.Reading <= r2.Reading ? r1 : r2));
-
-            Device.BeginInvokeOnMainThread(() => this.Model.HighestBg = highReading.Reading);
-            Device.BeginInvokeOnMainThread(() => this.Model.HighestBgTimeSpanInMinutes = highReading.DisplayTime);
-            Device.BeginInvokeOnMainThread(() => this.Model.LowestBg = lowReading.Reading);
-            Device.BeginInvokeOnMainThread(() => this.Model.LowestBgTimeSpanInMinutes = lowReading.DisplayTime);
+            this.IsBusy = false;
         }
     }
 }

@@ -1,10 +1,15 @@
 ﻿using DiabetesFoodJournal.Views.Journal;
+using GalaSoft.MvvmLight.Messaging;
 using MvvmHelpers;
+using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Tasks;
 using TypeOneFoodJournal.Models;
+using Xamarin.Forms;
+using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.ViewModels.Journal
 {
@@ -13,9 +18,26 @@ namespace DiabetesFoodJournal.ViewModels.Journal
         private JournalEntrySummary model;
         private bool isSelected;
         private string group;
+        private readonly INavigationHelper navigationHelper;
+        private readonly IMessagingCenter messagingCenter;
 
-        public JournalEntrySummaryViewModel()
+        public JournalEntrySummaryViewModel(INavigationHelper navigationHelper, IMessagingCenter messagingCenter)
         {
+            this.TappedCommand = new AsyncCommand(this.Select);
+            this.ViewReadingsCommand = new AsyncCommand(this.GoToReadings);
+            this.navigationHelper = navigationHelper;
+            this.messagingCenter = messagingCenter;
+        }
+
+        private async Task GoToReadings()
+        {
+            await this.navigationHelper.GoToAsync("BgReadings");
+            this.messagingCenter.Send(this.Model, "LoadReadings");
+        }
+
+        private Task Select()
+        {
+            return Task.Run(() => { this.IsSelected = true; });
         }
 
         public JournalEntrySummary Model
@@ -42,5 +64,8 @@ namespace DiabetesFoodJournal.ViewModels.Journal
             get { return this.group; }
             set { this.SetProperty(ref this.group, value); }
         }
+
+        public AsyncCommand TappedCommand { get; set; }
+        public AsyncCommand ViewReadingsCommand { get; set; }
     }
 }

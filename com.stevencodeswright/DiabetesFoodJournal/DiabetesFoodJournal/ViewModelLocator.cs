@@ -10,6 +10,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal
@@ -48,6 +49,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<IBgReadingsDataService, BgReadingsDataService>();
             SimpleIoc.Default.Register<IWebService, WebService>();
             SimpleIoc.Default.Register<IJournalEntrySummaryService, JournalEntrySummaryService>();
+            SimpleIoc.Default.Register<IMessagingCenter, MessagingCenter>();
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<CreateAccountViewModel>();
             SimpleIoc.Default.Register<JournalViewModel>();

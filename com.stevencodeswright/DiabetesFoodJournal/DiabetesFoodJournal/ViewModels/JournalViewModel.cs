@@ -32,7 +32,7 @@ namespace DiabetesFoodJournal.ViewModels
             SearchCommand = new AsyncCommand<string>(SearchClicked);
             UpdateEntryCommand = new RelayCommand(async () => await UpdateClicked().ConfigureAwait(true));
             LogAgainCommand = new RelayCommand(async () => await LogAgainClicked().ConfigureAwait(true));
-            ItemTappedCommand = new RelayCommand<JournalEntrySummaryViewModel>(x => ItemTapped(x));
+            ItemTappedCommand = new AsyncCommand<JournalEntrySummaryViewModel>(x => ItemTapped(x));
             CreateNewEntryCommand = new RelayCommand<string>(async entryTitle => await CreateNewEntryClicked(entryTitle).ConfigureAwait(true));
             ViewReadingsCommand = new AsyncCommand(this.ViewReadingsClicked);
             this.dataService = dataService;
@@ -78,19 +78,23 @@ namespace DiabetesFoodJournal.ViewModels
             this.messenger.Send(SelectedEntry);
         }
 
-        private void ItemTapped(JournalEntrySummaryViewModel foodResult)
+        private async Task ItemTapped(JournalEntrySummaryViewModel foodResult)
         {
-            foreach(var group in LocalSearchResults)
+            await Task.Run(() =>
             {
-                foreach(var item in group.Items)
+                foreach (var group in LocalSearchResults)
                 {
-                    item.IsSelected = false;
+                    foreach (var item in group.Items)
+                    {
+                        item.IsSelected = false;
+                    }
                 }
-            }
+            }).ConfigureAwait(true);
 
             foodResult.IsSelected = true;
             SelectedEntry = foodResult;
             RowIsSelected = true;
+            this.dataService.Select(foodResult.Model);
         }
 
         public bool Refreshing { get { return this.refreshing; } set { SetProperty(ref this.refreshing, value); } }
@@ -104,7 +108,7 @@ namespace DiabetesFoodJournal.ViewModels
         public RelayCommand LogAgainCommand { get; set; }
         public RelayCommand UpdateEntryCommand { get; set; }
         public AsyncCommand ViewReadingsCommand { get; set; }
-        public RelayCommand<JournalEntrySummaryViewModel> ItemTappedCommand { get; set; }
+        public AsyncCommand<JournalEntrySummaryViewModel> ItemTappedCommand { get; set; }
 
         private async Task SearchClicked(string searchString)
         {
