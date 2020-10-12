@@ -8,6 +8,7 @@ namespace TypeOneFoodJournal.Business
 {
     public interface IJournalEntryManager
     {
+        IQueryable<JournalEntry> GetJournalEntries();
         IQueryable<JournalEntry> GetJournalEntriesForUserId(int userId);
     }
 }

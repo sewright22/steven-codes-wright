@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="DiabetesFoodJournal.Views.JournalEntry.BloodSugarReadingsView">
+  <ContentView.Content>
+        <Grid>
+            <chart:SfChart HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           IsVisible="True"
+                           AreaBackgroundColor="#151415"
+                           BackgroundColor="#3F3F41">
+                <chart:SfChart.PrimaryAxis>
+                    <chart:NumericalAxis Minimum="-30"
+                                         Maximum="300"
+                                         Interval="30">
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Time since eating (minutes)"
+                                                  TextColor="White"
+                                                  FontSize="20" />
+                        </chart:NumericalAxis.Title>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle TextColor="White">
+
+                            </chart:ChartAxisLabelStyle>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.MajorGridLineStyle>
+                            <chart:ChartLineStyle StrokeColor="Transparent" />
+                        </chart:NumericalAxis.MajorGridLineStyle>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis Minimum="50"
+                                         Maximum="400">
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle TextColor="White">
+
+                            </chart:ChartAxisLabelStyle>
+                        </chart:NumericalAxis.LabelStyle>
+
+                        <chart:NumericalAxis.MajorGridLineStyle>
+                            <chart:ChartLineStyle StrokeColor="Transparent" />
+                        </chart:NumericalAxis.MajorGridLineStyle>
+                        <chart:NumericalAxis.StripLines>
+                            <chart:NumericalStripLineCollection>
+                                <chart:NumericalStripLine Start="80"
+                                                          Width="100"
+                                                          FillColor="#58585A" />
+
+                                <chart:NumericalStripLine Start="180"
+                                                          StrokeWidth="5"
+                                                          Width="2"
+                                                          FillColor="#FADD55" />
+
+                                <chart:NumericalStripLine Start="80"
+                                                          StrokeWidth="5"
+                                                          Width="2"
+                                                          FillColor="#B53238" />
+                            </chart:NumericalStripLineCollection>
+                        </chart:NumericalAxis.StripLines>
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+
+                <chart:ScatterSeries ItemsSource="{Binding Path=HighReadings}"
+                                     XBindingPath="DisplayTime"
+                                     YBindingPath="Reading"
+                                     Color="#FDF063"
+                                     ShapeType="Triangle"
+                                     IsVisible="True"
+                                     EnableTooltip="True" />
+
+                <chart:ScatterSeries ItemsSource="{Binding Path=BgReadings}"
+                                     XBindingPath="DisplayTime"
+                                     YBindingPath="Reading"
+                                     ShapeType="Diamond"
+                                     Color="White"
+                                     IsVisible="True"
+                                     EnableTooltip="True" />
+
+                <chart:ScatterSeries ItemsSource="{Binding Path=LowReadings}"
+                                     XBindingPath="DisplayTime"
+                                     YBindingPath="Reading"
+                                     ShapeType="InvertedTriangle"
+                                     Color="#FA172A"
+                                     IsVisible="True"
+                                     EnableTooltip="True" />
+
+                <chart:ScatterSeries ItemsSource="{Binding Path=OtherEntries}"
+                                     XBindingPath="DisplayTime"
+                                     YBindingPath="Reading"
+                                     IsVisible="True"
+                                     ScatterHeight="15"
+                                     ScatterWidth="15"
+                                     EnableTooltip="True">
+                    <chart:ScatterSeries.TooltipTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Food: " />
+                                    <Label Text="{Binding FoodName}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Bolus: " />
+                                    <Label Text="{Binding InsulinAmount}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </chart:ScatterSeries.TooltipTemplate>
+                </chart:ScatterSeries>
+            </chart:SfChart>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

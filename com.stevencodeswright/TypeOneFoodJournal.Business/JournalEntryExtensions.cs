@@ -59,5 +59,16 @@ namespace TypeOneFoodJournal.Business
 
             return retVal;
         }
+
+        public static JournalEntry GetJournalEntryByID(this IQueryable<JournalEntry> journalEntries, int id)
+        {
+            return journalEntries.FirstOrDefault(x => x.Id == id);
+        }
+
+        public static Dose GetDose(this JournalEntry journalEntry)
+        {
+            var dose = journalEntry.JournalEntryDoses.FirstOrDefault().Dose;
+            return dose;
+        }
     }
 }

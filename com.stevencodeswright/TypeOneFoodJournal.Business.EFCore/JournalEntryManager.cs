@@ -14,6 +14,11 @@ namespace TypeOneFoodJournal.Business.EFCore
             this.foodJournalContext = foodJournalContext;
         }
 
+        public IQueryable<JournalEntry> GetJournalEntries()
+        {
+            return this.foodJournalContext.JournalEntries;
+        }
+
         public IQueryable<JournalEntry> GetJournalEntriesForUserId(int userId)
         {
             return from uje in this.foodJournalContext.UserJournalEntries
