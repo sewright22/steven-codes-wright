@@ -16,7 +16,7 @@ using XamarinHelper.Core;
 
 namespace DiabetesFoodJournal.ViewModels
 {
-    public class JournalEntryViewModel : BaseViewModel
+    public class JournalEntrysViewModel : BaseViewModel
     {
         private readonly IJournalEntryDataService dataService;
         private readonly IMessenger messenger;
@@ -30,7 +30,7 @@ namespace DiabetesFoodJournal.ViewModels
         private JournalEntryDataModel model;
         private string tagSearchText;
 
-        public JournalEntryViewModel(IJournalEntryDataService dataService, IMessenger messenger, INavigationHelper navigation, IDataStore<Tag> tags)
+        public JournalEntrysViewModel(IJournalEntryDataService dataService, IMessenger messenger, INavigationHelper navigation, IDataStore<Tag> tags)
         {
             this.dataService = dataService;
             this.messenger = messenger;

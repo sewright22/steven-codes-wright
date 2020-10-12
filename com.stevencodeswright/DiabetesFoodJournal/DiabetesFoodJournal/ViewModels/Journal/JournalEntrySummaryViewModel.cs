@@ -4,6 +4,7 @@ using MvvmHelpers;
 using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,8 +32,15 @@ namespace DiabetesFoodJournal.ViewModels.Journal
 
         private async Task GoToReadings()
         {
-            await this.navigationHelper.GoToAsync("BgReadings");
-            this.messagingCenter.Send(this.Model, "LoadReadings");
+            try
+            {
+                await this.navigationHelper.GoToAsync("journalEntry/details").ConfigureAwait(true);
+                this.messagingCenter.Send(this.Model, "LoadReadings");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
         }
 
         private Task Select()

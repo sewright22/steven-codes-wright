@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:DiabetesFoodJournal"
+             base:ViewModelLocator.AutoWireViewModel="True"
+             x:Class="DiabetesFoodJournal.Views.JournalEntry.AdvancedBloodSugarStatsView">
+    <ContentView.Resources>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+        </Style>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label FontSize="Small"
+                   FontAttributes="Bold"
+                   Text="Starting BG" />
+
+            <Label HorizontalOptions="End"
+                   Grid.Row="0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding Path=Model.StartingBloodSugar}"
+                                  Style="{StaticResource StrongSpan}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="Small"
+                   FontAttributes="Bold"
+                   Text="Lowest BG"
+                   Grid.Row="1" />
+
+            <Label HorizontalOptions="End"
+                   Grid.Row="1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding Path=Model.LowestReading}"
+                                  Style="{StaticResource StrongSpan}" />
+                            <Span Text=" after " />
+                            <Span Text="{Binding Path=Model.LowestReadingTime}"
+                                  Style="{StaticResource StrongSpan}" />
+                            <Span Text=" minutes."
+                                  Style="{StaticResource StrongSpan}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="Small"
+                   FontAttributes="Bold"
+                   Text="Highest BG"
+                   Grid.Row="2" />
+
+            <Label HorizontalOptions="End"
+                   Grid.Row="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding Path=Model.HighestReading}"
+                                  Style="{StaticResource StrongSpan}" />
+                            <Span Text=" after " />
+                            <Span Text="{Binding Path=Model.HighestReadingTime}"
+                                  Style="{StaticResource StrongSpan}" />
+                            <Span Text=" minutes."
+                                  Style="{StaticResource StrongSpan}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

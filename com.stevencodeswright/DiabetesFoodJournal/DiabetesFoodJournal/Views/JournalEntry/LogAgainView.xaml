@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:DiabetesFoodJournal"
+             base:ViewModelLocator.AutoWireViewModel="True"
+             x:Class="DiabetesFoodJournal.Views.JournalEntry.LogAgainView">
+    <ContentView.Resources>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+        </Style>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <Label Text="Would you like to adjust the total insulin?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
+
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center"
+                       WidthRequest="100">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding InsulinAmount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" " />
+                                <Span Text="Units" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Slider x:Name="adjustInsulinSlider"
+                        Minimum="0"
+                        Maximum="20"
+                        Value="{Binding InsulinAmount}" />
+
+                <Label Text="Would you like to adjust the amount up front?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
+
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding Path=UpFront}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="% " />
+                                <Span Text="(" />
+                                <Span Text="{Binding UpFrontAmount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="u" />
+                                <Span Text=")" />
+                                <Span Text="/" />
+                                <Span Text="{Binding Extended}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="% " />
+                                <Span Text="(" />
+                                <Span Text="{Binding ExtendedAmount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="u" />
+                                <Span Text=")" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <!--<Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                        Minimum="0"
+                        Maximum="{Binding InsulinAmount}"
+                        Value="{Binding UpFrontAmount}" />-->
+
+                <Label Text="Would you like to adjust the length of the extended bolus?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
+
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding TimeExtendedHours}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" hours " />
+                                <Span Text="{Binding TimeExtendedMinutes}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" minutes" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Slider x:Name="TimeExtendedSlider"
+                        Minimum="0"
+                        Maximum="2"
+                        Value="{Binding TimeExtended}" />
+            </StackLayout>
+
+            <Button Text="Log"
+                    Command="{Binding LogCommand}"
+                    Grid.Row="1"
+                    Margin="10"
+                    CornerRadius="25"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource AppBlue}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

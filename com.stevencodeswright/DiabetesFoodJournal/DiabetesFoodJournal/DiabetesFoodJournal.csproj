@@ -49,6 +49,9 @@
     <Compile Update="Views\JournalEntryPage.xaml.cs">
       <DependentUpon>JournalEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\JournalEntry\AdvancedBloodSugarStatsView.xaml.cs">
+      <DependentUpon>AdvancedBloodSugarStatsView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\TestChartPage.xaml.cs">
       <DependentUpon>TestChartPage.xaml</DependentUpon>
     </Compile>
@@ -89,7 +92,19 @@
     <EmbeddedResource Update="Views\JournalEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\JournalEntry\AdvancedBloodSugarStatsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\JournalEntry\BloodSugarReadingsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JournalEntry\JournalEntryDetailsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JournalEntry\JournalEntryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JournalEntry\LogAgainView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Journal\JournalEntrySummaryListView.xaml">

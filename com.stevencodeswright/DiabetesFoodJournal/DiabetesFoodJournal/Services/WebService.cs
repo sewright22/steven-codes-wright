@@ -28,6 +28,22 @@ namespace DiabetesFoodJournal.Services
             this.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(authToken));
         }
 
+        public async Task<JournalEntryDetails> GetJournalEntryDetails(int id)
+        {
+            var endPoint = $"journalentrydetails/v2/{id}";
+
+            using (var response = await client.GetAsync(endPoint))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<JournalEntryDetails>(content);
+                }
+            }
+
+            return null;
+        }
+
         public async Task<IEnumerable<JournalEntrySummary>> GetJournalEntrySummaries(int userId, string searchString)
         {
             var retVal = new List<JournalEntrySummary>();

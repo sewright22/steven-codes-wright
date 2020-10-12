@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:local="clr-namespace:DiabetesFoodJournal.Views.JournalEntry"
+             xmlns:base="clr-namespace:DiabetesFoodJournal"
+             base:ViewModelLocator.AutoWireViewModel="True"
+             x:Name="EntryView"
+             x:Class="DiabetesFoodJournal.Views.JournalEntry.JournalEntryView">
+    <ContentPage.Resources>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <yummy:PancakeView CornerRadius="0"
+                           Padding="0">
+            <Grid>
+                <Grid BackgroundColor="{StaticResource AppBackgroundColor}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                                 x:Name="bgChart">
+                        <local:BloodSugarReadingsView />
+                    </RefreshView>
+
+                    <local:JournalEntryDetailsView Grid.Row="1"/>
+
+                    <local:AdvancedBloodSugarStatsView Grid.Row="2" 
+                                                       Margin="10,0,10,0"/>
+
+                    <Button Text="Log Again"
+                            x:Name="logAgainButton"
+                            Clicked="logAgainButton_Clicked"
+                            Command="{Binding LogAgainCommand}"
+                            Grid.Row="3"
+                            Margin="10"
+                            CornerRadius="25"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource AppBlue}" />
+                </Grid>
+
+                <Grid TranslationY="{Binding Height, Source={x:Reference EntryView}}"
+                      x:Name="hiddenGrid"
+                      BackgroundColor="{StaticResource AppBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ScrollView>
+                        <local:LogAgainView />
+                    </ScrollView>
+                </Grid>
+            </Grid>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
