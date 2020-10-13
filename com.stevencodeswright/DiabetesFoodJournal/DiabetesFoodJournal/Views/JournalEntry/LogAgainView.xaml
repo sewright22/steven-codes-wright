@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:DiabetesFoodJournal.Converters"
              xmlns:base="clr-namespace:DiabetesFoodJournal"
              base:ViewModelLocator.AutoWireViewModel="True"
              x:Class="DiabetesFoodJournal.Views.JournalEntry.LogAgainView">
@@ -17,6 +18,10 @@
             <Setter Property="TextColor"
                     Value="{StaticResource AppBlue}" />
         </Style>
+        <ResourceDictionary>
+            <converter:MinimumValueConverter x:Key="minValconverter" />
+            <converter:RoundValueConverter x:Key="roundValconverter"/>
+        </ResourceDictionary>
     </ContentView.Resources>
   <ContentView.Content>
         <Grid>
@@ -61,7 +66,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="{Binding Path=UpFront}"
+                                <Span Text="{Binding UpFrontPercent}"
                                       Style="{StaticResource StrongSpan}" />
                                 <Span Text="% " />
                                 <Span Text="(" />
@@ -70,7 +75,7 @@
                                 <Span Text="u" />
                                 <Span Text=")" />
                                 <Span Text="/" />
-                                <Span Text="{Binding Extended}"
+                                <Span Text="{Binding ExtendedPercent}"
                                       Style="{StaticResource StrongSpan}" />
                                 <Span Text="% " />
                                 <Span Text="(" />
@@ -83,10 +88,10 @@
                     </Label.FormattedText>
                 </Label>
 
-                <!--<Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                <Slider x:Name="adjustInsulinUpFrontAmountSlider"
                         Minimum="0"
-                        Maximum="{Binding InsulinAmount}"
-                        Value="{Binding UpFrontAmount}" />-->
+                        Maximum="{Binding InsulinAmount, Converter={StaticResource minValconverter}}"
+                        Value="{Binding UpFrontAmount, Converter={StaticResource roundValconverter}}" />
 
                 <Label Text="Would you like to adjust the length of the extended bolus?"
                        FontAttributes="Bold"
@@ -112,7 +117,7 @@
                 <Slider x:Name="TimeExtendedSlider"
                         Minimum="0"
                         Maximum="2"
-                        Value="{Binding TimeExtended}" />
+                        Value="{Binding TimeExtended, Converter={StaticResource roundValconverter}}" />
             </StackLayout>
 
             <Button Text="Log"
