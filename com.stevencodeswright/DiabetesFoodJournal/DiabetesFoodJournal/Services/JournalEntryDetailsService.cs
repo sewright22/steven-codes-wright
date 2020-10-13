@@ -19,5 +19,10 @@ namespace DiabetesFoodJournal.Services
         {
             return this.webService.GetJournalEntryDetails(id);
         }
+
+        public Task<int> Save(JournalEntryDetails journalEntryDetailsToCreate)
+        {
+            return this.webService.CreateNewJournalEntryDetails(journalEntryDetailsToCreate, 3);
+        }
     }
 }

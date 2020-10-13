@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Threading.Tasks;
 using TypeOneFoodJournal.Entities;
 
 namespace TypeOneFoodJournal.Business
@@ -69,6 +70,81 @@ namespace TypeOneFoodJournal.Business
         {
             var dose = journalEntry.JournalEntryDoses.FirstOrDefault().Dose;
             return dose;
+        }
+
+        public static IEnumerable<JournalEntryTag> AddTagsFromString(this JournalEntry journalEntry, string tags)
+        {
+            var retVal = new List<JournalEntryTag>();
+            if (string.IsNullOrEmpty(tags))
+            {
+                return null;
+            }
+
+            if (tags.Contains(","))
+            {
+                var tagArray = tags.Split(",");
+
+                foreach (var tag in tagArray)
+                {
+                    var newTag = new Tag
+                    {
+                        Description = tag,
+                    };
+
+                    retVal.Add(new JournalEntryTag
+                    {
+                        JournalEntry = journalEntry,
+                        Tag = newTag,
+                    });
+                }
+            }
+            else
+            {
+                var newTag = new Tag
+                {
+                    Description = tags,
+                };
+
+                retVal.Add(new JournalEntryTag
+                {
+                    JournalEntry = journalEntry,
+                    Tag = newTag,
+                });
+            }
+
+            return retVal;
+        }
+
+        public static JournalEntryDose AddDose(this JournalEntry journalEntry, decimal insulinAmount, int upFrontPercent, int extendedPercent, decimal timeExtended, int timeOffset)
+        {
+            var dose = new Dose
+            {
+                InsulinAmount = insulinAmount,
+                UpFront = upFrontPercent,
+                Extended = extendedPercent,
+                TimeExtended = timeExtended,
+                TimeOffset = timeOffset,
+            };
+
+            return new JournalEntryDose
+            {
+                JournalEntry = journalEntry,
+                Dose = dose,
+            };
+        }
+
+        public static JournalEntryNutritionalInfo AddNutritionalInfo(this JournalEntry journalEntry, int carbCount)
+        {
+            var nutritionalInfo = new NutritionalInfo
+            {
+                Carbohydrates = carbCount,
+            };
+
+            return new JournalEntryNutritionalInfo
+            {
+                JournalEntry = journalEntry,
+                NutritionalInfo = nutritionalInfo,
+            };
         }
     }
 }

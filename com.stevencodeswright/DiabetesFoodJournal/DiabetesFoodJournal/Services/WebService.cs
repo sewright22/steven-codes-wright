@@ -66,5 +66,26 @@ namespace DiabetesFoodJournal.Services
 
             return retVal;
         }
+
+        public async Task<int> CreateNewJournalEntryDetails(JournalEntryDetails journalEntryDetailsToCreate, int userId)
+        {
+            var serializedItem = JsonConvert.SerializeObject(journalEntryDetailsToCreate);
+
+            var content = new StringContent(serializedItem, Encoding.UTF8, "application/json");
+
+            var response = await this.client.PostAsync($"journalentrydetails/v2?userId={userId}", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<int>(responseContent);
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var test = errorContent;
+                return 0;
+            }
+        }
     }
 }

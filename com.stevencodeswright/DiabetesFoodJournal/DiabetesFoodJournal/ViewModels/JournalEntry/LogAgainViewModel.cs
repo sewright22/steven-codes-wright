@@ -1,4 +1,7 @@
-﻿using MvvmHelpers;
+﻿using DiabetesFoodJournal.Services;
+using GalaSoft.MvvmLight.Command;
+using MvvmHelpers;
+using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +14,7 @@ namespace DiabetesFoodJournal.ViewModels.JournalEntry
     public class LogAgainViewModel : BaseViewModel
     {
         private readonly IMessagingCenter messagingCenter;
+        private readonly IJournalEntryDetailsService journalEntryDetailsService;
         private decimal insulinAmount;
         private decimal upFrontAmount;
         private decimal extendedAmount;
@@ -20,12 +24,15 @@ namespace DiabetesFoodJournal.ViewModels.JournalEntry
         private int timeExtendedHours;
         private int timeExtendedMinutes;
 
-        public LogAgainViewModel(IMessagingCenter messagingCenter)
+        public LogAgainViewModel(IMessagingCenter messagingCenter, IJournalEntryDetailsService journalEntryDetailsService)
         {
             this.messagingCenter = messagingCenter ?? throw new ArgumentNullException(nameof(messagingCenter));
-
+            this.journalEntryDetailsService = journalEntryDetailsService ?? throw new ArgumentNullException(nameof(journalEntryDetailsService));
+            this.LogCommand = new AsyncCommand(this.LogNewEntry);
             this.messagingCenter.Subscribe<JournalEntryDetails>(this, "LogAgainClicked", this.Refresh);
         }
+
+        private JournalEntryDetails JournalEntryDetailsToCreate { get; set; }
 
         public decimal InsulinAmount
         {
@@ -75,10 +82,17 @@ namespace DiabetesFoodJournal.ViewModels.JournalEntry
             set { this.SetProperty(ref this.timeExtendedMinutes, value); }
         }
 
+        public AsyncCommand LogCommand { get; }
+
         private void Refresh(JournalEntryDetails details)
         {
             this.IsBusy = true;
-
+            this.JournalEntryDetailsToCreate = new JournalEntryDetails
+            {
+                Title = details.Title,
+                Tags = details.Tags,
+                CarbCount = details.CarbCount,
+            };
             this.InsulinAmount = details.InsulinAmount;
             this.UpFrontAmount = details.UpFrontAmount;
             this.ExtendedAmount = details.ExtendedAmount;
@@ -121,6 +135,19 @@ namespace DiabetesFoodJournal.ViewModels.JournalEntry
                 this.TimeExtendedHours = (int)Math.Floor(this.TimeExtended);
                 this.TimeExtendedMinutes = (int)((this.TimeExtended - TimeExtendedHours) * 60);
             }
+        }
+
+        private async Task LogNewEntry()
+        {
+            this.JournalEntryDetailsToCreate.InsulinAmount = this.insulinAmount;
+            this.JournalEntryDetailsToCreate.ExtendedAmount = this.extendedAmount;
+            this.JournalEntryDetailsToCreate.ExtendedPercent = this.extendedPercent;
+            this.JournalEntryDetailsToCreate.TimeExtended = this.TimeExtended;
+            this.JournalEntryDetailsToCreate.TimeExtendedHours = this.TimeExtendedHours;
+            this.JournalEntryDetailsToCreate.TimeExtendedMinutes = this.TimeExtendedMinutes;
+            this.JournalEntryDetailsToCreate.UpFrontAmount = this.UpFrontAmount;
+            this.JournalEntryDetailsToCreate.UpFrontPercent = this.UpFrontPercent;
+            var newID = await this.journalEntryDetailsService.Save(this.JournalEntryDetailsToCreate).ConfigureAwait(true);
         }
     }
 }

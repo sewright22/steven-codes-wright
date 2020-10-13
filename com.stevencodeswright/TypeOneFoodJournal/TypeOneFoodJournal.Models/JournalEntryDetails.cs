@@ -8,6 +8,7 @@ namespace TypeOneFoodJournal.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public int? CarbCount { get; set; }
         public string Tags { get; set; }
         public string Notes { get; set; }
         public decimal InsulinAmount { get; set; }
