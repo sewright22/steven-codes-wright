@@ -6,6 +6,8 @@ using DiabetesFoodJournal.Models;
 using DiabetesFoodJournal.Services;
 using DiabetesFoodJournal.ViewModels;
 using DiabetesFoodJournal.ViewModels.JournalEntry;
+using DiabetesFoodJournal.ViewModels.JournalEntryUpdate;
+using DiabetesFoodJournal.ViewModels.Tag;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System;
@@ -64,6 +66,8 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<BloodSugarReadingsViewModel>();
             SimpleIoc.Default.Register<AdvancedBloodSugarStatsViewModel>();
             SimpleIoc.Default.Register<LogAgainViewModel>();
+            SimpleIoc.Default.Register<AddTagViewModel>();
+            SimpleIoc.Default.Register<JournalEntryUpdateViewModel>();
         }
 
         public static readonly BindableProperty AutoWireViewModelProperty =

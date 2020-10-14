@@ -1,25 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:base="clr-namespace:DiabetesFoodJournal"
+             base:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:Tags="clr-namespace:DiabetesFoodJournal.Views.Tag"
              xmlns:converters="clr-namespace:DiabetesFoodJournal.Converters"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
-             xmlns:vm="clr-namespace:DiabetesFoodJournal.ViewModels"
-             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=JournalEntry}"
-             BackgroundColor="{StaticResource AppBackground}"
-             Title="New Entry"
-             mc:Ignorable="d"
-             Padding="0,5,0,10"
-             x:Class="DiabetesFoodJournal.Views.JournalEntryPage">
+             x:Class="DiabetesFoodJournal.Views.JournalEntryUpdate.JournalEntryUpdateView">
     <ContentPage.Resources>
         <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="500" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -27,7 +21,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.ColumnSpan="2"
+            <Tags:AddTagView Grid.ColumnSpan="2"/>
+
+            <!--<Grid Grid.ColumnSpan="2"
                   VerticalOptions="Fill">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -37,7 +33,7 @@
 
                 <StackLayout Margin="5"
                              Grid.Row="0">
-                    <Entry x:Name="TitleEntry" 
+                    <Entry x:Name="TitleEntry"
                            Text="{Binding Path=Model.Title}"
                            ReturnType="Next"
                            Focused="TitleEntry_Focused"
@@ -92,7 +88,7 @@
                                Grid.Row="1"
                                IsTabStop="False"
                                IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}" />
-                        
+
                         <FlexLayout BindableLayout.ItemsSource="{Binding ExistingTagSearch}"
                                     Wrap="Wrap"
                                     JustifyContent="Start"
@@ -106,7 +102,7 @@
                                     <templates:TagView TagText="{Binding Path=Description}"
                                                        CommandParameter="{Binding}"
                                                        Margin="5" />
-                                    <!--TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"-->
+                                    --><!--TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"--><!--
 
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
@@ -125,7 +121,7 @@
                                               IsTabStop="True"
                                               TabIndex="3"
                                               Grid.Column="0" />
-                        
+
                         <Grid Margin="{StaticResource DefaultMargin}"
                               Grid.Column="1">
                             <Grid.ColumnDefinitions>
@@ -194,12 +190,12 @@
                 </StackLayout>
                 <Label Text="Notes"
                        Grid.Row="1"
-                       Style="{StaticResource AppLabelStyle}"/>
+                       Style="{StaticResource AppLabelStyle}" />
                 <ScrollView Grid.Row="2">
-                        <Editor Text="{Binding Path=Model.Notes}"
-                                Placeholder="Notes"
-                                VerticalOptions="FillAndExpand" 
-                                AutoSize="TextChanges"/>
+                    <Editor Text="{Binding Path=Model.Notes}"
+                            Placeholder="Notes"
+                            VerticalOptions="FillAndExpand"
+                            AutoSize="TextChanges" />
                 </ScrollView>
             </Grid>
 
@@ -207,7 +203,7 @@
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
                     Style="{StaticResource AppButtonStyle}"
-                    Command="{Binding Path=SaveCommand}" />
+                    Command="{Binding Path=SaveCommand}" />-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

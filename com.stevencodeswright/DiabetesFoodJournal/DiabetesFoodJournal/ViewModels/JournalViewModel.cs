@@ -22,11 +22,12 @@ namespace DiabetesFoodJournal.ViewModels
         private readonly IJournalDataService dataService;
         private readonly INavigationHelper navigation;
         private readonly IMessenger messenger;
+        private readonly IMessagingCenter messagingCenter;
         private bool rowIsSelected;
         private bool refreshing;
         private bool searching;
 
-        public JournalViewModel(IJournalDataService dataService, INavigationHelper navigation, IMessenger messenger)
+        public JournalViewModel(IJournalDataService dataService, INavigationHelper navigation, IMessenger messenger, IMessagingCenter messagingCenter)
         {
             LocalSearchResults = new ObservableRangeCollection<Grouping<string, JournalEntrySummaryViewModel>>();
             SearchCommand = new AsyncCommand<string>(SearchClicked);
@@ -38,6 +39,7 @@ namespace DiabetesFoodJournal.ViewModels
             this.dataService = dataService;
             this.navigation = navigation;
             this.messenger = messenger;
+            this.messagingCenter = messagingCenter ?? throw new ArgumentNullException(nameof(messagingCenter));
         }
 
         private async Task ViewReadingsClicked()
@@ -61,15 +63,16 @@ namespace DiabetesFoodJournal.ViewModels
 
         private async Task CreateNewEntryClicked(string entryTitle)
         {
-            await this.navigation.GoToAsync($"journalEntry").ConfigureAwait(true);
-            var newEntry = this.dataService.CreateEntry(entryTitle);
-            newEntry = await this.dataService.SaveEntry(newEntry);
+            await this.navigation.GoToAsync($"journalEntry/update").ConfigureAwait(true);
+            this.messagingCenter.Send(new JournalEntrySummary(), "JournalEntrySummarySelected");
+            //var newEntry = this.dataService.CreateEntry(entryTitle);
+            //newEntry = await this.dataService.SaveEntry(newEntry);
 
-            if (newEntry.Id > 0)
-            {
-                this.messenger.Send(newEntry);
-                await SearchClicked(entryTitle);
-            }
+            //if (newEntry.Id > 0)
+            //{
+            //    this.messenger.Send(newEntry);
+            //    await SearchClicked(entryTitle);
+            //}
         }
 
         private async Task UpdateClicked()
