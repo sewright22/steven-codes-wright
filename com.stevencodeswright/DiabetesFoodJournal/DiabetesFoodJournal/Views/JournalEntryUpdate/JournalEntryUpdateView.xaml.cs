@@ -16,5 +16,12 @@ namespace DiabetesFoodJournal.Views.JournalEntryUpdate
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            this.AddTag.LoadTags();
+        }
     }
 }

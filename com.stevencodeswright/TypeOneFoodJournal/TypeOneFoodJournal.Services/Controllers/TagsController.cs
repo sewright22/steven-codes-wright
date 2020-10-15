@@ -25,10 +25,20 @@ namespace TypeOneFoodJournal.Services.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tag>>> GetTags(string searchValue)
         {
-            var upperSearchValue = searchValue.ToUpper();
-            var results = await _context.Tags.Where(entry => entry.Description.ToUpper().Contains(upperSearchValue)).Take(10).ToListAsync();
 
-            return Ok(results);
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                var results = await _context.Tags.Distinct().ToListAsync();
+
+                return Ok(results);
+            }
+            else
+            {
+                var upperSearchValue = searchValue.ToUpper();
+                var results = await _context.Tags.Where(entry => entry.Description.ToUpper().Contains(upperSearchValue)).ToListAsync();
+
+                return Ok(results);
+            }
         }
 
         // GET: api/Tags/5

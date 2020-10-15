@@ -87,5 +87,25 @@ namespace DiabetesFoodJournal.Services
                 return 0;
             }
         }
+
+        public async Task<IEnumerable<TagModel>> GetTags(string tagSearchText)
+        {
+            var retVal = new List<TagModel>();//journalEntry/SearchJournal?searchValue=test
+            using (var response = await client.GetAsync($"tags?searchValue={tagSearchText}"))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    var tags = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<TagModel>>(content));
+
+                    foreach (var tag in tags)
+                    {
+                        retVal.Add(tag);
+                    }
+                }
+            }
+
+            return retVal;
+        }
     }
 }

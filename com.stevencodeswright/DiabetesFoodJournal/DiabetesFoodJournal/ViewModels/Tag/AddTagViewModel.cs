@@ -17,10 +17,11 @@ namespace DiabetesFoodJournal.ViewModels.Tag
 
         public AddTagViewModel(IMessagingCenter messagingCenter)
         {
-            this.InputItems = new ObservableRangeCollection<string>();
+            this.InputItems = new ObservableRangeCollection<string>() { "Washer", "Television", "Air Conditioner" };
+            this.selectedItem = new List<string>() { "Washer" };
             this.messagingCenter = messagingCenter;
             this.placeHolderText = "Tag";
-            this.messagingCenter.Subscribe<JournalEntrySummary>(this, "JournalEntrySummarySelected", async (model) => await this.LoadTags(model));
+            //this.messagingCenter.Subscribe<JournalEntrySummary>(this, "JournalEntrySummarySelected", async (model) => await this.LoadTags(model));
         }
 
         public ObservableRangeCollection<string> InputItems { get; }
@@ -29,6 +30,17 @@ namespace DiabetesFoodJournal.ViewModels.Tag
         {
             get { return this.placeHolderText; }
             set { this.SetProperty(ref this.placeHolderText, value); }
+        }
+
+        private object selectedItem;
+
+        public object SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                this.SetProperty(ref this.selectedItem, value);
+            }
         }
 
         private Task LoadTags(JournalEntrySummary model)

@@ -55,6 +55,7 @@ namespace DiabetesFoodJournal
             SimpleIoc.Default.Register<IWebService, WebService>();
             SimpleIoc.Default.Register<IJournalEntrySummaryService, JournalEntrySummaryService>();
             SimpleIoc.Default.Register<IJournalEntryDetailsService, JournalEntryDetailsService>();
+            SimpleIoc.Default.Register<ITagService, TagService>();
             SimpleIoc.Default.Register<IBloodSugarService, BloodSugarService>();
             SimpleIoc.Default.Register<IMessagingCenter, MessagingCenter>();
             SimpleIoc.Default.Register<LoginViewModel>();

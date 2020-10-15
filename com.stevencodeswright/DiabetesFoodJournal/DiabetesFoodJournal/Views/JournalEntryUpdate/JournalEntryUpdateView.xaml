@@ -16,12 +16,7 @@
                 <RowDefinition Height="500" />
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Tags:AddTagView Grid.ColumnSpan="2"/>
+            <Tags:AddTagView x:Name="AddTag"/>
 
             <!--<Grid Grid.ColumnSpan="2"
                   VerticalOptions="Fill">

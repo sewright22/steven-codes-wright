@@ -1,48 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
              xmlns:SyncfusionButton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:base="clr-namespace:DiabetesFoodJournal"
              base:ViewModelLocator.AutoWireViewModel="True"
              x:Class="DiabetesFoodJournal.Views.Tag.AddTagView">
     <ContentView.Content>
         <StackLayout>
-            <SyncfusionButton:SfChipGroup VerticalOptions="Center"
-                                          x:Name="inputChipGroup"
-                                          ItemsSource="{Binding InputItems,Mode=OneWay}"
-                                          Type="Input"
-                                          ChipPadding="8,8,0,0">
-                <SyncfusionButton:SfChipGroup.InputView>
-                    <Entry VerticalOptions="Center"
-                           FontSize="15"
-                           Placeholder="{Binding PlaceHolderText,Mode=TwoWay}"
-                           WidthRequest="110"
-                           Text="{Binding InputText,Mode=TwoWay}"
-                           Margin="10,10,0,0">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android"
-                                    Value="40" />
-                                <On Platform="WPF"
-                                    Value="32" />
-                                <On Platform="iOS"
-                                    Value="33" />
-                                <On Platform="UWP"
-                                    Value="32" />
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </Entry>
-                </SyncfusionButton:SfChipGroup.InputView>
-                <SyncfusionButton:SfChipGroup.ChipLayout>
-                    <FlexLayout HorizontalOptions="Start"
-                                VerticalOptions="Center"
-                                Direction="Row"
-                                Wrap="Wrap"
-                                JustifyContent="Start"
-                                AlignContent="Start"
-                                AlignItems="Start" />
-                </SyncfusionButton:SfChipGroup.ChipLayout>
-            </SyncfusionButton:SfChipGroup>
+            <autocomplete:SfAutoComplete x:Name="autocomplete"
+                                         Grid.Column="1"
+                                         IsFocused="{Binding IsToFocused , Mode=TwoWay}"
+                                         MultiSelectMode="Token"
+                                         AutoCompleteMode="Suggest"
+                                         MaximumSuggestion="10"
+                                         TokensWrapMode="Wrap"
+                                         SuggestionMode="Contains"
+                                         Text="{Binding CustomText}"
+                                         IsSelectedItemsVisibleInDropDown="false"
+                                         Watermark="{Binding PlaceHolderText}"
+                                         SelectedItem="{Binding SelectedItem}" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>
