@@ -18,7 +18,19 @@ namespace DiabetesFoodJournal.Services
 
         public Task<IEnumerable<TagModel>> GetTags()
         {
-            return this.webService.GetTags("");
+            return this.webService.GetTags(string.Empty);
+        }
+
+        public Task<IEnumerable<TagModel>> GetTagsForJournalEntryId(int journalEntryId)
+        {
+            if (journalEntryId == 0)
+            {
+                return Task.FromResult(new List<TagModel>().AsEnumerable());
+            }
+            else
+            {
+                return this.webService.GetTags(string.Empty, journalEntryId);
+            }
         }
     }
 }

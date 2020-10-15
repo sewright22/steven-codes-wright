@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TypeOneFoodJournal.Business;
 using TypeOneFoodJournal.Data;
 using TypeOneFoodJournal.Entities;
 
@@ -23,14 +24,27 @@ namespace TypeOneFoodJournal.Services.Controllers
 
         // GET: api/Tags
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tag>>> GetTags(string searchValue)
+        public async Task<ActionResult<IEnumerable<Tag>>> GetTags(string searchValue, int? journalEntryId = null)
         {
 
-            if (string.IsNullOrEmpty(searchValue))
+            if (string.IsNullOrEmpty(searchValue) && journalEntryId.HasValue == false)
             {
                 var results = await _context.Tags.Distinct().ToListAsync();
 
                 return Ok(results);
+            }
+            else if (journalEntryId.HasValue)
+            {
+                var journalEntry = await _context.JournalEntries.FirstOrDefaultAsync(je => je.Id==journalEntryId.Value);
+
+                var tags = journalEntry?.GetTags();
+
+                if(string.IsNullOrEmpty(searchValue)==false)
+                {
+                    tags = tags.Where(t=>t.Description.ToUpper().Contains(searchValue.ToUpper()));
+                }
+
+                return Ok(tags);
             }
             else
             {

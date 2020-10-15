@@ -7,5 +7,6 @@ namespace DiabetesFoodJournal.Services
     public interface ITagService
     {
         Task<IEnumerable<TagModel>> GetTags();
+        Task<IEnumerable<TagModel>> GetTagsForJournalEntryId(int journalEntryId);
     }
 }

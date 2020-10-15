@@ -9,6 +9,6 @@ namespace DiabetesFoodJournal.Services
         Task<IEnumerable<JournalEntrySummary>> GetJournalEntrySummaries(int userId, string searchString);
         Task<JournalEntryDetails> GetJournalEntryDetails(int id);
         Task<int> CreateNewJournalEntryDetails(JournalEntryDetails journalEntryDetailsToCreate, int userId);
-        Task<IEnumerable<TagModel>> GetTags(string tagSearchText);
+        Task<IEnumerable<TagModel>> GetTags(string tagSearchText, int? journalEntryId = null);
     }
 }

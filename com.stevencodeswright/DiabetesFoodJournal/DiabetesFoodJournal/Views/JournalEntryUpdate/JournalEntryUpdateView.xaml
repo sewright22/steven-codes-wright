@@ -9,196 +9,277 @@
              x:Class="DiabetesFoodJournal.Views.JournalEntryUpdate.JournalEntryUpdateView">
     <ContentPage.Resources>
         <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <Style TargetType="Span"
+                   x:Key="StrongSpan">
+                <Setter Property="TextColor"
+                        Value="{StaticResource AppBlue}" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+            </Style>
+            <Style TargetType="Span"
+                   x:Key="BlueSpan">
+                <Setter Property="TextColor"
+                        Value="{StaticResource AppBlue}" />
+            </Style>
+            <ResourceDictionary>
+                <converters:MinimumValueConverter x:Key="minValconverter" />
+                <converters:RoundValueConverter x:Key="roundValconverter" />
+            </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid>
+
+        <Grid VerticalOptions="Fill">
             <Grid.RowDefinitions>
-                <RowDefinition Height="500" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Tags:AddTagView x:Name="AddTag"/>
+            <StackLayout Margin="5"
+                         Grid.Row="0">
+                <Entry x:Name="TitleEntry"
+                       Text="{Binding Path=Title}"
+                       ReturnType="Next"
+                       TabIndex="0" />
 
-            <!--<Grid Grid.ColumnSpan="2"
-                  VerticalOptions="Fill">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height=".5*" />
-                </Grid.RowDefinitions>
+                <Tags:AddTagView x:Name="AddTag" />
 
-                <StackLayout Margin="5"
-                             Grid.Row="0">
-                    <Entry x:Name="TitleEntry"
-                           Text="{Binding Path=Model.Title}"
-                           ReturnType="Next"
-                           Focused="TitleEntry_Focused"
-                           TabIndex="0" />
+                <Label Text="How many carbs?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
 
-                    <FlexLayout BindableLayout.ItemsSource="{Binding Model.Tags}"
-                                Wrap="Wrap"
-                                JustifyContent="Start"
-                                AlignItems="Start"
-                                AlignContent="Start"
-                                IsTabStop="False">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <templates:TagView TagText="{Binding Path=Description}"
-                                                   CanDelete="{Binding Path=CanDelete}"
-                                                   CommandParameter="{Binding}"
-                                                   Margin="5" />
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding CarbCount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" " />
+                                <Span Text="Units" />
+                                <Span Text=" " />
+                                <Span Text="Carb ratio" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CarbRatio}" />
+                                <Span Text=":1" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </FlexLayout>
+                <Slider x:Name="adjustCarbsSlider"
+                        Minimum="0"
+                        Maximum="120"
+                        Value="{Binding CarbCount}" />
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="50" />
-                        </Grid.ColumnDefinitions>
+                <Label Text="Would you like to adjust the total insulin?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
 
-                        <Entry Placeholder="Add Tag"
-                               x:Name="TagSearchEntry"
-                               Focused="TagSearchEntry_Focused"
-                               IsTabStop="True"
-                               TabIndex="1"
-                               ReturnType="Next"
-                               Text="{Binding TagSearchText, Mode=TwoWay}"
-                               ClearButtonVisibility="WhileEditing" />
-                        <Button Grid.Column="1"
-                                HeightRequest="40"
-                                CornerRadius="25"
-                                Margin="5"
-                                IsTabStop="True"
-                                TabIndex="2"
-                                Command="{Binding CreateNewTagCommand}"
-                                CommandParameter="{Binding Source={x:Reference TagSearchEntry}, Path=Text}"
-                                Text="+" />
-                        <Label Text="Existing Tags"
-                               Grid.Row="1"
-                               IsTabStop="False"
-                               IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}" />
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center"
+                       WidthRequest="100">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding InsulinAmount, Converter={StaticResource roundValconverter}}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" " />
+                                <Span Text="Units" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-                        <FlexLayout BindableLayout.ItemsSource="{Binding ExistingTagSearch}"
-                                    Wrap="Wrap"
-                                    JustifyContent="Start"
-                                    AlignItems="Start"
-                                    AlignContent="Start"
-                                    Grid.Row="2"
-                                    IsTabStop="False"
-                                    IsVisible="{Binding Source={x:Reference TagSearchEntry}, Path=Text, Converter={StaticResource StringToBoolConverter}}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:TagView TagText="{Binding Path=Description}"
-                                                       CommandParameter="{Binding}"
-                                                       Margin="5" />
-                                    --><!--TappedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:JournalEntryViewModel}}, Path=TagTappedCommand}"--><!--
+                <Slider x:Name="adjustInsulinSlider"
+                        Minimum="0"
+                        Maximum="20"
+                        Value="{Binding InsulinAmount}" />
 
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </FlexLayout>
-                    </Grid>
+                <Grid>
+                    <Label Text="Extened?" 
+                           HorizontalOptions="Start"/>
+                    
+                    <Switch IsToggled="{Binding IsExtended}"
+                            HorizontalOptions="End" />
+                </Grid>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                <Label Text="What percentage of the bolus did you give up front?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" 
+                       IsVisible="{Binding IsExtended}"/>
 
-                        <templates:LabelEntry Label="Carb Estimate"
-                                              Text="{Binding Path=Model.NutritionalInfo.Carbohydrates}"
-                                              Append=" Carbs"
-                                              IsTabStop="True"
-                                              TabIndex="3"
-                                              Grid.Column="0" />
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding IsExtended}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding UpFrontPercent}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="% " />
+                                <Span Text="(" />
+                                <Span Text="{Binding UpFrontAmount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="u" />
+                                <Span Text=")" />
+                                <Span Text="/" />
+                                <Span Text="{Binding ExtendedPercent}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="% " />
+                                <Span Text="(" />
+                                <Span Text="{Binding ExtendedAmount}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text="u" />
+                                <Span Text=")" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-                        <Grid Margin="{StaticResource DefaultMargin}"
-                              Grid.Column="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                <Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                        IsVisible="{Binding IsExtended}"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="{Binding UpFrontPercent, Converter={StaticResource roundValconverter}}" />
 
-                            <templates:LabelEntry Label="Bolus"
-                                                  Text="{Binding Path=Model.Dose.InsulinAmount}"
-                                                  Append=" Units" />
+                <Label Text="How long did you extend the bolus?"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding IsExtended}" />
 
-                            <CheckBox x:Name="IsExtended"
-                                      Grid.Column="1"
-                                      VerticalOptions="Center"
-                                      IsChecked="True">
-                                <CheckBox.Triggers>
-                                    <DataTrigger TargetType="CheckBox"
-                                                 Binding="{Binding Source={x:Reference lblExtendedAmount}, Path=Text}"
-                                                 Value="0">
-                                        <Setter Property="IsChecked"
-                                                Value="False" />
-                                    </DataTrigger>
-                                </CheckBox.Triggers>
-                            </CheckBox>
-                            <Label Grid.Column="2"
-                                   Text="Extend?"
-                                   VerticalOptions="Center"
-                                   VerticalTextAlignment="Center" />
-                        </Grid>
-                    </Grid>
+                <Label FontSize="Medium"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding IsExtended}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="{Binding TimeExtendedHours}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" hours " />
+                                <Span Text="{Binding TimeExtendedMinutes}"
+                                      Style="{StaticResource StrongSpan}" />
+                                <Span Text=" minutes" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Slider x:Name="TimeExtendedSlider"
+                        IsVisible="{Binding IsExtended}"
+                        Minimum="0"
+                        Maximum="2"
+                        Value="{Binding TimeExtended, Converter={StaticResource roundValconverter}}" />
+
+                <Label Text="When did/will you eat?" />
+                <Label Text="{Binding Path=TimeOffset, StringFormat='{0} minutes'}" />
+
+                <Slider x:Name="timeSlider"
+                        Value="{Binding TimeOffset, Mode=TwoWay}"
+                        Maximum="30"
+                        Minimum="-30"
+                        ThumbColor="Purple"
+                        MinimumTrackColor="Green"
+                        MaximumTrackColor="Blue" />
+            </StackLayout>
+
+            <!--<Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <templates:LabelEntry Label="Carb Estimate"
+                                          Text="{Binding Path=Model.NutritionalInfo.Carbohydrates}"
+                                          Append=" Carbs"
+                                          IsTabStop="True"
+                                          TabIndex="3"
+                                          Grid.Column="0" />
 
                     <Grid Margin="{StaticResource DefaultMargin}"
-                          IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
+                          Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <templates:LabelEntry Label="Up Front"
-                                              Text="{Binding Path=Model.Dose.UpFront, Mode=TwoWay}"
-                                              Append="% Up Front" />
-                        <templates:LabelEntry Label="Extended"
-                                              x:Name="lblExtendedAmount"
-                                              Text="{Binding Path=Model.Dose.Extended, Mode=TwoWay}"
-                                              Append="% Extended"
-                                              Grid.Column="1" />
-                        <templates:LabelEntry Label="How Long?"
-                                              Text="{Binding Path=Model.Dose.TimeExtended}"
-                                              Append=" Hours"
-                                              Grid.Column="2" />
+                        <templates:LabelEntry Label="Bolus"
+                                              Text="{Binding InsulinAmount}"
+                                              Append=" Units" />
 
+                        <CheckBox x:Name="IsExtended"
+                                  Grid.Column="1"
+                                  VerticalOptions="Center"
+                                  IsChecked="True">
+                            <CheckBox.Triggers>
+                                <DataTrigger TargetType="CheckBox"
+                                             Binding="{Binding Source={x:Reference lblExtendedAmount}, Path=Text}"
+                                             Value="0">
+                                    <Setter Property="IsChecked"
+                                            Value="False" />
+                                </DataTrigger>
+                            </CheckBox.Triggers>
+                        </CheckBox>
+                        <Label Grid.Column="2"
+                               Text="Extend?"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center" />
                     </Grid>
+                </Grid>
 
-                    <Label Text="When did/will you eat?" />
-                    <Label Text="{Binding Path=Model.Dose.TimeOffset, StringFormat='{0} minutes'}" />
+                <Grid Margin="{StaticResource DefaultMargin}"
+                      IsVisible="{Binding Path=IsChecked, Source={x:Reference IsExtended}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                    <Slider x:Name="timeSlider"
-                            Value="{Binding Model.Dose.TimeOffset, Mode=TwoWay}"
-                            Maximum="30"
-                            Minimum="-30"
-                            ThumbColor="Purple"
-                            MinimumTrackColor="Green"
-                            MaximumTrackColor="Blue" />
-                </StackLayout>
-                <Label Text="Notes"
-                       Grid.Row="1"
-                       Style="{StaticResource AppLabelStyle}" />
-                <ScrollView Grid.Row="2">
-                    <Editor Text="{Binding Path=Model.Notes}"
-                            Placeholder="Notes"
-                            VerticalOptions="FillAndExpand"
-                            AutoSize="TextChanges" />
-                </ScrollView>
-            </Grid>
+                    <templates:LabelEntry Label="Up Front"
+                                          Text="{Binding UpFrontPercent, Mode=TwoWay}"
+                                          Append="% Up Front" />
+                    <templates:LabelEntry Label="Extended"
+                                          x:Name="lblExtendedAmount"
+                                          Text="{Binding ExtendedPercent, Mode=TwoWay}"
+                                          Append="% Extended"
+                                          Grid.Column="1" />
+                    <templates:LabelEntry Label="How Long?"
+                                          Text="{Binding TimeExtended}"
+                                          Append=" Hours"
+                                          Grid.Column="2" />
 
-            <Button Text="Save"
-                    Grid.Row="1"
-                    Grid.ColumnSpan="2"
-                    Style="{StaticResource AppButtonStyle}"
-                    Command="{Binding Path=SaveCommand}" />-->
+                </Grid>
+
+                <Label Text="When did/will you eat?" />
+                <Label Text="{Binding Path=Model.Dose.TimeOffset, StringFormat='{0} minutes'}" />
+
+                <Slider x:Name="timeSlider"
+                        Value="{Binding Model.Dose.TimeOffset, Mode=TwoWay}"
+                        Maximum="30"
+                        Minimum="-30"
+                        ThumbColor="Purple"
+                        MinimumTrackColor="Green"
+                        MaximumTrackColor="Blue" />
+            </StackLayout>
+            <Label Text="Notes"
+                   Grid.Row="1"
+                   Style="{StaticResource AppLabelStyle}" />
+            <ScrollView Grid.Row="2">
+                <Editor Text="{Binding Path=Model.Notes}"
+                        Placeholder="Notes"
+                        VerticalOptions="FillAndExpand"
+                        AutoSize="TextChanges" />
+            </ScrollView>-->
+
+                <Button Text="Save"
+                        Grid.Row="2"
+                        Style="{StaticResource AppButtonStyle}"
+                        Command="{Binding Path=SaveCommand}" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

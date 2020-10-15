@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -88,10 +89,12 @@ namespace DiabetesFoodJournal.Services
             }
         }
 
-        public async Task<IEnumerable<TagModel>> GetTags(string tagSearchText)
+        public async Task<IEnumerable<TagModel>> GetTags(string tagSearchText, int? journalEntryId=null)
         {
-            var retVal = new List<TagModel>();//journalEntry/SearchJournal?searchValue=test
-            using (var response = await client.GetAsync($"tags?searchValue={tagSearchText}"))
+            var retVal = new List<TagModel>();
+            var query = $"tags?searchValue={tagSearchText}&{nameof(journalEntryId)}={journalEntryId}";
+
+            using (var response = await client.GetAsync(query))
             {
                 if (response.IsSuccessStatusCode)
                 {

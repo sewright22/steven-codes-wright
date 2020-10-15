@@ -23,6 +23,13 @@ namespace TypeOneFoodJournal.Business
             }
         }
 
+        public static IEnumerable<Tag> GetTags(this JournalEntry journalEntry)
+        {
+            var tags = journalEntry.JournalEntryTags;
+
+            return tags.Select(t => t.Tag);
+        }
+
         public static string GetTagsAsString(this JournalEntry journalEntry)
         {
             var retVal = new StringBuilder();

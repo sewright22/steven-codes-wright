@@ -7,10 +7,10 @@
              base:ViewModelLocator.AutoWireViewModel="True"
              x:Class="DiabetesFoodJournal.Views.Tag.AddTagView">
     <ContentView.Content>
-        <StackLayout>
+        <Grid>
             <autocomplete:SfAutoComplete x:Name="autocomplete"
-                                         Grid.Column="1"
-                                         IsFocused="{Binding IsToFocused , Mode=TwoWay}"
+                                         IsFocused="{Binding IsFocused , Mode=TwoWay}"
+                                         DisplayMemberPath="Description"
                                          MultiSelectMode="Token"
                                          AutoCompleteMode="Suggest"
                                          MaximumSuggestion="10"
@@ -19,7 +19,9 @@
                                          Text="{Binding CustomText}"
                                          IsSelectedItemsVisibleInDropDown="false"
                                          Watermark="{Binding PlaceHolderText}"
-                                         SelectedItem="{Binding SelectedItem}" />
-        </StackLayout>
+                                         SelectedItem="{Binding SelectedItem}" 
+                                         VerticalOptions="FillAndExpand"
+                                         HeightRequest="{Binding Height}"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>

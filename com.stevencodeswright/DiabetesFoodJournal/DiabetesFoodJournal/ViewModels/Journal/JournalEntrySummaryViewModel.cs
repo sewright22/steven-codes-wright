@@ -26,33 +26,16 @@ namespace DiabetesFoodJournal.ViewModels.Journal
         {
             this.TappedCommand = new AsyncCommand(this.Select);
             this.ViewReadingsCommand = new AsyncCommand(this.GoToReadings);
+            this.UpdateCommand = new AsyncCommand(this.Update);
             this.navigationHelper = navigationHelper;
             this.messagingCenter = messagingCenter;
-        }
-
-        private async Task GoToReadings()
-        {
-            try
-            {
-                await this.navigationHelper.GoToAsync("journalEntry/details").ConfigureAwait(true);
-                this.messagingCenter.Send(this.Model, "LoadReadings");
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e.Message);
-            }
-        }
-
-        private Task Select()
-        {
-            return Task.Run(() => { this.IsSelected = true; });
         }
 
         public JournalEntrySummary Model
         {
             get { return this.model; }
-            set 
-            { 
+            set
+            {
                 if (this.SetProperty(ref this.model, value))
                 {
                     this.IsSelected = this.model.IsSelected;
@@ -73,7 +56,40 @@ namespace DiabetesFoodJournal.ViewModels.Journal
             set { this.SetProperty(ref this.group, value); }
         }
 
+        private async Task Update()
+        {
+            try
+            {
+                await this.navigationHelper.GoToAsync("journalEntry/update").ConfigureAwait(true);
+                this.messagingCenter.Send(this.Model, "EditExisting");
+                this.messagingCenter.Send(this.Model, "JournalEntrySummarySelected");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+        }
+
+        private async Task GoToReadings()
+        {
+            try
+            {
+                await this.navigationHelper.GoToAsync("journalEntry/details").ConfigureAwait(true);
+                this.messagingCenter.Send(this.Model, "LoadReadings");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+        }
+
+        private Task Select()
+        {
+            return Task.Run(() => { this.IsSelected = true; });
+        }
+
         public AsyncCommand TappedCommand { get; set; }
         public AsyncCommand ViewReadingsCommand { get; set; }
+        public AsyncCommand UpdateCommand { get; set; }
     }
 }
