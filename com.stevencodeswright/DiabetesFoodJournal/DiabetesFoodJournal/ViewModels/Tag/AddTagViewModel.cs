@@ -22,7 +22,7 @@ namespace DiabetesFoodJournal.ViewModels.Tag
         {
             this.messagingCenter = messagingCenter;
             this.tagService = tagService;
-            this.height = 40;
+            this.height = 300;
             this.placeHolderText = "Tag";
             this.messagingCenter.Subscribe<JournalEntrySummary>(this, "JournalEntrySummarySelected", async (model) => await this.LoadTags(model));
         }
@@ -36,7 +36,7 @@ namespace DiabetesFoodJournal.ViewModels.Tag
             {
                 if (this.SetProperty(ref this.isFocused, value))
                 {
-                    Height = value ? 90 : 40;
+                    Height = value ? 300 : 300;
                 }
             }
         }

@@ -3,189 +3,262 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:base="clr-namespace:DiabetesFoodJournal"
              base:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:Tags="clr-namespace:DiabetesFoodJournal.Views.Tag"
              xmlns:converters="clr-namespace:DiabetesFoodJournal.Converters"
              xmlns:templates="clr-namespace:DiabetesFoodJournal.ResourceDictionaries.ViewTemplates"
+             BackgroundColor="White"
              x:Class="DiabetesFoodJournal.Views.JournalEntryUpdate.JournalEntryUpdateView">
     <ContentPage.Resources>
         <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
-            <Style TargetType="Span"
-                   x:Key="StrongSpan">
-                <Setter Property="TextColor"
-                        Value="{StaticResource AppBlue}" />
-                <Setter Property="FontAttributes"
-                        Value="Bold" />
-            </Style>
-            <Style TargetType="Span"
-                   x:Key="BlueSpan">
-                <Setter Property="TextColor"
-                        Value="{StaticResource AppBlue}" />
-            </Style>
-            <ResourceDictionary>
-                <converters:MinimumValueConverter x:Key="minValconverter" />
-                <converters:RoundValueConverter x:Key="roundValconverter" />
-            </ResourceDictionary>
+        <Style TargetType="Span"
+               x:Key="StrongSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+        </Style>
+        <Style TargetType="Span"
+               x:Key="BlueSpan">
+            <Setter Property="TextColor"
+                    Value="{StaticResource AppBlue}" />
+        </Style>
+
+        <Style TargetType="yummy:PancakeView"
+               x:Key="InfoCard">
+            <Setter Property="BackgroundColor"
+                    Value="White" />
+            <Setter Property="Margin"
+                    Value="0,5,0,5" />
+            <Setter Property="Padding"
+                    Value="10" />
+            <Setter Property="Elevation"
+                    Value="20" />
+        </Style>
+        <ResourceDictionary>
+            <converters:MinimumValueConverter x:Key="minValconverter" />
+            <converters:RoundValueConverter x:Key="roundValconverter" />
+        </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
 
         <Grid VerticalOptions="Fill">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
 
-            <StackLayout Margin="5"
-                         Grid.Row="0">
-                <Entry x:Name="TitleEntry"
-                       Text="{Binding Path=Title}"
-                       ReturnType="Next"
-                       TabIndex="0" />
+            <ScrollView>
+                <Grid Margin="5"
+                      Grid.Row="0">
 
-                <Tags:AddTagView x:Name="AddTag" />
 
-                <Label Text="How many carbs?"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       HorizontalOptions="Center" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                <Label FontSize="Medium"
-                       HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="{Binding CarbCount}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text=" " />
-                                <Span Text="Units" />
-                                <Span Text=" " />
-                                <Span Text="Carb ratio" />
-                                <Span Text=" " />
-                                <Span Text="{Binding CarbRatio}" />
-                                <Span Text=":1" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                    <yummy:PancakeView Style="{StaticResource InfoCard}">
+                        <StackLayout>
+                            <Entry x:Name="TitleEntry"
+                                   Text="{Binding Path=Title}"
+                                   ReturnType="Next"
+                                   TabIndex="0" />
+                        </StackLayout>
+                    </yummy:PancakeView>
 
-                <Slider x:Name="adjustCarbsSlider"
-                        Minimum="0"
-                        Maximum="120"
-                        Value="{Binding CarbCount}" />
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       Grid.Row="1">
+                        <Grid>
+                            <Tags:AddTagView x:Name="AddTag"
+                                             VerticalOptions="End" />
+                        </Grid>
+                    </yummy:PancakeView>
 
-                <Label Text="Would you like to adjust the total insulin?"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       HorizontalOptions="Center" />
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       Grid.Row="2">
+                        <StackLayout>
+                            <Label Text="How many carbs?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center" />
 
-                <Label FontSize="Medium"
-                       HorizontalOptions="Center"
-                       WidthRequest="100">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="{Binding InsulinAmount, Converter={StaticResource roundValconverter}}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text=" " />
-                                <Span Text="Units" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding CarbCount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" " />
+                                            <Span Text="Carb ratio" />
+                                            <Span Text=" " />
+                                            <Span Text="{Binding CarbRatio}" />
+                                            <Span Text=":1" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
 
-                <Slider x:Name="adjustInsulinSlider"
-                        Minimum="0"
-                        Maximum="20"
-                        Value="{Binding InsulinAmount}" />
+                            <Slider x:Name="adjustCarbsSlider"
+                                    Minimum="0"
+                                    Maximum="120"
+                                    MinimumTrackColor="{StaticResource AppBlue}"
+                                    MaximumTrackColor="{StaticResource AppBlue}"
+                                    Value="{Binding CarbCount}" />
+                        </StackLayout>
+                    </yummy:PancakeView>
 
-                <Grid>
-                    <Label Text="Extened?" 
-                           HorizontalOptions="Start"/>
-                    
-                    <Switch IsToggled="{Binding IsExtended}"
-                            HorizontalOptions="End" />
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       Grid.Row="3">
+                        <StackLayout>
+                            <Label Text="Would you like to adjust the total insulin?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   WidthRequest="100">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding InsulinAmount, Converter={StaticResource roundValconverter}}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" " />
+                                            <Span Text="Units" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="adjustInsulinSlider"
+                                    Minimum="0"
+                                    Maximum="20"
+                                    Value="{Binding InsulinAmount}" />
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       Grid.Row="4">
+                        <StackLayout>
+                            <Grid>
+                                <Label Text="Extended?"
+                                       HorizontalOptions="Start" />
+
+                                <Switch IsToggled="{Binding IsExtended}"
+                                        HorizontalOptions="End" />
+                            </Grid>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       IsVisible="{Binding IsExtended}"
+                                       Grid.Row="5">
+                        <StackLayout>
+                            <Label Text="What percentage of the bolus did you give up front?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   IsVisible="{Binding IsExtended}" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   IsVisible="{Binding IsExtended}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding UpFrontPercent}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding UpFrontAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                            <Span Text="/" />
+                                            <Span Text="{Binding ExtendedPercent}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="% " />
+                                            <Span Text="(" />
+                                            <Span Text="{Binding ExtendedAmount}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text="u" />
+                                            <Span Text=")" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="adjustInsulinUpFrontAmountSlider"
+                                    IsVisible="{Binding IsExtended}"
+                                    Minimum="0"
+                                    Maximum="100"
+                                    Value="{Binding UpFrontPercent}" />
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       IsVisible="{Binding IsExtended}"
+                                       Grid.Row="6">
+                        <StackLayout>
+                            <Label Text="How long did you extend the bolus?"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   IsVisible="{Binding IsExtended}" />
+
+                            <Label FontSize="Medium"
+                                   HorizontalOptions="Center"
+                                   IsVisible="{Binding IsExtended}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding TimeExtendedHours}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" hours " />
+                                            <Span Text="{Binding TimeExtendedMinutes}"
+                                                  Style="{StaticResource StrongSpan}" />
+                                            <Span Text=" minutes" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Slider x:Name="TimeExtendedSlider"
+                                    IsVisible="{Binding IsExtended}"
+                                    Minimum="0"
+                                    Maximum="2"
+                                    Value="{Binding TimeExtended, Converter={StaticResource roundValconverter}}" />
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Style="{StaticResource InfoCard}"
+                                       Grid.Row="7">
+                        <StackLayout>
+                            <Label Text="When did/will you eat?" />
+                            <Label Text="{Binding Path=TimeOffset, StringFormat='{0} minutes'}" />
+
+                            <Slider x:Name="timeSlider"
+                                    Value="{Binding TimeOffset, Mode=TwoWay}"
+                                    Maximum="30"
+                                    Minimum="-30"
+                                    ThumbColor="Purple"
+                                    MinimumTrackColor="Green"
+                                    MaximumTrackColor="Blue" />
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <Button Text="Save"
+                            Grid.Row="8"
+                            Style="{StaticResource AppButtonStyle}"
+                            Command="{Binding Path=SaveCommand}" />
                 </Grid>
-
-                <Label Text="What percentage of the bolus did you give up front?"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       HorizontalOptions="Center" 
-                       IsVisible="{Binding IsExtended}"/>
-
-                <Label FontSize="Medium"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding IsExtended}">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="{Binding UpFrontPercent}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text="% " />
-                                <Span Text="(" />
-                                <Span Text="{Binding UpFrontAmount}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text="u" />
-                                <Span Text=")" />
-                                <Span Text="/" />
-                                <Span Text="{Binding ExtendedPercent}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text="% " />
-                                <Span Text="(" />
-                                <Span Text="{Binding ExtendedAmount}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text="u" />
-                                <Span Text=")" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Slider x:Name="adjustInsulinUpFrontAmountSlider"
-                        IsVisible="{Binding IsExtended}"
-                        Minimum="0"
-                        Maximum="100"
-                        Value="{Binding UpFrontPercent, Converter={StaticResource roundValconverter}}" />
-
-                <Label Text="How long did you extend the bolus?"
-                       FontAttributes="Bold"
-                       FontSize="Medium"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding IsExtended}" />
-
-                <Label FontSize="Medium"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding IsExtended}">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="{Binding TimeExtendedHours}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text=" hours " />
-                                <Span Text="{Binding TimeExtendedMinutes}"
-                                      Style="{StaticResource StrongSpan}" />
-                                <Span Text=" minutes" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Slider x:Name="TimeExtendedSlider"
-                        IsVisible="{Binding IsExtended}"
-                        Minimum="0"
-                        Maximum="2"
-                        Value="{Binding TimeExtended, Converter={StaticResource roundValconverter}}" />
-
-                <Label Text="When did/will you eat?" />
-                <Label Text="{Binding Path=TimeOffset, StringFormat='{0} minutes'}" />
-
-                <Slider x:Name="timeSlider"
-                        Value="{Binding TimeOffset, Mode=TwoWay}"
-                        Maximum="30"
-                        Minimum="-30"
-                        ThumbColor="Purple"
-                        MinimumTrackColor="Green"
-                        MaximumTrackColor="Blue" />
-            </StackLayout>
+            </ScrollView>
 
             <!--<Grid>
                     <Grid.ColumnDefinitions>
@@ -275,11 +348,6 @@
                         VerticalOptions="FillAndExpand"
                         AutoSize="TextChanges" />
             </ScrollView>-->
-
-                <Button Text="Save"
-                        Grid.Row="2"
-                        Style="{StaticResource AppButtonStyle}"
-                        Command="{Binding Path=SaveCommand}" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

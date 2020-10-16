@@ -9,6 +9,7 @@
     <ContentView.Content>
         <Grid>
             <autocomplete:SfAutoComplete x:Name="autocomplete"
+                                         EnableAutoSize="True"
                                          IsFocused="{Binding IsFocused , Mode=TwoWay}"
                                          DisplayMemberPath="Description"
                                          MultiSelectMode="Token"
@@ -19,9 +20,7 @@
                                          Text="{Binding CustomText}"
                                          IsSelectedItemsVisibleInDropDown="false"
                                          Watermark="{Binding PlaceHolderText}"
-                                         SelectedItem="{Binding SelectedItem}" 
-                                         VerticalOptions="FillAndExpand"
-                                         HeightRequest="{Binding Height}"/>
+                                         SelectedItem="{Binding SelectedItem}" />
         </Grid>
     </ContentView.Content>
 </ContentView>
