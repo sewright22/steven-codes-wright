@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeOneFoodJournal", "TypeOneFoodJournal", "{1A63AAE3-55F5-4E76-A082-0AC90C739BD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlayoffPool", "PlayoffPool", "{749E0136-1487-478B-96D6-78687F8BC95B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Amer_Playoff_Pool\Readme.md = src\Amer_Playoff_Pool\Readme.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmerFamilyPlayoffs.Data", "src\Amer_Playoff_Pool\AmerFamilyPlayoffs.Data\AmerFamilyPlayoffs.Data.csproj", "{0BD65965-9809-4FCF-ADFC-8B7BBC1D38EE}"
 EndProject
