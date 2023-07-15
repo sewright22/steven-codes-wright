@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "path": "..\\..\\com.stevencodeswright.sln",
+    "projects": [
+      "src\\TypeOneDiabetesJournal\\Business\\Business.csproj",
+      "src\\TypeOneDiabetesJournal\\Core\\Core.csproj",
+      "src\\TypeOneDiabetesJournal\\DataLayer\\DataLayer.csproj",
+      "src\\TypeOneDiabetesJournal\\ExtensionsTests\\ExtensionsTests.csproj",
+      "src\\TypeOneDiabetesJournal\\Extensions\\Extensions.csproj",
+      "src\\TypeOneDiabetesJournal\\FoodJournal.UI\\FoodJournal.UI.csproj",
+      "src\\TypeOneDiabetesJournal\\Migrations\\Migrations.csproj",
+      "src\\TypeOneDiabetesJournal\\Services.EfCore.Tests.UnitTests\\Services.EfCore.Tests.UnitTests.csproj",
+      "src\\TypeOneDiabetesJournal\\Services.EfCore\\Services.EfCore.csproj",
+      "src\\TypeOneDiabetesJournal\\Services.ExternalTests\\Services.ExternalTests.csproj",
+      "src\\TypeOneDiabetesJournal\\Services.External\\Services.External.csproj",
+      "src\\TypeOneDiabetesJournal\\Services\\Services.csproj",
+      "src\\TypeOneDiabetesJournal\\WebApi.Tests.UnitTests\\WebApi.Tests.UnitTests.csproj",
+      "src\\TypeOneDiabetesJournal\\WebApi\\WebApi.csproj"
+    ]
+  }
+}

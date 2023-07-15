@@ -1,0 +1,13 @@
+﻿{
+  Id: 1,
+  Email: username,
+  Userpassword: {
+    Id: 1,
+    UserId: 1,
+    PasswordId: 1,
+    Password: {
+      Id: 1,
+      Text: encryptedPassword
+    }
+  }
+}

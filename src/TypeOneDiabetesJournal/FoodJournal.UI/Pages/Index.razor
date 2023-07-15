@@ -1,0 +1,31 @@
+﻿@page "/home"
+@using Services;
+
+<div class="d-grid g-2">
+    <button type="button" class="btn btn-primary" @onclick=LogFoodClicked>Log Food</button>
+    <button type="button" class="btn btn-primary mt-2" @onclick=SearchJournal>Search Journal</button>
+    <button type="button" class="btn btn-primary mt-2" @onclick=LinkFitbitClicked>Link Fitbit</button>
+    <a target="_blank" href="@fitbitLink">Fitbit</a>
+</div>
+
+@code {
+    @inject NavigationManager navManager
+    @inject IDiabetesDataService diabetesService
+
+    string fitbitLink = "";
+
+    private async Task LogFoodClicked()
+    {
+        navManager.NavigateTo("/logfood", true);
+    }
+
+    private async Task SearchJournal()
+    {
+        navManager.NavigateTo("/searchjournal", true);
+    }
+
+    private async Task LinkFitbitClicked()
+    {
+        fitbitLink = await diabetesService.GetFitbitLink(AppState.BearerToken);
+    }
+}

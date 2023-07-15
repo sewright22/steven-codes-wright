@@ -1,0 +1,283 @@
+html {
+    font-size: 16px;
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background: white;
+    color: black;
+    text-align: left;
+    padding: 0rem;
+}
+
+fieldset {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+/*.pp-main-container {
+    background: white;
+    height: 100%;
+}*/
+
+.container .pp-child-center {
+    text-align: center;
+}
+
+.pp-section {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.navbar {
+    background: #1F1F47;
+    color: #EDEBE8;
+    height: 4rem;
+}
+
+.pp-navbar-brand {
+    color: #EDEBE8 !important;
+    font-weight: bold;
+}
+
+.pp-card {
+    margin: auto;
+    width: 50%;
+}
+
+.pp-form-group {
+    color: #757575;
+    font-weight: 600;
+    border: none;
+    padding: .5rem 0rem;
+}
+
+.pp-card-content {
+    background: white;
+    padding: .5rem;
+    border: 1px solid #000;
+    border-radius: 16px
+}
+
+.pp-card-title {
+    padding: 1rem;
+    font-family: "Sofia", sans-serif;
+    font-size: 2rem;
+}
+
+.pp-nav {
+    margin-bottom: 1rem;
+}
+
+.pp-nav-link {
+    color: #F1F1F9 !important;
+    border-bottom: 0.25rem solid transparent;
+    margin: 0.5rem;
+}
+
+    .pp-nav-link:hover {
+        border-bottom: 0.25rem solid white;
+        border-radius: 1rem;
+        /*color: black !important;*/
+        /*font-size: 2rem;*/
+    }
+
+.pp-nav-item {
+    border-bottom: 4px solid lightgray;
+    padding: 0.5rem;
+    color: #1f1f47 !important;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.pp-nav-item a {
+    color: #1f1f47 !important;
+}
+
+    .pp-nav-item:hover {
+        border-bottom: 4px solid #1f1f47;
+        background-color: hsl(240, 39%, 98%);
+    }
+
+
+.pp-button {
+    background: #1F1F47;
+    color: #F1F1F9;
+    border: 0px;
+    border: 1px solid transparent;
+    box-shadow: 0.25rem 0.25rem 0.25rem #1F1F47;
+}
+
+    .pp-button:hover {
+        background: #F1F1F9;
+        color: #1F1F47;
+        border: 1px solid #1F1F47;
+    }
+
+.pp-button-secondary {
+    background: #F1F1F9;
+    color: #1F1F47;
+    border: 1px solid #1F1F47;
+    box-shadow: 0.25rem 0.25rem 0.25rem #1F1F47;
+}
+
+.pp-button-create-first-bracket {
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.pp-button-login {
+    margin-bottom: 0.5rem;
+}
+
+.pp-button-bar {
+    margin-top: 1rem;
+}
+
+    .pp-button-bar .pp-button {
+        margin-right: 1rem;
+    }
+
+.pp-conference-name {
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+}
+
+.afc {
+    background-color: rgba(213,10,10,0.50);
+    padding: 0.5rem 2rem 2rem 2rem;
+}
+
+.nfc {
+    background-color: rgba(1,51,105, 0.70);
+    padding: 0.5rem 2rem 2rem 2rem;
+}
+
+.pp-matchup {
+    border: 1px solid transparent;
+    padding: 0.25rem 1rem 0.5rem 1rem;
+    border-radius: 0.8rem;
+    margin: 0.5rem auto 0.5rem auto;
+    width: 75%;
+    background-color: white;
+}
+
+.pp-prediction-correct {
+    color: green;
+    font-size: 1.25rem;
+}
+
+.pp-prediction-incorrect {
+    color: red;
+    font-size: 1.25rem;
+}
+
+.afc .pp-matchup {
+    box-shadow: 0.25rem 0.25rem 0.25rem darkred;
+}
+
+.nfc .pp-matchup {
+    box-shadow: 0.25rem 0.25rem 0.25rem #031d45;
+}
+
+.super-bowl {
+    padding: 2rem;
+    background-image: linear-gradient(to right, rgba(213,10,10,0.50), rgba(1,51,105, 0.70));
+}
+
+.pp-round-name {
+    font-weight: 200;
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+}
+
+.pp-game-name {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1rem;
+    justify-self: end;
+    color: gray;
+}
+
+.pp-game-name-super-bowl {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.pp-team-name {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.pp-bracket-summary {
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.pp-label {
+    display: block;
+}
+
+.pp-label-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.pp-matchup-super-bowl {
+    width: 50%;
+}
+
+.pp-leaderboard {
+    margin-top: 4rem;
+}
+
+.pp-my-incomplete-brackets {
+    margin-top: 2rem;
+}
+
+.pp-my-complete-brackets {
+    margin-top: 4rem;
+}
+
+.pp-navbar-section-user {
+    /*display: block;*/
+}
+
+.pp-navbar-collapse {
+    background: #1F1F47;
+}
+
+.pp-li-logout {
+    float: right;
+}
+
+p {
+    padding: 2rem;
+    text-align: center;
+    font-weight: bold;
+}

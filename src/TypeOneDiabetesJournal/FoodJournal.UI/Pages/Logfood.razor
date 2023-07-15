@@ -1,0 +1,30 @@
+﻿@page "/logfood"
+
+@using Core.Responses;
+@using Services;
+<h3>Log Food</h3>
+
+@if (foodLog != null)
+{
+    <p>Logged foods:</p>
+    <ul>
+        @foreach (var food in foodLog.Foods)
+        {
+            <li>@food.LoggedFood.Name</li>
+        }
+    </ul>
+}
+
+@code {
+    @inject NavigationManager navManager;
+
+    @inject IDiabetesDataService diabetesService;
+
+    FoodLogResponse? foodLog;
+
+    protected override async Task OnInitializedAsync()
+    {
+        foodLog = await diabetesService.GetFoodLog(AppState.BearerToken, DateTime.Now);
+        var test = foodLog;
+    }
+}
