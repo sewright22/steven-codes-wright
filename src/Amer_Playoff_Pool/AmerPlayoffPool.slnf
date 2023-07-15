@@ -1,10 +1,10 @@
 {
   "solution": {
-    "path": "../../com.stevencodeswright.sln",
+    "path": "..\\..\\com.stevencodeswright.sln",
     "projects": [
-        "AmerFamilyPlayoffs.Data\\AmerFamilyPlayoffs.Data.csproj",
-        "PlayoffPool.MVC.UnitTests\\PlayoffPool.MVC.UnitTests.csproj",
-        "PlayoffPool.MVC\\PlayoffPool.MVC.csproj"
+        ".\\AmerFamilyPlayoffs.Data\\AmerFamilyPlayoffs.Data.csproj",
+        ".\\PlayoffPool.MVC.UnitTests\\PlayoffPool.MVC.UnitTests.csproj",
+        ".\\PlayoffPool.MVC\\PlayoffPool.MVC.csproj"
     ]
   }
 }
