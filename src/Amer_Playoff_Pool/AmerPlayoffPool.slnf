@@ -2,9 +2,9 @@
   "solution": {
     "path": "..\\..\\com.stevencodeswright.sln",
     "projects": [
-        ".\\AmerFamilyPlayoffs.Data\\AmerFamilyPlayoffs.Data.csproj",
-        ".\\PlayoffPool.MVC.UnitTests\\PlayoffPool.MVC.UnitTests.csproj",
-        ".\\PlayoffPool.MVC\\PlayoffPool.MVC.csproj"
+      "src\\Amer_Playoff_Pool\\AmerFamilyPlayoffs.Data\\AmerFamilyPlayoffs.Data.csproj",
+      "src\\Amer_Playoff_Pool\\PlayoffPool.MVC.UnitTests\\PlayoffPool.MVC.UnitTests.csproj",
+      "src\\Amer_Playoff_Pool\\PlayoffPool.MVC\\PlayoffPool.MVC.csproj"
     ]
   }
 }
