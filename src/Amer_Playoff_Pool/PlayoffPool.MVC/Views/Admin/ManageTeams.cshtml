@@ -1,0 +1,16 @@
+﻿@model ManageTeamsViewModel
+@{
+    Layout = "_AdminLayout";
+}
+
+<h4>Select a Year</h4>
+
+    <div class="pp-section col-lg-2">
+        <partial name="_YearSelectorAdminView"></partial>
+    </div>
+    @if (this.Model.Rounds != null && this.Model.Rounds.Any())
+    {
+        <div class="pp-section col-lg-8">
+            <partial name="_PlayoffTeamSelectorView"></partial>
+        </div>
+    }
