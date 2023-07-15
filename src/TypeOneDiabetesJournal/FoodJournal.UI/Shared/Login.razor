@@ -1,0 +1,63 @@
+﻿@page "/login"
+
+@using System.ComponentModel.DataAnnotations
+@using Services;
+@using System.Net;
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3 class="text-center">Login</h3>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(ErrorMessage))
+                    {
+                        <div class="alert alert-danger">@ErrorMessage</div>
+                    }
+                    <form @onsubmit="async e => { await HandleSubmit(); }">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required @bind="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required @bind="password">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string username = string.Empty;
+    private string password = "test";
+
+    @inject NavigationManager navManager
+    @inject IDiabetesDataService diabetesService
+
+    private async Task HandleSubmit()
+    {
+        var response = await diabetesService.Login(username, password).ConfigureAwait(false);
+        // Perform authentication logic here.
+        if (response != null)
+        {
+            AppState.BearerToken = response.UserInformation.Token;
+            // Authentication successful, redirect to home page.
+            navManager.NavigateTo($"/home", true);
+        }
+        else
+        {
+            // Authentication failed, show error message.
+            ErrorMessage = "Invalid username or password.";
+        }
+    }
+
+    private string ErrorMessage { get; set; }
+}
