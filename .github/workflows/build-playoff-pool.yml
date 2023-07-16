@@ -3,6 +3,8 @@ name: Playoff Pool Build and Publish
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**/PlayoffPool.MVC/**'
 
 jobs:
   deploy-dev:
