@@ -57,5 +57,6 @@ jobs:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
           timeout: 1200000
           local-dir: ./
