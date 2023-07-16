@@ -2,8 +2,7 @@ name: Playoff Pool Build and Publish
 
 on:
   push:
-    branches:
-      - '!main'
+    branches: [ main ]
     paths:
       - '**/PlayoffPool.MVC/**'
 
