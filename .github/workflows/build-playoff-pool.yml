@@ -4,9 +4,9 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'PlayoffPool.MVC/**'
-      - 'AmerFamilyPlayoffs.Data/**'
-      - 'PlayoffPool.MVC.UnitTests/**'
+      - 'src/Amer_PLayoff_Pool/PlayoffPool.MVC/**'
+      - 'src/Amer_PLayoff_Pool/AmerFamilyPlayoffs.Data/**'
+      - 'src/Amer_PLayoff_Pool/PlayoffPool.MVC.UnitTests/**'
 
 jobs:
   deploy-dev:
