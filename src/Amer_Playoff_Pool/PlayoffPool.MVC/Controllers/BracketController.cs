@@ -323,14 +323,18 @@ namespace PlayoffPool.MVC.Controllers
                 }
 
                 var nfcDivisionalRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-                nfcDivisionalRound.Conference = "NFC";
-                nfcDivisionalRound.IsLocked = false;
 
-                List<MatchupViewModel> nfcWildcardGames = bracketViewModel.NfcRounds.Single(x => x.RoundNumber == 1).Games.ToList();
-                var pickedNfcWinners = this.GetWinners(nfcWildcardGames).OrderByDescending(x => x.Seed).ToList();
-                nfcDivisionalRound.Games.Add(this.BuildMatchup("NFC Divisional Game 1", nfcTeams, 1, 1, pickedNfcWinners[0].Seed));
-                nfcDivisionalRound.Games.Add(this.BuildMatchup("NFC Divisional Game 2", nfcTeams, 1, pickedNfcWinners[2].Seed, pickedNfcWinners[1].Seed));
-                bracketViewModel.NfcRounds.Add(nfcDivisionalRound);
+                if (nfcDivisionalRound != null)
+                {
+                    nfcDivisionalRound.Conference = "NFC";
+                    nfcDivisionalRound.IsLocked = false;
+
+                    List<MatchupViewModel> nfcWildcardGames = bracketViewModel.NfcRounds.Single(x => x.RoundNumber == 1).Games.ToList();
+                    var pickedNfcWinners = this.GetWinners(nfcWildcardGames).OrderByDescending(x => x.Seed).ToList();
+                    nfcDivisionalRound.Games.Add(this.BuildMatchup("NFC Divisional Game 1", nfcTeams, 1, 1, pickedNfcWinners[0].Seed));
+                    nfcDivisionalRound.Games.Add(this.BuildMatchup("NFC Divisional Game 2", nfcTeams, 1, pickedNfcWinners[2].Seed, pickedNfcWinners[1].Seed));
+                    bracketViewModel.NfcRounds.Add(nfcDivisionalRound);
+                }
             }
         }
 
