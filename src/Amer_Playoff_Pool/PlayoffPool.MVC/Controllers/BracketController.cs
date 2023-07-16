@@ -222,7 +222,10 @@ namespace PlayoffPool.MVC.Controllers
 
         private List<PlayoffTeamViewModel> GetWinners(List<MatchupViewModel> games)
         {
-            var winningIds = games.Select(x => x.SelectedWinner.Value).ToList();
+            var winningIds = games
+                .Where(x => x.SelectedWinner != null)
+                .Select(x => x.SelectedWinner == null ? 0 : x.SelectedWinner.Value)
+                .ToList();
 
             return games.Select(x => winningIds.Contains(x.HomeTeam.Id) ? x.HomeTeam : x.AwayTeam).ToList();
         }
