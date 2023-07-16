@@ -52,7 +52,7 @@ jobs:
         with:
           name: playoff-pool-artifact
       - name: FTP Deploy MVC
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
