@@ -397,7 +397,18 @@ namespace PlayoffPool.MVC.Controllers
             }
 
             var teams = matchupPredictions.Where(x => x.PlayoffRound.Round.Number == 4);
-            var selectedWinner = teams.Where(x => x.PredictedWinner != null).FirstOrDefault(x => x.PredictedWinner.Id == bracketViewModel.SuperBowl.HomeTeam.Id || x.PredictedWinner.Id == bracketViewModel.SuperBowl.AwayTeam.Id).PredictedWinner;
+
+            if (teams == null)
+            {
+                return;
+            }
+
+            var selectedWinner = teams
+                .Where(x => x.PredictedWinner != null)
+                .FirstOrDefault(
+                    x => x.PredictedWinner.Id == bracketViewModel.SuperBowl.HomeTeam.Id 
+                    || x.PredictedWinner.Id == bracketViewModel.SuperBowl.AwayTeam.Id)?
+                .PredictedWinner;
 
             if (selectedWinner != null)
             {
