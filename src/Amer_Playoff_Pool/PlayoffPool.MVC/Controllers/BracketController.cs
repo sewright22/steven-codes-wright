@@ -294,16 +294,20 @@ namespace PlayoffPool.MVC.Controllers
                 }
 
                 var afcDivisionalRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-                afcDivisionalRound.Conference = "AFC";
-                afcDivisionalRound.IsLocked = false;
 
-                List<MatchupViewModel> afcWildcardGames = bracketViewModel.AfcRounds.Single(x => x.RoundNumber == 1).Games.ToList();
+                if (afcDivisionalRound != null)
+                {
+                    afcDivisionalRound.Conference = "AFC";
+                    afcDivisionalRound.IsLocked = false;
 
-                var pickedAfcWinners = this.GetWinners(afcWildcardGames).OrderByDescending(x => x.Seed).ToList();
+                    List<MatchupViewModel> afcWildcardGames = bracketViewModel.AfcRounds.Single(x => x.RoundNumber == 1).Games.ToList();
 
-                afcDivisionalRound.Games.Add(this.BuildMatchup("AFC Divisional Game 1", afcTeams, 1, 1, pickedAfcWinners[0].Seed));
-                afcDivisionalRound.Games.Add(this.BuildMatchup("AFC Divisional Game 2", afcTeams, 1, pickedAfcWinners[2].Seed, pickedAfcWinners[1].Seed));
-                bracketViewModel.AfcRounds.Add(afcDivisionalRound);
+                    var pickedAfcWinners = this.GetWinners(afcWildcardGames).OrderByDescending(x => x.Seed).ToList();
+
+                    afcDivisionalRound.Games.Add(this.BuildMatchup("AFC Divisional Game 1", afcTeams, 1, 1, pickedAfcWinners[0].Seed));
+                    afcDivisionalRound.Games.Add(this.BuildMatchup("AFC Divisional Game 2", afcTeams, 1, pickedAfcWinners[2].Seed, pickedAfcWinners[1].Seed));
+                    bracketViewModel.AfcRounds.Add(afcDivisionalRound);
+                }
             }
 
             if (currentNfcRound == null && previousNfcRound.Games.Any(x => x.SelectedWinner.HasValue == false) == false)
