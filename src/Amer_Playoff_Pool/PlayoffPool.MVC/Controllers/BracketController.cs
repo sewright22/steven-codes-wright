@@ -614,6 +614,12 @@ namespace PlayoffPool.MVC.Controllers
                 }
 
                 var nfcChampionship = this.Context.PlayoffRounds.Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+
+                if (nfcChampionship == null)
+                {
+                    return;
+                }
+
                 nfcChampionship.Conference = "NFC";
                 nfcChampionship.IsLocked = false;
 
