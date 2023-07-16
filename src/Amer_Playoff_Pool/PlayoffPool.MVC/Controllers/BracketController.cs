@@ -492,7 +492,7 @@ namespace PlayoffPool.MVC.Controllers
                 var game = BracketViewModel.SuperBowl;
 
                 var matchupPrediction = this.Mapper.Map<MatchupPrediction>(game);
-                matchupPrediction.PlayoffRoundId = this.Context.PlayoffRounds.FirstOrDefault(x => x.Round.Number == 4).Id;
+                matchupPrediction.PlayoffRoundId = this.Context.PlayoffRounds.FirstOrDefault(x => x.Round.Number == 4)?.Id ?? 0;
                 matchupPrediction.PredictedWinner = afcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner) == null ? nfcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner) : afcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner);
                 prediction.MatchupPredictions.Add(matchupPrediction);
             }
@@ -585,6 +585,12 @@ namespace PlayoffPool.MVC.Controllers
                 }
 
                 var afcChampionship = this.Context.PlayoffRounds.Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+
+                if (afcChampionship == null)
+                {
+                    return;
+                }
+
                 afcChampionship.Conference = "AFC";
                 afcChampionship.IsLocked = false;
 
