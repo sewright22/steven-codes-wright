@@ -232,6 +232,11 @@ namespace PlayoffPool.MVC.Controllers
 
         private BracketViewModel BuildBracketViewModel(BracketPrediction? bracketPrediction)
         {
+            if (bracketPrediction == null)
+            {
+                throw new ArgumentNullException(nameof(bracketPrediction));
+            }
+
             var bracketViewModel = this.Mapper.Map<BracketViewModel>(bracketPrediction);
 
             var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("AFC");
