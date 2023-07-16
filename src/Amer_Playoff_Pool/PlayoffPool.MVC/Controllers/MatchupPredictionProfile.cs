@@ -1,15 +1,14 @@
-﻿using AmerFamilyPlayoffs.Data;
+﻿namespace PlayoffPool.MVC.Controllers;
+
+using AmerFamilyPlayoffs.Data;
 using AutoMapper;
 using PlayoffPool.MVC.Models;
 
-namespace PlayoffPool.MVC.Controllers
+public class MatchupPredictionProfile : Profile
 {
-    public class MatchupPredictionProfile : Profile
+    public MatchupPredictionProfile()
     {
-        public MatchupPredictionProfile()
-        {
-            this.CreateMap<MatchupPrediction, PlayoffTeamViewModel>()
-                .ForMember(x => x.Name, obj => obj.MapFrom(x => x.PredictedWinner.SeasonTeam.Team.Name));
-        }
+        this.CreateMap<MatchupPrediction, PlayoffTeamViewModel>()
+            .ForMember(x => x.Name, obj => obj.MapFrom(x => x.PredictedWinner.SeasonTeam.Team.Name));
     }
 }
