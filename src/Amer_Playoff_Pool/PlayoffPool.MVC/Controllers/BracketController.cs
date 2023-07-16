@@ -56,21 +56,24 @@ namespace PlayoffPool.MVC.Controllers
                 if (afcRounds.IsNullOrEmpty() && nfcRounds.IsNullOrEmpty())
                 {
                     var afcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-                    afcWildcardRound.Conference = "AFC";
-
                     var nfcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-                    nfcWildcardRound.Conference = "NFC";
 
-                    afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 1", afcTeams, 1, 4, 5));
-                    afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 2", afcTeams, 2, 3, 6));
-                    afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 3", afcTeams, 3, 2, 7));
+                    if (afcWildcardRound != null && null != nfcWildcardRound)
+                    {
+                        afcWildcardRound.Conference = "AFC";
+                        nfcWildcardRound.Conference = "NFC";
 
-                    nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 1", nfcTeams, 1, 4, 5));
-                    nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 2", nfcTeams, 2, 3, 6));
-                    nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 3", nfcTeams, 3, 2, 7));
+                        afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 1", afcTeams, 1, 4, 5));
+                        afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 2", afcTeams, 2, 3, 6));
+                        afcWildcardRound.Games.Add(this.BuildMatchup("AFC Wildcard Game 3", afcTeams, 3, 2, 7));
 
-                    BracketViewModel.AfcRounds.Add(afcWildcardRound);
-                    BracketViewModel.NfcRounds.Add(nfcWildcardRound);
+                        nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 1", nfcTeams, 1, 4, 5));
+                        nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 2", nfcTeams, 2, 3, 6));
+                        nfcWildcardRound.Games.Add(this.BuildMatchup("NFC Wildcard Game 3", nfcTeams, 3, 2, 7));
+
+                        BracketViewModel.AfcRounds.Add(afcWildcardRound);
+                        BracketViewModel.NfcRounds.Add(nfcWildcardRound);
+                    }
 
                     // Save to database.
                     var newId = this.SaveBracket(BracketViewModel, afcTeams, nfcTeams);
