@@ -20,7 +20,7 @@ jobs:
       working-directory: './src/Amer_Playoff_Pool'
       run: dotnet restore .\AmerPlayoffPool.slnf
     - name: Build Solution
-      run: dotnet build --configuration Release --no-restore .\AmerPlayoffPool.slnf
+      run: dotnet build --configuration Release --no-restore ".\PlayoffPool.MVC\PlayoffPool.MVC.csproj"
     - name: Publish MVC Site
       run: dotnet publish ".\PlayoffPool.MVC\PlayoffPool.MVC.csproj" -c Release -o publishMVC --self-contained true -a x86
     - name: App Settings Variable Substitution
