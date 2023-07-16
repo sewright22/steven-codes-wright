@@ -33,6 +33,11 @@ jobs:
         ConnectionStrings.PlayoffPoolContext: ${{ secrets.DEV_DB_CONNECTION_STRING }}
         SeedData.AdminUser.Email: ${{secrets.AdminEmail}}
         SeedData.AdminUser.Password: ${{secrets.AdminEmail}}
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: playoff-pool-artifact
+        path: ./src/Amer_Playoff_Pool/publishMVC
 
   deploy-to-host-gator:
     name: Copy Files to HostGator
@@ -40,4 +45,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: echo "Copy Files to HostGator"
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: playoff-pool-artifact
+      - name: Copy Files
+        run: dir
