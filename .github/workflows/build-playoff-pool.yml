@@ -2,7 +2,7 @@ name: Playoff Pool Build and Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: [ build-pipeline ]
     paths:
       - '**/PlayoffPool.MVC/**'
 
