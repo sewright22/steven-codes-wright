@@ -6,4 +6,7 @@ Before running the project you must start MySQL. You can do this by running the 
 net start MySQL56
 ```
 
+## Workflows
+This has a single build workflow.
+
 
