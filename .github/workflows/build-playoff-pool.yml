@@ -3,8 +3,6 @@ name: Playoff Pool Build and Publish
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**/src/Amer_PLayoff_Pool/**'
 
 jobs:
   deploy-dev:
