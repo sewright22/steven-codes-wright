@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'src/Amer_PLayoff_Pool/**'
+      - '**/src/Amer_PLayoff_Pool/**'
 
 jobs:
   deploy-dev:
