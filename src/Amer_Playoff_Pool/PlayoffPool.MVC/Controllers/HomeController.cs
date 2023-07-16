@@ -151,7 +151,7 @@ namespace PlayoffPool.MVC.Controllers
 
                     if (previousScore == currentBracket.CurrentScore)
                     {
-                        string previousPlace = retVal.Brackets[i - 1].Place;
+                        string? previousPlace = retVal.Brackets[i - 1].Place;
 
                         if (previousPlace.StartsWith("T"))
                         {

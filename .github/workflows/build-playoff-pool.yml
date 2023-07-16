@@ -30,7 +30,7 @@ jobs:
       with:
         files: './src/Amer_Playoff_Pool/publishMVC/appsettings.json'
       env:
-        ConnectionStrings.PlayoffPoolContext: ${{ secrets.DEV_DB_CONNECTION_STRING }}
+        ConnectionStrings.PlayoffPoolContext: ${{ secrets.DB_CONNECTION_STRING }}
         SeedData.AdminUser.Email: ${{secrets.AdminEmail}}
         SeedData.AdminUser.Password: ${{secrets.AdminEmail}}
     - name: Upload Artifact
@@ -49,5 +49,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: playoff-pool-artifact
-      - name: Copy Files
-        run: dir
+      - name: FTP Deploy MVC
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
