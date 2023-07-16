@@ -43,6 +43,7 @@ jobs:
   deploy-to-host-gator:
     name: Copy Files to HostGator
     needs: build-playoff-pool
+    environment: development
     runs-on: windows-latest
 
     steps:
