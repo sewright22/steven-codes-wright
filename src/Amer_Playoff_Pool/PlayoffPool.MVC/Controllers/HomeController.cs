@@ -130,7 +130,7 @@ public class HomeController : Controller
                 Name = bracket.Name,
                 PredictedWinner = new PlayoffTeamViewModel()
                 {
-                    Name = bracket.SuperBowl.PredictedWinner.SeasonTeam.Team.Name,
+                    Name = bracket.SuperBowl?.PredictedWinner.SeasonTeam.Team.Name ?? "Unknown",
                 },
                 CurrentScore = round1Score + round2Score + round3Score + round4Score,
             });
