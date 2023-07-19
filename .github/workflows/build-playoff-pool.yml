@@ -22,10 +22,10 @@ jobs:
       run: dotnet restore ./AmerPlayoffPool.slnf
     - name: Build Solution
       working-directory: './src/Amer_Playoff_Pool'
-      run: dotnet build --configuration Release --no-restore .\AmerPlayoffPool.slnf
+      run: dotnet build --configuration Release --no-restore ./AmerPlayoffPool.slnf
     - name: Publish MVC Site
       working-directory: './src/Amer_Playoff_Pool'
-      run: dotnet publish ".\PlayoffPool.MVC\PlayoffPool.MVC.csproj" -c Release -o publishMVC --self-contained true -a x86
+      run: dotnet publish "./PlayoffPool.MVC/PlayoffPool.MVC.csproj" -c Release -o publishMVC --self-contained true -a x86
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
