@@ -152,7 +152,7 @@ public class HomeController : Controller
                 {
                     string? previousPlace = retVal.Brackets[i - 1].Place;
 
-                    if (previousPlace.StartsWith("T"))
+                    if (previousPlace != null && previousPlace.StartsWith("T"))
                     {
                         currentBracket.Place = previousPlace;
                     }
