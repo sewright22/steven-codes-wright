@@ -1,4 +1,4 @@
-﻿namespace PlayoffPool.MVC.Helpers
+﻿namespace PlayoffPool.MVC.Helpers;
 
 using System.Diagnostics;
 using AmerFamilyPlayoffs.Data;
