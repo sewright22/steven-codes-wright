@@ -9,7 +9,7 @@ on:
 jobs:
   build-playoff-pool:
     environment: development
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
