@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 7.0.*
     - name: Install dependencies
       working-directory: './src/Amer_Playoff_Pool'
-      run: dotnet restore .\AmerPlayoffPool.slnf
+      run: dotnet restore ./AmerPlayoffPool.slnf
     - name: Build Solution
       working-directory: './src/Amer_Playoff_Pool'
       run: dotnet build --configuration Release --no-restore .\AmerPlayoffPool.slnf
