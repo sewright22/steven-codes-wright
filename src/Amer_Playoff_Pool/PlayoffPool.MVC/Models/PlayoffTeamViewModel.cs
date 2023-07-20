@@ -7,7 +7,7 @@ namespace PlayoffPool.MVC.Models
         public int Id { get; set; }
         public int Seed { get; set; }
         public string ViewId { get; set; } = Guid.NewGuid().ToString();
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public bool Selected { get; set; }
     }
 }
