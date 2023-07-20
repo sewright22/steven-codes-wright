@@ -40,6 +40,17 @@ jobs:
         name: playoff-pool-artifact
         path: ./src/Amer_Playoff_Pool/publishMVC
 
+  run-unit-tests:
+    name: Run Unit Tests
+    needs: build-playoff-pool
+    environment: development
+    runs-on: windows-latest
+
+    steps:
+      - name: Run Unit Tests
+        working-directory: './src/Amer_Playoff_Pool'
+        run: dotnet test --no-restore --verbosity normal ./AmerPlayoffPool.slnf
+
   deploy-to-host-gator:
     name: Copy Files to HostGator
     needs: build-playoff-pool
