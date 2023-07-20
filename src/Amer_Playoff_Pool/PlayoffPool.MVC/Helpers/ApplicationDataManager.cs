@@ -67,7 +67,7 @@ public class ApplicationDataManager : IDataManager
             LastName = adminUser["LastName"],
         };
 
-        var result = await this.UserManager.CreateAsync(userToAdd, adminUser["Password"]).ConfigureAwait(false);
+        var result = await this.UserManager.CreateAsync(userToAdd, adminUser["Password"] ?? "Invalid").ConfigureAwait(false);
 
         if (result.Succeeded)
         {
