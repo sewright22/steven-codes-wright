@@ -300,12 +300,16 @@ public class ApplicationDataManager : IDataManager
         var conference = this.DataContext.Conferences.AsNoTracking().FirstOrDefault(x => x.Name == conferenceName);
         var team = this.DataContext.Teams.AsNoTracking().FirstOrDefault(x => x.Abbreviation == teamAbbreviation);
 
-        if (team == null)
+        if (team == null || conference == null)
         {
             return;
         }
 
-        var existingRecord = this.DataContext.SeasonTeams.FirstOrDefault(x => x.SeasonId == seasonId && x.TeamId == team.Id && x.ConferenceId == conference.Id);
+        var existingRecord = this.DataContext.SeasonTeams
+            .FirstOrDefault(
+                x => x.SeasonId == seasonId
+                && x.TeamId == team.Id
+                && x.ConferenceId == conference.Id);
 
         if (existingRecord != null)
         {
