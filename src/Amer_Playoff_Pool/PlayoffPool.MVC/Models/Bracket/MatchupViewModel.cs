@@ -6,7 +6,7 @@ namespace PlayoffPool.MVC.Models.Bracket
     public class MatchupViewModel
     {
         public int GameNumber { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public PlayoffTeamViewModel HomeTeam { get; set; }
         public PlayoffTeamViewModel AwayTeam { get; set; }
 

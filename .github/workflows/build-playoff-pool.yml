@@ -23,6 +23,9 @@ jobs:
     - name: Build Solution
       working-directory: './src/Amer_Playoff_Pool'
       run: dotnet build --configuration Release --no-restore ./AmerPlayoffPool.slnf
+    - name: Run Unit Tests
+      working-directory: './src/Amer_Playoff_Pool'
+      run: dotnet test --no-restore --verbosity normal ./AmerPlayoffPool.slnf
     - name: Publish MVC Site
       working-directory: './src/Amer_Playoff_Pool'
       run: dotnet publish "./PlayoffPool.MVC/PlayoffPool.MVC.csproj" -c Release -o publishMVC --self-contained true -a x86
@@ -40,24 +43,9 @@ jobs:
         name: playoff-pool-artifact
         path: ./src/Amer_Playoff_Pool/publishMVC
 
-  run-unit-tests:
-    name: Run Unit Tests
-    needs: build-playoff-pool
-    environment: development
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: playoff-pool-artifact
-      - name: Run Unit Tests
-        working-directory: './src/Amer_Playoff_Pool'
-        run: dotnet test --no-restore --verbosity normal ./AmerPlayoffPool.slnf
-
   deploy-to-host-gator:
     name: Copy Files to HostGator
-    needs: run-unit-tests
+    needs: build-playoff-pool
     environment: development
     runs-on: ubuntu-latest
 
