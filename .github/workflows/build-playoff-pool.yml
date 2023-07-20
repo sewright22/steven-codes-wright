@@ -53,7 +53,7 @@ jobs:
 
   deploy-to-host-gator:
     name: Copy Files to HostGator
-    needs: build-playoff-pool
+    needs: run-unit-tests
     environment: development
     runs-on: ubuntu-latest
 
