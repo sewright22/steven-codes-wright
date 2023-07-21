@@ -27,8 +27,18 @@ namespace WebApi.Features.Fitbit
         public override async Task HandleAsync(FoodLogRequest req, CancellationToken ct)
         {
             string currentUserId = this.User.GetUserId();
-            ExternalServiceUser fitbitUser = this.DbContext.ExternalServiceUsers.Include(x=>x.AccessToken)
-                .FirstOrDefault(x => x.ExternalService.Name == "Fitbit" && x.UserId == Convert.ToInt32(currentUserId));
+            ExternalServiceUser? fitbitUser = this.DbContext.ExternalServiceUsers
+                .Include(x => x.AccessToken)
+                .FirstOrDefault(x => x.ExternalService.Name == "Fitbit"
+                    && x.UserId == Convert.ToInt32(currentUserId));
+
+            if (fitbitUser == null || fitbitUser.AccessToken == null || fitbitUser.AccessToken.Value == null || fitbitUser.ClientId == null)
+            {
+                this.AddError("User not found");
+                await this.SendErrorsAsync(cancellation: ct);
+                return;
+            }
+
             var foodLog = await this.FitbitService.GetFoodLog(fitbitUser.AccessToken.Value, fitbitUser.ClientId, req.Date).ConfigureAwait(false);
             await this.SendOkAsync(foodLog);
         }
