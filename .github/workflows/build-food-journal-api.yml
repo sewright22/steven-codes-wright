@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: food-journal-api-artifact
-        path: ./src/TypeOneDiabetesJournal/publishFoodJournalApi
+        path: ./src/TypeOneDiabetesJournal/WebApi/publishFoodJournalApi
 
   deploy-to-host-gator:
     name: Copy Files to HostGator
