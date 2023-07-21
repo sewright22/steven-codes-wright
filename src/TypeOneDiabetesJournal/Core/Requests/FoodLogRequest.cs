@@ -1,7 +1,6 @@
-﻿namespace Core.Requests
+﻿namespace Core.Requests;
+
+public class FoodLogRequest
 {
-    public class FoodLogRequest
-    {
-        public DateTime Date { get; set; }
-    }
+    public DateTime Date { get; set; }
 }
