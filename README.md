@@ -6,3 +6,6 @@ I also believe it will help me to keep my projects more consistent in terms of c
 share GitHub pipelines.
 
 I have added solution filters (.slnf) to the root of each project. This is to allow me to easily open a single project in Visual Studio.
+
+- [Amer Family Playoff Pool](/src/Amer_Playoff_Pool/Readme.md)
+
