@@ -1,4 +1,4 @@
-name: Playoff Pool Build and Publish
+name: Food Journal Build and Publish
 
 on:
   push:
