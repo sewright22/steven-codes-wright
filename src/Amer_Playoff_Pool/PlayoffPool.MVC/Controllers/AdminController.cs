@@ -4,13 +4,19 @@ using AmerFamilyPlayoffs.Data;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using NuGet.Packaging;
 using PlayoffPool.MVC.Helpers;
 using PlayoffPool.MVC.Models;
 using PlayoffPool.MVC.Models.Admin;
+using PlayoffPool.MVC.Models.Bracket;
 using System;
+using System.Security.Claims;
+using System.Security.Principal;
 
 public class AdminController : Controller
 {
