@@ -21,7 +21,7 @@ var connectionString = builder.Configuration.GetConnectionString("DatabaseContex
 var connectionString = builder.Configuration.GetConnectionString("PlayoffPoolContext");
 #endif
 builder.Services.AddDbContext<AmerFamilyPlayoffContext>(
-    o => o.UseMySql(connectionString, ServerVersion.Create(5,0,0, Pomelo.EntityFrameworkCore.MySql.Infrastructure.ServerType.MySql)), ServiceLifetime.Transient);
+    o => o.UseNpgsql(connectionString), ServiceLifetime.Transient);
 
 builder.Services.AddIdentity<User, IdentityRole>(
     options =>
