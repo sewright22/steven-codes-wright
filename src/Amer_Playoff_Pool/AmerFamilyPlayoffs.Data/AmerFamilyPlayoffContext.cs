@@ -17,7 +17,7 @@
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseNpgsql("ConnectionString");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
