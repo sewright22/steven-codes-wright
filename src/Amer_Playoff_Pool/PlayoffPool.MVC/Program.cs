@@ -8,6 +8,7 @@ using NLog;
 using System;
 using NLog.Web;
 using PlayoffPool.MVC.Helpers;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +18,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 #if DEBUG
 var connectionString = builder.Configuration.GetConnectionString("DatabaseContext");
+builder.Services.AddDbContext<AmerFamilyPlayoffContext>(
+    o => o.UseMySql(connectionString, ServerVersion.Create(8, 2, 0, Pomelo.EntityFrameworkCore.MySql.Infrastructure.ServerType.MySql)), ServiceLifetime.Transient);
 #else
 var connectionString = builder.Configuration.GetConnectionString("PlayoffPoolContext");
-#endif
 builder.Services.AddDbContext<AmerFamilyPlayoffContext>(
-    o => o.UseNpgsql(connectionString), ServiceLifetime.Transient);
+    o => o.UseMySql(connectionString, ServerVersion.Create(5,0,0, Pomelo.EntityFrameworkCore.MySql.Infrastructure.ServerType.MySql)), ServiceLifetime.Transient);
+#endif
 
 builder.Services.AddIdentity<User, IdentityRole>(
     options =>
