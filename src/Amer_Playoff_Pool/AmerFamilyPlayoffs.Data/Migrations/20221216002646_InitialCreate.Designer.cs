@@ -3,6 +3,7 @@ using System;
 using AmerFamilyPlayoffs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmerFamilyPlayoffs.Data.Migrations
 {
     [DbContext(typeof(AmerFamilyPlayoffContext))]
-    partial class AmerFamilyPlayoffContextModelSnapshot : ModelSnapshot
+    [Migration("20221216002646_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,14 +50,9 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.Property<int>("PlayoffId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(95)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PlayoffId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("BracketPredictions");
                 });
@@ -85,6 +83,9 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.Property<int?>("HomeTeamId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PlayoffRoundId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("WinningTeamId")
                         .HasColumnType("int");
 
@@ -93,6 +94,8 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.HasIndex("AwayTeamId");
 
                     b.HasIndex("HomeTeamId");
+
+                    b.HasIndex("PlayoffRoundId");
 
                     b.HasIndex("WinningTeamId");
 
@@ -108,17 +111,20 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.Property<int>("BracketPredictionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PlayoffRoundId")
+                    b.Property<int>("MatchupId")
                         .HasColumnType("int");
 
                     b.Property<int?>("PredictedWinnerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("WinningTeamId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BracketPredictionId");
 
-                    b.HasIndex("PlayoffRoundId");
+                    b.HasIndex("MatchupId");
 
                     b.HasIndex("PredictedWinnerId");
 
@@ -208,27 +214,6 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.ToTable("Rounds");
                 });
 
-            modelBuilder.Entity("AmerFamilyPlayoffs.Data.RoundWinner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("PlayoffRoundId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PlayoffTeamId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PlayoffRoundId");
-
-                    b.HasIndex("PlayoffTeamId");
-
-                    b.ToTable("RoundWinners");
-                });
-
             modelBuilder.Entity("AmerFamilyPlayoffs.Data.Season", b =>
                 {
                     b.Property<int>("Id")
@@ -242,9 +227,6 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Year")
-                        .IsUnique();
 
                     b.ToTable("Seasons");
                 });
@@ -512,13 +494,7 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AmerFamilyPlayoffs.Data.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Playoff");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("AmerFamilyPlayoffs.Data.Matchup", b =>
@@ -530,6 +506,10 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.HasOne("AmerFamilyPlayoffs.Data.PlayoffTeam", "HomeTeam")
                         .WithMany()
                         .HasForeignKey("HomeTeamId");
+
+                    b.HasOne("AmerFamilyPlayoffs.Data.PlayoffRound", null)
+                        .WithMany("Matchups")
+                        .HasForeignKey("PlayoffRoundId");
 
                     b.HasOne("AmerFamilyPlayoffs.Data.PlayoffTeam", "WinningTeam")
                         .WithMany()
@@ -550,9 +530,9 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AmerFamilyPlayoffs.Data.PlayoffRound", "PlayoffRound")
+                    b.HasOne("AmerFamilyPlayoffs.Data.Matchup", "Matchup")
                         .WithMany()
-                        .HasForeignKey("PlayoffRoundId")
+                        .HasForeignKey("MatchupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -560,7 +540,7 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                         .WithMany()
                         .HasForeignKey("PredictedWinnerId");
 
-                    b.Navigation("PlayoffRound");
+                    b.Navigation("Matchup");
 
                     b.Navigation("PredictedWinner");
                 });
@@ -612,25 +592,6 @@ namespace AmerFamilyPlayoffs.Data.Migrations
                     b.Navigation("Playoff");
 
                     b.Navigation("SeasonTeam");
-                });
-
-            modelBuilder.Entity("AmerFamilyPlayoffs.Data.RoundWinner", b =>
-                {
-                    b.HasOne("AmerFamilyPlayoffs.Data.PlayoffRound", "PlayoffRound")
-                        .WithMany("RoundWinners")
-                        .HasForeignKey("PlayoffRoundId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AmerFamilyPlayoffs.Data.PlayoffTeam", "PlayoffTeam")
-                        .WithMany()
-                        .HasForeignKey("PlayoffTeamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PlayoffRound");
-
-                    b.Navigation("PlayoffTeam");
                 });
 
             modelBuilder.Entity("AmerFamilyPlayoffs.Data.SeasonTeam", b =>
@@ -730,7 +691,7 @@ namespace AmerFamilyPlayoffs.Data.Migrations
 
             modelBuilder.Entity("AmerFamilyPlayoffs.Data.PlayoffRound", b =>
                 {
-                    b.Navigation("RoundWinners");
+                    b.Navigation("Matchups");
                 });
 
             modelBuilder.Entity("AmerFamilyPlayoffs.Data.Season", b =>
