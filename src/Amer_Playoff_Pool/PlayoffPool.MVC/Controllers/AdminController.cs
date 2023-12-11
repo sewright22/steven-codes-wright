@@ -75,6 +75,17 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
+    public async Task<IActionResult> Users()
+    {
+        ManageUsersViewModel model = new ManageUsersViewModel();
+
+        model.Users.AddRange(await this.GetUsers().ConfigureAwait(false));
+
+        return View(model);
+    }
+
+    [HttpGet]
+    [Authorize]
     public async Task<IActionResult> ManageTeams(ManageTeamsViewModel ManageTeamsViewModel)
     {
         var model = ManageTeamsViewModel;
@@ -252,5 +263,17 @@ public class AdminController : Controller
     {
         return Task.CompletedTask;
         //throw new NotImplementedException();
+    }
+    private async Task<IEnumerable<UserModel>> GetUsers()
+    {
+        return await this.DataManager.DataContext.Users.AsNoTracking()
+            .Select(
+                x => new UserModel
+                {
+                    Id = x.Id,
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                }).ToListAsync().ConfigureAwait(false);
     }
 }
