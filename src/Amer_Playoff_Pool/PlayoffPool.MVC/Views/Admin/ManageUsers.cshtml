@@ -2,25 +2,13 @@
 
 <div class="section section-admin">
     <h6>Manage Users</h6>
-    <form asp-action="UpdateUsers">
         @for (int i = 0; i < this.Model.Users.Count(); i++)
         {
-            <div class="sg-card">
-                <input type="hidden" asp-for="@this.Model.Users[i].Id" />
-                <input asp-for="@this.Model.Users[i].FirstName" />
-                <input asp-for="@this.Model.Users[i].LastName" />
-                <input asp-for="@this.Model.Users[i].Email" />
-                <select asp-for="@this.Model.Users[i].RoleId" asp-items="@(new SelectList(this.Model.Users[i].Roles, nameof(SelectListItem.Value), nameof(SelectListItem.Text)))">
-                    <option>Select One</option>
-                </select>
-                <input type="checkbox" asp-for="@this.Model.Users[i].ShouldResetPassword" />
-                <label asp-for="@this.Model.Users[i].ShouldResetPassword"></label>
-            </div>
+            <partial name="UserSummary" model="@this.Model.Users[i]" />
         }
 
         <div class="button-group pp-button-bar">
             <button class="btn btn-primary pp-button" type="submit">Submit</button>
             <button class="btn pp-button pp-button-secondary" type="reset">Reset</button>
         </div>
-    </form>
 </div>
