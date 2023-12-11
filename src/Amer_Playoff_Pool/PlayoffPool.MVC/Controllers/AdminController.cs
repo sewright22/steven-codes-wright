@@ -88,11 +88,25 @@ public class AdminController : Controller
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> User(string id)
     {
+        User? userFromDb = this.DataManager.DataContext.Users.AsNoTracking().FirstOrDefault(x => x.Id == id);
+
+        if (userFromDb == null)
+        {
+            return this.RedirectToAction(nameof(this.Users));
+        }
+
+        string? userRole = (await this.DataManager.UserManager.GetRolesAsync(userFromDb).ConfigureAwait(false)).FirstOrDefault();
+
         UserModel model = new UserModel()
         {
-            FirstName = "John",
-            LastName = "Doe",
+            FirstName = userFromDb.FirstName,
+            LastName = userFromDb.LastName,
+            Email = userFromDb.Email,
+            Id = userFromDb.Id,
+            Roles = this.DataManager.RoleManager.Roles.Select(x => new SelectListItem(x.Name, x.Id)).ToList(),
         };
+
+        model.RoleId = model.Roles.Where(x => x.Text == userRole).Select(x => x.Value).FirstOrDefault();
 
         return View(model);
     }
