@@ -85,6 +85,26 @@ public class AdminController : Controller
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> User(string id)
+    {
+        UserModel model = new UserModel()
+        {
+            FirstName = "John",
+            LastName = "Doe",
+        };
+
+        return View(model);
+    }
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> User(string? id, UserModel model)
+    {
+        return this.RedirectToAction(nameof(this.Index));
+    }
+
+    [HttpGet]
     [Authorize]
     public async Task<IActionResult> ManageTeams(ManageTeamsViewModel ManageTeamsViewModel)
     {

@@ -1,9 +1,13 @@
 ﻿@model ManageUsersViewModel
 
+@{
+    Layout = "_AdminLayout";
+}
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="../Admin">Admin</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Users</li>
+        <li class="breadcrumb-item active" aria-current="page">All Users</li>
     </ol>
 </nav>
 
@@ -13,9 +17,4 @@
     {
         <partial name="UserSummary" model="@this.Model.Users[i]" />
     }
-
-    <div class="button-group pp-button-bar">
-        <button class="btn btn-primary pp-button" type="submit">Submit</button>
-        <button class="btn pp-button pp-button-secondary" type="reset">Reset</button>
-    </div>
 </div>
