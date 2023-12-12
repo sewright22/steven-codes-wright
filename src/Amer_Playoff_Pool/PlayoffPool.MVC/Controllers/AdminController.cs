@@ -1,6 +1,7 @@
 ﻿namespace PlayoffPool.MVC.Controllers;
 
 using AmerFamilyPlayoffs.Data;
+using AmerFamilyPlayoffs.Data.DataExtensions;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
@@ -8,15 +9,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using NuGet.Packaging;
+using PlayoffPool.MVC.Extensions;
 using PlayoffPool.MVC.Helpers;
 using PlayoffPool.MVC.Models;
 using PlayoffPool.MVC.Models.Admin;
-using PlayoffPool.MVC.Models.Bracket;
 using System;
-using System.Security.Claims;
-using System.Security.Principal;
 
 public class AdminController : Controller
 {
@@ -86,7 +83,7 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> User(string id)
+    public new async Task<IActionResult> User(string id)
     {
         User? userFromDb = this.DataManager.DataContext.Users.AsNoTracking().FirstOrDefault(x => x.Id == id);
 
@@ -113,9 +110,24 @@ public class AdminController : Controller
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> User(string? id, UserModel model)
+    public async Task<IActionResult> User(string? id, UserModel modelUser)
     {
-        return this.RedirectToAction(nameof(this.Index));
+        if (string.IsNullOrEmpty(modelUser.Id))
+        {
+            return this.RedirectToAction(nameof(this.Users));
+        }
+
+        if (ModelState.IsValid == false)
+        {
+            return this.View(modelUser);
+        }
+
+        User? userToUpdate = await this.DataManager.UserManager.FindByIdAsync(modelUser.Id).ConfigureAwait(false);
+
+        userToUpdate.Update(modelUser);
+        await UpdateRoleForUser(userToUpdate, modelUser).ConfigureAwait(false);
+
+        return this.RedirectToAction(nameof(this.Users));
     }
 
     [HttpGet]
@@ -309,5 +321,58 @@ public class AdminController : Controller
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                 }).ToListAsync().ConfigureAwait(false);
+    }
+
+    private async Task UpdateRoleForUser(User? userToUpdate, UserModel modelUser)
+    {
+        if (userToUpdate == null ||
+            string.IsNullOrEmpty(modelUser.RoleId))
+        {
+            return;
+        }
+
+        await this.DataManager.DataContext.SaveChangesAsync().ConfigureAwait(false);
+
+        IdentityRole? userRole = await this.DataManager.RoleManager.FindByIdAsync(modelUser.RoleId).ConfigureAwait(false);
+
+        if (userRole == null)
+        {
+            return;
+        }
+
+        await this.DataManager.RoleManager.FindByIdAsync(modelUser.RoleId).ConfigureAwait(false);
+
+        await this.UpdateRoleForUser(userToUpdate, userRole.Name).ConfigureAwait(false);
+    }
+
+    private async Task UpdateRoleForUser(User? userToUpdate, string? roleName)
+    {
+        if (userToUpdate == null ||
+            string.IsNullOrEmpty(roleName))
+        {
+            return;
+        }
+
+        var userRoles = await this.DataManager.UserManager.GetRolesAsync(userToUpdate).ConfigureAwait(false);
+
+        if (userRoles.Contains(roleName))
+        {
+            return;
+        }
+
+        if (userRoles.Any())
+        {
+            var firstRoleForUser = userRoles.First();
+
+            var result = await this.DataManager.UserManager.RemoveFromRoleAsync(userToUpdate, firstRoleForUser).ConfigureAwait(false);
+
+            if (result.Succeeded == false)
+            {
+                return;
+            }
+        }
+
+        var newRole = await this.DataManager.RoleManager.FindByNameAsync(roleName).ConfigureAwait(false);
+        await this.DataManager.UserManager.AddToRoleAsync(userToUpdate, newRole.Name).ConfigureAwait(false);
     }
 }

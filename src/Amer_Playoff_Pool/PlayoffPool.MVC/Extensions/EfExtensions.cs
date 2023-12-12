@@ -1,4 +1,5 @@
 ﻿using AmerFamilyPlayoffs.Data;
+using PlayoffPool.MVC.Models;
 
 namespace PlayoffPool.MVC.Extensions
 {
@@ -19,6 +20,19 @@ namespace PlayoffPool.MVC.Extensions
             }
 
             return playoffTeam;
+        }
+
+        public static void Update(this User? userToUpdate, UserModel userModel)
+        {
+            if (userToUpdate == null)
+            {
+                return;
+            }
+
+            userToUpdate.FirstName = userModel.FirstName;
+            userToUpdate.LastName = userModel.LastName;
+            userToUpdate.Email = userModel.Email;
+            userToUpdate.UserName = userModel.Email;
         }
     }
 }
