@@ -34,4 +34,8 @@
 		<ProjectReference Include="..\AmerFamilyPlayoffs.Data\AmerFamilyPlayoffs.Data.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Views\User\" />
+	</ItemGroup>
+
 </Project>

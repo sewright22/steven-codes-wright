@@ -14,6 +14,11 @@ namespace PlayoffPool.MVC.Models
 		public string? LastName { get; set; }
 		public string? Email { get; set; }
 
+		/// <summary>
+		/// Gets or sets the role.
+		/// </summary>
+		public string? Role { get; set; }
+
 		[Display(Name = "Reset Password")]
 		public bool ShouldResetPassword { get; set; }
         public List<SelectListItem> Roles { get; set; } = new List<SelectListItem>();
