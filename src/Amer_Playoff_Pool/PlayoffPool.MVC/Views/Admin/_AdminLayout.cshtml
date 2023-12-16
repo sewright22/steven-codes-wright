@@ -1,8 +1,26 @@
-﻿@{
+﻿@model AdminViewModel
+
+@{
     Layout = "_AuthenticatedLayout";
 }
 
 <h1>Admin</h1>
-<h4>Admin section</h4>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        @foreach (var breadcrumb in this.Model.BreadcrumbList)
+        {
+            if (breadcrumb.IsActive)
+{
+                <li class="breadcrumb-item active" aria-current="page">@breadcrumb.Text</li>
+                continue;
+            }
+
+            <li class="breadcrumb-item">
+                <a href="@breadcrumb.Url">@breadcrumb.Text</a>
+            </li>
+        }
+    </ol>
+</nav>
 
 @RenderBody()

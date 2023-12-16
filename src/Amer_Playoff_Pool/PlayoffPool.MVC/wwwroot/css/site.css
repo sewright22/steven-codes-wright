@@ -280,6 +280,21 @@ fieldset {
     float: right;
 }
 
+.card {
+    padding: 2rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+}
+
+    .card:hover {
+        text-decoration: underline;
+        background-color: #f5f5f5;
+        color: black;
+    }
+
 p {
     padding: 2rem;
     text-align: center;

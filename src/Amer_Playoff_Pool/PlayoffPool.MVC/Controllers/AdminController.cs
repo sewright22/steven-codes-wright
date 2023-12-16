@@ -36,38 +36,14 @@ public class AdminController : Controller
     [Authorize]
     public async Task<IActionResult> Index()
     {
-        var model = new AdminViewModel();
-        model.ManageUsersViewModel = new ManageUsersViewModel();
-        model.ManageRolesViewModel = new ManageRolesViewModel();
+        return this.View(new AdminViewModel());
+    }
 
-        var users = await this.DataManager.DataContext.Users.AsNoTracking().ToListAsync().ConfigureAwait(false);
-        var roles = this.DataManager.RoleManager.Roles.Select(x => new SelectListItem(x.Name, x.Id)).ToList();
-
-        foreach (var role in roles)
-        {
-            model.ManageRolesViewModel.Roles.Add(new RoleModel
-            {
-                Id = role.Value,
-                Name = role.Text,
-            });
-        }
-
-        foreach (var user in users)
-        {
-            var userRoles = await this.DataManager.UserManager.GetRolesAsync(user).ConfigureAwait(false);
-
-            model.ManageUsersViewModel.Users.Add(new Models.UserModel
-            {
-                Id = user.Id,
-                Email = user.Email,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Roles = roles,
-                RoleId = roles.Where(x => userRoles.Contains(x.Text)).Select(x => x.Value).FirstOrDefault(),
-            });
-        }
-
-        return this.View(model);
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> Seasons()
+    {
+        return this.View();
     }
 
     [HttpGet]
