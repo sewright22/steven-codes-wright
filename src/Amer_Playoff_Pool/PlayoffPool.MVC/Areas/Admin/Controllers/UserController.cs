@@ -1,5 +1,6 @@
 ﻿namespace PlayoffPool.MVC.Areas.Admin.Controllers
 {
+    using AmerFamilyPlayoffs.Data;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using PlayoffPool.MVC.Areas.Admin.Models;
@@ -51,9 +52,22 @@
 
         [HttpPost]
         [Authorize]
-        public IActionResult Edit(UserModel model)
+        public async Task<IActionResult> Edit(UserModel model)
         {
-            return this.RedirectToAction("Index");
+            if (string.IsNullOrEmpty(model.Id))
+            {
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            if (ModelState.IsValid == false)
+            {
+                return this.View(GenerateViewModel(model));
+            }
+
+            await this.DataManager.DataContext.UpdateUser(model);
+            await this.DataManager.UserManager.UpdateRoleForUser(model.Id, model.RoleId, this.DataManager.RoleManager);
+
+            return this.RedirectToAction(nameof(this.Index));
         }
 
         private static UserViewModel GenerateViewModel(UserModel model)

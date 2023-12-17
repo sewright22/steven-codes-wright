@@ -1,4 +1,5 @@
 ﻿using AmerFamilyPlayoffs.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PlayoffPool.MVC.Areas.Admin.Models;
@@ -76,6 +77,75 @@ namespace PlayoffPool.MVC.Extensions
             }));
 
             return user;
+        }
+
+        public static async Task UpdateUser(this AmerFamilyPlayoffContext dbContext, UserModel userModel)
+        {
+            var userToUpdate = await dbContext.Users.FirstOrDefaultAsync(x => x.Id == userModel.Id);
+
+            userToUpdate.Update(userModel);
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public static async Task CreateUser(this AmerFamilyPlayoffContext dbContext, UserModel userModel)
+        {
+            var user = new User();
+
+            user.Update(userModel);
+
+            await dbContext.Users.AddAsync(user);
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public static async Task UpdateRoleForUser(this UserManager<User> userManager, string? userId, string? roleId, RoleManager<IdentityRole> roleManager)
+        {
+            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(roleId))
+            {
+                return;
+            }
+
+            var user = await userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return;
+            }
+
+            var userRoles = await userManager.GetRolesAsync(user);
+
+            if (userRoles.Any())
+            {
+                await userManager.RemoveFromRolesAsync(user, userRoles);
+            }
+
+            var role = await roleManager.FindByIdAsync(roleId);
+
+            if (role == null || string.IsNullOrEmpty(role.Name))
+            {
+                return;
+            }
+
+            await userManager.AddToRoleAsync(user, role.Name);
+        }
+
+        public static async Task UpdateRoleForUser(this AmerFamilyPlayoffContext dbContext, string? userId, string? roleId)
+        {
+            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(roleId))
+            {
+                return;
+            }
+
+            var userRole = dbContext.UserRoles.FirstOrDefault(x => x.UserId == userId);
+
+            if (userRole == null)
+            {
+                return;
+            }
+
+            userRole.RoleId = roleId;
+            await dbContext.SaveChangesAsync();
         }
 
         public static void Update(this User? userToUpdate, UserModel userModel)
