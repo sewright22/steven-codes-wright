@@ -2,7 +2,7 @@
 {
     using PlayoffPool.MVC.Models;
 
-    public class AdminViewModel : IBreadcrumb
+    public class AdminModel : IBreadcrumb
     {
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {

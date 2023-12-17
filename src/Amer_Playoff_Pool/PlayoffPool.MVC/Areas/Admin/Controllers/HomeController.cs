@@ -25,7 +25,7 @@
 
         public IActionResult Index()
         {
-            return this.View(new AdminViewModel());
+            return this.View(new AdminModel());
         }
     }
 }
