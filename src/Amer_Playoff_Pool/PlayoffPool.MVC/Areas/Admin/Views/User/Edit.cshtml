@@ -1,0 +1,13 @@
+﻿@using PlayoffPool.MVC.Areas.Admin.Models
+@using PlayoffPool.MVC.Areas.Admin.ViewModels
+
+@model UserViewModel
+
+@if (this.Model.UserModel != null)
+{
+    <partial name="EditForm" model="@this.Model.UserModel" />
+}
+else
+{
+    <span>User not found</span>
+}

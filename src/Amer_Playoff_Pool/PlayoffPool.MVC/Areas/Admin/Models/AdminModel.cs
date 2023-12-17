@@ -1,6 +1,8 @@
-﻿namespace PlayoffPool.MVC.Models
+﻿namespace PlayoffPool.MVC.Areas.Admin.Models
 {
-    public class AdminViewModel : IBreadcrumb
+    using PlayoffPool.MVC.Models;
+
+    public class AdminModel : IBreadcrumb
     {
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {

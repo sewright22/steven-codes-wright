@@ -1,23 +1,23 @@
-﻿using PlayoffPool.MVC.Areas.Admin.Models;
-
-namespace PlayoffPool.MVC.Models
+﻿namespace PlayoffPool.MVC.Areas.Admin.Models
 {
-    public class ManageUsersViewModel : IBreadcrumb
-	{
-		public List<UserModel> Users { get; } = new List<UserModel>();
+    using PlayoffPool.MVC.Models;
+
+    public class UsersModel : IBreadcrumb
+    {
+        public List<UserModel> Users { get; } = new List<UserModel>();
 
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {
             new BreadcrumbItemModel
             {
                 Text = "Admin",
-                Url = "/Admin",
+                Url = "/Admin/Home",
                 IsActive = false,
             },
             new BreadcrumbItemModel
             {
-                Text = "Manage Users",
-                Url = "/Admin/ManageUsers",
+                Text = "Users",
+                Url = "/Admin/User/Index",
                 IsActive = true,
             },
         };
