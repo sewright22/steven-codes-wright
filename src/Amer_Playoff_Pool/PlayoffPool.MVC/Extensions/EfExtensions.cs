@@ -1,4 +1,5 @@
 ﻿using AmerFamilyPlayoffs.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PlayoffPool.MVC.Areas.Admin.Models;
 
@@ -60,12 +61,19 @@ namespace PlayoffPool.MVC.Extensions
             }
 
             var roleForUser = dbContext.UserRoles.AsNoTracking().FirstOrDefault(x => x.UserId == id);
+            var roles = dbContext.Roles.AsNoTracking().ToList();
 
             if (roleForUser != null)
             {
                 user.RoleId = roleForUser.RoleId;
-                user.Role = dbContext.Roles.AsNoTracking().FirstOrDefault(x => x.Id == roleForUser.RoleId)?.Name;
+                user.Role = roles.FirstOrDefault(x => x.Id == roleForUser.RoleId)?.Name;
             }
+
+            user.Roles.AddRange(roles.Select(x => new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.Id,
+            }));
 
             return user;
         }

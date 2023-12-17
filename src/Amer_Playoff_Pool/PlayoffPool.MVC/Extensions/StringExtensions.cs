@@ -9,9 +9,16 @@ namespace PlayoffPool.MVC.Extensions
 			return controllerName.Replace("Controller", string.Empty);
 		}
 
-		public static bool HasValue(this string? value)
+		public static bool HasValue(this string? value, params string[] ignoreStrings)
 		{
-            return !string.IsNullOrWhiteSpace(value);
+			string adjustedString = value?.Trim() ?? string.Empty;
+
+			foreach (var ignoreString in ignoreStrings)
+			{
+				adjustedString = adjustedString.Replace(ignoreString, string.Empty);
+			}
+
+            return !string.IsNullOrWhiteSpace(adjustedString);
         }
 	}
 }

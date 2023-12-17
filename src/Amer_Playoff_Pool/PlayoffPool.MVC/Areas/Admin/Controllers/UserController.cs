@@ -3,9 +3,11 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using PlayoffPool.MVC.Areas.Admin.Models;
+    using PlayoffPool.MVC.Areas.Admin.ViewModels;
     using PlayoffPool.MVC.Controllers;
     using PlayoffPool.MVC.Extensions;
     using PlayoffPool.MVC.Helpers;
+    using PlayoffPool.MVC.Models;
 
     [Area("Admin")]
     public class UserController : Controller
@@ -26,13 +28,8 @@
 
         [HttpGet]
         [Authorize]
-        public IActionResult Index(string? id)
+        public IActionResult Index()
         {
-            if (id.HasValue())
-            {
-                return this.RedirectToAction(nameof(this.Edit));
-            }
-
             var model = new UsersModel();
 
             var users = this.DataManager.DataContext.GetUsers();
@@ -46,10 +43,28 @@
         [Authorize]
         public IActionResult Edit(string? id)
         {
-
             UserModel model = this.DataManager.DataContext.GetUser(id);
+            UserViewModel viewModel = GenerateViewModel(model);
 
-            return this.View(model);
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Edit(UserModel model)
+        {
+            return this.RedirectToAction("Index");
+        }
+
+        private static UserViewModel GenerateViewModel(UserModel model)
+        {
+            UserViewModel viewModel = new UserViewModel()
+            {
+                UserModel = model,
+            };
+
+            viewModel.AddBreadcrumb($"{model.LastName}, {model.FirstName}");
+            return viewModel;
         }
     }
 }
