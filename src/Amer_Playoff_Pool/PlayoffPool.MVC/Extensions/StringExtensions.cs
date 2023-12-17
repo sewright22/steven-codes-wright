@@ -8,5 +8,10 @@ namespace PlayoffPool.MVC.Extensions
 		{
 			return controllerName.Replace("Controller", string.Empty);
 		}
+
+		public static bool HasValue(this string? value)
+		{
+            return !string.IsNullOrWhiteSpace(value);
+        }
 	}
 }

@@ -36,6 +36,40 @@ namespace PlayoffPool.MVC.Extensions
                 });
         }
 
+        public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return new UserModel();
+            }
+
+            var user = dbContext.Users.AsNoTracking()
+            .Select(
+                x => new UserModel
+                {
+                    Id = x.Id,
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                })
+            .FirstOrDefault(x => x.Id == id);
+
+            if (user == null)
+            {
+                throw new KeyNotFoundException(nameof(id));
+            }
+
+            var roleForUser = dbContext.UserRoles.AsNoTracking().FirstOrDefault(x => x.UserId == id);
+
+            if (roleForUser != null)
+            {
+                user.RoleId = roleForUser.RoleId;
+                user.Role = dbContext.Roles.AsNoTracking().FirstOrDefault(x => x.Id == roleForUser.RoleId)?.Name;
+            }
+
+            return user;
+        }
+
         public static void Update(this User? userToUpdate, UserModel userModel)
         {
             if (userToUpdate == null)
