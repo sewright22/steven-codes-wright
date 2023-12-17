@@ -1,5 +1,6 @@
 ﻿using AmerFamilyPlayoffs.Data;
-using PlayoffPool.MVC.Models;
+using Microsoft.EntityFrameworkCore;
+using PlayoffPool.MVC.Areas.Admin.Models;
 
 namespace PlayoffPool.MVC.Extensions
 {
@@ -7,7 +8,7 @@ namespace PlayoffPool.MVC.Extensions
     {
         public static IQueryable<PlayoffTeam> FilterConference(this IQueryable<PlayoffTeam> playoffTeams, string conference)
         {
-            return playoffTeams.Where(x=>x.SeasonTeam.Conference.Name== conference);
+            return playoffTeams.Where(x => x.SeasonTeam.Conference.Name == conference);
         }
 
         public static PlayoffTeam GetTeamFromSeed(this IQueryable<PlayoffTeam> conferenceTeams, int seed)
@@ -20,6 +21,19 @@ namespace PlayoffPool.MVC.Extensions
             }
 
             return playoffTeam;
+        }
+
+        public static IQueryable<UserModel> GetUsers(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.Users.AsNoTracking()
+            .Select(
+                x => new UserModel
+                {
+                    Id = x.Id,
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                });
         }
 
         public static void Update(this User? userToUpdate, UserModel userModel)

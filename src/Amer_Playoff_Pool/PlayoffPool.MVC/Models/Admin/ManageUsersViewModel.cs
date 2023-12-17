@@ -1,6 +1,8 @@
-﻿namespace PlayoffPool.MVC.Models
+﻿using PlayoffPool.MVC.Areas.Admin.Models;
+
+namespace PlayoffPool.MVC.Models
 {
-	public class ManageUsersViewModel : IBreadcrumb
+    public class ManageUsersViewModel : IBreadcrumb
 	{
 		public List<UserModel> Users { get; } = new List<UserModel>();
 

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PlayoffPool.MVC.Areas.Admin.Models;
 using PlayoffPool.MVC.Extensions;
 using PlayoffPool.MVC.Helpers;
 using PlayoffPool.MVC.Models;

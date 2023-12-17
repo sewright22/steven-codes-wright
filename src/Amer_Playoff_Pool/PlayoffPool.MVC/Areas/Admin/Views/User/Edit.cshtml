@@ -1,12 +1,5 @@
-﻿@model UserModel
-
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../Admin">Admin</a></li>
-        <li class="breadcrumb-item"><a href="../Users">All Users</a></li>
-        <li class="breadcrumb-item active" aria-current="page">@this.Model.LastName, @this.Model.FirstName</li>
-    </ol>
-</nav>
+﻿@using PlayoffPool.MVC.Areas.Admin.Models
+@model UserModel
 
 <form asp-action="User">
     <input type="hidden" asp-for="Id" />
