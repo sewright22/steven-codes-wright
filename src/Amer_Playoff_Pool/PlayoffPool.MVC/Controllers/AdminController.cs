@@ -43,7 +43,8 @@ public class AdminController : Controller
     [Authorize]
     public async Task<IActionResult> Seasons()
     {
-        return this.View();
+        var model = new SeasonListViewModel();
+        return this.View(model);
     }
 
     [HttpGet]
