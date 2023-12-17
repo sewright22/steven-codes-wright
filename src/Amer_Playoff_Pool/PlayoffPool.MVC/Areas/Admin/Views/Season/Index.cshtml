@@ -1,0 +1,14 @@
+﻿@model SeasonsModel
+
+<h2>Seasons</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<row>
+    @for (int i = 0; i < this.Model.Seasons.Count(); i++)
+    {
+        <partial name="ViewSummary" model="@this.Model.Seasons[i]" />
+    }
+</row>
