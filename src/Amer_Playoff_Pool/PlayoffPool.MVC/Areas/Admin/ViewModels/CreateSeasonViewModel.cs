@@ -1,11 +1,10 @@
-﻿namespace PlayoffPool.MVC.Areas.Admin.Models
+﻿namespace PlayoffPool.MVC.Areas.Admin.ViewModels
 {
+    using PlayoffPool.MVC.Areas.Admin.Models;
     using PlayoffPool.MVC.Models;
 
-    public class UsersModel : IBreadcrumb
+    public class CreateSeasonViewModel : IBreadcrumb
     {
-        public List<UserModel> Users { get; } = new List<UserModel>();
-
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {
             new BreadcrumbItemModel
@@ -16,10 +15,17 @@
             },
             new BreadcrumbItemModel
             {
-                Text = "Users",
-                Url = "/Admin/User/Index",
+                Text = "Seasons",
+                Url = "/Admin/Seasons",
+                IsActive = false,
+            },
+            new BreadcrumbItemModel
+            {
+                Text = "Create Season",
                 IsActive = true,
             },
         };
+
+        public required SeasonModel Season { get; set; }
     }
 }

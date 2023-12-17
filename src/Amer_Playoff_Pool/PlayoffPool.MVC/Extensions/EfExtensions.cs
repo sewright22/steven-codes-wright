@@ -35,7 +35,30 @@ namespace PlayoffPool.MVC.Extensions
                     Email = x.Email,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
+                }).OrderBy(x => x.LastName);
+        }
+
+        public static IQueryable<TeamModel> GetTeams(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.Teams.AsNoTracking()
+            .Select(
+                x => new TeamModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Abbreviation = x.Abbreviation,
                 });
+        }
+
+        public static IQueryable<SeasonSummaryModel> GetSeasons(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.Seasons.AsNoTracking()
+            .Select(
+                x => new SeasonSummaryModel
+                {
+                    Id = x.Id,
+                    Name = x.Year.ToString(),
+                }).OrderByDescending(x => x.Name);
         }
 
         public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)

@@ -1,0 +1,18 @@
+﻿@model TeamsModel
+
+@{
+    ViewBag.Title = "Teams";
+}
+
+<h2>Teams</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<row>
+    @for (int i = 0; i < this.Model.Teams.Count(); i++)
+    {
+        <partial name="ViewSummary" model="@this.Model.Teams[i]" />
+    }
+</row>

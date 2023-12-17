@@ -2,9 +2,9 @@
 {
     using PlayoffPool.MVC.Models;
 
-    public class UsersModel : IBreadcrumb
+    public class SeasonsModel : IBreadcrumb
     {
-        public List<UserModel> Users { get; } = new List<UserModel>();
+        public List<SeasonSummaryModel> Seasons { get; } = new List<SeasonSummaryModel>();
 
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {
@@ -16,8 +16,7 @@
             },
             new BreadcrumbItemModel
             {
-                Text = "Users",
-                Url = "/Admin/User/Index",
+                Text = "Seasons",
                 IsActive = true,
             },
         };
