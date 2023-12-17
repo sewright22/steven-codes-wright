@@ -58,7 +58,6 @@ namespace PlayoffPool.MVC.Extensions
                 {
                     Id = x.Id,
                     Name = x.Year.ToString(),
-                    Winner = x.Playoff.PlayoffRounds.OrderByDescending(y=>y.Round).FirstOrDefault().RoundWinners.FirstOrDefault().PlayoffTeam.SeasonTeam.Team.Name,
                 }).OrderByDescending(x => x.Name);
         }
 
