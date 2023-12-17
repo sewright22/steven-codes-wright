@@ -38,6 +38,18 @@ namespace PlayoffPool.MVC.Extensions
                 });
         }
 
+        public static IQueryable<TeamModel> GetTeams(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.Teams.AsNoTracking()
+            .Select(
+                x => new TeamModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Abbreviation = x.Abbreviation,
+                });
+        }
+
         public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)
         {
             if (string.IsNullOrWhiteSpace(id))
