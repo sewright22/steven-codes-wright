@@ -1,27 +1,15 @@
 ﻿namespace PlayoffPool.MVC.Models
 {
-    public class AdminViewModel
+    public class AdminViewModel : IBreadcrumb
     {
-        public AdminViewModel()
+        public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {
-            this.BreadcrumbList.Add(new BreadcrumbItemModel()
+            new BreadcrumbItemModel
             {
                 Text = "Admin",
                 Url = "/Admin",
-            });
-
-            this.SetActiveBreadcrumbs();
-        }
-
-        // Create container for the breadcrumb
-        public List<BreadcrumbItemModel> BreadcrumbList { get; } = new List<BreadcrumbItemModel>();
-
-        public void SetActiveBreadcrumbs()
-        {
-            for (int currentIndex = 0; currentIndex < this.BreadcrumbList.Count; currentIndex++)
-            {
-                this.BreadcrumbList[currentIndex].IsActive = currentIndex == this.BreadcrumbList.Count - 1;
-            }
-        }
+                IsActive = true,
+            },
+        };
     }
 }

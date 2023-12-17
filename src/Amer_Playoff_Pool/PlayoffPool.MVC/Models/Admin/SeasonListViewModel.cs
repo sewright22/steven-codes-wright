@@ -1,9 +1,9 @@
-﻿namespace PlayoffPool.MVC.Models
+﻿namespace PlayoffPool.MVC.Models.Admin
 {
-	public class ManageUsersViewModel : IBreadcrumb
-	{
-		public List<UserModel> Users { get; } = new List<UserModel>();
+    using System.Collections.Generic;
 
+    public class SeasonListViewModel : IBreadcrumb
+    {
         public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
         {
             new BreadcrumbItemModel
@@ -14,8 +14,8 @@
             },
             new BreadcrumbItemModel
             {
-                Text = "Manage Users",
-                Url = "/Admin/ManageUsers",
+                Text = "Seasons",
+                Url = "/Admin/Seasons",
                 IsActive = true,
             },
         };
