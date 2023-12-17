@@ -2,7 +2,9 @@
 {
     public class SeasonModel
     {
-        public int Id { get; set; }
-        public required string Name { get; set; }
+        public required int Id { get; set; }
+        public required string Year { get; set; }
+        public int? PlayoffId { get; set; }
+        public List<RoundModel> Rounds { get; } = new List<RoundModel>();
     }
 }

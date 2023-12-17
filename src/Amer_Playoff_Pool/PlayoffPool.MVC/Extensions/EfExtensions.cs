@@ -50,11 +50,11 @@ namespace PlayoffPool.MVC.Extensions
                 });
         }
 
-        public static IQueryable<SeasonModel> GetSeasons(this AmerFamilyPlayoffContext dbContext)
+        public static IQueryable<SeasonSummaryModel> GetSeasons(this AmerFamilyPlayoffContext dbContext)
         {
             return dbContext.Seasons.AsNoTracking()
             .Select(
-                x => new SeasonModel
+                x => new SeasonSummaryModel
                 {
                     Id = x.Id,
                     Name = x.Year.ToString(),
