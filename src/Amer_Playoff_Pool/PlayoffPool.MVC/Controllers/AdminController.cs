@@ -1,7 +1,6 @@
 ﻿namespace PlayoffPool.MVC.Controllers;
 
 using AmerFamilyPlayoffs.Data;
-using AmerFamilyPlayoffs.Data.DataExtensions;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Authorization;
@@ -111,16 +110,17 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> ManageTeams(ManageTeamsViewModel ManageTeamsViewModel)
+    public async Task<IActionResult> ManageTeams(Models.ManageTeamsViewModel ManageTeamsViewModel)
     {
         var model = ManageTeamsViewModel;
 
         if (string.IsNullOrEmpty(model.Year) == false)
         {
             var teams = this.DataManager.DataContext.PlayoffTeams
-                .Where(x => x.SeasonTeam.Season.Year.ToString() == model.Year).ProjectTo<PlayoffTeamViewModel>(this.Mapper.ConfigurationProvider).ToList();
+                .Where(x => x.SeasonTeam.Season.Year.ToString() == model.Year).ProjectTo<Models.PlayoffTeamViewModel>(this.Mapper.ConfigurationProvider).ToList();
 
-            var rounds = this.DataManager.DataContext.PlayoffRounds.Include("Round")
+            var rounds = this.DataManager.DataContext.PlayoffRounds
+                .Include(x => x.Round)
                 .Include(x => x.RoundWinners)
                 .ThenInclude(x => x.PlayoffTeam)
                 .Where(x => x.Playoff.Season.Year.ToString() == model.Year)
@@ -129,7 +129,7 @@ public class AdminController : Controller
             foreach (var round in rounds)
             {
                 var vm = new AdminRoundViewModel();
-                vm.Teams = new List<PlayoffTeamViewModel>(teams.Select(x => this.Mapper.Map<PlayoffTeamViewModel>(x)));
+                vm.Teams = new List<Models.PlayoffTeamViewModel>(teams.Select(x => this.Mapper.Map<Models.PlayoffTeamViewModel>(x)));
                 if (round.RoundWinners.Any())
                 {
                     vm.Teams.ForEach(team =>
@@ -154,7 +154,7 @@ public class AdminController : Controller
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> SaveTeams(ManageTeamsViewModel ManageTeamsViewModel)
+    public async Task<IActionResult> SaveTeams(Models.ManageTeamsViewModel ManageTeamsViewModel)
     {
         var model = ManageTeamsViewModel;
 
@@ -279,7 +279,7 @@ public class AdminController : Controller
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> UpdateRoles(RoleModel model)
+    public async Task<IActionResult> UpdateRoles(Models.RoleModel model)
     {
         return this.View(model);
     }
