@@ -1,6 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
+    Layout = "ModalLayout";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+@section ModalFooter
+{
+    <button type="button" class="btn pp-button pp-button-primary" data-bs-dismiss="modal">Close</button>
+}

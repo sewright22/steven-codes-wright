@@ -9,7 +9,7 @@ namespace PlayoffPool.MVC.Areas.Admin.Models
     public class UserModel
     {
         [Required]
-        public string? Id { get; set; }
+        public string Id { get; set; } = "New_User";
         public string? RoleId { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

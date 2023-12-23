@@ -12,6 +12,6 @@
         <span class="pp-label-value">@this.Model.Email</span>
     </span>
     <span class="col-auto">
-        <span><a class="btn pp-button pp-button-secondary" href=@string.Format("/Admin/User/Edit/{0}", this.Model.Id)>Update</a></span>
+        <span><button class="btn pp-button pp-button-secondary modal-button" data-url=@string.Format("/Admin/User/Edit/{0}", this.Model.Id)>Update</button></span>
     </span>
 </div>
