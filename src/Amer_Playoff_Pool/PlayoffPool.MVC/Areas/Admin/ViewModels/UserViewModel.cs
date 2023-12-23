@@ -7,7 +7,7 @@
 
     public class UserViewModel : IModal
     {
-        public UserModel? UserModel { get; set; }
+        public required UserModel UserModel { get; set; }
 
         public string? Title
         {

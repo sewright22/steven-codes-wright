@@ -1,6 +1,6 @@
 ﻿@model UserModel
 
-<form asp-action="Edit">
+<form asp-action="Edit" id="@string.Format("userForm-{0}", this.Model.Id)">
     <input type="hidden" asp-for="Id" />
     <input asp-for="FirstName" />
     <input asp-for="LastName" />
