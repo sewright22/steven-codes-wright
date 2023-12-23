@@ -8,8 +8,4 @@
     <select asp-for="RoleId" asp-items="@(new SelectList(this.Model.Roles, nameof(SelectListItem.Value), nameof(SelectListItem.Text)))">
         <option>Select One</option>
     </select>
-    <div class="button-group pp-button-bar">
-        <button class="btn btn-primary pp-button" type="submit">Save</button>
-        <button class="btn pp-button pp-button-secondary" type="reset">Cancel</button>
-    </div>
 </form>

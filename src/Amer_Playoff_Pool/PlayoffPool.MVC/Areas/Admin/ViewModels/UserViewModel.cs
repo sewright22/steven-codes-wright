@@ -5,41 +5,20 @@
     using PlayoffPool.MVC.Models;
     using System;
 
-    public class UserViewModel : IBreadcrumb
+    public class UserViewModel : IModal
     {
         public UserModel? UserModel { get; set; }
 
-        public List<BreadcrumbItemModel> BreadcrumbList { get; } = new()
+        public string? Title
         {
-            new BreadcrumbItemModel
+            get
             {
-                Text = "Admin",
-                Url = "/Admin/Home",
-                IsActive = false,
-            },
-            new BreadcrumbItemModel
-            {
-                Text = "Users",
-                Url = "/Admin/User/Index",
-                IsActive = true,
-            },
-        };
-
-        internal void AddBreadcrumb(string displayText)
-        {
-            var lastItem = this.BreadcrumbList.LastOrDefault();
-
-            if (lastItem != null)
-            {
-                lastItem.IsActive = false;
+                return "Update User";
             }
-
-            this.BreadcrumbList.Add(new BreadcrumbItemModel
+            set
             {
-                Text = displayText.HasValue(",") ? displayText : "New User",
-                Url = "/Admin/User/Index",
-                IsActive = true,
-            });
+
+            }
         }
     }
 }

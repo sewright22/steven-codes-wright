@@ -3,6 +3,10 @@
 
 @model UserViewModel
 
+@{
+    Layout = "ModalLayout";
+}
+
 @if (this.Model.UserModel != null)
 {
     <partial name="EditForm" model="@this.Model.UserModel" />
@@ -10,4 +14,10 @@
 else
 {
     <span>User not found</span>
+}
+
+@section ModalFooter
+{
+    <button class="btn pp-button pp-button-secondary" type="reset">Cancel</button>
+    <button class="btn btn-primary pp-button" type="submit">Save</button>
 }

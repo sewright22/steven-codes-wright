@@ -47,7 +47,7 @@
             UserModel model = this.DataManager.DataContext.GetUser(id);
             UserViewModel viewModel = GenerateViewModel(model);
 
-            return this.View(viewModel);
+            return this.PartialView(viewModel);
         }
 
         [HttpPost]
@@ -77,7 +77,6 @@
                 UserModel = model,
             };
 
-            viewModel.AddBreadcrumb($"{model.LastName}, {model.FirstName}");
             return viewModel;
         }
     }
