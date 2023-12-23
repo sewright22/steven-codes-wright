@@ -1,8 +1,10 @@
 ﻿using AmerFamilyPlayoffs.Data;
+using Elfie.Serialization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PlayoffPool.MVC.Areas.Admin.Models;
+using System.Linq.Expressions;
 
 namespace PlayoffPool.MVC.Extensions
 {
@@ -21,7 +23,6 @@ namespace PlayoffPool.MVC.Extensions
             {
                 throw new KeyNotFoundException(nameof(seed));
             }
-
             return playoffTeam;
         }
 
@@ -35,7 +36,7 @@ namespace PlayoffPool.MVC.Extensions
                     Email = x.Email,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
-                }).OrderBy(x => x.LastName);
+                });
         }
 
         public static IQueryable<TeamModel> GetTeams(this AmerFamilyPlayoffContext dbContext)

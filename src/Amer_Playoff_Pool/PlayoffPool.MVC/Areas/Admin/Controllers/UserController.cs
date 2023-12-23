@@ -35,7 +35,7 @@
 
             var users = this.DataManager.DataContext.GetUsers();
 
-            model.Users.AddRange(users);
+            model.Users.AddRange(users.OrderBy(x => x.FirstName).ThenBy(x => x.LastName));
 
             return this.View(model);
         }
