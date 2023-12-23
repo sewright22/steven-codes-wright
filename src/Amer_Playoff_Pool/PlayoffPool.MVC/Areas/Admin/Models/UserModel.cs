@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using AutoMapper.Configuration.Annotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PlayoffPool.MVC.Extensions;
 
 namespace PlayoffPool.MVC.Areas.Admin.Models
 {
@@ -13,6 +14,19 @@ namespace PlayoffPool.MVC.Areas.Admin.Models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
+
+        public string? FullName
+        {
+            get
+            {
+                if (this.FirstName.HasValue() == false && this.LastName.HasValue() == false)
+                {
+                    return "Unknown";
+                }
+
+                return $"{this.FirstName} {this.LastName}".Trim();
+            }
+        }
 
         /// <summary>
         /// Gets or sets the role.

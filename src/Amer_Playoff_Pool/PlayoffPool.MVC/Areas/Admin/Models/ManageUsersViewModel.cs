@@ -1,6 +1,7 @@
 ﻿using PlayoffPool.MVC.Areas.Admin.Models;
+using PlayoffPool.MVC.Models;
 
-namespace PlayoffPool.MVC.Models
+namespace PlayoffPool.MVC.Areas.Admin.Models
 {
     public class ManageUsersViewModel : IBreadcrumb
 	{
