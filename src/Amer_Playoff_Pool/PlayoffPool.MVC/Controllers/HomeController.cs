@@ -77,7 +77,7 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
-        return View();
+        return this.PartialView(new PrivacyModel());
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
