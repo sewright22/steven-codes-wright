@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using PlayoffPool.MVC.Areas.Admin.Models;
 using PlayoffPool.MVC.Extensions;
 using PlayoffPool.MVC.Helpers;
-using PlayoffPool.MVC.Models;
 using PlayoffPool.MVC.Models.Admin;
 using System;
 
@@ -54,7 +53,9 @@ public class AdminController : Controller
     {
         ManageUsersViewModel model = new ManageUsersViewModel();
 
-        model.Users.AddRange(await this.GetUsers().ConfigureAwait(false));
+        var users = await this.GetUsers().ConfigureAwait(false);
+
+        model.Users.AddRange(users);
 
         return View(model);
     }
