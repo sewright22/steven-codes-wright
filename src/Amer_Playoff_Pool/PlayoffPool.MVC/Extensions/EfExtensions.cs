@@ -61,6 +61,37 @@ namespace PlayoffPool.MVC.Extensions
                 }).OrderByDescending(x => x.Name);
         }
 
+        public static SeasonModel GetSeason(this AmerFamilyPlayoffContext dbContext, int id)
+        {
+            var season = dbContext.Seasons.AsNoTracking().FirstOrDefault(x => x.Id == id);
+
+            if (season == null)
+            {
+                throw new KeyNotFoundException(nameof(id));
+            }
+
+            var seasonModel = new SeasonModel
+            {
+                Id = season.Id,
+                Year = season.Year.ToString(),
+            };
+
+            seasonModel.Rounds.AddRange(dbContext.GetRounds().ToList());
+
+            return seasonModel;
+        }
+
+        public static IQueryable<RoundModel> GetRounds(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.Rounds.AsNoTracking()
+            .Select(
+                x => new RoundModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                });
+        }
+
         public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)
         {
             if (string.IsNullOrWhiteSpace(id))
