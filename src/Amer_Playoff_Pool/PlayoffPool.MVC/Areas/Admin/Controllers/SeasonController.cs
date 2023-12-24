@@ -85,6 +85,8 @@
                 PlayoffId = id,
             };
 
+            model.Rounds.AddRange(this.DataManager.DataContext.GetRounds().ToList());
+
             return View(model);
         }
     }

@@ -105,14 +105,14 @@ namespace PlayoffPool.MVC.Extensions
             return playoff;
         }
 
-        public static IQueryable<RoundModel> GetRounds(this AmerFamilyPlayoffContext dbContext)
+        public static IQueryable<SelectListItem> GetRounds(this AmerFamilyPlayoffContext dbContext)
         {
             return dbContext.Rounds.AsNoTracking()
             .Select(
-                x => new RoundModel
+                x => new SelectListItem
                 {
-                    Id = x.Id,
-                    Name = x.Name,
+                    Value = x.Id.ToString(),
+                    Text = x.Name,
                 });
         }
 
