@@ -3,28 +3,17 @@
     using PlayoffPool.MVC.Areas.Admin.Models;
     using PlayoffPool.MVC.Models;
 
-    public class CreateSeasonViewModel : IBreadcrumb
+    public class CreateSeasonViewModel : IModal
     {
-        public List<BreadcrumbItemModel> BreadcrumbList => new List<BreadcrumbItemModel>
+        public string? Title
         {
-            new BreadcrumbItemModel
+            get
             {
-                Text = "Admin",
-                Url = "/Admin",
-                IsActive = false,
-            },
-            new BreadcrumbItemModel
-            {
-                Text = "Seasons",
-                Url = "/Admin/Seasons",
-                IsActive = false,
-            },
-            new BreadcrumbItemModel
-            {
-                Text = "Create Season",
-                IsActive = true,
-            },
-        };
+                return "Create Season";
+            }
+            set
+            { }
+        }
 
         public required SeasonModel Season { get; set; }
     }
