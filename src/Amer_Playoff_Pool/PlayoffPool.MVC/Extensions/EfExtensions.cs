@@ -143,6 +143,17 @@ namespace PlayoffPool.MVC.Extensions
             await dbContext.SaveChangesAsync();
         }
 
+        public static async Task CreateSeason(this AmerFamilyPlayoffContext dbContext, SeasonModel seasonModel)
+        {
+            var season = new Season();
+
+            season.Update(seasonModel);
+
+            await dbContext.Seasons.AddAsync(season);
+
+            await dbContext.SaveChangesAsync();
+        }
+
         public static async Task CreateUser(this AmerFamilyPlayoffContext dbContext, UserModel userModel)
         {
             var user = new User();
@@ -214,6 +225,17 @@ namespace PlayoffPool.MVC.Extensions
             userToUpdate.LastName = userModel.LastName;
             userToUpdate.Email = userModel.Email;
             userToUpdate.UserName = userModel.Email;
+        }
+
+        public static void Update(this Season? seasonToUpdate, SeasonModel seasonModel)
+        {
+            if (seasonToUpdate == null)
+            {
+                return;
+            }
+
+            seasonToUpdate.Year = int.Parse(seasonModel.Year);
+            seasonToUpdate.Description = seasonModel.Description;
         }
     }
 }

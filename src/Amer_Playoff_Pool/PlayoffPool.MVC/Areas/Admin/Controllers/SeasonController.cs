@@ -51,14 +51,14 @@
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public IActionResult Create(CreateSeasonViewModel model)
+        public async Task<IActionResult> Create(CreateSeasonViewModel model)
         {
             if (ModelState.IsValid == false)
             {
                 return PartialView(model);
             }
 
-            //this.DataManager.DataContext.CreateSeason(model.Season);
+            await this.DataManager.DataContext.CreateSeason(model.Season);
 
             return RedirectToAction(nameof(Index));
         }
