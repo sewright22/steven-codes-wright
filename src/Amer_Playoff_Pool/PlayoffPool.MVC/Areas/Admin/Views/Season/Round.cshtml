@@ -1,0 +1,14 @@
+﻿@model RoundModel
+
+@{
+    Layout = "ModalLayout";
+}
+
+<span>@this.Model.Id</span>
+<span>@this.Model.PlayoffId</span>
+
+@section ModalFooter
+{
+    <cancel-button></cancel-button>
+    <button type="button" class="btn pp-button pp-button-primary" data-dismiss="modal">Save</button>
+}

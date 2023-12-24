@@ -66,9 +66,23 @@
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var model = new CreateSeasonViewModel()
+            var model = new UpdateSeasonViewModel()
             {
                 Season = this.DataManager.DataContext.GetSeason(id),
+            };
+
+            model.AddBreadcrumb(model.Season.Year);
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Round(int id)
+        {
+            var model = new RoundModel()
+            { 
+                Name = string.Empty,
+                PlayoffId = id,
             };
 
             return View(model);

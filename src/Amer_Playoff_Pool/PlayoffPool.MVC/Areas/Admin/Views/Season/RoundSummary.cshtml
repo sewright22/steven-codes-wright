@@ -1,0 +1,23 @@
+﻿@model RoundModel
+
+<div class="row pp-bracket-summary">
+
+    <span class="col">
+        <span class="pp-label">Round</span>
+        <span class="pp-label-value">@this.Model.Number</span>
+    </span>
+
+    <span class="col">
+        <span class="pp-label">Name</span>
+        <span class="pp-label-value">@this.Model.Name</span>
+    </span>
+
+    <span class="col">
+        <span class="pp-label">Points</span>
+        <span class="pp-label-value">@this.Model.PointValue</span>
+    </span>
+
+    <span class="col-auto">
+        <a class="btn pp-button pp-button-secondary" href="/Admin/Season/Round/@this.Model.Id">Update</a>
+    </span>
+</div>

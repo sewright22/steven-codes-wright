@@ -64,22 +64,45 @@ namespace PlayoffPool.MVC.Extensions
 
         public static SeasonModel GetSeason(this AmerFamilyPlayoffContext dbContext, int id)
         {
-            var season = dbContext.Seasons.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            var season = dbContext.Seasons
+                .AsNoTracking()
+                .Include(x => x.Playoff)
+                .FirstOrDefault(x => x.Id == id);
 
             if (season == null)
             {
                 throw new KeyNotFoundException(nameof(id));
             }
 
+            if (season.Playoff == null)
+            {
+                season.Playoff = dbContext.AddPlayoffForSeason(id);
+            }
+
             var seasonModel = new SeasonModel
             {
                 Id = season.Id,
                 Year = season.Year.ToString(),
+                PlayoffId = season.Playoff.Id,
             };
 
-            seasonModel.Rounds.AddRange(dbContext.GetRounds().ToList());
+            seasonModel.Rounds.AddRange(dbContext.GetPlayoffRounds(season.Id).ToList());
 
             return seasonModel;
+        }
+
+        public static Playoff AddPlayoffForSeason(this AmerFamilyPlayoffContext dbContext, int seasonId)
+        {
+            var playoff = new Playoff
+            {
+                SeasonId = seasonId,
+            };
+
+            dbContext.Playoffs.Add(playoff);
+
+            dbContext.SaveChanges();
+
+            return playoff;
         }
 
         public static IQueryable<RoundModel> GetRounds(this AmerFamilyPlayoffContext dbContext)
@@ -91,6 +114,43 @@ namespace PlayoffPool.MVC.Extensions
                     Id = x.Id,
                     Name = x.Name,
                 });
+        }
+
+        public static IQueryable<RoundModel> GetPlayoffRounds(this AmerFamilyPlayoffContext dbContext, int seasonId)
+        {
+            return dbContext.PlayoffRounds.AsNoTracking()
+                .Where(x => x.Playoff.SeasonId == seasonId)
+            .Select(
+                x => new RoundModel
+                {
+                    Id = x.Id,
+                    Name = x.Round.Name,
+                    PointValue = x.PointValue,
+                    Number = x.Round.Number,
+                });
+        }
+
+        public static RoundModel GetPlayoffRound(this AmerFamilyPlayoffContext dbContext, int id)
+        {
+            var playoffRound = dbContext.PlayoffRounds
+                .AsNoTracking()
+                .Include(x => x.Round)
+                .FirstOrDefault(x => x.Id == id);
+
+            if (playoffRound == null)
+            {
+                throw new KeyNotFoundException(nameof(id));
+            }
+
+            var roundModel = new RoundModel
+            {
+                Id = playoffRound.Id,
+                Name = playoffRound.Round.Name,
+                PointValue = playoffRound.PointValue,
+                Number = playoffRound.Round.Number,
+            };
+
+            return roundModel;
         }
 
         public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)
