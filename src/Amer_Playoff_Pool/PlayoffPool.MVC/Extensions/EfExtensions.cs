@@ -130,29 +130,6 @@ namespace PlayoffPool.MVC.Extensions
                 });
         }
 
-        public static RoundModel GetPlayoffRound(this AmerFamilyPlayoffContext dbContext, int id)
-        {
-            var playoffRound = dbContext.PlayoffRounds
-                .AsNoTracking()
-                .Include(x => x.Round)
-                .FirstOrDefault(x => x.Id == id);
-
-            if (playoffRound == null)
-            {
-                throw new KeyNotFoundException(nameof(id));
-            }
-
-            var roundModel = new RoundModel
-            {
-                Id = playoffRound.Id,
-                Name = playoffRound.Round.Name,
-                PointValue = playoffRound.PointValue,
-                Number = playoffRound.Round.Number,
-            };
-
-            return roundModel;
-        }
-
         public static UserModel GetUser(this AmerFamilyPlayoffContext dbContext, string? id)
         {
             if (string.IsNullOrWhiteSpace(id))
@@ -296,6 +273,18 @@ namespace PlayoffPool.MVC.Extensions
 
             seasonToUpdate.Year = int.Parse(seasonModel.Year);
             seasonToUpdate.Description = seasonModel.Description;
+        }
+
+        public static int GetSeasonIdFromPlayoffId(this AmerFamilyPlayoffContext dbContext, int playoffId)
+        {
+            var seasonId = dbContext.Playoffs.AsNoTracking().FirstOrDefault(x => x.Id == playoffId)?.SeasonId;
+
+            if (seasonId == null)
+            {
+                throw new KeyNotFoundException(nameof(playoffId));
+            }
+
+            return seasonId.Value;
         }
     }
 }
