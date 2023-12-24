@@ -3,15 +3,8 @@
 <h2>@this.Model.Year</h2>
 
 <row>
-    <form action="Edit">
+    <form action="Edit" id="seasonForm-@this.Model.Id">
         <input type="hidden" name="id" value="@this.Model.Id" />
-
-        @for (int i = 0; i < this.Model.Rounds.Count(); i++)
-        {
-            <label asp-for="@this.Model.Rounds[i].Number" />
-            <input asp-for="@this.Model.Rounds[i].Number" />
-        }
-
-        <input type="submit" value="Edit" />
+        <input type="text" name="year" value="@this.Model.Year" />
     </form>
 </row>

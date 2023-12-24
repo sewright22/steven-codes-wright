@@ -1,5 +1,6 @@
 ﻿namespace PlayoffPool.MVC.Areas.Admin.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using PlayoffPool.MVC.Areas.Admin.Models;
     using PlayoffPool.MVC.Areas.Admin.ViewModels;
@@ -33,9 +34,33 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
-            return View();
+            var model = new CreateSeasonViewModel()
+            {
+                Season = new SeasonModel()
+                {
+                    Id = 0,
+                    Year = DateTime.Now.Year.ToString(),
+                },
+            };
+
+            return PartialView(model);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create(CreateSeasonViewModel model)
+        {
+            if (ModelState.IsValid == false)
+            {
+                return PartialView(model);
+            }
+
+            //this.DataManager.DataContext.CreateSeason(model.Season);
+
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]

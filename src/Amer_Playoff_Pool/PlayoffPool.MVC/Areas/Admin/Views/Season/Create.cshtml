@@ -1,2 +1,17 @@
-﻿@using PlayoffPool.MVC.Areas.Admin.ViewModels
-@model CreateSeasonViewModel
+﻿@model CreateSeasonViewModel
+
+@{
+    Layout = "ModalLayout";
+}
+
+<form asp-action="Create" id="seasonForm-@this.Model.Season.Id">
+    <input type="hidden" name="id" value="@this.Model.Season.Id" />
+    <label asp-for="Season.Year" />
+    <input asp-for="Season.Year" />
+</form>
+
+@section ModalFooter
+{
+    <button type="button" class="btn pp-button pp-button-secondary" data-dismiss="modal">Cancel</button>
+    <button type="submit" class="btn pp-button pp-button-primary" data-dismiss="modal" data-form-id="seasonForm-@this.Model.Season.Id">Save</button>
+}
