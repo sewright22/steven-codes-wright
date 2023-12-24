@@ -2,9 +2,4 @@
 
 <h2>@this.Model.Year</h2>
 
-<row>
-    <form action="Edit" id="seasonForm-@this.Model.Id">
-        <input type="hidden" name="id" value="@this.Model.Id" />
-        <input type="text" name="year" value="@this.Model.Year" />
-    </form>
-</row>
+<partial name="Rounds" />
