@@ -64,32 +64,69 @@ namespace PlayoffPool.MVC.Extensions
 
         public static SeasonModel GetSeason(this AmerFamilyPlayoffContext dbContext, int id)
         {
-            var season = dbContext.Seasons.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            var season = dbContext.Seasons
+                .AsNoTracking()
+                .Include(x => x.Playoff)
+                .FirstOrDefault(x => x.Id == id);
 
             if (season == null)
             {
                 throw new KeyNotFoundException(nameof(id));
             }
 
+            if (season.Playoff == null)
+            {
+                season.Playoff = dbContext.AddPlayoffForSeason(id);
+            }
+
             var seasonModel = new SeasonModel
             {
                 Id = season.Id,
                 Year = season.Year.ToString(),
+                PlayoffId = season.Playoff.Id,
             };
 
-            seasonModel.Rounds.AddRange(dbContext.GetRounds().ToList());
+            seasonModel.Rounds.AddRange(dbContext.GetPlayoffRounds(season.Id).ToList());
 
             return seasonModel;
         }
 
-        public static IQueryable<RoundModel> GetRounds(this AmerFamilyPlayoffContext dbContext)
+        public static Playoff AddPlayoffForSeason(this AmerFamilyPlayoffContext dbContext, int seasonId)
+        {
+            var playoff = new Playoff
+            {
+                SeasonId = seasonId,
+            };
+
+            dbContext.Playoffs.Add(playoff);
+
+            dbContext.SaveChanges();
+
+            return playoff;
+        }
+
+        public static IQueryable<SelectListItem> GetRounds(this AmerFamilyPlayoffContext dbContext)
         {
             return dbContext.Rounds.AsNoTracking()
+            .Select(
+                x => new SelectListItem
+                {
+                    Value = x.Id.ToString(),
+                    Text = x.Name,
+                });
+        }
+
+        public static IQueryable<RoundModel> GetPlayoffRounds(this AmerFamilyPlayoffContext dbContext, int seasonId)
+        {
+            return dbContext.PlayoffRounds.AsNoTracking()
+                .Where(x => x.Playoff.SeasonId == seasonId)
             .Select(
                 x => new RoundModel
                 {
                     Id = x.Id,
-                    Name = x.Name,
+                    Name = x.Round.Name,
+                    PointValue = x.PointValue,
+                    Number = x.Round.Number,
                 });
         }
 
@@ -236,6 +273,18 @@ namespace PlayoffPool.MVC.Extensions
 
             seasonToUpdate.Year = int.Parse(seasonModel.Year);
             seasonToUpdate.Description = seasonModel.Description;
+        }
+
+        public static int GetSeasonIdFromPlayoffId(this AmerFamilyPlayoffContext dbContext, int playoffId)
+        {
+            var seasonId = dbContext.Playoffs.AsNoTracking().FirstOrDefault(x => x.Id == playoffId)?.SeasonId;
+
+            if (seasonId == null)
+            {
+                throw new KeyNotFoundException(nameof(playoffId));
+            }
+
+            return seasonId.Value;
         }
     }
 }
