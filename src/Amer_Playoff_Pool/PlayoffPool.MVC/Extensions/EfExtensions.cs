@@ -87,6 +87,7 @@ namespace PlayoffPool.MVC.Extensions
             };
 
             seasonModel.Rounds.AddRange(dbContext.GetPlayoffRounds(season.Id).ToList());
+            seasonModel.Teams.AddRange(dbContext.GetPlayoffTeams(season.Id).ToList());
 
             return seasonModel;
         }
