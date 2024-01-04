@@ -136,8 +136,8 @@ public class BracketController : Controller
             isEditable = false;
         }
 
-        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("AFC");
-        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("NFC");
+        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("AFC");
+        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("NFC");
 
         this.BuildDivisionalRound(BracketViewModel, afcTeams, nfcTeams);
         this.BuildChampionshipRound(BracketViewModel, afcTeams, nfcTeams);
@@ -238,11 +238,11 @@ public class BracketController : Controller
 
         var bracketViewModel = this.Mapper.Map<BracketViewModel>(bracketPrediction);
 
-        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("AFC");
-        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("NFC");
+        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("AFC");
+        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("NFC");
         var afcRounds = new List<RoundViewModel>(bracketViewModel.AfcRounds);
         var nfcRounds = new List<RoundViewModel>(bracketViewModel.NfcRounds);
-        var winners = this.Context.RoundWinners.Where(x => x.PlayoffRound.Playoff.Season.Year == 2022).Select(x => new { RoundNumber = x.PlayoffRound.Round.Number, x.PlayoffTeamId }).ToList();
+        var winners = this.Context.RoundWinners.Where(x => x.PlayoffRound.Playoff.Id == this.Context.GetCurrentSeasonId()).Select(x => new { RoundNumber = x.PlayoffRound.Round.Number, x.PlayoffTeamId }).ToList();
 
         this.BuildWildCardRound(bracketViewModel, afcTeams, nfcTeams);
         this.UpdateRoundPicks(bracketViewModel, 1, bracketPrediction.MatchupPredictions, winners.Where(x => x.RoundNumber == 1).Select(x => x.PlayoffTeamId).ToList());
@@ -451,7 +451,7 @@ public class BracketController : Controller
         {
             prediction = this.Mapper.Map<BracketPrediction>(BracketViewModel);
             prediction.UserId = this.UserManager.GetUserId(this.User);
-            prediction.Playoff = this.Context.Playoffs.FirstOrDefault(x => x.Season.Year == 2022);
+            prediction.Playoff = this.Context.Playoffs.FirstOrDefault(x => x.Season.Id == this.Context.GetCurrentSeasonId());
             prediction.MatchupPredictions = new List<MatchupPrediction>();
         }
         else

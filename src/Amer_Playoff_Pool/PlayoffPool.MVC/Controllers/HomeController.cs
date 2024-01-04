@@ -59,12 +59,14 @@ public class HomeController : Controller
 
         model.CompletedBrackets = this.dataContext.BracketPredictions
             .AsNoTracking()
+            .Where(x => x.Playoff.Season.Id == this.dataContext.GetCurrentSeasonId())
             .Where(x => x.UserId == this.UserManager.GetUserId(this.User))
             .Where(x => x.MatchupPredictions.Count(x => x.PredictedWinner != null) == 13)
             .ProjectTo<BracketSummaryModel>(this.Mapper.ConfigurationProvider).ToList();
 
         model.IncompleteBrackets = this.dataContext.BracketPredictions
             .AsNoTracking()
+            .Where(x => x.Playoff.Season.Id == this.dataContext.GetCurrentSeasonId())
             .Where(x => x.UserId == this.UserManager.GetUserId(this.User))
             .Where(x => x.MatchupPredictions == null
                 || x.MatchupPredictions.Count(x => x.PredictedWinner != null) < 13)
@@ -99,10 +101,10 @@ public class HomeController : Controller
         var brackets = this.dataContext.BracketPredictions
             .Include("MatchupPredictions.PlayoffRound.Round")
             .Include("MatchupPredictions.PredictedWinner.SeasonTeam.Team")
-            .AsNoTracking().Where(x => x.Playoff.Season.Year == 2022)
+            .AsNoTracking().Where(x => x.Playoff.Season.Id == dataContext.GetCurrentSeasonId())
             .Where(x => x.MatchupPredictions.Count(x => x.PredictedWinner != null) == 13);
 
-        var actualWinners = this.dataContext.RoundWinners.Include(x => x.PlayoffRound).Where(x => x.PlayoffRound.Playoff.Season.Year == 2022);
+        var actualWinners = this.dataContext.RoundWinners.Include(x => x.PlayoffRound).Where(x => x.PlayoffRound.Playoff.Season.Id == dataContext.GetCurrentSeasonId());
 
         foreach (var bracket in brackets.ToList())
         {
