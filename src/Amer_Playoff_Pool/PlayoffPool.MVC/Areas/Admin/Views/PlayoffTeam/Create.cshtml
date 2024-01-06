@@ -1,0 +1,35 @@
+﻿@model PlayoffTeamModel
+
+@{
+    Layout = "ModalLayout";
+}
+
+<form asp-controller="PlayoffTeam" asp-action="Create" id="playoffTeamForm-@this.Model.PlayoffTeamId">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="PlayoffId" />
+    <input type="hidden" asp-for="PlayoffTeamId" />
+    <input type="hidden" asp-for="SeasonId" />
+    <input type="hidden" asp-for="Name" />
+    <div class="row mb-3">
+        <label asp-for="ConferenceId" class="col-12 col-form-label"></label>
+        <select class="col-12" asp-for="ConferenceId" asp-items="@(new SelectList(this.Model.Conferences, nameof(SelectListItem.Value), nameof(SelectListItem.Text)))">
+            <option>Select One</option>
+        </select>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="TeamId" class="col-12 col-form-label"></label>
+        <select class="col-12" asp-for="TeamId" asp-items="@(new SelectList(this.Model.Teams, nameof(SelectListItem.Value), nameof(SelectListItem.Text)))">
+            <option>Select One</option>
+        </select>
+    </div>
+    <div class="row">
+        <label class="col-12" asp-for="Seed"></label>
+        <input class="col-12" type="number" asp-for="Seed" />
+    </div>
+</form>
+
+@section ModalFooter
+{
+    <cancel-button></cancel-button>
+    <button type="submit" class="btn pp-button pp-button-primary" data-dismiss="modal" data-form-id="playoffTeamForm-@this.Model.PlayoffTeamId">Save</button>
+}

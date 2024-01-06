@@ -31,8 +31,7 @@ public class BracketController : Controller
     {
         var BracketViewModel = new BracketViewModel();
 
-        var afcTeams = this.Context.PlayoffTeams.AsNoTracking().Include("SeasonTeam.Team").FilterConference("AFC");
-        var nfcTeams = this.Context.PlayoffTeams.AsNoTracking().Include("SeasonTeam.Team").FilterConference("NFC");
+
 
         BracketViewModel.Name = string.Empty;
         BracketViewModel.CanEdit = true;
@@ -54,8 +53,8 @@ public class BracketController : Controller
 
             if (afcRounds.IsNullOrEmpty() && nfcRounds.IsNullOrEmpty())
             {
-                var afcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-                var nfcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+                var afcWildcardRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+                var nfcWildcardRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
                 if (afcWildcardRound != null && null != nfcWildcardRound)
                 {
@@ -100,7 +99,7 @@ public class BracketController : Controller
 
         BracketViewModel bracketViewModel = this.BuildBracketViewModel(bracketPrediction);
 
-        if (bracketPrediction.UserId != this.UserManager.GetUserId(this.User) || true)
+        if (bracketPrediction.UserId != this.UserManager.GetUserId(this.User))
         {
             bracketViewModel.CanEdit = false;
         }
@@ -136,8 +135,8 @@ public class BracketController : Controller
             isEditable = false;
         }
 
-        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("AFC");
-        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("NFC");
+        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("AFC");
+        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("NFC");
 
         this.BuildDivisionalRound(BracketViewModel, afcTeams, nfcTeams);
         this.BuildChampionshipRound(BracketViewModel, afcTeams, nfcTeams);
@@ -238,11 +237,11 @@ public class BracketController : Controller
 
         var bracketViewModel = this.Mapper.Map<BracketViewModel>(bracketPrediction);
 
-        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("AFC");
-        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Year == 2022).Include("SeasonTeam.Team").FilterConference("NFC");
+        var afcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("AFC");
+        var nfcTeams = this.Context.PlayoffTeams.Where(x => x.Playoff.Season.Id == this.Context.GetCurrentSeasonId()).Include("SeasonTeam.Team").FilterConference("NFC");
         var afcRounds = new List<RoundViewModel>(bracketViewModel.AfcRounds);
         var nfcRounds = new List<RoundViewModel>(bracketViewModel.NfcRounds);
-        var winners = this.Context.RoundWinners.Where(x => x.PlayoffRound.Playoff.Season.Year == 2022).Select(x => new { RoundNumber = x.PlayoffRound.Round.Number, x.PlayoffTeamId }).ToList();
+        var winners = this.Context.RoundWinners.Where(x => x.PlayoffRound.Playoff.Id == this.Context.GetCurrentSeasonId()).Select(x => new { RoundNumber = x.PlayoffRound.Round.Number, x.PlayoffTeamId }).ToList();
 
         this.BuildWildCardRound(bracketViewModel, afcTeams, nfcTeams);
         this.UpdateRoundPicks(bracketViewModel, 1, bracketPrediction.MatchupPredictions, winners.Where(x => x.RoundNumber == 1).Select(x => x.PlayoffTeamId).ToList());
@@ -292,7 +291,7 @@ public class BracketController : Controller
                 }
             }
 
-            var afcDivisionalRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+            var afcDivisionalRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
             if (afcDivisionalRound != null)
             {
@@ -321,7 +320,7 @@ public class BracketController : Controller
                 }
             }
 
-            var nfcDivisionalRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+            var nfcDivisionalRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 2).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
             if (nfcDivisionalRound != null)
             {
@@ -417,8 +416,8 @@ public class BracketController : Controller
 
     private void BuildWildCardRound(BracketViewModel bracketViewModel, IQueryable<PlayoffTeam> afcTeams, IQueryable<PlayoffTeam> nfcTeams)
     {
-        var afcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
-        var nfcWildcardRound = this.Context.PlayoffRounds.Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+        var afcWildcardRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+        var nfcWildcardRound = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 1).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
         if (afcWildcardRound != null && nfcWildcardRound != null)
         {
@@ -451,7 +450,7 @@ public class BracketController : Controller
         {
             prediction = this.Mapper.Map<BracketPrediction>(BracketViewModel);
             prediction.UserId = this.UserManager.GetUserId(this.User);
-            prediction.Playoff = this.Context.Playoffs.FirstOrDefault(x => x.Season.Year == 2022);
+            prediction.Playoff = this.Context.Playoffs.FirstOrDefault(x => x.Season.Id == this.Context.GetCurrentSeasonId());
             prediction.MatchupPredictions = new List<MatchupPrediction>();
         }
         else
@@ -491,7 +490,7 @@ public class BracketController : Controller
             var game = BracketViewModel.SuperBowl;
 
             var matchupPrediction = this.Mapper.Map<MatchupPrediction>(game);
-            matchupPrediction.PlayoffRoundId = this.Context.PlayoffRounds.FirstOrDefault(x => x.Round.Number == 4)?.Id ?? 0;
+            matchupPrediction.PlayoffRoundId = this.Context.GetCurrentSeasonPlayoffRounds().FirstOrDefault(x => x.Round.Number == 4)?.Id ?? 0;
             matchupPrediction.PredictedWinner = afcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner) == null ? nfcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner) : afcTeams.FirstOrDefault(x => x.Id == game.SelectedWinner);
             prediction.MatchupPredictions.Add(matchupPrediction);
         }
@@ -583,7 +582,7 @@ public class BracketController : Controller
                 }
             }
 
-            var afcChampionship = this.Context.PlayoffRounds.Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+            var afcChampionship = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
             if (afcChampionship == null)
             {
@@ -612,7 +611,7 @@ public class BracketController : Controller
                 }
             }
 
-            var nfcChampionship = this.Context.PlayoffRounds.Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
+            var nfcChampionship = this.Context.GetCurrentSeasonPlayoffRounds().Where(x => x.Round.Number == 3).ProjectTo<RoundViewModel>(this.Mapper.ConfigurationProvider).FirstOrDefault();
 
             if (nfcChampionship == null)
             {
