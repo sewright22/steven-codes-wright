@@ -23,7 +23,7 @@
                 return;
             }
 
-            playoff = cutoffDateTime.Value;
+            playoff.StartDateTime = cutoffDateTime.Value.ToUniversalTime();
 
             dataContext.SaveChanges();
         }

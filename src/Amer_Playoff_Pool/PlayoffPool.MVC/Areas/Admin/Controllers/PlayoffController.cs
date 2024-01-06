@@ -33,12 +33,12 @@
         [HttpPost]
         public IActionResult Edit(SeasonModel model)
         {
-            if (model.CutoffDateTime.HasValue == false)
+            if (model.CutoffDateTime.HasValue == false || model.PlayoffId.HasValue == false)
             {
                 return View(model);
             }
 
-            this.DataManager.DataContext.UpdatePlayoffStartTime(model.PlayoffId, model.CutoffDateTime);
+            this.DataManager.DataContext.UpdatePlayoffStartDateTime(model.PlayoffId.Value, model.CutoffDateTime);
 
             return RedirectToAction("Index", "Season");
         }

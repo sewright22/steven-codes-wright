@@ -79,11 +79,14 @@ namespace PlayoffPool.MVC.Extensions
                 season.Playoff = dbContext.AddPlayoffForSeason(id);
             }
 
+            var localTime = season.Playoff.StartDateTime?.ToLocalTime();
+
             var seasonModel = new SeasonModel
             {
                 Id = season.Id,
                 Year = season.Year.ToString(),
                 PlayoffId = season.Playoff.Id,
+                CutoffDateTime = localTime,
             };
 
             seasonModel.Rounds.AddRange(dbContext.GetPlayoffRounds(season.Id).ToList());
