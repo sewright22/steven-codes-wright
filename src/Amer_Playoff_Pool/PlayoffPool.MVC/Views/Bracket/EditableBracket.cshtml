@@ -12,7 +12,7 @@
         <label asp-for="Name"></label>
         <input asp-for="Name" />
 
-        @if (string.IsNullOrWhiteSpace(this.Model.Name) == false)
+        @if (this.Model.AfcRounds.Any() && this.Model.NfcRounds.Any())
         {
             <div class="container">
                 <div class="row">
@@ -65,7 +65,6 @@
                 }
             </div>
         }
-
         <div class="row">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         </div>

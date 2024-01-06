@@ -8,6 +8,14 @@
 
     public static class BracketPredictionManager
     {
+        public static IQueryable<PlayoffRound> GetCurrentSeasonPlayoffRounds(this AmerFamilyPlayoffContext dbContext)
+        {
+            return dbContext.PlayoffRounds.AsNoTracking()
+                .Include(x => x.Round)
+                .Include(x => x.Playoff)
+                .Where(x => x.Playoff.SeasonId == dbContext.GetCurrentSeasonId());
+        }
+
         public static int GetCurrentSeasonId(this AmerFamilyPlayoffContext dbContext)
         {
             return dbContext.Seasons.AsNoTracking()
