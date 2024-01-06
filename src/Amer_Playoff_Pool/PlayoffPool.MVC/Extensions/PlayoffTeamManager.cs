@@ -9,6 +9,14 @@
     {
         public static IQueryable<PlayoffTeamModel> GetPlayoffTeams(this AmerFamilyPlayoffContext dataContext, int seasonId)
         {
+            var conferences = dataContext.Conferences.AsNoTracking()
+                    .Select(
+                        y => new SelectListItem
+                        {
+                            Value = y.Id.ToString(),
+                            Text = y.Name,
+                        }).ToList();
+
             return dataContext.PlayoffTeams
                 .Where(x => x.SeasonTeam.SeasonId == seasonId)
                 .Select(x => new PlayoffTeamModel
@@ -19,13 +27,7 @@
                     SeasonId = x.SeasonTeam.SeasonId,
                     TeamId = x.SeasonTeam.TeamId,
                     ConferenceId = x.SeasonTeam.ConferenceId,
-                    Conferences = dataContext.Conferences.AsNoTracking()
-                    .Select(
-                        y => new SelectListItem
-                        {
-                            Value = y.Id.ToString(),
-                            Text = y.Name,
-                        }).ToList(),
+                    Conferences = conferences,
                 });
         }
 
