@@ -1,0 +1,22 @@
+﻿@model SeasonModel
+
+@{
+    Layout = "ModalLayout";
+    string formId = Guid.NewGuid().ToString();
+}
+
+<form asp-controller="Playoff" asp-action="Edit" id="@formId">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="PlayoffId" />
+    <input type="hidden" asp-for="Year" />
+    <div class="row mb-3">
+        <label asp-for="CutoffDateTime" class="col-12 col-form-label"></label>
+        <input type="datetime-local" asp-for="CutoffDateTime"/>
+    </div>
+</form>
+
+@section ModalFooter
+{
+    <cancel-button></cancel-button>
+    <button type="submit" class="btn pp-button pp-button-primary" data-form-id="@formId">Save</button>
+}

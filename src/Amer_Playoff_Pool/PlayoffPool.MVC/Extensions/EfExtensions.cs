@@ -276,6 +276,11 @@ namespace PlayoffPool.MVC.Extensions
             seasonToUpdate.Description = seasonModel.Description;
         }
 
+        public static SeasonModel GetSeasonFromPlayoffId(this AmerFamilyPlayoffContext dbContext, int playoffId)
+        {
+            return dbContext.GetSeason(dbContext.GetSeasonIdFromPlayoffId(playoffId));
+        }
+
         public static int GetSeasonIdFromPlayoffId(this AmerFamilyPlayoffContext dbContext, int playoffId)
         {
             var seasonId = dbContext.Playoffs.AsNoTracking().FirstOrDefault(x => x.Id == playoffId)?.SeasonId;

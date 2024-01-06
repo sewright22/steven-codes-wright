@@ -1,6 +1,20 @@
 ﻿@model SeasonModel
 
 <h2>@this.Model.Year</h2>
-
+<div class="row">
+    <div class="col text-end">
+        @if (this.Model.CutoffDateTime.HasValue)
+        {
+            <span>Start Date: @this.Model.CutoffDateTime</span>
+        }
+        else
+        {
+            <span>Starting date not set!</span>
+        }
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn pp-button pp-button-secondary modal-button" data-url="/Admin/Playoff/Edit/@this.Model.PlayoffId">Update Start Time</button>
+    </div>
+</div>
 <partial name="Rounds" />
 <partial name="Teams" />
