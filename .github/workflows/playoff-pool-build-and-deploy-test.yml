@@ -1,4 +1,4 @@
-name: Playoff Pool Build and Publish
+name: Playoff Pool Build and Publish Test
 
 on:
   push:
