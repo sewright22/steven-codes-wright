@@ -17,9 +17,9 @@
         [DisplayName("Points")]
         public int PointValue { get; set; }
         public required string Name { get; set; }
-        public List<string>? SelectedTeams { get; set; }
-        public List<TeamModel> Teams { get; } = new List<TeamModel>();
-        public List<SelectListItem> Rounds { get; } = new List<SelectListItem>();
+        public List<string>? Winners { get; set; }
+        public List<SelectListItem> Teams { get; } = new ();
+        public List<SelectListItem> Rounds { get; } = new ();
         public string? Title
         {
             get

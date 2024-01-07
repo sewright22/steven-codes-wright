@@ -1,6 +1,7 @@
 ﻿namespace PlayoffPool.MVC.Extensions
 {
     using AmerFamilyPlayoffs.Data;
+    using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.EntityFrameworkCore;
     using PlayoffPool.MVC.Areas.Admin.Models;
 
@@ -48,6 +49,7 @@
                 .AsNoTracking()
                 .Include(x => x.Round)
                 .Include(x => x.Playoff)
+                .Include(x => x.RoundWinners)
                 .FirstOrDefault(x => x.Id == id);
 
             if (playoffRound == null)
@@ -64,9 +66,41 @@
                 SeasonId = playoffRound.Playoff.SeasonId,
             };
 
+            roundModel.Teams.AddRange(dbContext.GetTeamsForRound(playoffRound.Id).ToList());
+
+            roundModel.Winners = playoffRound.RoundWinners?.Select(x => x.PlayoffTeamId.ToString()).ToList();
+
             roundModel.Rounds.AddRange(dbContext.GetRounds().ToList());
 
             return roundModel;
+        }
+
+        public static IEnumerable<SelectListItem> GetTeamsForRound(this AmerFamilyPlayoffContext dataContext, int playoffRoundId)
+        {
+            if (dataContext is null)
+            {
+                throw new ArgumentNullException(nameof(dataContext));
+            }
+
+            var playoffId = dataContext.PlayoffRounds
+                .FirstOrDefault(x => x.Id == playoffRoundId)?.PlayoffId;
+
+            if (playoffId == null)
+            {
+                throw new KeyNotFoundException(nameof(playoffRoundId));
+            }
+
+            var teams = dataContext.PlayoffTeams
+                .Include(x => x.SeasonTeam)
+                .Where(x => x.PlayoffId == playoffId)
+                .OrderBy(x => x.SeasonTeam.Team.Name)
+                .Select(x => new SelectListItem
+                {
+                    Text = x.SeasonTeam.Team.Name,
+                    Value = x.Id.ToString(),
+                });
+
+            return teams;
         }
 
         public static void UpdatePlayoffRound(this AmerFamilyPlayoffContext dataContext, RoundModel model)
@@ -101,6 +135,32 @@
 
             playoffRound.RoundId = roundId;
             playoffRound.PointValue = model.PointValue;
+
+            if (playoffRound.RoundWinners == null)
+            {
+                playoffRound.RoundWinners = new List<RoundWinner>();
+            }
+
+            playoffRound.RoundWinners.Clear();
+
+            if (model.Winners != null)
+            {
+                foreach (var winner in model.Winners)
+                {
+                    var playoffTeam = dataContext.PlayoffTeams
+                        .FirstOrDefault(x => x.Id == int.Parse(winner));
+
+                    if (playoffTeam == null)
+                    {
+                        throw new KeyNotFoundException(nameof(winner));
+                    }
+
+                    playoffRound.RoundWinners.Add(new RoundWinner
+                    {
+                        PlayoffTeamId = playoffTeam.Id,
+                    });
+                }
+            }
 
             dataContext.SaveChanges();
         }

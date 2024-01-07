@@ -18,6 +18,12 @@
         <label class="col-12" asp-for="PointValue"></label>
         <input class="col-12" type="number" asp-for="PointValue" />
     </div>
+
+    <div class="row">
+        <label class="col-12" asp-for="Winners"></label>
+        <select class="form-select form-select-lg mb-3" multiple aria-label=".form-select-lg example" size="15" asp-for="Winners" asp-items="@(new SelectList(this.Model.Teams, nameof(SelectListItem.Value), nameof(SelectListItem.Text)))">
+        </select>
+    </div>
 </form>
 
 @section ModalFooter
