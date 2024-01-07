@@ -99,7 +99,7 @@ public class BracketController : Controller
 
         BracketViewModel bracketViewModel = this.BuildBracketViewModel(bracketPrediction);
 
-        if (bracketPrediction.UserId != this.UserManager.GetUserId(this.User))
+        if (bracketPrediction.UserId != this.UserManager.GetUserId(this.User) || this.Context.IsPlayoffStarted())
         {
             bracketViewModel.CanEdit = false;
         }

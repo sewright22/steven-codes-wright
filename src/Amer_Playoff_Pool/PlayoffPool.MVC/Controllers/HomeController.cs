@@ -57,6 +57,8 @@ public class HomeController : Controller
 
         var model = new HomeViewModel();
 
+        model.IsPlayoffStarted = this.dataContext.IsPlayoffStarted();
+
         model.CompletedBrackets = this.dataContext.BracketPredictions
             .AsNoTracking()
             .Where(x => x.Playoff.Season.Id == this.dataContext.GetCurrentSeasonId())
@@ -97,11 +99,15 @@ public class HomeController : Controller
     private LeaderboardViewModel BuildLeaderboard()
     {
         var retVal = new LeaderboardViewModel();
+
+        retVal.ShowLeaderboard = this.dataContext.IsPlayoffStarted();
+
         retVal.Brackets = new List<BracketSummaryModel>();
         var brackets = this.dataContext.BracketPredictions
             .Include("MatchupPredictions.PlayoffRound.Round")
             .Include("MatchupPredictions.PredictedWinner.SeasonTeam.Team")
-            .AsNoTracking().Where(x => x.Playoff.Season.Id == dataContext.GetCurrentSeasonId())
+            .AsNoTracking()
+            .Where(x => x.Playoff.Season.Id == dataContext.GetCurrentSeasonId())
             .Where(x => x.MatchupPredictions.Count(x => x.PredictedWinner != null) == 13);
 
         var actualWinners = this.dataContext.RoundWinners.Include(x => x.PlayoffRound).Where(x => x.PlayoffRound.Playoff.Season.Id == dataContext.GetCurrentSeasonId());

@@ -27,5 +27,53 @@
 
             dataContext.SaveChanges();
         }
+
+        public static int GetCurrentPlayoffId(this AmerFamilyPlayoffContext dataContext)
+        {
+            if (dataContext is null)
+            {
+                throw new ArgumentNullException(nameof(dataContext));
+            }
+
+            int seasonId = dataContext.GetCurrentSeasonId();
+
+            Playoff? playoff = dataContext.Playoffs.FirstOrDefault(p => p.SeasonId == seasonId);
+
+            if (playoff is null)
+            {
+                throw new Exception("No playoff found for current season.");
+            }
+
+            return playoff.Id;
+        }
+
+        public static bool IsPlayoffStarted(this AmerFamilyPlayoffContext dataContext)
+        {
+            if (dataContext is null)
+            {
+                throw new ArgumentNullException(nameof(dataContext));
+            }
+
+            int playoffId = dataContext.GetCurrentPlayoffId();
+
+            return dataContext.IsPlayoffStarted(playoffId);
+        }
+
+        public static bool IsPlayoffStarted(this AmerFamilyPlayoffContext dataContext, int playoffId)
+        {
+            if (dataContext is null)
+            {
+                throw new ArgumentNullException(nameof(dataContext));
+            }
+
+            Playoff? playoff = dataContext.Playoffs.FirstOrDefault(p => p.Id == playoffId);
+
+            if (playoff is null)
+            {
+                return false;
+            }
+
+            return playoff.StartDateTime.HasValue && playoff.StartDateTime.Value < DateTime.UtcNow;
+        }
     }
 }

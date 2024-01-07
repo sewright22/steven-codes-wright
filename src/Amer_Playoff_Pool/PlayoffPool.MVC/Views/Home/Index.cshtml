@@ -11,9 +11,13 @@
 @if (this.Model.CompletedBrackets.Any() == false && this.Model.IncompleteBrackets.Any() == false)
 {
     <p>It looks like you haven't made any picks.</p>
-    <div class="pp-child-center">
-        <a class="btn btn-primary pp-button pp-button-create-first-bracket" href="/Bracket/Create">Create your first bracket</a>
-    </div>
+
+    @if (this.Model.IsPlayoffStarted == false)
+    {
+        <div class="pp-child-center">
+            <a class="btn btn-primary pp-button pp-button-create-first-bracket" href="/Bracket/Create">Create your first bracket</a>
+        </div>
+    }
 }
 else
 {
@@ -57,11 +61,14 @@ else
             </div>
         }
 
-        <div class="row">
-            <a class="btn btn-primary pp-button pp-child-center" href="/Bracket/Create">Create Another Bracket</a>
-        </div>
+        @if (this.Model.IsPlayoffStarted == false)
+        {
+            <div class="row">
+                <a class="btn btn-primary pp-button pp-child-center" href="/Bracket/Create">Create Another Bracket</a>
+            </div>
+        }
 
-        @if (this.Model.Leaderboard != null)
+        @if (this.Model.Leaderboard != null && this.Model.Leaderboard.ShowLeaderboard && this.Model.Leaderboard.Brackets.Any())
         {
             <div class="row pp-leaderboard">
                 <h4 class="col">Leaderboard</h4>
