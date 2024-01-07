@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+// Running locally on my machine uses a newer version of mysql.
 #if DEBUG
 var connectionString = builder.Configuration.GetConnectionString("DatabaseContext");
 builder.Services.AddDbContext<AmerFamilyPlayoffContext>(
