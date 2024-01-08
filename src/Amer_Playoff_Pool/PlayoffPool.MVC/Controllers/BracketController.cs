@@ -190,7 +190,7 @@ public class BracketController : Controller
     {
         BracketPrediction? bracketPrediction = this.GetBracketPrediction(id, false);
 
-        if (bracketPrediction == null || bracketPrediction.UserId == this.UserManager.GetUserId(this.User))
+        if (bracketPrediction == null || bracketPrediction.UserId != this.UserManager.GetUserId(this.User))
         {
             return this.RedirectToAction(nameof(this.Create));
         }
