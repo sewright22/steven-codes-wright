@@ -40,7 +40,7 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> Seasons()
+    public IActionResult Seasons()
     {
         var model = new SeasonListViewModel();
         return this.View(model);
