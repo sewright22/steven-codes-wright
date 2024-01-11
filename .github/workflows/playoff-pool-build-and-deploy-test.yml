@@ -55,12 +55,9 @@ jobs:
         with:
           name: playoff-pool-artifact
           
-      - name: FTP Deploy MVC
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      - name: Fast FTP
+        uses: anvil-solutions/Fast-FTP-Action@2.1.3
         with:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          timeout: 1200000
-          local-dir: ./
