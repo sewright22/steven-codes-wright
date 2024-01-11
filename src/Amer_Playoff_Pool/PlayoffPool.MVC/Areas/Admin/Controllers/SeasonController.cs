@@ -80,7 +80,7 @@
         public IActionResult Round(int id)
         {
             var model = new RoundModel()
-            { 
+            {
                 Name = string.Empty,
                 PlayoffId = id,
             };
@@ -88,6 +88,47 @@
             model.Rounds.AddRange(this.DataManager.DataContext.GetRounds().ToList());
 
             return View(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Brackets(int seasonId)
+        {
+            var model = new BracketsModel();
+
+            model.Brackets.AddRange(this.DataManager.DataContext.GetBracketsForYear(seasonId).ToList());
+
+            return View(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Bracket(int id)
+        {
+            return this.PartialView(this.DataManager.DataContext.GetBracket(id));
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult DeleteBracket(int id, BracketModel model)
+        {
+            this.DataManager.DataContext.DeleteBracket(id);
+
+            return RedirectToAction(nameof(Brackets), new { seasonId = model.SeasonId });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Bracket(BracketModel model)
+        {
+            if (ModelState.IsValid == false)
+            {
+                return View(model);
+            }
+
+            this.DataManager.DataContext.UpdateBracket(model);
+
+            return RedirectToAction(nameof(Brackets), new { seasonId = model.SeasonId });
         }
     }
 }

@@ -9,6 +9,7 @@
         public string? Description { get; set; }
         public int? PlayoffId { get; set; }
         public DateTime? CutoffDateTime { get; set; }
+        public int BracketCount { get; set; }
         public List<RoundModel> Rounds { get; } = new();
         public List<PlayoffTeamModel> Teams { get; } = new();
         public string? Title

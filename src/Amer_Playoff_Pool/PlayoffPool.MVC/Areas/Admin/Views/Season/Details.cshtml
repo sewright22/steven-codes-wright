@@ -9,13 +9,23 @@
         <div class="col-auto">
             @if (this.Model.CutoffDateTime.HasValue)
             {
-                <span>Start Date: @this.Model.CutoffDateTime</span>
+                <span>Start Date: <strong>@this.Model.CutoffDateTime</strong></span>
             }
             else
             {
                 <span>Starting date not set!</span>
             }
             <button type="button" class="btn pp-button pp-button-secondary modal-button" data-url="/Admin/Playoff/Edit/@this.Model.PlayoffId">Update Start Time</button>
+        </div>
+    </div>
+
+    <div class="row pp-bracket-summary">
+        <div class="col">
+            <h4><strong>@this.Model.BracketCount</strong> Brackets Created</h4>
+        </div>
+
+        <div class="col-auto">
+            <a class="btn pp-button pp-button-secondary" href="/Admin/Season/Brackets?seasonId=@this.Model.Id">Manage Brackets</a>
         </div>
     </div>
 

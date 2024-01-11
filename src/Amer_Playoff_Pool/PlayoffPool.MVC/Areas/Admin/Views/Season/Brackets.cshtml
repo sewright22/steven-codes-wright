@@ -1,0 +1,6 @@
+﻿@model BracketsModel
+
+@foreach (var bracket in this.Model.Brackets)
+{
+    <partial name="BracketSummary" model="@bracket" />
+}
