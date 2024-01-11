@@ -33,7 +33,7 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
         return this.View(new AdminViewModel());
     }
