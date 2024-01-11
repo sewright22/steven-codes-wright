@@ -36,6 +36,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Areas\Admin\Data\" />
+	  <Folder Include="Areas\Admin\Views\Bracket\" />
 	  <Folder Include="Views\User\" />
 	</ItemGroup>
 

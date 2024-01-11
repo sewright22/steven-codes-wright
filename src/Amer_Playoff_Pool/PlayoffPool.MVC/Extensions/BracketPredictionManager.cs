@@ -3,6 +3,7 @@
     using AmerFamilyPlayoffs.Data;
     using AutoMapper.QueryableExtensions;
     using Microsoft.EntityFrameworkCore;
+    using PlayoffPool.MVC.Areas.Admin.Models;
     using PlayoffPool.MVC.Models;
     using PlayoffPool.MVC.Models.Home;
 
@@ -52,8 +53,66 @@
                     ? null
                     : x.MatchupPredictions.FirstOrDefault(mp => mp.PlayoffRound.Round.Number == 4)!.PredictedWinner.ToPlayoffTeamViewModel(),
                 });
+        }
 
+        public static BracketModel? GetBracket(this AmerFamilyPlayoffContext dbContext, int bracketId)
+        {
+            return dbContext.BracketPredictions
+                .AsNoTracking()
+                .AsBracketModel()
+                .FirstOrDefault(x => x.Id == bracketId);
+        }
 
+        public static IQueryable<BracketModel> AsBracketModel(this IQueryable<BracketPrediction> bracketPredictions)
+        {
+            return bracketPredictions
+                .Include(x => x.Playoff)
+                .Select(
+                    x => new BracketModel()
+                    {
+                        Id = x.Id,
+                        SeasonId = x.Playoff.SeasonId,
+                        Name = x.Name,
+                    });
+        }
+
+        public static IQueryable<BracketModel> GetBracketsForYear(this AmerFamilyPlayoffContext dbContext, int seasonId)
+        {
+            return dbContext.BracketPredictions
+                .AsNoTracking()
+                .Where(x => x.Playoff.Season.Id == seasonId)
+                .AsBracketModel();
+        }
+
+        public static void UpdateBracket(this AmerFamilyPlayoffContext dbContext, BracketModel bracketModel)
+        {
+            var bracket = dbContext.BracketPredictions
+                .Include(x => x.MatchupPredictions)
+                .FirstOrDefault(x => x.Id == bracketModel.Id);
+
+            if (bracket is null)
+            {
+                return;
+            }
+
+            bracket.Name = bracketModel.Name;
+
+            dbContext.SaveChanges();
+        }
+
+        public static void DeleteBracket(this AmerFamilyPlayoffContext dbContext, int bracketId)
+        {
+            var bracket = dbContext.BracketPredictions
+                .FirstOrDefault(x => x.Id == bracketId);
+
+            if (bracket is null)
+            {
+                return;
+            }
+
+            dbContext.BracketPredictions.Remove(bracket);
+
+            dbContext.SaveChanges();
         }
 
         public static PlayoffTeamViewModel ToPlayoffTeamViewModel(this PlayoffTeam playoffTeam)

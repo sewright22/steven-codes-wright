@@ -87,6 +87,7 @@ namespace PlayoffPool.MVC.Extensions
                 Year = season.Year.ToString(),
                 PlayoffId = season.Playoff.Id,
                 CutoffDateTime = localTime,
+                BracketCount = dbContext.BracketPredictions.Count(x => x.PlayoffId == season.Playoff.Id),
             };
 
             seasonModel.Rounds.AddRange(dbContext.GetPlayoffRounds(season.Id).ToList());

@@ -1,0 +1,30 @@
+﻿@model BracketModel
+@{
+    Layout = "ModalLayout";
+    string formId = Guid.NewGuid().ToString();
+}
+
+<form id="@formId" asp-controller="Season" asp-action="Bracket">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="SeasonId" />
+    <div class="row mb-3">
+        <label asp-for="Name" class="col-12 col-form-label"></label>
+        <input asp-for="Name" class="col-12" />
+    </div>
+</form>
+
+@section ModalFooter
+{
+    <div class="col">
+        <form asp-controller="Season" asp-action="DeleteBracket">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="SeasonId" />
+            <button type="submit" class="btn pp-button pp-button-secondary" data-dismiss="modal">Delete</button>
+        </form>
+    </div>
+
+    <div class="col-auto">
+        <cancel-button></cancel-button>
+        <button type="submit" class="btn pp-button pp-button-primary" data-dismiss="modal" data-form-id="@formId">Save</button>
+    </div>
+}

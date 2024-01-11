@@ -54,8 +54,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: playoff-pool-artifact
+      
       - name: FTP Deploy MVC
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -63,3 +64,5 @@ jobs:
           port: 21
           timeout: 1200000
           local-dir: ./
+
+      
