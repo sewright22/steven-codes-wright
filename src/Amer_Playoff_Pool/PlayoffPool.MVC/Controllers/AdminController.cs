@@ -40,7 +40,7 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> Seasons()
+    public IActionResult Seasons()
     {
         var model = new SeasonListViewModel();
         return this.View(model);
@@ -110,7 +110,7 @@ public class AdminController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> ManageTeams(Models.ManageTeamsViewModel ManageTeamsViewModel)
+    public IActionResult ManageTeams(Models.ManageTeamsViewModel ManageTeamsViewModel)
     {
         var model = ManageTeamsViewModel;
 

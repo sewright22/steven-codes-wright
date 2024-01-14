@@ -126,6 +126,7 @@
             }
 
             var playoffRound = dataContext.PlayoffRounds
+                .Include(x => x.RoundWinners)
                 .FirstOrDefault(x => x.Id == model.Id);
 
             if (playoffRound == null)
