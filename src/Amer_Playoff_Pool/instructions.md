@@ -1,5 +1,5 @@
 # How to Use the FJA Pool website
-Click the following link to get ready for some football! [Click me!](https://amerplayoffpool-test.stevencodeswright.com/)
+Click the following link to get ready for some football! [Click me!](https://fjapool.com/)
 
 ## Create Account
 To create your account, click on the "Click Here to Register" button.
